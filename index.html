@@ -172,7 +172,7 @@
         
         
         <li class="menu-item menu-item-about">
-          <a href="/about me">
+          <a href="/about">
             
             <i class="fa fa-fw fa-coffee"></i>
             
@@ -240,7 +240,7 @@
   <div class="widget">
     <h3 class="widget-title">归档</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -267,21 +267,6 @@
             </div>
           </li>
           
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                
-              </p>
-              <p class="item-title">
-                <a href="/2017/10/26/hello-world/" class="title">Hello World</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2017-10-26T11:07:16.000Z" itemprop="datePublished">2017-10-26</time>
-              </p>
-            </div>
-          </li>
-          
       </ul>
     </div>
   </div>
@@ -294,63 +279,113 @@
   
   <main class="main" role="main">
   
-  <div class="content article-list">
+  
+    <div class="content">
+  <article id="post-pl0笔记" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
+    <div class="article-header">
+      
+        
   
     <h1 itemprop="name">
       <a class="article-title" href="/2017/10/26/pl0笔记/">pl0笔记</a>
     </h1>
   
 
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
+      
+      <div class="article-meta">
+        <span class="article-date">
     <i class="fa fa-calendar-check-o"></i>
 	<a href="/2017/10/26/pl0笔记/" class="article-date">
-	  <time datetime="2017-10-26T11:26:43.000Z" itemprop="datePublished">10月 26</time>
+	  <time datetime="2017-10-26T11:26:43.000Z" itemprop="datePublished">2017-10-26</time>
 	</a>
 </span>
-    
-    
+        
+        
 
-    <span class="post-comment"><i class="fa fa-commenting-o"></i> <a href="/2017/10/26/pl0笔记/#comments" class="article-comment-link">评论</a></span>
-    
-  </p>
-</article>
+        
+	<span class="article-read hidden-xs">
+	    <i class="fa fa-eye" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			阅读<span id="busuanzi_value_page_pv">0</span>次
+		</span>
+	</span>
 
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/26/hello-world/">Hello World</a>
-    </h1>
-  
 
+        <span class="post-comment"><i class="fa fa-commenting-o"></i> <a href="/2017/10/26/pl0笔记/#comments" class="article-comment-link">评论</a></span>
+        
+      </div>
+      
+    </div>
+    <div class="article-entry markdown-body" itemprop="articleBody">
+      
+        <p>#pl0笔记</p>
+<p>##第一部分 pl0语言及其编译器  </p>
+<ul>
+<li><strong>pl0语言介绍</strong><br>  pl0设计语言是一个比较简单的语言，它以赋值语句为基础，构造概念有顺序，条件，循环三种。pl0有子程序的概念，包括过程定义（可以嵌套）与调用且有局部变量说明。pl0唯一的数据类型是整型，可以用来说明该类型的变量和常量。当然pl0也具有通常的算术与逻辑运算。具体的pl0语法图如下所示。</li>
+<li><strong>pl0语言编译器</strong><br>  pl0编译器的基本工作流程如下图所示：<br>  <img src="/Users/rat_racer/Desktop/屏幕快照/pl0编译器流程.png" alt="compiler process"><ul>
+<li>语法分析完成以下工作<br>  1.跳过分隔符，即空格，回车，制表符<br>  2.识别保留字，如<strong><code>begin，end，if ，while</code></strong>等<br>  3.识别非保留字的 一般标志符，将次标志符赋值给全局量<code>id</code>，而全局量<code>sym</code>赋值为<strong><code>sym_identifier</code></strong><br>  4.识别数字序列，当前值赋值给全局量<code>num</code>,<code>sym</code>被赋值为<strong><code>sym_number</code></strong><br>  5.是被<code>：=,&lt;=,&gt;=</code>等特殊符号，全局量<code>sym</code>被赋值为<strong><code>sym_becomes,sym_leq,sym_gtr</code></strong>等。<br>  相关函数有<strong><code>getsym(),getch()</code></strong>,其中<code>getch()</code>为获取单个字符函数，除此之外，它还完成:  <ul>
+<li>识别且跳过行结束符</li>
+<li>将输入源文件复写到输出文件</li>
+<li>产生一份程序列表，输出相应行号或者指令计数器的值<br>注意getch()识别一个字符后，文件指针指向下一个，而getc()不会。</li>
+</ul>
+</li>
+<li>语法分析 </li>
+</ul>
+</li>
+</ul>
+<p>###pl0的指令集</p>
+<ul>
+<li>pl0的指令集包含7种指令，分别是：<br>（1) LIT  将常数压栈<br>（2) LOD  将变量值压栈<br>（3) STO  将栈顶的值赋予某变量<br>（4) CAL  过程调用<br>（5) INT  在数据栈中分配存储空间<br>（6) JMP,JPC 用于if,while语句的条件或者无条件控制转移指令<br>（7) OPR  算术逻辑指令  </li>
+<li><p>指令格式  </p>
+<p>   <img src="" alt=""> <img src="/Users/rat_racer/Desktop/屏幕快照/19.png" alt="format">  </p>
+<pre><code>F,L,A的含义见下表  
+ ![ins]
+</code></pre></li>
+<li></li>
+</ul>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://yoursite.com/2017/10/26/pl0笔记/" title="pl0笔记" target="_blank" rel="external">http://yoursite.com/2017/10/26/pl0笔记/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/Rat-racer" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/Rat-racer" target="_blank"><span class="text-dark">Rat-racer</span><small class="ml-1x">computer science student</small></a></h3>
+        <div>学渣渣，什么都不会。</div>
+      </div>
+    </figure>
   </div>
+</div>
+
+
+    </div>
+  </article>
   
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="fa fa-calendar-check-o"></i>
-	<a href="/2017/10/26/hello-world/" class="article-date">
-	  <time datetime="2017-10-26T11:07:16.000Z" itemprop="datePublished">10月 26</time>
-	</a>
-</span>
-    
-    
+</div>
 
-    <span class="post-comment"><i class="fa fa-commenting-o"></i> <a href="/2017/10/26/hello-world/#comments" class="article-comment-link">评论</a></span>
-    
-  </p>
-</article>
-
-    
-  </div>
+  
 
    
 </main>
