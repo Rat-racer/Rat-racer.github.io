@@ -16,17 +16,29 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>标签 | Rat-racer&#39;s Blog</title>
-  <meta property="og:type" content="website">
-<meta property="og:title" content="标签">
-<meta property="og:url" content="http://yoursite.com/tags/index.html">
+  <title>Rat-racer&#39;s Blog</title>
+  <meta name="description" content="#ifconfig————-linux指令  ifconfig=interfaces config   命令格式：  ifconfig [网络设备][参数] 功能  查看和配置网络设备，当网络环境发生改变的时候可以通过该命令对网络进行相应的配置。   命令参数   up 启动相应的网络设备/网卡   down 关闭指定的网络设备/网卡   arp 设置指定网卡是都支持ARP协议   -promis">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Rat-racer&#39;s Blog">
+<meta property="og:url" content="http://yoursite.com/2017/10/25/ifconfig学习/index.html">
 <meta property="og:site_name" content="Rat-racer&#39;s Blog">
+<meta property="og:description" content="#ifconfig————-linux指令  ifconfig=interfaces config   命令格式：  ifconfig [网络设备][参数] 功能  查看和配置网络设备，当网络环境发生改变的时候可以通过该命令对网络进行相应的配置。   命令参数   up 启动相应的网络设备/网卡   down 关闭指定的网络设备/网卡   arp 设置指定网卡是都支持ARP协议   -promis">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-10-26T11:39:15.000Z">
+<meta property="og:image" content="http://yoursite.com/Users/rat_racer/Desktop/屏幕快照/linux-ifconfig.png">
+<meta property="og:image" content="http://yoursite.com/Users/rat_racer/Desktop/屏幕快照/linux-ifconfig-down.png">
+<meta property="og:image" content="http://yoursite.com/Users/rat_racer/Desktop/屏幕快照/linux-以太网断开连接.png">
+<meta property="og:image" content="http://yoursite.com/Users/rat_racer/Desktop/屏幕快照/linux-以太网连接.png">
+<meta property="og:image" content="http://yoursite.com/Users/rat_racer/Desktop/屏幕快照/del-ipv6-before.png">
+<meta property="og:image" content="http://yoursite.com/Users/rat_racer/Desktop/屏幕快照/del-ipv6-after.png">
+<meta property="og:image" content="http://yoursite.com/Users/rat_racer/Desktop/屏幕快照/linux-change-MAC.png">
+<meta property="og:image" content="http://yoursite.com/Users/rat_racer/Desktop/屏幕快照/linux-change-IP.png">
+<meta property="og:updated_time" content="2017-10-25T14:33:01.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="标签">
+<meta name="twitter:title" content="Rat-racer&#39;s Blog">
+<meta name="twitter:description" content="#ifconfig————-linux指令  ifconfig=interfaces config   命令格式：  ifconfig [网络设备][参数] 功能  查看和配置网络设备，当网络环境发生改变的时候可以通过该命令对网络进行相应的配置。   命令参数   up 启动相应的网络设备/网卡   down 关闭指定的网络设备/网卡   arp 设置指定网卡是都支持ARP协议   -promis">
+<meta name="twitter:image" content="http://yoursite.com/Users/rat_racer/Desktop/屏幕快照/linux-ifconfig.png">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://yoursite.com/tags/index.html">
+  <link rel="canonical" href="http://yoursite.com/2017/10/25/ifconfig学习/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Rat-racer&#39;s Blog" type="application/atom+xml">
   
@@ -282,23 +294,210 @@
 </aside>
 
   
-  <main class="main" role="main">
-  <article class="article article-tags post-type-list" itemscope="">
-    <header class="article-header">
-      <h1 itemprop="name" class="hidden-xs">标签</h1>
-      <p class="text-muted hidden-xs">共 0 个标签</p>
-      <nav role="navigation" id="nav-main" class="okayNav">
-        <ul>
-          <li><a href="/tags">All</a></li>
-          
-        </ul>
-      </nav>
-    </header>
-    <!-- /header -->
-    <div class="article-body">
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-ifconfig学习" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="fa fa-calendar-check-o"></i>
+	<a href="/2017/10/25/ifconfig学习/" class="article-date">
+	  <time datetime="2017-10-25T13:33:28.000Z" itemprop="datePublished">2017-10-25</time>
+	</a>
+</span>
+        
+        
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="fa fa-eye" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			阅读<span id="busuanzi_value_page_pv">0</span>次
+		</span>
+	</span>
+
+
+        <span class="post-comment"><i class="fa fa-commenting-o"></i> <a href="/2017/10/25/ifconfig学习/#comments" class="article-comment-link">评论</a></span>
+        
+      </div>
       
     </div>
+    <div class="article-entry markdown-body" itemprop="articleBody">
+      
+        <p>#ifconfig————-linux指令</p>
+<ul>
+<li><code>ifconfig=interfaces config</code>  </li>
+<li>命令格式：<br>  <code>ifconfig [网络设备][参数]</code></li>
+<li>功能<br>  查看和配置网络设备，当网络环境发生改变的时候可以通过该命令对网络进行相应的配置。  </li>
+<li>命令参数  <ul>
+<li>up 启动相应的网络设备/网卡  </li>
+<li>down 关闭指定的网络设备/网卡  </li>
+<li>arp 设置指定网卡是都支持ARP协议  </li>
+<li>-promisc 设置是否支持网卡的promiscuous模式  </li>
+<li>-allmulti 设置是否支持多播模式，如果选择该参数，网卡将接受网络中所有的多播数据包  </li>
+<li>-a 显示全部接口信息  </li>
+<li>-s 显示摘要信息  </li>
+<li>add 给指定网卡配置ipv6地址  </li>
+<li>del 删除指定网卡的ipv6地址  </li>
+<li>mtu&lt;字节数&gt; 设置网卡的最大传输单元  </li>
+<li>netmask&lt;子网掩码&gt; 设置网卡的子网掩码  </li>
+<li>tunel 建立隧道  </li>
+<li>dsaddr 设定一个远端地址，建立点对点通信  </li>
+<li>-broadcst&lt;地址&gt; 为指定网卡设置广播协议  </li>
+<li>-pointtopoint&lt;地址&gt; 为网卡设置点对点通讯协议  </li>
+<li>multicast 为网卡设置组播标识 </li>
+<li>address 为网卡设置IPV4地址</li>
+</ul>
+</li>
+</ul>
+<p>##使用实例 </p>
+<ul>
+<li>查看设备信息<br>  <img src="/Users/rat_racer/Desktop/屏幕快照/linux-ifconfig.png" alt="ifconfig"><ul>
+<li>第一行：连接类型：以太网 硬件地址即MAC地址：…</li>
+<li>第二行：inet 地址表示网卡的IP地址：10.211.55.5<br>广播地址：10.211.55.255<br>子网掩码：255.255.255.0 </li>
+<li>第六行：网卡的状态 UP:网卡处于开启状态 RUNNING：网卡的网线被插上 MULTICAST：允许组播 MTU=1500：最大传输单元1500字节  </li>
+</ul>
+</li>
+<li>关闭开启网卡<br>  <img src="/Users/rat_racer/Desktop/屏幕快照/linux-ifconfig-down.png" alt="down"><ul>
+<li><code>sudo ifconfig eth1 down</code><br><img src="/Users/rat_racer/Desktop/屏幕快照/linux-以太网断开连接.png" alt="断开连接">  </li>
+<li><code>sudo ifconfig eth1 down</code><br><img src="/Users/rat_racer/Desktop/屏幕快照/linux-以太网连接.png" alt="连接"></li>
+</ul>
+</li>
+<li>删除/添加ipv6地址  <code>sudo ifconfig eth1 del/add ipv6-addr</code><ul>
+<li>before<br><img src="/Users/rat_racer/Desktop/屏幕快照/del-ipv6-before.png" alt="del-ipv6-before">  <ul>
+<li>after<br><img src="/Users/rat_racer/Desktop/屏幕快照/del-ipv6-after.png" alt="del-ipv6-after">  </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>修改MAC地址<br>  <code>sudo ifconfig eth1 hw ether MAC_ADDR</code><br>  <img src="/Users/rat_racer/Desktop/屏幕快照/linux-change-MAC.png" alt="change-MAC">   </li>
+<li>修改IP地址<br>  <code>sudo ifconfig eth1 IP_ADDR netmask ADDR broadcasr ADDR</code><br>  <img src="/Users/rat_racer/Desktop/屏幕快照/linux-change-IP.png" alt="change-IP">  </li>
+<li>其他操作  <ul>
+<li>关闭或启动arp协议<br>  <code>ifconfig eth1 arp</code><br>  <code>ifconfig eth1 -arp</code>  </li>
+<li>设置最大传输单元<br>  <code>ifconfig eth1 mtu 1500</code> </li>
+</ul>
+</li>
+</ul>
+<p>###Note:用ifconfig命令配置的网卡信息，在网卡重启后机器重启后，配置就不存在。要想将上述的配置信息永远的存的电脑里，那就要修改网卡的配置文件了</p>
+<p>参考：<a href="http://xp9802.iteye.com/blog/2120351" target="_blank" rel="external">reference</a></p>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://yoursite.com/2017/10/25/ifconfig学习/" title="" target="_blank" rel="external">http://yoursite.com/2017/10/25/ifconfig学习/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/Rat-racer" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/Rat-racer" target="_blank"><span class="text-dark">Rat-racer</span><small class="ml-1x">computer science student</small></a></h3>
+        <div>学渣渣，什么都不会。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
   </article>
+  
+    
+  <section id="comments">
+  	
+       
+    <div id="uyan_frame"></div>
+
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2017/10/26/pl0笔记/" title="pl0笔记"><i class="fa fa-angle-left" aria-hidden="true"></i>&nbsp;&nbsp;上一篇</a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning hidden-xs" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  
+  
+  <div class="bar-right">
+    <div class="share-component" data-sites="weibo,qq,douban,linkedin,qzone,google" data-mobile-sites="qq,qzone,tencent,douban,wechat"></div>
+  </div>
+  
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-tit">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="donate-payimg">
+            <img src="/images/donate/alipayimg.png" alt="扫码支持" title="扫一扫" />
+          </div>
+          <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+          <div class="donate-payselect">
+            <div class="pay_item checked" data-id="alipay" data-src="/images/donate/alipayimg.png">
+              <div class="radio">
+                <input type="radio" name="payment" id="input-alipay" value="alipay" checked>
+                <label class="pay_logo clickable" for="input-alipay"><img src="/images/donate/alipay.jpg" alt="支付宝" /></label>
+              </div>
+            </div>
+            <div class="pay_item" data-id="weipay" data-src="/images/donate/weipayimg.png">
+              <div class="radio">
+                <input type="radio" name="payment" id="input-weipay" value="weipay">
+                <label class="pay_logo clickable" for="input-weipay"><img src="/images/donate/weipay.jpg" alt="微信支付" /></label>
+              </div>
+            </div>
+          </div>
+          <div class="text-grey">
+            <p>打开<span id="donate-pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 </main>
 
   <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
@@ -368,6 +567,12 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
     
+    
+        
+    
+    <script defer type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=[object Object]"></script>
+
+
     
     
 
