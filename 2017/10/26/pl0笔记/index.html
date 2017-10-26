@@ -65,27 +65,19 @@
       
       <div class="search" id="search-form-wrap">
 
-    <form class="search-form sidebar-form">
-        <div class="input-group">
-            <input type="text" class="search-form-input form-control" placeholder="Search" />
-            <span class="input-group-btn">
-                <button type="submit" class="search-form-submit btn btn-flat"><i class="fa fa-search"></i></button>
-            </span>
-        </div>
-    </form>
-    <div class="ins-search">
-    <div class="ins-search-mask"></div>
-    <div class="ins-search-container">
-        <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="Type something..." x-webkit-speech />
-            <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-            <!-- <span class="ins-close ins-selectable"><i class="fa fa-times"></i></span> -->
-        </div>
-        <div class="ins-section-wrapper">
-            <div class="ins-section-container"></div>
-        </div>
-    </div>
-</div>
+    <form class="search-form" method="GET" action="https://www.baidu.com/s?">
+    <input name="wd" type="text" class="search-form-input" placeholder="Search" />
+    <button type="submit" class="search-form-submit"></button>
+</form>
+<script>
+(function ($) {
+    $('.search-form').on('submit', function (e) {
+        var keyword = $('.search-form-input[name="wd"]').val();
+        window.location = 'https://www.baidu.com/s?wd=site:yoursite.com ' + keyword;
+        return false;
+    });
+})(jQuery);
+</script>
 
 </div>
       <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
@@ -193,11 +185,19 @@
     	
         <li><a href="https://github.com/Rat-racer" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="fa fa-github"></i></a></li>
         
-        <li><a href="http://fltustc.lofter.com" target="_blank" title="Lofter" data-toggle=tooltip data-placement=top><i class="fa fa-lofter"></i></a></li>
-        
-        <li><a href="https://www.zhihu.com/people/fanglintao/" target="_blank" title="Zhihu" data-toggle=tooltip data-placement=top><i class="fa fa-zhihu"></i></a></li>
+        <li><a href="http://weibo.com/" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="fa fa-weibo"></i></a></li>
         
         <li><a href="https://www.douban.com/people/95596562/" target="_blank" title="Douban" data-toggle=tooltip data-placement=top><i class="fa fa-douban"></i></a></li>
+        
+        <li><a href="http://1356772993.qzone.qq.com" target="_blank" title="Qzone" data-toggle=tooltip data-placement=top><i class="fa fa-qzone"></i></a></li>
+        
+        <li><a href="/flt-ustc" target="_blank" title="Wechat" data-toggle=tooltip data-placement=top><i class="fa fa-wechat"></i></a></li>
+        
+        <li><a href="/lintaofang@gmail.com" target="_blank" title="Google" data-toggle=tooltip data-placement=top><i class="fa fa-google"></i></a></li>
+        
+        <li><a href="https://www.linkedin.com/in/lintaofang/" target="_blank" title="Linkedin" data-toggle=tooltip data-placement=top><i class="fa fa-linkedin"></i></a></li>
+        
+        <li><a href="/qq number:1356772993" target="_blank" title="Tencent" data-toggle=tooltip data-placement=top><i class="fa fa-tencent"></i></a></li>
         
         <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="fa fa-rss"></i></a></li>
         
@@ -426,7 +426,7 @@
   
   
   <div class="bar-right">
-    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    <div class="share-component" data-sites="weibo,qq,douban,linkedin,qzone,google" data-mobile-sites="qq,qzone,tencent,douban,wechat"></div>
   </div>
   
   </div>
@@ -480,11 +480,19 @@
     	
         <li><a href="https://github.com/Rat-racer" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="fa fa-github"></i></a></li>
         
-        <li><a href="http://fltustc.lofter.com" target="_blank" title="Lofter" data-toggle=tooltip data-placement=top><i class="fa fa-lofter"></i></a></li>
-        
-        <li><a href="https://www.zhihu.com/people/fanglintao/" target="_blank" title="Zhihu" data-toggle=tooltip data-placement=top><i class="fa fa-zhihu"></i></a></li>
+        <li><a href="http://weibo.com/" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="fa fa-weibo"></i></a></li>
         
         <li><a href="https://www.douban.com/people/95596562/" target="_blank" title="Douban" data-toggle=tooltip data-placement=top><i class="fa fa-douban"></i></a></li>
+        
+        <li><a href="http://1356772993.qzone.qq.com" target="_blank" title="Qzone" data-toggle=tooltip data-placement=top><i class="fa fa-qzone"></i></a></li>
+        
+        <li><a href="/flt-ustc" target="_blank" title="Wechat" data-toggle=tooltip data-placement=top><i class="fa fa-wechat"></i></a></li>
+        
+        <li><a href="/lintaofang@gmail.com" target="_blank" title="Google" data-toggle=tooltip data-placement=top><i class="fa fa-google"></i></a></li>
+        
+        <li><a href="https://www.linkedin.com/in/lintaofang/" target="_blank" title="Linkedin" data-toggle=tooltip data-placement=top><i class="fa fa-linkedin"></i></a></li>
+        
+        <li><a href="/qq number:1356772993" target="_blank" title="Tencent" data-toggle=tooltip data-placement=top><i class="fa fa-tencent"></i></a></li>
         
         <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="fa fa-rss"></i></a></li>
         
@@ -506,24 +514,6 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
   
     
     
-    
-        <script>
-(function (window) {
-    var INSIGHT_CONFIG = {
-        TRANSLATION: {
-            POSTS: 'Posts',
-            PAGES: 'Pages',
-            CATEGORIES: 'Categories',
-            TAGS: 'Tags',
-            UNTITLED: '(Untitled)',
-        },
-        ROOT_URL: '/',
-        CONTENT_URL: '/content.json',
-    };
-    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-})(window);
-</script>
-<script src="/js/insight.js"></script>
     
     
         
