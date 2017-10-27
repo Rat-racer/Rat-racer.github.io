@@ -36,6 +36,9 @@
     <title><![CDATA[ifconfig命令学习笔记]]></title>
     <url>%2F2017%2F10%2F26%2Fifconfig%2F</url>
     <content type="text"><![CDATA[ifconfig=interfaces config 命令格式： ifconfig [网络设备][参数] 功能 查看和配置网络设备，当网络环境发生改变的时候可以通过该命令对网络进行相应的配置。 命令参数 up 启动相应的网络设备/网卡 down 关闭指定的网络设备/网卡 arp 设置指定网卡是都支持ARP协议 -promisc 设置是否支持网卡的promiscuous模式 -allmulti 设置是否支持多播模式，如果选择该参数，网卡将接受网络中所有的多播数据包 -a 显示全部接口信息 -s 显示摘要信息 add 给指定网卡配置ipv6地址 del 删除指定网卡的ipv6地址 mtu&lt;字节数&gt; 设置网卡的最大传输单元 netmask&lt;子网掩码&gt; 设置网卡的子网掩码 tunel 建立隧道 dsaddr 设定一个远端地址，建立点对点通信 -broadcst&lt;地址&gt; 为指定网卡设置广播协议 -pointtopoint&lt;地址&gt; 为网卡设置点对点通讯协议 multicast 为网卡设置组播标识 address 为网卡设置IPV4地址 使用实例 查看设备信息 第一行：连接类型：以太网 硬件地址即MAC地址：… 第二行：inet 地址表示网卡的IP地址：10.211.55.5广播地址：10.211.55.255子网掩码：255.255.255.0 第六行：网卡的状态 UP:网卡处于开启状态 RUNNING：网卡的网线被插上 MULTICAST：允许组播 MTU=1500：最大传输单元1500字节 关闭开启网卡 sudo ifconfig eth1 down sudo ifconfig eth1 down 删除/添加ipv6地址 sudo ifconfig eth1 del/add ipv6-addr before after 修改MAC地址 sudo ifconfig eth1 hw ether MAC_ADDR 修改IP地址 sudo ifconfig eth1 IP_ADDR netmask ADDR broadcasr ADDR 其他操作 关闭或启动arp协议 ifconfig eth1 arp ifconfig eth1 -arp 设置最大传输单元 ifconfig eth1 mtu 1500 Note:用ifconfig命令配置的网卡信息，在网卡重启后机器重启后，配置就不存在。要想将上述的配置信息永远的存的电脑里，那就要修改网卡的配置文件了参考：reference]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
       <tags>
         <tag>linux</tag>
         <tag>ifconfig</tag>
