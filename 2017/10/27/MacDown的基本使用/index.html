@@ -25,7 +25,7 @@
 <meta property="og:site_name" content="Rat-racer&#39;s Blog">
 <meta property="og:description" content="最近一直在寻找Mac上的比较好用的markdown编辑器，由于mac平台上有太多MarkDown编辑器，Typora，Mou,Ulysses,iA Writer，等等，工具太多，不知道如何选择，我索性就都下载下来，一个个试用，最后感觉还是macdown我比较喜欢。Macdown的好处是，使用简单，它的界面分为两栏，左栏编辑，右栏实时预览，我觉得这样很好，比较适合我这样的Markdown新手。好吧，">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-10-27T06:34:16.000Z">
+<meta property="og:updated_time" content="2017-10-27T06:59:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MacDown的基本使用">
 <meta name="twitter:description" content="最近一直在寻找Mac上的比较好用的markdown编辑器，由于mac平台上有太多MarkDown编辑器，Typora，Mou,Ulysses,iA Writer，等等，工具太多，不知道如何选择，我索性就都下载下来，一个个试用，最后感觉还是macdown我比较喜欢。Macdown的好处是，使用简单，它的界面分为两栏，左栏编辑，右栏实时预览，我觉得这样很好，比较适合我这样的Markdown新手。好吧，">
@@ -431,55 +431,47 @@
 </ul>
 </li>
 </ul>
-<pre><code>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">定义：[name]:URL</div><div class="line">引用：[name]</div></pre></td></tr></table></figure>
+<pre><code>  定义：[name]:URL  
+  引用：[name]
 
 
 * 引用图片方法和上面类似，图片可以在本地，也可以通过url
-
-    <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">		定义：[picture name]:URL or PATH</div><div class="line">		引用：![picture name]</div><div class="line">		```  </div><div class="line">		  </div><div class="line">*  插入代码  </div><div class="line">	行代码只需要在其两侧加 `符号即可。</div><div class="line">	  </div><div class="line">	`#include&lt;stdio.h&gt;`  </div><div class="line">	  </div><div class="line">	插入代码块可以通过，缩进4个空格，或者代码块两端加```。注意：插入代码块之前要空一行  </div><div class="line">	</div><div class="line">* 块引用</div></pre></td></tr></table></figure>
-</code></pre><blockquote>
+   定义：[picture name]:URL or PATH  
+    引用：![picture name]
+</code></pre><ul>
+<li><p>插入代码<br> 行代码只需要在其两侧加 `符号即可。</p>
+<p> <code>#include&lt;stdio.h&gt;</code>  </p>
+<p> 插入代码块可以通过，缩进4个空格，或者代码块两端加。注意：插入代码块之前要空一行  </p>
+</li>
+<li><p>块引用  </p>
+</li>
+</ul>
+<blockquote>
 <p>first</p>
 <blockquote>
 <p>second</p>
 <ul>
-<li>term<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line">eg:</div><div class="line">&gt;fisrt  </div><div class="line">&gt;second  </div><div class="line">&gt;third  </div><div class="line">&gt;&gt;* term1</div><div class="line">&gt;&gt;* term2   </div><div class="line"></div><div class="line">* 水平线  </div><div class="line"> ***三个星号</div><div class="line">  </div><div class="line"> ****  </div><div class="line">* 表格</div></pre></td></tr></table></figure>
-</li>
+<li>term</li>
 </ul>
 </blockquote>
 </blockquote>
-<table>
-<thead>
-<tr>
-<th>name</th>
-<th>number   </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>laji</td>
-<td>1512</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>name</th>
-<th>score</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>flt</td>
-<td>100  </td>
-</tr>
-<tr>
-<td>laji</td>
-<td>0 </td>
-</tr>
-</tbody>
-</table>
-<p>```</p>
+<p>eg:</p>
+<blockquote>
+<p>fisrt<br>second<br>third  </p>
+<blockquote>
+<ul>
+<li>term1</li>
+<li>term2   </li>
+</ul>
+</blockquote>
+</blockquote>
+<ul>
+<li><p>水平线<br><em>*</em>三个星号</p>
+<hr>
+</li>
+<li>表格 </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">  </div><div class="line">name | number   </div><div class="line">---- | -----  </div><div class="line">laji | 1512</div><div class="line"></div><div class="line">name | score</div><div class="line">-----|------</div><div class="line">flt	  | 100  </div><div class="line">laji |  0</div></pre></td></tr></table></figure>
 <table>
 <thead>
 <tr>
