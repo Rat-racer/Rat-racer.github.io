@@ -25,7 +25,7 @@
 <meta property="og:site_name" content="Rat-racer&#39;s Blog">
 <meta property="og:description" content="最近一直在寻找Mac上的比较好用的markdown编辑器，由于mac平台上有太多MarkDown编辑器，Typora，Mou,Ulysses,iA Writer，等等，工具太多，不知道如何选择，我索性就都下载下来，一个个试用，最后感觉还是macdown我比较喜欢。Macdown的好处是，使用简单，它的界面分为两栏，左栏编辑，右栏实时预览，我觉得这样很好，比较适合我这样的Markdown新手。好吧，">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-10-27T06:59:16.000Z">
+<meta property="og:updated_time" content="2017-10-27T07:03:47.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MacDown的基本使用">
 <meta name="twitter:description" content="最近一直在寻找Mac上的比较好用的markdown编辑器，由于mac平台上有太多MarkDown编辑器，Typora，Mou,Ulysses,iA Writer，等等，工具太多，不知道如何选择，我索性就都下载下来，一个个试用，最后感觉还是macdown我比较喜欢。Macdown的好处是，使用简单，它的界面分为两栏，左栏编辑，右栏实时预览，我觉得这样很好，比较适合我这样的Markdown新手。好吧，">
@@ -424,23 +424,28 @@
 <li>特别的，使用二级标题的时候，在标题下面后有一条水平线  </li>
 </ul>
 </li>
-<li>加链接以及图片 <ul>
+<li><p>加链接以及图片 </p>
+<ul>
 <li>直接加链接：<code>&lt;url&gt;</code>即可，即直接在链接两侧加上&lt; &gt;  </li>
 <li>给链接起名字 <code>[name](url)</code>即可，</li>
-<li>在文章中添加很多链接会显得很凌乱，特别是当链接比较长的时候，这样的情况下，我们可以这样做。将定义统一放在文章末尾，文中进行引用即可。  </li>
+<li><p>在文章中添加很多链接会显得很凌乱，特别是当链接比较长的时候，这样的情况下，我们可以这样做。将定义统一放在文章末尾，文中进行引用即可。</p>
+<blockquote>
+<p>定义：[name]:URL<br>引用：[name]</p>
+</blockquote>
+</li>
+<li><p>引用图片方法和上面类似，图片可以在本地，也可以通过url</p>
+<blockquote>
+<p>定义：[picture name]:URL or PATH<br>引用：![picture name]</p>
+</blockquote>
+</li>
 </ul>
 </li>
 </ul>
-<pre><code>  定义：[name]:URL  
-  引用：[name]
-
-
-* 引用图片方法和上面类似，图片可以在本地，也可以通过url
-   定义：[picture name]:URL or PATH  
-    引用：![picture name]
-</code></pre><ul>
+<ul>
 <li><p>插入代码<br> 行代码只需要在其两侧加 `符号即可。</p>
-<p> <code>#include&lt;stdio.h&gt;</code>  </p>
+<blockquote>
+<p><code>include&lt;stdio.h&gt;</code></p>
+</blockquote>
 <p> 插入代码块可以通过，缩进4个空格，或者代码块两端加。注意：插入代码块之前要空一行  </p>
 </li>
 <li><p>块引用  </p>
@@ -471,7 +476,40 @@
 </li>
 <li>表格 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">  </div><div class="line">name | number   </div><div class="line">---- | -----  </div><div class="line">laji | 1512</div><div class="line"></div><div class="line">name | score</div><div class="line">-----|------</div><div class="line">flt	  | 100  </div><div class="line">laji |  0</div></pre></td></tr></table></figure>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>number   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>laji</td>
+<td>1512</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>flt</td>
+<td>100  </td>
+</tr>
+<tr>
+<td>laji</td>
+<td>0 </td>
+</tr>
+</tbody>
+</table>
+</blockquote>
 <table>
 <thead>
 <tr>
