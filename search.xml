@@ -45,14 +45,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[hello]]></title>
-    <url>%2F2017%2F10%2F26%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[hello wors]]></content>
-      <tags>
-        <tag>hello</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[pl0笔记]]></title>
     <url>%2F2017%2F10%2F26%2Fpl0%E7%AC%94%E8%AE%B0%2F</url>
     <content type="text"><![CDATA[#pl0笔记 ##第一部分 pl0语言及其编译器 pl0语言介绍 pl0设计语言是一个比较简单的语言，它以赋值语句为基础，构造概念有顺序，条件，循环三种。pl0有子程序的概念，包括过程定义（可以嵌套）与调用且有局部变量说明。pl0唯一的数据类型是整型，可以用来说明该类型的变量和常量。当然pl0也具有通常的算术与逻辑运算。具体的pl0语法图如下所示。 pl0语言编译器 pl0编译器的基本工作流程如下图所示： 语法分析完成以下工作 1.跳过分隔符，即空格，回车，制表符 2.识别保留字，如begin，end，if ，while等 3.识别非保留字的 一般标志符，将次标志符赋值给全局量id，而全局量sym赋值为sym_identifier 4.识别数字序列，当前值赋值给全局量num,sym被赋值为sym_number 5.是被：=,&lt;=,&gt;=等特殊符号，全局量sym被赋值为sym_becomes,sym_leq,sym_gtr等。 相关函数有getsym(),getch(),其中getch()为获取单个字符函数，除此之外，它还完成: 识别且跳过行结束符 将输入源文件复写到输出文件 产生一份程序列表，输出相应行号或者指令计数器的值注意getch()识别一个字符后，文件指针指向下一个，而getc()不会。 语法分析 ###pl0的指令集 pl0的指令集包含7种指令，分别是：（1) LIT 将常数压栈（2) LOD 将变量值压栈（3) STO 将栈顶的值赋予某变量（4) CAL 过程调用（5) INT 在数据栈中分配存储空间（6) JMP,JPC 用于if,while语句的条件或者无条件控制转移指令（7) OPR 算术逻辑指令 指令格式 F,L,A的含义见下表 ![ins]]]></content>
