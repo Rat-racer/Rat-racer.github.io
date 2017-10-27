@@ -17,13 +17,13 @@
   
   
   <title>ifconfig命令学习笔记 | Rat-racer&#39;s Blog</title>
-  <meta name="description" content="ifconfig=interfaces config   命令格式：  ifconfig [网络设备][参数] 功能  查看和配置网络设备，当网络环境发生改变的时候可以通过该命令对网络进行相应的配置。">
+  <meta name="description" content="ifconfig=interfaces config      命令格式：    ifconfig [网络设备][参数]   功能  查看和配置网络设备，当网络环境发生改变的时候可以通过该命令对网络进行相应的配置。">
 <meta name="keywords" content="linux,ifconfig">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ifconfig命令学习笔记">
 <meta property="og:url" content="http://yoursite.com/2017/10/26/ifconfig/index.html">
 <meta property="og:site_name" content="Rat-racer&#39;s Blog">
-<meta property="og:description" content="ifconfig=interfaces config   命令格式：  ifconfig [网络设备][参数] 功能  查看和配置网络设备，当网络环境发生改变的时候可以通过该命令对网络进行相应的配置。">
+<meta property="og:description" content="ifconfig=interfaces config      命令格式：    ifconfig [网络设备][参数]   功能  查看和配置网络设备，当网络环境发生改变的时候可以通过该命令对网络进行相应的配置。">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79ly1fkxa5j58u2j30o00d442o.jpg">
 <meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79ly1fkxa619l3xj30n20d6jvk.jpg">
@@ -33,10 +33,10 @@
 <meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1fkxa740umzj30ro06sacn.jpg">
 <meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79ly1fkxa7c3wovj30wh0lh46f.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79ly1fkxa7kdp33j30wh0lh46f.jpg">
-<meta property="og:updated_time" content="2017-10-27T16:49:29.000Z">
+<meta property="og:updated_time" content="2017-10-27T16:54:41.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ifconfig命令学习笔记">
-<meta name="twitter:description" content="ifconfig=interfaces config   命令格式：  ifconfig [网络设备][参数] 功能  查看和配置网络设备，当网络环境发生改变的时候可以通过该命令对网络进行相应的配置。">
+<meta name="twitter:description" content="ifconfig=interfaces config      命令格式：    ifconfig [网络设备][参数]   功能  查看和配置网络设备，当网络环境发生改变的时候可以通过该命令对网络进行相应的配置。">
 <meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006tNc79ly1fkxa5j58u2j30o00d442o.jpg">
   <!-- Canonical links -->
   <link rel="canonical" href="http://yoursite.com/2017/10/26/ifconfig/index.html">
@@ -412,9 +412,15 @@
     </div>
     <div class="article-entry markdown-body" itemprop="articleBody">
       
-        <ul>
-<li><code>ifconfig=interfaces config</code>  </li>
-<li>命令格式：<br>  <code>ifconfig [网络设备][参数]</code></li>
+        <blockquote>
+<p>ifconfig=interfaces config   </p>
+</blockquote>
+<ul>
+<li><p>命令格式：  </p>
+<blockquote>
+<p>ifconfig [网络设备][参数]</p>
+</blockquote>
+</li>
 <li>功能<br>  查看和配置网络设备，当网络环境发生改变的时候可以通过该命令对网络进行相应的配置。  <a id="more"></a></li>
 <li>命令参数  <ul>
 <li>up 启动相应的网络设备/网卡  </li>
@@ -444,23 +450,49 @@
 <li>第六行：网卡的状态 UP:网卡处于开启状态 RUNNING：网卡的网线被插上 MULTICAST：允许组播 MTU=1500：最大传输单元1500字节  </li>
 </ul>
 </li>
-<li>关闭开启网卡<br>  <img src="https://ws2.sinaimg.cn/large/006tNc79ly1fkxa619l3xj30n20d6jvk.jpg" alt=""><ul>
-<li><code>sudo ifconfig eth1 down</code><br><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fkxa6dxq6qj30ch02f74e.jpg" alt=""></li>
-<li><code>sudo ifconfig eth1 down</code><br><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fkxa6khycuj30bz02bt8n.jpg" alt=""></li>
-</ul>
+<li><p>关闭开启网卡<br>  <img src="https://ws2.sinaimg.cn/large/006tNc79ly1fkxa619l3xj30n20d6jvk.jpg" alt="">  </p>
+<blockquote>
+<p>sudo ifconfig eth1 down </p>
+</blockquote>
+<p>  <img src="https://ws3.sinaimg.cn/large/006tNc79ly1fkxa6dxq6qj30ch02f74e.jpg" alt=""></p>
+<blockquote>
+<p>sudo ifconfig eth1 down</p>
+</blockquote>
+<p>  <img src="https://ws1.sinaimg.cn/large/006tNc79ly1fkxa6khycuj30bz02bt8n.jpg" alt=""></p>
 </li>
-<li>删除/添加ipv6地址  <code>sudo ifconfig eth1 del/add ipv6-addr</code><ul>
+<li>删除/添加ipv6地址  <blockquote>
+<p>sudo ifconfig eth1 del/add ipv6-addr</p>
+<ul>
 <li>before<br><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fkxa6rs7myj30ot072acl.jpg" alt=""> <ul>
 <li>after<br><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fkxa740umzj30ro06sacn.jpg" alt="">  </li>
 </ul>
 </li>
 </ul>
+</blockquote>
 </li>
-<li>修改MAC地址<br>  <code>sudo ifconfig eth1 hw ether MAC_ADDR</code><br>  <img src="https://ws2.sinaimg.cn/large/006tNc79ly1fkxa7c3wovj30wh0lh46f.jpg" alt="">   </li>
-<li>修改IP地址<br>  <code>sudo ifconfig eth1 IP_ADDR netmask ADDR broadcasr ADDR</code><br>  <img src="https://ws1.sinaimg.cn/large/006tNc79ly1fkxa7kdp33j30wh0lh46f.jpg" alt="">  </li>
-<li>其他操作  <ul>
-<li>关闭或启动arp协议<br>  <code>ifconfig eth1 arp</code><br>  <code>ifconfig eth1 -arp</code>  </li>
-<li>设置最大传输单元<br>  <code>ifconfig eth1 mtu 1500</code> </li>
+<li><p>修改MAC地址   </p>
+<blockquote>
+<p>sudo ifconfig eth1 hw ether MAC_ADDR</p>
+</blockquote>
+<p>  <img src="https://ws2.sinaimg.cn/large/006tNc79ly1fkxa7c3wovj30wh0lh46f.jpg" alt="">   </p>
+</li>
+<li><p>修改IP地址  </p>
+<blockquote>
+<p>sudo ifconfig eth1 IP_ADDR netmask ADDR broadcasr ADDR</p>
+</blockquote>
+<p>  <img src="https://ws1.sinaimg.cn/large/006tNc79ly1fkxa7kdp33j30wh0lh46f.jpg" alt="">  </p>
+</li>
+<li><p>其他操作  </p>
+<ul>
+<li><p>关闭或启动arp协议 </p>
+<blockquote>
+<p>ifconfig eth1 arp<br>ifconfig eth1 -arp  </p>
+</blockquote>
+</li>
+<li>设置最大传输单元  <blockquote>
+<p>ifconfig eth1 mtu 1500  </p>
+</blockquote>
+</li>
 </ul>
 </li>
 </ul>
