@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[mac环境变量配置及其理解&软连接]]></title>
     <url>%2F2017%2F10%2F28%2Fmac%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%85%8D%E7%BD%AE%E5%8F%8A%E5%85%B6%E7%90%86%E8%A7%A3-%E8%BD%AF%E8%BF%9E%E6%8E%A5%2F</url>
-    <content type="text"><![CDATA[mac环境变量配置及理解&amp;软连接什么是环境变量所谓环境变量，通俗的理解就是命令的路径譬如我的mac里安装了jdk1.6,jdk1.8那么当我执行javac指令的时候，改使用哪一个版本呢？ 这个时候就可以通过设置环境变量来确定。 export JDK1.7=/usr/apps/jdk1.7export JDK1.8=/usr/apps/jdk1.8export PATH=$JDK1.7/bin 通过这样，将jdk1.7加入环境变量，即指定我默认的jdk版本是1.6 对于其他的命令亦此。 环境变量的作用就是就是用户可以在操作系统的各个目录之下，都能访问到所需要的工具目录内的内容。 mac的环境变量 查看当前环境变量 echo $PATH 分为全局用户环境变量，以及单个用户环境变量。 全局用户环境变量在： /etc/bashrc /etc/profile 单个用户的环境变量在 ~/.bash_profile 一般在~/.bash_profile修改环境变量，不需要修改全局用户变量 注：全局环境变量只有root用户才有权限修改，对于普通用户是只读的，用户要sudo才可以修改。 sudo vim /etc/bashrc 修改环境变量 cd ~vim .bash_profileexport PATH=…..:$PATHsource .bash_profile 如果是修改或者是新增环境变量的值，要source一下才会生效。 什么是软连接？硬连接 硬链接 异名同体 软连接 快捷方式 reference: Linux软连接和硬链接 Mac 中环境变量的配置和理解]]></content>
+    <content type="text"><![CDATA[什么是环境变量所谓环境变量，通俗的理解就是命令的路径譬如我的mac里安装了jdk1.6,jdk1.8那么当我执行javac指令的时候，改使用哪一个版本呢？ 这个时候就可以通过设置环境变量来确定。 export JDK1.7=/usr/apps/jdk1.7export JDK1.8=/usr/apps/jdk1.8export PATH=$JDK1.7/bin 通过这样，将jdk1.7加入环境变量，即指定我默认的jdk版本是1.6 对于其他的命令亦此。 环境变量的作用就是就是用户可以在操作系统的各个目录之下，都能访问到所需要的工具目录内的内容。 mac的环境变量 查看当前环境变量 echo $PATH 分为全局用户环境变量，以及单个用户环境变量。 全局用户环境变量在： /etc/bashrc /etc/profile 单个用户的环境变量在 ~/.bash_profile 一般在~/.bash_profile修改环境变量，不需要修改全局用户变量 注：全局环境变量只有root用户才有权限修改，对于普通用户是只读的，用户要sudo才可以修改。 sudo vim /etc/bashrc 修改环境变量 cd ~vim .bash_profileexport PATH=…..:$PATHsource .bash_profile 如果是修改或者是新增环境变量的值，要source一下才会生效。 什么是软连接？硬连接 硬链接 异名同体 软连接 快捷方式 reference: Linux软连接和硬链接 Mac 中环境变量的配置和理解]]></content>
   </entry>
   <entry>
     <title><![CDATA[MacDown的基本使用]]></title>
