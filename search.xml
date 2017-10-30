@@ -12,11 +12,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[docs学习笔记]]></title>
-    <url>%2F2017%2F10%2F30%2Fdocs%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%2F</url>
-    <content type="text"></content>
-  </entry>
-  <entry>
     <title><![CDATA[argparse库学习]]></title>
     <url>%2F2017%2F10%2F30%2Fargparse%E5%BA%93%E5%AD%A6%E4%B9%A0%2F</url>
     <content type="text"><![CDATA[argparse库是Python的命令行解析模块。 使用步骤： 导入库 import argparse 创建解析对象parser parser=argparse.ArgumentParser() 加入参数 parser.add_argument() 进行解析 args=parser.parse_args() ArgumentParser() 参数prog,usage,description,epilog都是用来修改帮助（–help,-h)中输出的内容。 测试用例 -h 结果 参数parents表示继承关系，继承parents list中所有parent对象的所有的参数 parents[parent1 ,parent2,….] 其他的比较少用，具体意义及用法参见文档，就不赘述了。 add_argument() 可选参数，其他位置参数 nargs 参数数量 N，* ，+，？ action store(默认）,store_const,store_true,store_false, append,append_const,count,help,version) default 默认值 type string（默认）,file ,int ,float choices 可供选择值 required 是否必选 reference: python argparse docs python命令行解析库argparse python argparse用法总结]]></content>
