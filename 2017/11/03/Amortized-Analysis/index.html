@@ -17,21 +17,22 @@
   
   
   <title>第十七章  摊还分析 | Rat-racer&#39;s Blog</title>
-  <meta name="description" content="第十七章  摊还分析 what is 摊还分析   即求数据结构的一个操作序列中所执行所有操作的平均时间。   不考虑概率，保证最坏情况下每个操作的平均性能       Methods    aggregate analysis   聚合分析 counting method       核算法   potential method      势能法    &amp;lt;–!more–&amp;gt;17.1聚合">
+  <meta name="description" content="what is 摊还分析   即求数据结构的一个操作序列中所执行所有操作的平均时间。   不考虑概率，保证最坏情况下每个操作的平均性能       Methods    aggregate analysis   聚合分析 counting method       核算法   potential method      势能法    !&amp;lt;–more–&amp;gt;17.1聚合分析    聚合分析">
 <meta name="keywords" content="algorithms">
 <meta property="og:type" content="article">
 <meta property="og:title" content="第十七章  摊还分析">
 <meta property="og:url" content="http://yoursite.com/2017/11/03/Amortized-Analysis/index.html">
 <meta property="og:site_name" content="Rat-racer&#39;s Blog">
-<meta property="og:description" content="第十七章  摊还分析 what is 摊还分析   即求数据结构的一个操作序列中所执行所有操作的平均时间。   不考虑概率，保证最坏情况下每个操作的平均性能       Methods    aggregate analysis   聚合分析 counting method       核算法   potential method      势能法    &amp;lt;–!more–&amp;gt;17.1聚合">
+<meta property="og:description" content="what is 摊还分析   即求数据结构的一个操作序列中所执行所有操作的平均时间。   不考虑概率，保证最坏情况下每个操作的平均性能       Methods    aggregate analysis   聚合分析 counting method       核算法   potential method      势能法    !&amp;lt;–more–&amp;gt;17.1聚合分析    聚合分析">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcgy1flarn95omfj30df03874f.jpg">
 <meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcgy1flassujx3fj30o304kwgc.jpg">
 <meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcgy1flasy56c2zj30oa04jtan.jpg">
-<meta property="og:updated_time" content="2017-11-08T09:57:03.000Z">
+<meta property="og:updated_time" content="2017-11-08T10:02:24.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="第十七章  摊还分析">
-<meta name="twitter:description" content="第十七章  摊还分析 what is 摊还分析   即求数据结构的一个操作序列中所执行所有操作的平均时间。   不考虑概率，保证最坏情况下每个操作的平均性能       Methods    aggregate analysis   聚合分析 counting method       核算法   potential method      势能法    &amp;lt;–!more–&amp;gt;17.1聚合">
-<meta name="twitter:image" content="https://ws4.sinaimg.cn/large/006tKfTcgy1flassujx3fj30o304kwgc.jpg">
+<meta name="twitter:description" content="what is 摊还分析   即求数据结构的一个操作序列中所执行所有操作的平均时间。   不考虑概率，保证最坏情况下每个操作的平均性能       Methods    aggregate analysis   聚合分析 counting method       核算法   potential method      势能法    !&amp;lt;–more–&amp;gt;17.1聚合分析    聚合分析">
+<meta name="twitter:image" content="https://ws2.sinaimg.cn/large/006tKfTcgy1flarn95omfj30df03874f.jpg">
   <!-- Canonical links -->
   <link rel="canonical" href="http://yoursite.com/2017/11/03/Amortized-Analysis/index.html">
   
@@ -406,7 +407,7 @@
     </div>
     <div class="article-entry markdown-body" itemprop="articleBody">
       
-        <h3 id="第十七章-摊还分析"><a href="#第十七章-摊还分析" class="headerlink" title="第十七章  摊还分析"></a>第十七章  摊还分析</h3><ul>
+        <ul>
 <li>what is 摊还分析  <ul>
 <li>即求数据结构的一个操作序列中所执行所有操作的平均时间。  </li>
 <li>不考虑概率，保证最坏情况下每个操作的平均性能    </li>
@@ -418,7 +419,7 @@
 <li>counting method       核算法  </li>
 <li>potential method      势能法  </li>
 </ul>
-<p>&lt;–!more–&gt;<br>17.1聚合分析  </p>
+<p>!&lt;–more–&gt;<br>17.1聚合分析  </p>
 </li>
 <li><p>聚合分析令每个操作的摊还代价相等。<br>算出n个操作的总时间上界T(n),则每个操作的的摊还代价是T(n)/n    </p>
 <p>For example:    </p>
@@ -435,28 +436,28 @@
 </ul>
 </li>
 </ul>
-<pre><code>![](https://ws2.sinaimg.cn/large/006tKfTcgy1flarn95omfj30df03874f.jpg)  
-</code></pre><p> 17.2  accounting method  </p>
+<p><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1flarn95omfj30df03874f.jpg" alt="">  </p>
+<p> 17.2  accounting method  </p>
 <ul>
 <li>credit  </li>
 <li><p>accounting method 为每一种操作分配一个摊还代价c。对于n个操作，若当操作的实际代价real小于摊还代价，则结余credit,为c-real;<br> 若当前操作的实际代价real小于摊还代价，则从之前存储的credit中取出real-c  </p>
 <p>For example:  </p>
 </li>
 <li><p>栈操作 </p>
-<p>  ||分配摊还代价   | 实际代价  |<br>  —|———-|——–<br>  |PUSH | 2       |   1  |<br>  |POP |0       | 1   |<br>|    POP(k)| 0     | k  |  </p>
+<p>  |   |分配摊还代价   | 实际代价  |<br>  —|———|——–<br>  |PUSH | 2       |   1  |<br>  |POP |0       | 1   |<br>|    POP(k)| 0     | k  |  </p>
 </li>
 </ul>
-<pre><code>*  则每一次PUSH操作，摊还代价一个用于实际代价，一个存入credit，用于pop时使用、  每一个栈中的值都具有一个额外的credit  
- pop指令，使用已经存储的一个credit  
-</code></pre><ul>
+<ul>
+<li><p>则每一次PUSH操作，摊还代价一个用于实际代价，一个存入credit，用于pop时使用、  每一个栈中的值都具有一个额外的credit<br>  pop指令，使用已经存储的一个credit  </p>
+<ul>
 <li>二进制计数递增器 略  </li>
+</ul>
+</li>
 </ul>
 <p> 17.3 potential method </p>
 <p><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1flassujx3fj30o304kwgc.jpg" alt="">  </p>
 <p><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1flasy56c2zj30oa04jtan.jpg" alt=""></p>
-<p>###略略略</p>
-<p>#习题解答   </p>
-<ul>
+<h3 id="略略略"><a href="#略略略" class="headerlink" title="略略略"></a>略略略</h3><h1 id="习题解答"><a href="#习题解答" class="headerlink" title="习题解答"></a>习题解答</h1><ul>
 <li><p>solutions for CLRS<br>  链接:<a href="http://pan.baidu.com/s/1mikmehU" target="_blank" rel="external">http://pan.baidu.com/s/1mikmehU</a>  密码:pbon </p>
 </li>
 <li><p>17.1.1<br>  O(k) 考虑最坏情形即为此   </p>
