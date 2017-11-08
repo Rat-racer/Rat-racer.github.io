@@ -253,7 +253,7 @@
   <div class="widget">
     <h3 class="widget-title">Archive</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 
@@ -269,28 +269,13 @@
             
             <div class="item-inner">
               <p class="item-category">
-                <a class="category-link" href="/categories/CLRS/">CLRS</a>
+                
               </p>
               <p class="item-title">
-                <a href="/2017/11/08/分治法应用宝典/" class="title">分治法应用宝典</a>
+                <a href="/2017/11/08/第1，2，3章-算法基础以及渐进符号/" class="title">第1，2，3章-算法基础以及渐进符号</a>
               </p>
               <p class="item-date">
-                <time datetime="2017-11-08T10:42:56.000Z" itemprop="datePublished">2017-11-08</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/CLRS/">CLRS</a>
-              </p>
-              <p class="item-title">
-                <a href="/2017/11/03/Amortized-Analysis/" class="title">第十七章  摊还分析</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2017-11-03T15:37:53.000Z" itemprop="datePublished">2017-11-03</time>
+                <time datetime="2017-11-08T11:05:37.000Z" itemprop="datePublished">2017-11-08</time>
               </p>
             </div>
           </li>
@@ -302,10 +287,10 @@
                 
               </p>
               <p class="item-title">
-                <a href="/2017/11/03/mining/" class="title">mining</a>
+                <a href="/2017/11/08/第4章-分治策略/" class="title">第4章-分治策略</a>
               </p>
               <p class="item-date">
-                <time datetime="2017-11-03T15:36:50.000Z" itemprop="datePublished">2017-11-03</time>
+                <time datetime="2017-11-08T11:04:08.000Z" itemprop="datePublished">2017-11-08</time>
               </p>
             </div>
           </li>
@@ -317,10 +302,10 @@
                 
               </p>
               <p class="item-title">
-                <a href="/2017/11/03/快速傅里叶变换FFT/" class="title">快速傅里叶变换FFT</a>
+                <a href="/2017/11/08/第6，7，8，9章-排序/" class="title">第6，7，8，9章-排序</a>
               </p>
               <p class="item-date">
-                <time datetime="2017-11-03T15:36:00.000Z" itemprop="datePublished">2017-11-03</time>
+                <time datetime="2017-11-08T11:03:31.000Z" itemprop="datePublished">2017-11-08</time>
               </p>
             </div>
           </li>
@@ -329,13 +314,28 @@
             
             <div class="item-inner">
               <p class="item-category">
-                <a class="category-link" href="/categories/工具/">工具</a>
+                
               </p>
               <p class="item-title">
-                <a href="/2017/10/30/Git-docs学习笔记/" class="title">Git docs学习笔记</a>
+                <a href="/2017/11/08/第16章-贪心算法/" class="title">第16章-贪心算法</a>
               </p>
               <p class="item-date">
-                <time datetime="2017-10-30T14:41:50.000Z" itemprop="datePublished">2017-10-30</time>
+                <time datetime="2017-11-08T11:02:07.000Z" itemprop="datePublished">2017-11-08</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2017/11/08/第15章-动态规划/" class="title">第15章-动态规划</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2017-11-08T11:01:44.000Z" itemprop="datePublished">2017-11-08</time>
               </p>
             </div>
           </li>
@@ -353,6 +353,192 @@
   <main class="main" role="main">
   
   <div class="content article-list">
+    
+      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/30/argparse库学习/">argparse库学习</a>
+    </h1>
+  
+
+  </div>
+  
+  <div class="article-entry text-muted" itemprop="description">
+    <p>argparse库是Python的命令行解析模块。</p>
+<h2 id="使用步骤："><a href="#使用步骤：" class="headerlink" title="使用步骤："></a>使用步骤：</h2><ul>
+<li><p>导入库   </p>
+<blockquote>
+<p>import argparse </p>
+</blockquote>
+</li>
+<li>创建解析对象parser  <blockquote>
+<p>parser=argparse.ArgumentParser()</p>
+</blockquote>
+</li>
+<li>加入参数<blockquote>
+<p>parser.add_argument()</p>
+</blockquote>
+</li>
+<li>进行解析  <blockquote>
+<p>args=parser.parse_args()    </p>
+</blockquote>
+</li>
+</ul>
+  </div>
+  
+  <p class="article-meta">
+    <span class="article-date">
+    <i class="fa fa-calendar-check-o"></i>
+	<a href="/2017/10/30/argparse库学习/" class="article-date">
+	  <time datetime="2017-10-30T10:09:58.000Z" itemprop="datePublished">Oct 30</time>
+	</a>
+</span>
+    
+  <span class="article-category">
+    <i class="fa fa-folder"></i>
+    <a class="article-category-link" href="/categories/python/">python</a>
+  </span>
+
+    
+  <span class="article-tag">
+    <i class="fa fa-tag"></i>
+	<a class="article-tag-link" href="/tags/argparse/">argparse</a>, <a class="article-tag-link" href="/tags/python/">python</a>
+  </span>
+
+
+    <span class="post-comment"><i class="fa fa-commenting-o"></i> <a href="/2017/10/30/argparse库学习/#comments" class="article-comment-link">Comments</a></span>
+    
+  </p>
+</article>
+
+    
+      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/28/mac环境变量配置及其理解-软连接/">mac环境变量配置及其理解&amp;软连接</a>
+    </h1>
+  
+
+  </div>
+  
+  <div class="article-entry text-muted" itemprop="description">
+    <h3 id="什么是环境变量"><a href="#什么是环境变量" class="headerlink" title="什么是环境变量"></a>什么是环境变量</h3><p>所谓环境变量，通俗的理解就是命令的路径<br>譬如我的mac里安装了jdk1.6,jdk1.8那么当我执行javac指令的时候，改使用哪一个版本呢？  这个时候就可以通过设置环境变量来确定。
+  </div>
+  
+  <p class="article-meta">
+    <span class="article-date">
+    <i class="fa fa-calendar-check-o"></i>
+	<a href="/2017/10/28/mac环境变量配置及其理解-软连接/" class="article-date">
+	  <time datetime="2017-10-27T16:31:57.000Z" itemprop="datePublished">Oct 28</time>
+	</a>
+</span>
+    
+    
+
+    <span class="post-comment"><i class="fa fa-commenting-o"></i> <a href="/2017/10/28/mac环境变量配置及其理解-软连接/#comments" class="article-comment-link">Comments</a></span>
+    
+  </p>
+</article>
+
+    
+      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/27/MacDown的基本使用/">MacDown的基本使用</a>
+    </h1>
+  
+
+  </div>
+  
+  <div class="article-entry text-muted" itemprop="description">
+    <p>最近一直在寻找Mac上的比较好用的markdown编辑器，由于mac平台上有太多MarkDown编辑器，Typora，Mou,Ulysses,iA Writer，等等，工具太多，不知道如何选择，我索性就都下载下来，一个个试用，最后感觉还是macdown我比较喜欢。Macdown的好处是，使用简单，它的界面分为两栏，左栏编辑，右栏实时预览，我觉得这样很好，比较适合我这样的Markdown新手。好吧，下面介绍一下什么是Macdown以及基本语法。
+  </div>
+  
+  <p class="article-meta">
+    <span class="article-date">
+    <i class="fa fa-calendar-check-o"></i>
+	<a href="/2017/10/27/MacDown的基本使用/" class="article-date">
+	  <time datetime="2017-10-27T05:09:45.000Z" itemprop="datePublished">Oct 27</time>
+	</a>
+</span>
+    
+  <span class="article-category">
+    <i class="fa fa-folder"></i>
+    <a class="article-category-link" href="/categories/工具/">工具</a>
+  </span>
+
+    
+  <span class="article-tag">
+    <i class="fa fa-tag"></i>
+	<a class="article-tag-link" href="/tags/macdown/">macdown</a>, <a class="article-tag-link" href="/tags/markdown/">markdown</a>
+  </span>
+
+
+    <span class="post-comment"><i class="fa fa-commenting-o"></i> <a href="/2017/10/27/MacDown的基本使用/#comments" class="article-comment-link">Comments</a></span>
+    
+  </p>
+</article>
+
+    
+      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/27/ictclass-简介/">ictclass 简介</a>
+    </h1>
+  
+
+  </div>
+  
+  <p class="article-meta">
+    <span class="article-date">
+    <i class="fa fa-calendar-check-o"></i>
+	<a href="/2017/10/27/ictclass-简介/" class="article-date">
+	  <time datetime="2017-10-27T05:00:44.000Z" itemprop="datePublished">Oct 27</time>
+	</a>
+</span>
+    
+    
+
+    <span class="post-comment"><i class="fa fa-commenting-o"></i> <a href="/2017/10/27/ictclass-简介/#comments" class="article-comment-link">Comments</a></span>
+    
+  </p>
+</article>
+
+    
+      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/27/lucene简介/">lucene简介</a>
+    </h1>
+  
+
+  </div>
+  
+  <p class="article-meta">
+    <span class="article-date">
+    <i class="fa fa-calendar-check-o"></i>
+	<a href="/2017/10/27/lucene简介/" class="article-date">
+	  <time datetime="2017-10-27T04:56:35.000Z" itemprop="datePublished">Oct 27</time>
+	</a>
+</span>
+    
+    
+
+    <span class="post-comment"><i class="fa fa-commenting-o"></i> <a href="/2017/10/27/lucene简介/#comments" class="article-comment-link">Comments</a></span>
+    
+  </p>
+</article>
+
     
       <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
   <div class="article-header">

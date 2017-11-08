@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[第1，2，3章-算法基础以及渐进符号]]></title>
+    <url>%2F2017%2F11%2F08%2F%E7%AC%AC1%EF%BC%8C2%EF%BC%8C3%E7%AB%A0-%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E4%BB%A5%E5%8F%8A%E6%B8%90%E8%BF%9B%E7%AC%A6%E5%8F%B7%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[第4章-分治策略]]></title>
+    <url>%2F2017%2F11%2F08%2F%E7%AC%AC4%E7%AB%A0-%E5%88%86%E6%B2%BB%E7%AD%96%E7%95%A5%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[第6，7，8，9章-排序]]></title>
+    <url>%2F2017%2F11%2F08%2F%E7%AC%AC6%EF%BC%8C7%EF%BC%8C8%EF%BC%8C9%E7%AB%A0-%E6%8E%92%E5%BA%8F%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[第16章-贪心算法]]></title>
+    <url>%2F2017%2F11%2F08%2F%E7%AC%AC16%E7%AB%A0-%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[第15章-动态规划]]></title>
+    <url>%2F2017%2F11%2F08%2F%E7%AC%AC15%E7%AB%A0-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
     <title><![CDATA[分治法应用宝典]]></title>
     <url>%2F2017%2F11%2F08%2F%E5%88%86%E6%B2%BB%E6%B3%95%E5%BA%94%E7%94%A8%E5%AE%9D%E5%85%B8%2F</url>
     <content type="text"><![CDATA[大整数的乘法 分治法 X=a×2^(n/2)+bY=c×2^(n/2)+d XY=（a×2^(n/2)+b ）×（c×2^(n/2)+d）即 ac×2^n+(bc+ad)×2^(n/2)+bd 所以有T(n)=4T(n/2)+O(n),T(1)=O(1) T(n)=O(n^2)同暴力解法时间复杂度相同 XY = ac×2^n - ((a-b)(c-d)-ac-bd)× 2^n/2 + bdXY = ac×2^n + ((a+b)(c+d)-ac-bd)×2^n/2 + bd T(n)=3T(n/2)+O(n) T(1)=O(1) T(n)=O(n^log3)=O(n^1.59) DFT快速傅里叶变换 O(nlgn) 至今未找到现行时间的算法 strassen矩阵相乘 暴力解法 O(n^3) strassen O(n^log7) 残缺棋盘问题to be continued 最近点对to be continued 快速傅里叶变换to be continued]]></content>
