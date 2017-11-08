@@ -16,18 +16,22 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>Amortized-Analysis | Rat-racer&#39;s Blog</title>
-  <meta name="description" content="stay busy and happy">
+  <title>第十七章  摊还分析 | Rat-racer&#39;s Blog</title>
+  <meta name="description" content="第十七章  摊还分析 what is 摊还分析   即求数据结构的一个操作序列中所执行所有操作的平均时间。   不考虑概率，保证最坏情况下每个操作的平均性能       Methods    aggregate analysis   聚合分析 counting method       核算法   potential method      势能法    &amp;lt;–!more–&amp;gt;17.1聚合">
+<meta name="keywords" content="algorithms">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Amortized-Analysis">
+<meta property="og:title" content="第十七章  摊还分析">
 <meta property="og:url" content="http://yoursite.com/2017/11/03/Amortized-Analysis/index.html">
 <meta property="og:site_name" content="Rat-racer&#39;s Blog">
-<meta property="og:description" content="stay busy and happy">
+<meta property="og:description" content="第十七章  摊还分析 what is 摊还分析   即求数据结构的一个操作序列中所执行所有操作的平均时间。   不考虑概率，保证最坏情况下每个操作的平均性能       Methods    aggregate analysis   聚合分析 counting method       核算法   potential method      势能法    &amp;lt;–!more–&amp;gt;17.1聚合">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-11-03T15:37:53.000Z">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcgy1flassujx3fj30o304kwgc.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcgy1flasy56c2zj30oa04jtan.jpg">
+<meta property="og:updated_time" content="2017-11-08T09:57:03.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Amortized-Analysis">
-<meta name="twitter:description" content="stay busy and happy">
+<meta name="twitter:title" content="第十七章  摊还分析">
+<meta name="twitter:description" content="第十七章  摊还分析 what is 摊还分析   即求数据结构的一个操作序列中所执行所有操作的平均时间。   不考虑概率，保证最坏情况下每个操作的平均性能       Methods    aggregate analysis   聚合分析 counting method       核算法   potential method      势能法    &amp;lt;–!more–&amp;gt;17.1聚合">
+<meta name="twitter:image" content="https://ws4.sinaimg.cn/large/006tKfTcgy1flassujx3fj30o304kwgc.jpg">
   <!-- Canonical links -->
   <link rel="canonical" href="http://yoursite.com/2017/11/03/Amortized-Analysis/index.html">
   
@@ -225,7 +229,7 @@
   <div class="widget">
     <h3 class="widget-title">Categories</h3>
     <div class="widget-body">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a><span class="category-list-count">2</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CLRS/">CLRS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a><span class="category-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -235,7 +239,7 @@
   <div class="widget">
     <h3 class="widget-title">Tags</h3>
     <div class="widget-body">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/argparse/">argparse</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ifconfig/">ifconfig</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/macdown/">macdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithms/">algorithms</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/argparse/">argparse</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ifconfig/">ifconfig</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/macdown/">macdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -245,7 +249,7 @@
   <div class="widget">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget-body tagcloud">
-      <a href="/tags/Git/" style="font-size: 13px;">Git</a> <a href="/tags/argparse/" style="font-size: 13px;">argparse</a> <a href="/tags/ifconfig/" style="font-size: 13px;">ifconfig</a> <a href="/tags/linux/" style="font-size: 13px;">linux</a> <a href="/tags/macdown/" style="font-size: 13px;">macdown</a> <a href="/tags/markdown/" style="font-size: 13px;">markdown</a> <a href="/tags/python/" style="font-size: 13px;">python</a>
+      <a href="/tags/Git/" style="font-size: 13px;">Git</a> <a href="/tags/algorithms/" style="font-size: 13px;">algorithms</a> <a href="/tags/argparse/" style="font-size: 13px;">argparse</a> <a href="/tags/ifconfig/" style="font-size: 13px;">ifconfig</a> <a href="/tags/linux/" style="font-size: 13px;">linux</a> <a href="/tags/macdown/" style="font-size: 13px;">macdown</a> <a href="/tags/markdown/" style="font-size: 13px;">markdown</a> <a href="/tags/python/" style="font-size: 13px;">python</a>
     </div>
   </div>
 
@@ -270,10 +274,10 @@
             
             <div class="item-inner">
               <p class="item-category">
-                
+                <a class="category-link" href="/categories/CLRS/">CLRS</a>
               </p>
               <p class="item-title">
-                <a href="/2017/11/03/Amortized-Analysis/" class="title">Amortized-Analysis</a>
+                <a href="/2017/11/03/Amortized-Analysis/" class="title">第十七章  摊还分析</a>
               </p>
               <p class="item-date">
                 <time datetime="2017-11-03T15:37:53.000Z" itemprop="datePublished">2017-11-03</time>
@@ -361,7 +365,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Amortized-Analysis
+      第十七章  摊还分析
     </h1>
   
 
@@ -374,7 +378,17 @@
 	</a>
 </span>
         
+  <span class="article-category">
+    <i class="fa fa-folder"></i>
+    <a class="article-category-link" href="/categories/CLRS/">CLRS</a>
+  </span>
+
         
+  <span class="article-tag">
+    <i class="fa fa-tag"></i>
+	<a class="article-tag-link" href="/tags/algorithms/">algorithms</a>
+  </span>
+
 
         
 	<span class="article-read hidden-xs">
@@ -392,7 +406,78 @@
     </div>
     <div class="article-entry markdown-body" itemprop="articleBody">
       
-        
+        <h3 id="第十七章-摊还分析"><a href="#第十七章-摊还分析" class="headerlink" title="第十七章  摊还分析"></a>第十七章  摊还分析</h3><ul>
+<li>what is 摊还分析  <ul>
+<li>即求数据结构的一个操作序列中所执行所有操作的平均时间。  </li>
+<li>不考虑概率，保证最坏情况下每个操作的平均性能    </li>
+</ul>
+</li>
+<li><p>Methods  </p>
+<ul>
+<li>aggregate analysis   聚合分析</li>
+<li>counting method       核算法  </li>
+<li>potential method      势能法  </li>
+</ul>
+<p>&lt;–!more–&gt;<br>17.1聚合分析  </p>
+</li>
+<li><p>聚合分析令每个操作的摊还代价相等。<br>算出n个操作的总时间上界T(n),则每个操作的的摊还代价是T(n)/n    </p>
+<p>For example:    </p>
+<ul>
+<li><p>栈操作  PUSH,POP,POP(k)   </p>
+<ul>
+<li>n个操作的代价之至多是O(n)  为什么？<br>每个操作的摊还代价是O(n)/n=O(1)  </li>
+</ul>
+</li>
+<li>二进制计数器递增  Increment   <ul>
+<li>T(n)=O(n)      O(n)/n=O(1)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>![](https://ws2.sinaimg.cn/large/006tKfTcgy1flarn95omfj30df03874f.jpg)  
+</code></pre><p> 17.2  accounting method  </p>
+<ul>
+<li>credit  </li>
+<li><p>accounting method 为每一种操作分配一个摊还代价c。对于n个操作，若当操作的实际代价real小于摊还代价，则结余credit,为c-real;<br> 若当前操作的实际代价real小于摊还代价，则从之前存储的credit中取出real-c  </p>
+<p>For example:  </p>
+</li>
+<li><p>栈操作 </p>
+<p>  ||分配摊还代价   | 实际代价  |<br>  —|———-|——–<br>  |PUSH | 2       |   1  |<br>  |POP |0       | 1   |<br>|    POP(k)| 0     | k  |  </p>
+</li>
+</ul>
+<pre><code>*  则每一次PUSH操作，摊还代价一个用于实际代价，一个存入credit，用于pop时使用、  每一个栈中的值都具有一个额外的credit  
+ pop指令，使用已经存储的一个credit  
+</code></pre><ul>
+<li>二进制计数递增器 略  </li>
+</ul>
+<p> 17.3 potential method </p>
+<p><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1flassujx3fj30o304kwgc.jpg" alt="">  </p>
+<p><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1flasy56c2zj30oa04jtan.jpg" alt=""></p>
+<p>###略略略</p>
+<p>#习题解答   </p>
+<ul>
+<li><p>solutions for CLRS<br>  链接:<a href="http://pan.baidu.com/s/1mikmehU" target="_blank" rel="external">http://pan.baidu.com/s/1mikmehU</a>  密码:pbon </p>
+</li>
+<li><p>17.1.1<br>  O(k) 考虑最坏情形即为此   </p>
+</li>
+<li><p>17.1.2<br>  略  </p>
+</li>
+<li><p>17.1.3<br>  求和即可  </p>
+</li>
+<li><p>17.2.1<br>  push 2  1pop+1copy<br>  pop pop(k) 0</p>
+</li>
+<li>17.2.2<br>  设摊还代价为0，若i is a power of 2<br>  其他情况下，摊还代价为2，即可  </li>
+<li>17.2.3<br>  略  </li>
+<li>17.3.1<br>  设𝞥’(Di)=𝞥(Di)-𝞥(Di-1),𝞥(0)=0即可</li>
+<li>17.3.2<br>  略  </li>
+<li>17.3.3<br>  设𝞥(D)=nlgn  </li>
+<li><p>17.3.4<br>O(n) + sn-s0  </p>
+</li>
+<li><p>本章余略  </p>
+</li>
+</ul>
+
       
     </div>
     <div class="article-footer">
@@ -401,7 +486,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://yoursite.com/2017/11/03/Amortized-Analysis/" title="Amortized-Analysis" target="_blank" rel="external">http://yoursite.com/2017/11/03/Amortized-Analysis/</a>
+      <a href="http://yoursite.com/2017/11/03/Amortized-Analysis/" title="第十七章  摊还分析" target="_blank" rel="external">http://yoursite.com/2017/11/03/Amortized-Analysis/</a>
     </li>
     
     <li class="post-copyright-license">
