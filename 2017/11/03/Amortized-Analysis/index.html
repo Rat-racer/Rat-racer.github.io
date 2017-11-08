@@ -17,21 +17,21 @@
   
   
   <title>第十七章  摊还分析 | Rat-racer&#39;s Blog</title>
-  <meta name="description" content="what is 摊还分析   即求数据结构的一个操作序列中所执行所有操作的平均时间。   不考虑概率，保证最坏情况下每个操作的平均性能       Methods    aggregate analysis   聚合分析 counting method       核算法   potential method      势能法    !&amp;lt;–more–&amp;gt;17.1聚合分析    聚合分析">
+  <meta name="description" content="what is 摊还分析   即求数据结构的一个操作序列中所执行所有操作的平均时间。   不考虑概率，保证最坏情况下每个操作的平均性能       Methods    aggregate analysis   聚合分析 counting method       核算法   potential method      势能法">
 <meta name="keywords" content="algorithms">
 <meta property="og:type" content="article">
 <meta property="og:title" content="第十七章  摊还分析">
 <meta property="og:url" content="http://yoursite.com/2017/11/03/Amortized-Analysis/index.html">
 <meta property="og:site_name" content="Rat-racer&#39;s Blog">
-<meta property="og:description" content="what is 摊还分析   即求数据结构的一个操作序列中所执行所有操作的平均时间。   不考虑概率，保证最坏情况下每个操作的平均性能       Methods    aggregate analysis   聚合分析 counting method       核算法   potential method      势能法    !&amp;lt;–more–&amp;gt;17.1聚合分析    聚合分析">
+<meta property="og:description" content="what is 摊还分析   即求数据结构的一个操作序列中所执行所有操作的平均时间。   不考虑概率，保证最坏情况下每个操作的平均性能       Methods    aggregate analysis   聚合分析 counting method       核算法   potential method      势能法">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcgy1flarn95omfj30df03874f.jpg">
 <meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcgy1flassujx3fj30o304kwgc.jpg">
 <meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcgy1flasy56c2zj30oa04jtan.jpg">
-<meta property="og:updated_time" content="2017-11-08T10:02:35.000Z">
+<meta property="og:updated_time" content="2017-11-08T10:45:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="第十七章  摊还分析">
-<meta name="twitter:description" content="what is 摊还分析   即求数据结构的一个操作序列中所执行所有操作的平均时间。   不考虑概率，保证最坏情况下每个操作的平均性能       Methods    aggregate analysis   聚合分析 counting method       核算法   potential method      势能法    !&amp;lt;–more–&amp;gt;17.1聚合分析    聚合分析">
+<meta name="twitter:description" content="what is 摊还分析   即求数据结构的一个操作序列中所执行所有操作的平均时间。   不考虑概率，保证最坏情况下每个操作的平均性能       Methods    aggregate analysis   聚合分析 counting method       核算法   potential method      势能法">
 <meta name="twitter:image" content="https://ws2.sinaimg.cn/large/006tKfTcgy1flarn95omfj30df03874f.jpg">
   <!-- Canonical links -->
   <link rel="canonical" href="http://yoursite.com/2017/11/03/Amortized-Analysis/index.html">
@@ -230,7 +230,7 @@
   <div class="widget">
     <h3 class="widget-title">Categories</h3>
     <div class="widget-body">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CLRS/">CLRS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a><span class="category-list-count">2</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CLRS/">CLRS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a><span class="category-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -240,7 +240,7 @@
   <div class="widget">
     <h3 class="widget-title">Tags</h3>
     <div class="widget-body">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithms/">algorithms</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/argparse/">argparse</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ifconfig/">ifconfig</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/macdown/">macdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithms/">algorithms</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/argparse/">argparse</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ifconfig/">ifconfig</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/macdown/">macdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -250,7 +250,7 @@
   <div class="widget">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget-body tagcloud">
-      <a href="/tags/Git/" style="font-size: 13px;">Git</a> <a href="/tags/algorithms/" style="font-size: 13px;">algorithms</a> <a href="/tags/argparse/" style="font-size: 13px;">argparse</a> <a href="/tags/ifconfig/" style="font-size: 13px;">ifconfig</a> <a href="/tags/linux/" style="font-size: 13px;">linux</a> <a href="/tags/macdown/" style="font-size: 13px;">macdown</a> <a href="/tags/markdown/" style="font-size: 13px;">markdown</a> <a href="/tags/python/" style="font-size: 13px;">python</a>
+      <a href="/tags/Git/" style="font-size: 13px;">Git</a> <a href="/tags/algorithms/" style="font-size: 14px;">algorithms</a> <a href="/tags/argparse/" style="font-size: 13px;">argparse</a> <a href="/tags/ifconfig/" style="font-size: 13px;">ifconfig</a> <a href="/tags/linux/" style="font-size: 13px;">linux</a> <a href="/tags/macdown/" style="font-size: 13px;">macdown</a> <a href="/tags/markdown/" style="font-size: 13px;">markdown</a> <a href="/tags/python/" style="font-size: 13px;">python</a>
     </div>
   </div>
 
@@ -259,7 +259,7 @@
   <div class="widget">
     <h3 class="widget-title">Archive</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 
@@ -271,6 +271,21 @@
     <div class="widget-body">
       <ul class="recent-post-list list-unstyled no-thumbnail">
         
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/CLRS/">CLRS</a>
+              </p>
+              <p class="item-title">
+                <a href="/2017/11/08/分治法应用宝典/" class="title">分治法应用宝典</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2017-11-08T10:42:56.000Z" itemprop="datePublished">2017-11-08</time>
+              </p>
+            </div>
+          </li>
+          
           <li>
             
             <div class="item-inner">
@@ -327,21 +342,6 @@
               </p>
               <p class="item-date">
                 <time datetime="2017-10-30T14:41:50.000Z" itemprop="datePublished">2017-10-30</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/python/">python</a>
-              </p>
-              <p class="item-title">
-                <a href="/2017/10/30/argparse库学习/" class="title">argparse库学习</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2017-10-30T10:09:58.000Z" itemprop="datePublished">2017-10-30</time>
               </p>
             </div>
           </li>
@@ -419,7 +419,8 @@
 <li>counting method       核算法  </li>
 <li>potential method      势能法  </li>
 </ul>
-<p>!&lt;–more–&gt;<br>17.1聚合分析  </p>
+<a id="more"></a>  
+<p>17.1聚合分析  </p>
 </li>
 <li><p>聚合分析令每个操作的摊还代价相等。<br>算出n个操作的总时间上界T(n),则每个操作的的摊还代价是T(n)/n    </p>
 <p>For example:    </p>
@@ -534,6 +535,10 @@
   <div class="bar-inner">
   
   <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2017/11/08/分治法应用宝典/" title="分治法应用宝典"><i class="fa fa-angle-left" aria-hidden="true"></i>&nbsp;&nbsp;Newer</a>
+    </li>
     
     
     <li class="next">
