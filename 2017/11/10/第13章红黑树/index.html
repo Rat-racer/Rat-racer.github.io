@@ -16,21 +16,26 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>MacDown的基本使用 | Rat-racer&#39;s Blog</title>
-  <meta name="description" content="最近一直在寻找Mac上的比较好用的markdown编辑器，由于mac平台上有太多MarkDown编辑器，Typora，Mou,Ulysses,iA Writer，等等，工具太多，不知道如何选择，我索性就都下载下来，一个个试用，最后感觉还是macdown我比较喜欢。Macdown的好处是，使用简单，它的界面分为两栏，左栏编辑，右栏实时预览，我觉得这样很好，比较适合我这样的Markdown新手。好吧，">
-<meta name="keywords" content="markdown,macdown">
+  <title>第13章 红黑树 | Rat-racer&#39;s Blog</title>
+  <meta name="description" content="13.1 Propery of black-red tree  红黑树是一种特殊的二叉检索树，它的每一个节点附加有一个color属性，其值为black或者是red。  且满足以下五个性质：   每一个节点的color属性要么是红，要么是黑。 根节点是黑色的。 叶子节点都是NIL，而且都是黑色的。 两个红色的节点不可能是父子关系。 对于任何一个节点，从该节点出发到它的所有子孙叶子节点的这一段路径中">
+<meta name="keywords" content="红黑树">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MacDown的基本使用">
-<meta property="og:url" content="http://yoursite.com/2017/10/27/MacDown的基本使用/index.html">
+<meta property="og:title" content="第13章 红黑树">
+<meta property="og:url" content="http://yoursite.com/2017/11/10/第13章红黑树/index.html">
 <meta property="og:site_name" content="Rat-racer&#39;s Blog">
-<meta property="og:description" content="最近一直在寻找Mac上的比较好用的markdown编辑器，由于mac平台上有太多MarkDown编辑器，Typora，Mou,Ulysses,iA Writer，等等，工具太多，不知道如何选择，我索性就都下载下来，一个个试用，最后感觉还是macdown我比较喜欢。Macdown的好处是，使用简单，它的界面分为两栏，左栏编辑，右栏实时预览，我觉得这样很好，比较适合我这样的Markdown新手。好吧，">
+<meta property="og:description" content="13.1 Propery of black-red tree  红黑树是一种特殊的二叉检索树，它的每一个节点附加有一个color属性，其值为black或者是red。  且满足以下五个性质：   每一个节点的color属性要么是红，要么是黑。 根节点是黑色的。 叶子节点都是NIL，而且都是黑色的。 两个红色的节点不可能是父子关系。 对于任何一个节点，从该节点出发到它的所有子孙叶子节点的这一段路径中">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-10-31T11:56:49.000Z">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79ly1flcx5f9xzmj30ja0h6mzb.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79ly1flcx6psaeej308y02wt8r.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79ly1flcx6vpnggj309k02edfu.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79ly1flcx79z0q2j30a702f0sr.jpg">
+<meta property="og:updated_time" content="2017-11-10T05:35:53.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MacDown的基本使用">
-<meta name="twitter:description" content="最近一直在寻找Mac上的比较好用的markdown编辑器，由于mac平台上有太多MarkDown编辑器，Typora，Mou,Ulysses,iA Writer，等等，工具太多，不知道如何选择，我索性就都下载下来，一个个试用，最后感觉还是macdown我比较喜欢。Macdown的好处是，使用简单，它的界面分为两栏，左栏编辑，右栏实时预览，我觉得这样很好，比较适合我这样的Markdown新手。好吧，">
+<meta name="twitter:title" content="第13章 红黑树">
+<meta name="twitter:description" content="13.1 Propery of black-red tree  红黑树是一种特殊的二叉检索树，它的每一个节点附加有一个color属性，其值为black或者是red。  且满足以下五个性质：   每一个节点的color属性要么是红，要么是黑。 根节点是黑色的。 叶子节点都是NIL，而且都是黑色的。 两个红色的节点不可能是父子关系。 对于任何一个节点，从该节点出发到它的所有子孙叶子节点的这一段路径中">
+<meta name="twitter:image" content="https://ws4.sinaimg.cn/large/006tNc79ly1flcx5f9xzmj30ja0h6mzb.jpg">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://yoursite.com/2017/10/27/MacDown的基本使用/index.html">
+  <link rel="canonical" href="http://yoursite.com/2017/11/10/第13章红黑树/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Rat-racer&#39;s Blog" type="application/atom+xml">
   
@@ -355,14 +360,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-MacDown的基本使用" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-第13章红黑树" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      MacDown的基本使用
+      第13章 红黑树
     </h1>
   
 
@@ -370,20 +375,20 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="fa fa-calendar-check-o"></i>
-	<a href="/2017/10/27/MacDown的基本使用/" class="article-date">
-	  <time datetime="2017-10-27T05:09:45.000Z" itemprop="datePublished">2017-10-27</time>
+	<a href="/2017/11/10/第13章红黑树/" class="article-date">
+	  <time datetime="2017-11-10T04:14:52.000Z" itemprop="datePublished">2017-11-10</time>
 	</a>
 </span>
         
   <span class="article-category">
     <i class="fa fa-folder"></i>
-    <a class="article-category-link" href="/categories/工具/">工具</a>
+    <a class="article-category-link" href="/categories/CLRS/">CLRS</a>
   </span>
 
         
   <span class="article-tag">
     <i class="fa fa-tag"></i>
-	<a class="article-tag-link" href="/tags/macdown/">macdown</a>, <a class="article-tag-link" href="/tags/markdown/">markdown</a>
+	<a class="article-tag-link" href="/tags/红黑树/">红黑树</a>
   </span>
 
 
@@ -396,150 +401,33 @@
 	</span>
 
 
-        <span class="post-comment"><i class="fa fa-commenting-o"></i> <a href="/2017/10/27/MacDown的基本使用/#comments" class="article-comment-link">Comments</a></span>
+        <span class="post-comment"><i class="fa fa-commenting-o"></i> <a href="/2017/11/10/第13章红黑树/#comments" class="article-comment-link">Comments</a></span>
         
       </div>
       
     </div>
     <div class="article-entry markdown-body" itemprop="articleBody">
       
-        <p>最近一直在寻找Mac上的比较好用的markdown编辑器，由于mac平台上有太多MarkDown编辑器，Typora，Mou,Ulysses,iA Writer，等等，工具太多，不知道如何选择，我索性就都下载下来，一个个试用，最后感觉还是macdown我比较喜欢。Macdown的好处是，使用简单，它的界面分为两栏，左栏编辑，右栏实时预览，我觉得这样很好，比较适合我这样的Markdown新手。好吧，下面介绍一下什么是Macdown以及基本语法。<a id="more"></a></p>
-<h3 id="什么是Macdown"><a href="#什么是Macdown" class="headerlink" title="什么是Macdown?"></a>什么是Macdown?</h3><p><a href="http://macdown.uranusjr.com" target="_blank" rel="external">MacDown</a>是一个开源的，MarkDown语法编辑器，用于macOS平台。类似于<a href="http://25.io/mou/" target="_blank" rel="external">Mou</a>;  </p>
+        <ul>
+<li><p>13.1 Propery of black-red tree<br>  红黑树是一种特殊的二叉检索树，它的每一个节点附加有一个color属性，其值为black或者是red。  且满足以下五个性质： </p>
 <ul>
-<li><p>here is the <a href="http://macdown.uranusjr.com" target="_blank" rel="external">download link</a>.  </p>
-</li>
-<li><p>如果你安装了homebrew的话，可以直接用brew安装:<br><code>brew cask install macdown</code>  </p>
-</li>
-</ul>
-<h3 id="Macdown的基本语法"><a href="#Macdown的基本语法" class="headerlink" title="Macdown的基本语法"></a>Macdown的基本语法</h3><p>同其他编辑器一样，语法无非是标题，链接，图片，代码块什么的。  </p>
-<ul>
-<li>换行  <code>行末加两个空格，然后回车</code></li>
-<li>强调       <ul>
-<li>加黑  <code>**要加黑的内容**</code>    eg:<strong>我变黑了</strong>  </li>
-<li>加黄  <code>&lt;mark&gt;要加黄的内容&lt;/mark&gt;</code> eg:<mark>我是黄的</mark>  </li>
-<li>删除线 <code>&lt;del&gt;要删除的内容&lt;/del&gt;</code> eg：<del>别删我</del>  </li>
-<li>上脚注 <code>我在下面&lt;sup&gt;我在上面&lt;/sup&gt;</code> 我在下面<sup>我在上面</sup></li>
-</ul>
-</li>
-<li>标题 这个不多说了，#，##，，，######标题依次为一级，二级，，六级，字号依次减小  <ul>
-<li>特别的，使用二级标题的时候，在标题下面后有一条水平线  </li>
-</ul>
-</li>
-<li><p>加链接以及图片 </p>
-<ul>
-<li>直接加链接：<code>&lt;url&gt;</code>即可，即直接在链接两侧加上&lt; &gt;  </li>
-<li>给链接起名字 <code>[name](url)</code>即可，</li>
-<li><p>在文章中添加很多链接会显得很凌乱，特别是当链接比较长的时候，这样的情况下，我们可以这样做。将定义统一放在文章末尾，文中进行引用即可。</p>
-<blockquote>
-<p>定义：[name]:URL<br>引用：[name]</p>
-</blockquote>
-</li>
-<li><p>引用图片方法和上面类似，图片可以在本地，也可以通过url</p>
-<blockquote>
-<p>定义：[picture name]:URL or PATH<br>引用：![picture name]</p>
-</blockquote>
+<li>每一个节点的color属性要么是红，要么是黑。</li>
+<li>根节点是黑色的。</li>
+<li>叶子节点都是NIL，而且都是黑色的。</li>
+<li>两个红色的节点不可能是父子关系。</li>
+<li>对于任何一个节点，从该节点出发到它的所有子孙叶子节点的这一段路径中，所经过的黑色节点的个数相同。<a id="more"></a>
 </li>
 </ul>
-</li>
-</ul>
-<ul>
-<li><p>插入代码<br> 行代码只需要在其两侧加 `符号即可。</p>
-<blockquote>
-<p><code>include&lt;stdio.h&gt;</code></p>
-</blockquote>
-<p> 插入代码块可以通过，缩进4个空格，或者代码块两端加。注意：插入代码块之前要空一行  </p>
-</li>
-<li><p>块引用  </p>
-</li>
-</ul>
-<blockquote>
-<p>first</p>
-<blockquote>
-<p>second</p>
-<ul>
-<li>term</li>
-</ul>
-</blockquote>
-</blockquote>
-<p>eg:</p>
-<blockquote>
-<p>fisrt<br>second<br>third  </p>
-<blockquote>
-<ul>
-<li>term1</li>
-<li>term2   </li>
-</ul>
-</blockquote>
-</blockquote>
-<ul>
-<li><p>水平线<br><em>*</em>三个星号</p>
 <hr>
-</li>
-<li><p>表格 </p>
+<ul>
+<li>黑高bh(x)  [不包含x自身以及为NIL的叶子节点]</li>
+<li>引理 13.1 一个有n个内部节点的红黑树高度至多有2lg(n+1) <pre><code>* prove  
+* 首先由归纳法证明任意节点x，它的字数中，至少包含2^bh(x)-1个内部节点
+</code></pre></li>
+</ul>
 </li>
 </ul>
-<table>
-<thead>
-<tr>
-<th>name</th>
-<th>number   </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>laji</td>
-<td>1512</td>
-</tr>
-<tr>
-<td>name</td>
-<td>score</td>
-</tr>
-<tr>
-<td>—–</td>
-<td>——</td>
-</tr>
-<tr>
-<td>flt</td>
-<td>100  </td>
-</tr>
-<tr>
-<td>laji</td>
-<td>0 </td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>name</th>
-<th>number   </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>laji</td>
-<td>1512</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>name</th>
-<th>score</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>flt</td>
-<td>100  </td>
-</tr>
-<tr>
-<td>laji</td>
-<td>0 </td>
-</tr>
-</tbody>
-</table>
+<h3 id="13-2-旋转-O-1"><a href="#13-2-旋转-O-1" class="headerlink" title="13.2 旋转 O(1)"></a>13.2 旋转 O(1)</h3><h3 id="13-3-插入-O-logn"><a href="#13-3-插入-O-logn" class="headerlink" title="13.3 插入 O(logn)"></a>13.3 插入 O(logn)</h3><p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1flcx5f9xzmj30ja0h6mzb.jpg" alt=""><br><img src="https://ws1.sinaimg.cn/large/006tNc79ly1flcx6psaeej308y02wt8r.jpg" alt=""><br><img src="https://ws1.sinaimg.cn/large/006tNc79ly1flcx6vpnggj309k02edfu.jpg" alt=""><br><img src="https://ws2.sinaimg.cn/large/006tNc79ly1flcx79z0q2j30a702f0sr.jpg" alt=""></p>
 
       
     </div>
@@ -549,7 +437,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://yoursite.com/2017/10/27/MacDown的基本使用/" title="MacDown的基本使用" target="_blank" rel="external">http://yoursite.com/2017/10/27/MacDown的基本使用/</a>
+      <a href="http://yoursite.com/2017/11/10/第13章红黑树/" title="第13章 红黑树" target="_blank" rel="external">http://yoursite.com/2017/11/10/第13章红黑树/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -598,12 +486,12 @@
   <ul class="pager pull-left">
     
     <li class="prev">
-      <a href="/2017/10/28/mac环境变量配置及其理解-软连接/" title="mac环境变量配置及其理解&amp;软连接"><i class="fa fa-angle-left" aria-hidden="true"></i>&nbsp;&nbsp;Newer</a>
+      <a href="/2017/11/10/第12章二叉检索树/" title="第12章二叉检索树"><i class="fa fa-angle-left" aria-hidden="true"></i>&nbsp;&nbsp;Newer</a>
     </li>
     
     
     <li class="next">
-      <a href="/2017/10/27/ictclass-简介/" title="ictclass 简介">Older&nbsp;&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+      <a href="/2017/11/08/第1，2，3章-算法基础以及渐进符号/" title="第1，2，3章-算法基础以及渐进符号">Older&nbsp;&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></a>
     </li>
     
   </ul>
