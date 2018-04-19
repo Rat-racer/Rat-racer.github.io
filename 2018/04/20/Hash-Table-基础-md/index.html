@@ -16,20 +16,21 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>第12章二叉检索树 | Rat-racer&#39;s Blog</title>
-  <meta name="description" content="stay busy and happy">
+  <title>Hash-Table-基础.md | Rat-racer&#39;s Blog</title>
+  <meta name="description" content="##  目录1.1 什么是哈希Hash  1.2 哈希函数 Hash Function      1.2.1 哈希函数性质     1.2.2 哈希函数的选择     1.2.3 Perfect Hash Function (PHF)      1.2.4 Minimal Perfect Hash Function (MPHF)             [Note]  1.3 什么是哈希表 Has">
+<meta name="keywords" content="data structures,Hash Table">
 <meta property="og:type" content="article">
-<meta property="og:title" content="第12章二叉检索树">
-<meta property="og:url" content="http://yoursite.com/2017/11/10/第12章二叉检索树/index.html">
+<meta property="og:title" content="Hash-Table-基础.md">
+<meta property="og:url" content="http://yoursite.com/2018/04/20/Hash-Table-基础-md/index.html">
 <meta property="og:site_name" content="Rat-racer&#39;s Blog">
-<meta property="og:description" content="stay busy and happy">
+<meta property="og:description" content="##  目录1.1 什么是哈希Hash  1.2 哈希函数 Hash Function      1.2.1 哈希函数性质     1.2.2 哈希函数的选择     1.2.3 Perfect Hash Function (PHF)      1.2.4 Minimal Perfect Hash Function (MPHF)             [Note]  1.3 什么是哈希表 Has">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-01-02T14:46:22.000Z">
+<meta property="og:updated_time" content="2018-04-19T18:01:46.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="第12章二叉检索树">
-<meta name="twitter:description" content="stay busy and happy">
+<meta name="twitter:title" content="Hash-Table-基础.md">
+<meta name="twitter:description" content="##  目录1.1 什么是哈希Hash  1.2 哈希函数 Hash Function      1.2.1 哈希函数性质     1.2.2 哈希函数的选择     1.2.3 Perfect Hash Function (PHF)      1.2.4 Minimal Perfect Hash Function (MPHF)             [Note]  1.3 什么是哈希表 Has">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://yoursite.com/2017/11/10/第12章二叉检索树/index.html">
+  <link rel="canonical" href="http://yoursite.com/2018/04/20/Hash-Table-基础-md/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Rat-racer&#39;s Blog" type="application/atom+xml">
   
@@ -354,14 +355,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-第12章二叉检索树" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-Hash-Table-基础-md" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      第12章二叉检索树
+      Hash-Table-基础.md
     </h1>
   
 
@@ -369,12 +370,17 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="fa fa-calendar-check-o"></i>
-	<a href="/2017/11/10/第12章二叉检索树/" class="article-date">
-	  <time datetime="2017-11-10T04:22:59.000Z" itemprop="datePublished">2017-11-10</time>
+	<a href="/2018/04/20/Hash-Table-基础-md/" class="article-date">
+	  <time datetime="2018-04-19T18:00:59.000Z" itemprop="datePublished">2018-04-20</time>
 	</a>
 </span>
         
         
+  <span class="article-tag">
+    <i class="fa fa-tag"></i>
+	<a class="article-tag-link" href="/tags/Hash-Table/">Hash Table</a>, <a class="article-tag-link" href="/tags/data-structures/">data structures</a>
+  </span>
+
 
         
 	<span class="article-read hidden-xs">
@@ -385,14 +391,113 @@
 	</span>
 
 
-        <span class="post-comment"><i class="fa fa-commenting-o"></i> <a href="/2017/11/10/第12章二叉检索树/#comments" class="article-comment-link">Comments</a></span>
+        <span class="post-comment"><i class="fa fa-commenting-o"></i> <a href="/2018/04/20/Hash-Table-基础-md/#comments" class="article-comment-link">Comments</a></span>
         
       </div>
       
     </div>
     <div class="article-entry markdown-body" itemprop="articleBody">
       
-        
+        <p>## </p>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><pre><code>1.1 什么是哈希Hash 
+1.2 哈希函数 Hash Function 
+    1.2.1 哈希函数性质
+    1.2.2 哈希函数的选择
+    1.2.3 Perfect Hash Function (PHF) 
+    1.2.4 Minimal Perfect Hash Function (MPHF)  
+          [Note]
+
+1.3 什么是哈希表 Hash Table
+    1.3.1 Key statistics 
+    1.3.2 Dynamic Resizing
+    1.3.3 ReHashing
+1.4 冲突 Collsion
+1.4 性能 
+1.5 哈希表的实现 Implementation 
+    1.5.1 PHF以及MPHF的实现
+    1.5.2 Java Python 实现
+1.6 应用 Applications 
+1.7 總結 Summary 
+1.7 References &amp; External Links
+</code></pre><a id="more"></a>
+<h3 id="1-1-什么是哈希Hash？"><a href="#1-1-什么是哈希Hash？" class="headerlink" title="1.1 什么是哈希Hash？"></a>1.1 什么是哈希Hash？</h3><p>哈希表的实现 称之为 哈希，抑或 散列。(雜湊 For 台灣 )<br>哈希表在【平均】情况下以常数时间constant time 执行「插入」，「删除」和「查找」的技术。  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">为什么平均O(1)？原理？</div><div class="line">最坏情况下呢？ O(n) 为什么？</div></pre></td></tr></table></figure>
+<p>但是对于元素间的【排序】操作将不会得到有效的支持。<br>譬如FindMax,FindMin以及按序打印元素都是散列表所不支持的。<sup>[1]</sup></p>
+<p>哈希/散列 接收一个值，输出这个值的哈希值 </p>
+<p>维基百科<sup>[2]</sup>中有一段对其的介绍：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Selected From Wiki-Hash Table [2]: </div><div class="line">The idea of hashing is to distribute the entries (key/value pairs) across an </div><div class="line">array of buckets. Given a key, the algorithm computes an index that suggests </div><div class="line">where the entry can be found.</div></pre></td></tr></table></figure>
+<h3 id="1-2-哈希函数-Hash-Function-？"><a href="#1-2-哈希函数-Hash-Function-？" class="headerlink" title="1.2 哈希函数 Hash Function ？"></a>1.2 哈希函数 Hash Function ？</h3><p>哈希函数是可以将【任意大小】的数据映射为【固定】大小数据的一个函数。其返回数据的哈希值。<br>哈希函数的一个用处是用来实现哈希表Hash Table. 哈希表在计算机科学中被广泛应用以提高查询性能。<br>哈希函数在密码学，Cache , 布隆过滤器，等中也有所应用。<sup>[3]</sup></p>
+<p>关于具体的哈希函数，请参见<a href="https://en.wikipedia.org/wiki/List_of_hash_functions" target="_blank" rel="external">List of hash_functions</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">维基百科[3]：</div><div class="line">	A hash function is any function that can be used to map data of arbitrary size to data of fixed size. </div><div class="line">	The values returned by a hash function are called hash values, hash codes, digests, or simply hashes. </div><div class="line">	One use is a data structure called a hash table, widely used in computer software for rapid data lookup. </div><div class="line">	Hash functions accelerate table or database lookup by detecting duplicated records in a large file.</div></pre></td></tr></table></figure>
+<h3 id="1-2-1-哈希函数性质"><a href="#1-2-1-哈希函数性质" class="headerlink" title="1.2.1 哈希函数性质"></a>1.2.1 哈希函数性质</h3><p>一个好的哈希函数通常需要满足下列属性。当然，一个哈希函数要满足哪些性质，还要看具体的应用决定。<br>Determinism<br>Uniformity<br>Defined range<br>Variable range<br>Data normalization<br>Continuity<br>Non-invertible.  </p>
+<p>关于哈希函数的若干性质，参见<a href="https://en.wikipedia.org/wiki/Hash_function" target="_blank" rel="external">Hash Function 维基百科</a></p>
+<h3 id="1-2-2-哈希函数的选择"><a href="#1-2-2-哈希函数的选择" class="headerlink" title="1.2.2 哈希函数的选择"></a>1.2.2 哈希函数的选择</h3><p>存在着很多各种各样的哈希函数，这些函数都不尽相同。<br>对于特定的应用而言，如何选取合适的哈希函数是一个重要的问题。<br>函数的选择强烈依赖于输入数据的性质, 以及它们在预期应用程序中的概率分布。<sup>[3]</sup></p>
+<p>Trivial hash function 平凡哈希函数，<br>Perfect hashing 完美哈希，<br>Minimal perfect hashing，最小完美哈希，<br>Hashing uniformly distributed data 哈希均匀分布数据，<br>Universal hashing,Rolling hash …<br>等等。具体描述参见<a href="https://en.wikipedia.org/wiki/Hash_function" target="_blank" rel="external">Hash Function 维基百科</a>  </p>
+<p>下面对PHF,与MPHF作进一步学习。<br>当键值是【static(即固定不变)】的时候，我们可以涉及方案使得最差情况下的查询性能也很出色。<br>由此引入了  </p>
+<ul>
+<li>PHF  最坏时间O(1),  </li>
+<li>与MPHF 最坏时间O(1),空间O(n)。</li>
+</ul>
+<h4 id="1-2-3-Perfect-Hash-Function-PHF"><a href="#1-2-3-Perfect-Hash-Function-PHF" class="headerlink" title="1.2.3 Perfect Hash Function (PHF)?"></a>1.2.3 Perfect Hash Function (PHF)?</h4><p>即【沒有冲突】的哈希函数<sup>[2]</sup> no collisions<br>即：<sup>[5]</sup>  </p>
+<pre><code>函数 Hash 将 N 个 Key 值映射到 M 个整数上，这里 M&gt;=N 
+    对于任意的 Key1 ，Key2 ，
+     Hash( Key1 ) != Hash( Key2 )   
+</code></pre><p>如何construct?    见[4]  </p>
+<p>拓展：</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Dynamic_perfect_hashing" target="_blank" rel="external">Dynamic perfect hashing</a>  【动态完美哈希函数】</li>
+<li>Minimal perfect hash function   【最小完美哈希函数 】</li>
+<li>Order preservation   【保序最小完美哈希函数】<ul>
+<li>key<sub> I </sub> &lt; key<sub> J </sub> 等价于 Hash(key<sub> I </sub>) &lt; Hash(key<sub> J </sub>)</li>
+<li>满足 Minimal perfect hash function</li>
+</ul>
+</li>
+</ul>
+<h4 id="1-2-4-Minimal-Perfect-Hash-Function-MPHF"><a href="#1-2-4-Minimal-Perfect-Hash-Function-MPHF" class="headerlink" title="1.2.4 Minimal Perfect Hash Function (MPHF)?"></a>1.2.4 Minimal Perfect Hash Function (MPHF)?</h4><p>在1.2.3 Perfect Hash Function (PHF)中，若M==N,则为MPHF.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">维基百科[4]:</div><div class="line">A minimal perfect hash function is a perfect hash function that maps n keys to n</div><div class="line">consecutive integers – usually the numbers from 0 to n − 1 or from 1 to n</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">NOTE:</div><div class="line">静态</div><div class="line">[5]</div><div class="line">通常情况下，PHF或MPHF是针对静态集合的。也就是，在使用PHF或MPHF时，</div><div class="line">所有的 KEY 值是事先已知并且固定的。</div><div class="line">不过，这里有针对动态集合的一个算法（我没有仔细看，不敢肯定）</div><div class="line"></div><div class="line">[6]</div><div class="line">缺点：</div><div class="line">一是必须事前必须知道原数据集，二是需要花一定的CPU来生成这个函数。</div><div class="line">我认为，对于数据仓库类的线下搜索应用，这个算法是有用武之地的。</div><div class="line">但对于强调实时的数据业务，这个算法是不适合的。</div></pre></td></tr></table></figure>
+<h3 id="1-3-什么是哈希表-7"><a href="#1-3-什么是哈希表-7" class="headerlink" title="1.3 什么是哈希表[7] ?"></a>1.3 什么是哈希表<sup>[7]</sup> ?</h3><p>哈希表是一种基于键-值(key-index) 的数据结构。<br>哈希表通过哈希函数实现key , index的转换。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">[7]</div><div class="line">Selected From Wiki-Hash Table : </div><div class="line">	In computing, a hash table (hash map) is a data structure which implements an </div><div class="line">associative array abstract data type, a structure that can map keys to values. A </div><div class="line">hash table uses a hash function to compute an index into an array of buckets or</div><div class="line">slots, from which the desired value can be found.</div></pre></td></tr></table></figure>
+<p>在很多情况下，哈希表在平均性能上【优于】 搜索树以及 table lookup structure。<br>因此哈希表在计算机领域中得到广泛应用，尤其是涉及数组，数据库索引，Cache和Set.   </p>
+<h4 id="1-3-1-Key-statistics"><a href="#1-3-1-Key-statistics" class="headerlink" title="1.3.1 Key statistics"></a>1.3.1 Key statistics</h4><ul>
+<li><p>load factor = n/k </p>
+<ul>
+<li>n is the number of entries</li>
+<li>k is the number of slots</li>
+</ul>
+<p>load factor 过大，冲突可能性增加；<br>load factor 过小，空间的浪费。  </p>
+</li>
+</ul>
+<h4 id="1-3-2-Dynamic-Resizing"><a href="#1-3-2-Dynamic-Resizing" class="headerlink" title="1.3.2 Dynamic Resizing"></a>1.3.2 Dynamic Resizing</h4><p>动态调整大小  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">For example, in Java&apos;s HashMap class the default load factor threshold for</div><div class="line">table expansion is 3/4 and in Python&apos;s dict, table size is resized when load </div><div class="line">factor is greater than 2/3</div></pre></td></tr></table></figure>
+<h4 id="1-3-3-Rehashing"><a href="#1-3-3-Rehashing" class="headerlink" title="1.3.3 Rehashing"></a>1.3.3 Rehashing</h4><p> O(n) </p>
+<h3 id="1-4-冲突"><a href="#1-4-冲突" class="headerlink" title="1.4 冲突"></a>1.4 冲突</h3><h4 id="冲突问题"><a href="#冲突问题" class="headerlink" title="冲突问题"></a>冲突问题</h4><p>优于哈希函数不一定是完美哈希函数或者是slots过少，因此可能会导致冲突发生，产生冲突可以有多重方法加以解决。</p>
+<h4 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h4><ul>
+<li>分离链接法    </li>
+<li>开放定址法<ul>
+<li>线性探测</li>
+<li>平凡探测</li>
+</ul>
+</li>
+<li>Rehash </li>
+</ul>
+<h3 id="1-4-性能"><a href="#1-4-性能" class="headerlink" title="1.4 性能"></a>1.4 性能</h3><p>[7]<br>In the simplest model, the hash function is completely unspecified and the table does not resize. For the best possible choice of hash function, a table of size k with open addressing has no collisions and holds up to k elements, with a single comparison for successful lookup, and a table of size k with chaining and n keys has the minimum max(0, n − k) collisions and O(1 + n/k) comparisons for lookup. For the worst choice of hash function, every insertion causes a collision, and hash tables degenerate to linear search, with Ω(n) amortized comparisons per insertion and up to n comparisons for a successful lookup.</p>
+<p>Adding rehashing to this model is straightforward. As in a dynamic array, geometric resizing by a factor of b implies that only n/bi keys are inserted i or more times, so that the total number of insertions is bounded above by bn/(b − 1), which is O(n). By using rehashing to maintain n &lt; k, tables using both chaining and open addressing can have unlimited elements and perform successful lookup in a single comparison for the best choice of hash function.</p>
+<p>In more realistic models, the hash function is a random variable over a probability distribution of hash functions, and performance is computed on average over the choice of hash function. When this distribution is uniform, the assumption is called “simple uniform hashing” and it can be shown that hashing with chaining requires Θ(1 + n/k) comparisons on average for an unsuccessful lookup, and hashing with open addressing requires Θ(1/(1 − n/k)).[25] Both these bounds are constant, if we maintain n/k &lt; c using table resizing, where c is a fixed constant less than 1.</p>
+<h3 id="1-5-Implementation-实现"><a href="#1-5-Implementation-实现" class="headerlink" title="1.5 Implementation 实现"></a>1.5 Implementation 实现</h3><h4 id="1-5-1-PHF以及MPHF的实现"><a href="#1-5-1-PHF以及MPHF的实现" class="headerlink" title="1.5.1 PHF以及MPHF的实现"></a>1.5.1 PHF以及MPHF的实现</h4><p>关于PHF以及MPHF的实现，这位<a href="https://blog.csdn.net/chixinmuzi" target="_blank" rel="external">博主</a>已经给了较好的总结，<br>我不认为我可以比他总结的更好。于是就照搬过来吧。<br>参见 ：<br><a href="https://blog.csdn.net/chixinmuzi/article/details/1727195" target="_blank" rel="external">完美哈希函数（Perfect Hash Function）</a> 的【PHF和MPHF生成程序库】以及【PHF和MPHF生成算法】部分。</p>
+<h4 id="1-5-2-Java-Python-实现"><a href="#1-5-2-Java-Python-实现" class="headerlink" title="1.5.2 Java Python 实现"></a>1.5.2 Java Python 实现</h4><p>待续</p>
+<h3 id="1-6-应用-Applications"><a href="#1-6-应用-Applications" class="headerlink" title="1.6 应用 Applications"></a>1.6 应用 Applications</h3><p>待续</p>
+<h3 id="1-7-總結-Summary"><a href="#1-7-總結-Summary" class="headerlink" title="1.7 總結 Summary"></a>1.7 總結 Summary</h3><p>哈希表作为常数平均时间查询与插入的数据结构。采用哈希函数实现。<br>哈希函数常常是不完美的因此会产生冲突问题，对此也有一系列的解决方法。<br>哈希表也可以动态调整。<br>完美哈希函数在一些库中已经得到了较好的实现。哈希表在Java等编程语言中也得到了实现。<br>哈希表作为一个优秀的数据结构在计算机科学的很多领域都发挥着重要的作用。</p>
+<h3 id="1-8-References-amp-External-Links"><a href="#1-8-References-amp-External-Links" class="headerlink" title="1.8  References &amp; External Links"></a>1.8  References &amp; External Links</h3><h4 id="References"><a href="#References" class="headerlink" title="References"></a>References</h4><p>[1] 数据结构与算法-C语言描述[Mark Allen Weiss]         Chapter 5  </p>
+<p>[2] <a href="https://en.wikipedia.org/wiki/Hash_table" target="_blank" rel="external">Hash Table维基百科</a></p>
+<p>[3] <a href="https://en.wikipedia.org/wiki/Hash_function" target="_blank" rel="external">Hash Function 维基百科</a></p>
+<p>[4] <a href="https://en.wikipedia.org/wiki/Perfect_hash_function" target="_blank" rel="external">Perfect Hash Function维基百科</a> </p>
+<p>[5] <a href="https://blog.csdn.net/chixinmuzi/article/details/1727195" target="_blank" rel="external">完美哈希函数（Perfect Hash Function）- Blog</a></p>
+<p>[6] <a href="http://www.yankay.com/introduction-to-opmphf/" target="_blank" rel="external">最小完美哈希函数简介-Blog</a></p>
+<p>[7] <a href="https://en.wikipedia.org/wiki/Hash_table" target="_blank" rel="external">Hash_table维基百科</a></p>
+<h4 id="External-Links"><a href="#External-Links" class="headerlink" title="External Links"></a>External Links</h4><p><a href="https://en.wikipedia.org/wiki/Distributed_hash_table" target="_blank" rel="external">Distributed hash table</a></p>
+<p><a href="http://tools.timodenk.com/?p=hash-function" target="_blank" rel="external">Calculate hash of a given value </a>by Timo Denk</p>
+
       
     </div>
     <div class="article-footer">
@@ -401,7 +506,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://yoursite.com/2017/11/10/第12章二叉检索树/" title="第12章二叉检索树" target="_blank" rel="external">http://yoursite.com/2017/11/10/第12章二叉检索树/</a>
+      <a href="http://yoursite.com/2018/04/20/Hash-Table-基础-md/" title="Hash-Table-基础.md" target="_blank" rel="external">http://yoursite.com/2018/04/20/Hash-Table-基础-md/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -449,13 +554,9 @@
   
   <ul class="pager pull-left">
     
-    <li class="prev">
-      <a href="/2018/01/01/函数的增长/" title="函数的增长"><i class="fa fa-angle-left" aria-hidden="true"></i>&nbsp;&nbsp;Newer</a>
-    </li>
-    
     
     <li class="next">
-      <a href="/2017/11/10/第13章红黑树/" title="第13章 红黑树">Older&nbsp;&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+      <a href="/2018/04/20/test-md/" title="test.md">Older&nbsp;&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></a>
     </li>
     
   </ul>
