@@ -17,18 +17,21 @@
   
   
   <title>基于比较的的排序 | Rat-racer&#39;s Blog</title>
-  <meta name="description" content="堆排序1.1 什么是堆?     1.2 堆的实现？什么二叉堆？    1.3 堆的相关操作？   1.4 堆与优先队列的关系？  1.5 如何利用堆进行堆排序 ?  1.6 堆的优缺点? 堆排序分析、   ###1.1堆是一种数据结构，可以满足">
+  <meta name="description" content="toaday I’m going to review some important sorting algorithms based on comparison.besides,related data structures such as heap ,will also be talked. 1.1 堆排序1.1.1 什么是堆?    what and why? 1.1.2 堆的实现？什么二叉堆">
 <meta name="keywords" content="排序,基于比较的排序,算法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="基于比较的的排序">
 <meta property="og:url" content="http://yoursite.com/2018/04/21/基于比较的的排序/index.html">
 <meta property="og:site_name" content="Rat-racer&#39;s Blog">
-<meta property="og:description" content="堆排序1.1 什么是堆?     1.2 堆的实现？什么二叉堆？    1.3 堆的相关操作？   1.4 堆与优先队列的关系？  1.5 如何利用堆进行堆排序 ?  1.6 堆的优缺点? 堆排序分析、   ###1.1堆是一种数据结构，可以满足">
+<meta property="og:description" content="toaday I’m going to review some important sorting algorithms based on comparison.besides,related data structures such as heap ,will also be talked. 1.1 堆排序1.1.1 什么是堆?    what and why? 1.1.2 堆的实现？什么二叉堆">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-04-20T16:53:42.000Z">
+<meta property="og:image" content="https://img-blog.csdn.net/20161201154351701">
+<meta property="og:image" content="https://img-blog.csdn.net/20161201155126086">
+<meta property="og:updated_time" content="2018-04-20T18:30:07.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于比较的的排序">
-<meta name="twitter:description" content="堆排序1.1 什么是堆?     1.2 堆的实现？什么二叉堆？    1.3 堆的相关操作？   1.4 堆与优先队列的关系？  1.5 如何利用堆进行堆排序 ?  1.6 堆的优缺点? 堆排序分析、   ###1.1堆是一种数据结构，可以满足">
+<meta name="twitter:description" content="toaday I’m going to review some important sorting algorithms based on comparison.besides,related data structures such as heap ,will also be talked. 1.1 堆排序1.1.1 什么是堆?    what and why? 1.1.2 堆的实现？什么二叉堆">
+<meta name="twitter:image" content="https://img-blog.csdn.net/20161201154351701">
   <!-- Canonical links -->
   <link rel="canonical" href="http://yoursite.com/2018/04/21/基于比较的的排序/index.html">
   
@@ -403,13 +406,38 @@
     </div>
     <div class="article-entry markdown-body" itemprop="articleBody">
       
-        <h3 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h3><pre><code>1.1 什么是堆?    
-1.2 堆的实现？什么二叉堆？   
-1.3 堆的相关操作？  
-1.4 堆与优先队列的关系？ 
-1.5 如何利用堆进行堆排序 ? 
-1.6 堆的优缺点? 堆排序分析、  
-</code></pre><p>###1.1<br>堆是一种数据结构，可以满足 </p>
+        <p>toaday I’m going to review some important sorting algorithms based on comparison.besides,related data structures such as heap ,will also be talked.</p>
+<h3 id="1-1-堆排序"><a href="#1-1-堆排序" class="headerlink" title="1.1 堆排序"></a>1.1 堆排序</h3><pre><code>1.1.1 什么是堆?    what and why?
+1.1.2 堆的实现？什么二叉堆？   
+1.1.3 堆的相关操作？  
+1.1.4 堆与优先队列的关系？ 优先队列 what and why?
+1.1.5 如何利用堆进行堆排序 ? 
+1.1.6 堆的优缺点? 堆排序分析.  
+</code></pre><h5 id="1-1-1-什么是堆？Heap"><a href="#1-1-1-什么是堆？Heap" class="headerlink" title="1.1.1  什么是堆？Heap?"></a>1.1.1  什么是堆？Heap?</h5><h5 id="1-1-1-1-what？"><a href="#1-1-1-1-what？" class="headerlink" title="1.1.1.1 what？"></a>1.1.1.1 what？</h5><p>很多人以为<br>堆 == 二叉堆 == 优先队列   他们之间的关系真的是相等的吗？    </p>
+<p>在英语中，heap作为动词 <strong>把..堆起/使成堆</strong> 的意思。作为名词是<strong>堆/很多</strong>的意思。<br>1964年，J. W. J. Williams 发明了堆排序(Heap Sort)<sup>[1]</sup>，同时描述了如何利用二叉堆来实现一个优先队列。 使用该种数据结构可以高效的获取队列中的最大值或者最小值，从而进行排序操作。<br>（关于二叉堆见1.1.2,什么是优先队列见1.1.4 ）</p>
+<p>之后，后人不断加以改进，产生了一系列不同的堆.<br>比如k-叉堆，斐波那契堆，二项堆，左式堆，斜堆等等。  见<a href="https://en.wikipedia.org/wiki/Heap_(data_structure" target="_blank" rel="external">堆变体</a>#Variants)。  </p>
+<p>从最初William的二叉堆用于堆排序，到后来的各式各样的堆，基本都是以树的形式表示。因此说    </p>
+<p>  <strong>堆是一共基于树的数据结构</strong>。</p>
+<p>  维基百科也有说：A heap is a <strong>specialized tree-based data structure</strong> that satisfies the heap property。<br>  所谓的heap property(堆的性质)即是大根堆/小跟堆的性质(所有父节点≥/≤子节点)。   </p>
+<p>  因此，亦可以说堆不是一个数据结构，而是一类数据结构[this is my personal opinion]。</p>
+<h5 id="1-1-1-2-关于二叉堆-Binary-Heap"><a href="#1-1-1-2-关于二叉堆-Binary-Heap" class="headerlink" title="1.1.1.2 关于二叉堆 Binary Heap"></a>1.1.1.2 关于二叉堆 Binary Heap</h5><p>  <strong>二叉堆是一种堆</strong>。  </p>
+<p>  维基百科上说：<br>  A binary heap is <strong>a heap data structure</strong> that takes the form of a binary tree. Binary heaps are a common way of implementing priority queues.[2]</p>
+<p> 显而易见的，将堆与二叉堆划等号（堆heap == 二叉堆bianry heap），显然是一个不成熟的想法。  </p>
+<p>heap != bianry heap,that is to say , heap is a class of data structures.but binay heap is a common type of heap.  </p>
+<p>它们与优先队列的关系将会在1.1.4中简要探讨。</p>
+<h5 id="1-1-1-3-why"><a href="#1-1-1-3-why" class="headerlink" title="1.1.1.3 why ?"></a>1.1.1.3 why ?</h5><p>既然知道了什么是堆，那么为什么要用堆呢？williams为什么要引入它呢。它又有哪些优点呢。<br>我认为，对于传统的大根堆或者小跟堆而言，最大值/最小值分别处于root节点位置.(为什么？)<br>这方便我们从中读/取最大值，最小值，这是一个O(logn)的操作。相对于数组而言，这有显著的性能提升。因此堆适用于那些需要频繁取最大/最小值的应用。  </p>
+<h4 id="1-1-2-堆的实现？什么二叉堆？"><a href="#1-1-2-堆的实现？什么二叉堆？" class="headerlink" title="1.1.2 堆的实现？什么二叉堆？"></a>1.1.2 堆的实现？什么二叉堆？</h4><p>堆采用树结构实现。对于不同的堆有不同的树实现。  </p>
+<h5 id="1-1-2-0-什么是二叉堆"><a href="#1-1-2-0-什么是二叉堆" class="headerlink" title="1.1.2.0 什么是二叉堆"></a>1.1.2.0 什么是二叉堆</h5><p>二叉堆是一种堆，二叉堆广泛地被使用，以至于，当我们谈论堆时，通常默认指的就是二叉堆。<br>二叉堆也是优先队列的一种常见的实现。 （什么是优先队列见1.1.4 ）</p>
+<p>二叉堆基于二叉树是实现，除了是二叉树之外，还需要满足下面两个条件。<br>1.Shape property :一个二叉堆是一个完全二叉树。在此含义即是所有的层（除了最后一层）都是满的，只有最后一层不是满的，而且最后一层的节点从左向右依次填充。  </p>
+<ol>
+<li>Heap property: （大根堆）对于所有的父亲节点而言，其值≥子节点。<br> （小根堆）对于所有的父亲节点而言，其值≤ 子节点。   </li>
+</ol>
+<h5 id="1-1-2-1-二叉堆的实现"><a href="#1-1-2-1-二叉堆的实现" class="headerlink" title="1.1.2.1 二叉堆的实现"></a>1.1.2.1 二叉堆的实现</h5><p>对于最常见的二叉堆：<br>他使用二叉树来实现，这个二叉树是一个完全二叉树(完全二叉树在不同的文献中有着不同的含义，在此处我们取所有的层（除了最后一层）都是满的，只有最后一层不是满的，而且最后一层的节点从左向右依次填充。见<a href="https://en.wikipedia.org/wiki/Binary_tree" target="_blank" rel="external">维基百科-完全二叉树</a>)  </p>
+<p>逻辑上，二叉堆是一棵树。  物理上，二叉堆常用数组来实现。而不需要指针。这样可以获得较好的性能。(考虑为什么可以？)  </p>
+<p>如下图所示：<br>逻辑结构：<br><img src="https://img-blog.csdn.net/20161201154351701" alt=""><br>物理结构：<br><img src="https://img-blog.csdn.net/20161201155126086" alt=""></p>
+<h5 id="1-1-2-2-斐波那契堆的实现"><a href="#1-1-2-2-斐波那契堆的实现" class="headerlink" title="1.1.2.2 斐波那契堆的实现"></a>1.1.2.2 斐波那契堆的实现</h5><h5 id="1-1-2-3-二项堆堆的实现"><a href="#1-1-2-3-二项堆堆的实现" class="headerlink" title="1.1.2.3 二项堆堆的实现"></a>1.1.2.3 二项堆堆的实现</h5><h4 id="1-1-3-堆的相关操作？"><a href="#1-1-3-堆的相关操作？" class="headerlink" title="1.1.3 堆的相关操作？"></a>1.1.3 堆的相关操作？</h4><p>对于不同的heap，我们有不同的操作，在此，我们先对最为广泛的二叉堆进行阐述。  </p>
+<p>[1] : Williams, J. W. J. (1964), “Algorithm 232 - Heapsort”, Communications of the ACM, 7 (6): 347–348</p>
+<p>[2] :<a href="https://en.wikipedia.org/wiki/Binary_heap" target="_blank" rel="external">https://en.wikipedia.org/wiki/Binary_heap</a></p>
 
       
     </div>
