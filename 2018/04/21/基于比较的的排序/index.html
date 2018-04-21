@@ -32,7 +32,8 @@
 <meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79gy1fqjpbnwuryj30ei0713z7.jpg">
 <meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1fqk7tyztq7j30rk05amyp.jpg">
 <meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1fqk7v8i14jj311r03j3z4.jpg">
-<meta property="og:updated_time" content="2018-04-21T05:35:48.000Z">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79ly1fqk8st2mxmj307e06p3yv.jpg">
+<meta property="og:updated_time" content="2018-04-21T06:41:54.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于比较的的排序">
 <meta name="twitter:description" content="Toaday I’m going to review some important sorting algorithms based on comparison.besides,related data structures such as heap,will also be talked. 1.1 堆排序 &amp;amp;&amp;amp; 优先队列 1.2 选择排序，插入排序，冒泡排序 1.3 快速排序 1">
@@ -469,7 +470,9 @@
 <h5 id="1-1-2-1-二叉堆的实现"><a href="#1-1-2-1-二叉堆的实现" class="headerlink" title="1.1.2.1 二叉堆的实现"></a>1.1.2.1 二叉堆的实现</h5><p>对于最常见的二叉堆：<br>他使用二叉树来实现，这个二叉树是一个完全二叉树(完全二叉树在不同的文献中有着不同的含义，在此处我们取所有的层（除了最后一层）都是满的，只有最后一层不是满的，而且最后一层的节点从左向右依次填充。见<a href="https://en.wikipedia.org/wiki/Binary_tree" target="_blank" rel="external">维基百科-完全二叉树</a>)  </p>
 <p>逻辑上，二叉堆是一棵树。  物理上，二叉堆常用数组来实现。而不需要指针。这样可以获得较好的性能。(考虑为什么可以？)  </p>
 <p>如下图所示：<br>逻辑结构：<br><img src="https://img-blog.csdn.net/20161201154351701" alt=""><br>物理结构：<br><img src="https://img-blog.csdn.net/20161201155126086" alt=""></p>
-<h5 id="1-1-2-2-斐波那契堆的实现"><a href="#1-1-2-2-斐波那契堆的实现" class="headerlink" title="1.1.2.2 斐波那契堆的实现"></a>1.1.2.2 斐波那契堆的实现</h5><h5 id="1-1-2-3-二项堆堆的实现"><a href="#1-1-2-3-二项堆堆的实现" class="headerlink" title="1.1.2.3 二项堆堆的实现"></a>1.1.2.3 二项堆堆的实现</h5><h4 id="1-1-3-堆的相关操作？-堆排序？"><a href="#1-1-3-堆的相关操作？-堆排序？" class="headerlink" title="1.1.3 堆的相关操作？   堆排序？"></a>1.1.3 堆的相关操作？   堆排序？</h4><p>对于不同的heap，我们有不同的操作，在此，我们先对最为广泛的二叉堆进行阐述。<br>【本部分主要采自算法导论第三版 &amp;&amp; 只针对大根堆（小根同理）】<br>【注：大根堆 == 最大堆，小根堆 == 最小堆】</p>
+<h5 id="1-1-2-2-斐波那契堆的实现"><a href="#1-1-2-2-斐波那契堆的实现" class="headerlink" title="1.1.2.2 斐波那契堆的实现"></a>1.1.2.2 斐波那契堆的实现</h5><p>待续</p>
+<h5 id="1-1-2-3-二项堆的实现"><a href="#1-1-2-3-二项堆的实现" class="headerlink" title="1.1.2.3 二项堆的实现"></a>1.1.2.3 二项堆的实现</h5><p>待续</p>
+<h4 id="1-1-3-堆的相关操作？-堆排序？"><a href="#1-1-3-堆的相关操作？-堆排序？" class="headerlink" title="1.1.3 堆的相关操作？   堆排序？"></a>1.1.3 堆的相关操作？   堆排序？</h4><p>对于不同的heap，我们有不同的操作，在此，我们先对最为广泛的二叉堆进行阐述。<br>【本部分主要采自算法导论第三版 &amp;&amp; 只针对大根堆（小根同理）】<br>【注：大根堆 == 最大堆，小根堆 == 最小堆】</p>
 <ul>
 <li>Max-Heapify 维护大根堆的性质。O(log n)</li>
 <li>Build-Max-Heap 从无序的输入数据数组中构造一个大根堆。 O(n) </li>
@@ -487,14 +490,18 @@
 <li>Heap-Increase-Key,将某个节点增加一定的值，然后调整之</li>
 <li>Heap-Maximum，返回根节点的值</li>
 </ul>
-<h4 id="1-1-4-堆的优缺点-堆排序分析"><a href="#1-1-4-堆的优缺点-堆排序分析" class="headerlink" title="1.1.4 堆的优缺点? 堆排序分析."></a>1.1.4 堆的优缺点? 堆排序分析.</h4><h4 id="1-1-5-堆与优先队列的关系？-优先队列what-and-why"><a href="#1-1-5-堆与优先队列的关系？-优先队列what-and-why" class="headerlink" title="1.1.5 堆与优先队列的关系？ 优先队列what and why?"></a>1.1.5 堆与优先队列的关系？ 优先队列what and why?</h4><h5 id="1-1-5-1-什么是优先队列？Priority-Queue"><a href="#1-1-5-1-什么是优先队列？Priority-Queue" class="headerlink" title="1.1.5.1 什么是优先队列？Priority Queue"></a>1.1.5.1 什么是优先队列？Priority Queue</h5><p>优先队列是一种类似于队列的数据结构。<br>熟悉数据结构的我们知道，队列是一种允许在一段进行插入(入队)以及另一端进行删除(出队)的数据结构。 它是一种FIFO类型的数据结构。 队列在很多方面都有很多应用，比如在cache(替换策略),进程/作业调度方面。  </p>
+<h4 id="1-1-4-堆的优缺点-堆排序分析"><a href="#1-1-4-堆的优缺点-堆排序分析" class="headerlink" title="1.1.4 堆的优缺点? 堆排序分析."></a>1.1.4 堆的优缺点? 堆排序分析.</h4><h4 id="1-1-5-堆与优先队列的关系？-优先队列what-and-why"><a href="#1-1-5-堆与优先队列的关系？-优先队列what-and-why" class="headerlink" title="1.1.5 堆与优先队列的关系？ 优先队列what and why?"></a>1.1.5 堆与优先队列的关系？ 优先队列what and why?</h4><h5 id="1-1-5-1-什么是优先队列？Priority-Queue"><a href="#1-1-5-1-什么是优先队列？Priority-Queue" class="headerlink" title="1.1.5.1 什么是优先队列？Priority Queue"></a>1.1.5.1 什么是优先队列？Priority Queue</h5><p>优先队列是一种类似于队列的数据结构。<br>熟悉数据结构的我们知道，队列是一种允许在一段进行插入(入队)以及另一端进行删除(出队)的数据结构。 它是一种FIFO类型的数据结构。 队列在很多方面都有很多应用，比如在cache(替换策略),进程/作业调度，贪心算法方面。  </p>
 <p>而，在很多情况下，我们需要考虑不同元素的优先权不同，譬如在操作系统调度中，有一种叫做SJF的算法(即最短作业有限),在此，优先级就是执行作业的用时长短。这种情况下，用基本的队列就不能胜任了。<br>因此，引入了一种叫做优先队列(Priority Queue )的数据结构。<br>优先队列中的每一个节点都有对应的优先级。 在不同的应用中采用不同的指标作为优先级。   </p>
 <ul>
-<li>优先队列满足至少以下两种操作<ul>
+<li>优先队列满足至少以下两种操作<sup>[4]</sup><ul>
 <li>Insert  插入/入队 将一个节点插入到优先队列</li>
 <li>Deelete Min/Max      删除最小值/最大值，或者称之为Min/Max出队.</li>
 </ul>
 </li>
+</ul>
+<ul>
+<li>其实可以将Stack,Queue作为优先队列的两种特殊情况(为什么？)</li>
+<li>也可以将优先队列看做为队列的一种修改，当出队时，总是出优先级最大/小的节点。</li>
 </ul>
 <h5 id="1-1-5-2-为什么是要使用优先队列？-why"><a href="#1-1-5-2-为什么是要使用优先队列？-why" class="headerlink" title="1.1.5.2 为什么是要使用优先队列？ why?"></a>1.1.5.2 为什么是要使用优先队列？ why?</h5><p>引入了优先队列，可以方便的执行插入以及取最大/最小值的操作。在很多应用中，这两种操作频繁出现。</p>
 <ul>
@@ -517,9 +524,63 @@ Prim&apos;s algorithm for minimum spanning tree
 <h5 id="1-1-6-2-Usual-Implementation"><a href="#1-1-6-2-Usual-Implementation" class="headerlink" title="1.1.6.2 Usual Implementation"></a>1.1.6.2 Usual Implementation</h5><p>为了提高性能，堆被引入作为实现。<br>普通的二叉堆具有O(log n )的performance for inserts and removals。<br>and O(n) to build initially。<br>普通二叉堆的变体，斐波那契堆， pairing heaps提供了更好的性能。 </p>
 <h5 id="1-1-6-3-Specialized-Heaps-Implementation"><a href="#1-1-6-3-Specialized-Heaps-Implementation" class="headerlink" title="1.1.6.3 Specialized Heaps Implementation"></a>1.1.6.3 Specialized Heaps Implementation</h5><p>有一些特殊的堆结构，可以提供附加一些的操作(除1.1.5.1中的两种),或者在一些特殊的数据类型上性能优于普通的堆。<br>见[3]</p>
 <h5 id="1-1-6-4-性能分析"><a href="#1-1-6-4-性能分析" class="headerlink" title="1.1.6.4 性能分析"></a>1.1.6.4 性能分析</h5><p>下图为采用不同的堆作为优先队列时，相关操作的时间复杂度。【此为最小堆】<br><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fqk7tyztq7j30rk05amyp.jpg" alt=""><br><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fqk7v8i14jj311r03j3z4.jpg" alt=""><br>【采自维基百科，注释略之】</p>
-<h4 id="1-1-7-Java，Python中的Heap，Priority-Queue的实现"><a href="#1-1-7-Java，Python中的Heap，Priority-Queue的实现" class="headerlink" title="1.1.7 Java，Python中的Heap，Priority Queue的实现"></a>1.1.7 Java，Python中的Heap，Priority Queue的实现</h4><h4 id="1-1-8-References-amp-Externel-Links"><a href="#1-1-8-References-amp-Externel-Links" class="headerlink" title="1.1.8 References &amp; Externel Links"></a>1.1.8 References &amp; Externel Links</h4><p>[1] : Williams, J. W. J. (1964), “Algorithm 232 - Heapsort”, Communications of the ACM, 7 (6): 347–348</p>
-<p>[2] :<a href="https://en.wikipedia.org/wiki/Binary_heap" target="_blank" rel="external">https://en.wikipedia.org/wiki/Binary_heap</a></p>
-<p>[3] <a href="https://en.wikipedia.org/wiki/Priority_queue" target="_blank" rel="external">https://en.wikipedia.org/wiki/Priority_queue</a></p>
+<h4 id="1-1-7-Java，Python中的Heap，Priority-Queue的实现"><a href="#1-1-7-Java，Python中的Heap，Priority-Queue的实现" class="headerlink" title="1.1.7 Java，Python中的Heap，Priority Queue的实现"></a>1.1.7 Java，Python中的Heap，Priority Queue的实现</h4><h5 id="1-1-7-1-Java中的实现"><a href="#1-1-7-1-Java中的实现" class="headerlink" title="1.1.7.1 Java中的实现"></a>1.1.7.1 Java中的实现</h5><p>Class PriorityQueue </p>
+<h5 id="1-1-7-2-Python中的实现"><a href="#1-1-7-2-Python中的实现" class="headerlink" title="1.1.7.2 Python中的实现"></a>1.1.7.2 Python中的实现</h5><p>heapq模块实现了二叉堆的功能,可以用来实现优先队列以及Heapsort。<br>为Min-Heap.且下标从0开始。</p>
+<ul>
+<li>API<ul>
+<li>Heapify() 给定一List,原地 线性 将其变为最小堆。</li>
+<li>Heappop() 从堆中pop最小值，即索引[0]所在元素。</li>
+<li>Heappush() 向插入一个元素。</li>
+</ul>
+</li>
+<li>用例<ul>
+<li><img src="https://ws2.sinaimg.cn/large/006tNc79ly1fqk8st2mxmj307e06p3yv.jpg" alt=""></li>
+</ul>
+</li>
+<li>此外还提供了<br>  heapq.nlargest, heapq.nsmallest 用来返回n个最大/最小的元素。</li>
+</ul>
+<h5 id="实现HeapSort"><a href="#实现HeapSort" class="headerlink" title="实现HeapSort"></a>实现HeapSort</h5><pre><code>def heapsort(iterable):
+   h = []
+   for value in iterable:
+     heappush(h, value)
+   return [heappop(h) for i in range(len(h))]
+
+ &gt;&gt;&gt; heapsort([1, 3, 5, 7, 9, 2, 4, 6, 8, 0])
+ &gt;&gt;&gt; [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+</code></pre><h5 id="实现优先队列"><a href="#实现优先队列" class="headerlink" title="实现优先队列"></a>实现优先队列</h5><pre><code>pq = []                         # list of entries arranged in a heap
+entry_finder = {}               # mapping of tasks to entries
+REMOVED = &apos;&lt;removed-task&gt;&apos;      # placeholder for a removed task
+counter = itertools.count()     # unique sequence count
+
+def add_task(task, priority=0):
+    &apos;Add a new task or update the priority of an existing task&apos;
+    if task in entry_finder:
+        remove_task(task)
+    count = next(counter)
+    entry = [priority, count, task]
+    entry_finder[task] = entry
+    heappush(pq, entry)
+
+def remove_task(task):
+    &apos;Mark an existing task as REMOVED.  Raise KeyError if not found.&apos;
+    entry = entry_finder.pop(task)
+    entry[-1] = REMOVED
+
+    def pop_task():
+&apos;Remove and return the lowest priority task. Raise KeyError if empty.&apos;
+    while pq:
+        priority, count, task = heappop(pq)
+        if task is not REMOVED:
+            del entry_finder[task]
+            return task
+    raise KeyError(&apos;pop from an empty priority queue&apos;)
+</code></pre><h4 id="1-1-8-References-amp-Externel-Links"><a href="#1-1-8-References-amp-Externel-Links" class="headerlink" title="1.1.8 References &amp; Externel Links"></a>1.1.8 References &amp; Externel Links</h4><h5 id="1-1-8-1-References"><a href="#1-1-8-1-References" class="headerlink" title="1.1.8.1 References"></a>1.1.8.1 References</h5><p>[1] : Williams, J. W. J. (1964), “Algorithm 232 - Heapsort”, Communications of the ACM, 7 (6): 347–348</p>
+<p>[2] :<a href="https://en.wikipedia.org/wiki/Binary_heap" target="_blank" rel="external">维基百科-二叉堆</a></p>
+<p>[3] :<a href="https://en.wikipedia.org/wiki/Priority_queue" target="_blank" rel="external">维基百科-优先队列</a></p>
+<p>[4] : 《数据结构与算法分析 C语言实现》 Weiss Chapter 6</p>
+<h5 id="1-1-8-2-Externel-Links"><a href="#1-1-8-2-Externel-Links" class="headerlink" title="1.1.8.2 Externel Links"></a>1.1.8.2 Externel Links</h5><p><a href="https://www.coder4.com/archives/3844" target="_blank" rel="external">Python使用heapq实现小顶堆（TopK大）、大顶堆（BtmK小）</a></p>
+<p><a href="https://blog.csdn.net/minxihou/article/details/51850001" target="_blank" rel="external">利用Python实现堆排序</a></p>
+<p><a href="https://blog.csdn.net/Marksinoberg/article/details/52734332" target="_blank" rel="external">..</a></p>
 <h3 id="1-2-选择排序，插入排序，冒泡排序"><a href="#1-2-选择排序，插入排序，冒泡排序" class="headerlink" title="1.2 选择排序，插入排序，冒泡排序"></a>1.2 选择排序，插入排序，冒泡排序</h3><h3 id="1-3-快速排序"><a href="#1-3-快速排序" class="headerlink" title="1.3 快速排序"></a>1.3 快速排序</h3><h3 id="1-4"><a href="#1-4" class="headerlink" title="1.4"></a>1.4</h3>
       
     </div>
