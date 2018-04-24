@@ -17,13 +17,13 @@
   
   
   <title>Basic Data Structures Review | Rat-racer&#39;s Blog</title>
-  <meta name="description" content="1 Tree     1.1 Definition     1.2 Operation      1.3 性能分析 &amp;amp; 计算相关问题     1.4 Implementation         1.4.1 二叉树的遍历         1.4.2 二叉搜索树的操作 2 Linked List  3 Stack &amp;amp; Queue   4 Heap  5 String 6 Hash 1">
+  <meta name="description" content="1 Tree     1.1 Definition     1.2 Operation      1.3 性能分析 &amp;amp; 计算相关问题     1.4 Implementation         1.4.1 二叉树的遍历         1.4.2 二叉搜索树的操作 2 Linked List  3 Stack &amp;amp; Queue   4 Heap  5 String 6 Hash 今">
 <meta name="keywords" content="data structures">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Basic Data Structures Review">
 <meta property="og:url" content="http://yoursite.com/2018/04/23/Basic Data Structures/index.html">
 <meta property="og:site_name" content="Rat-racer&#39;s Blog">
-<meta property="og:description" content="1 Tree     1.1 Definition     1.2 Operation      1.3 性能分析 &amp;amp; 计算相关问题     1.4 Implementation         1.4.1 二叉树的遍历         1.4.2 二叉搜索树的操作 2 Linked List  3 Stack &amp;amp; Queue   4 Heap  5 String 6 Hash 1">
+<meta property="og:description" content="1 Tree     1.1 Definition     1.2 Operation      1.3 性能分析 &amp;amp; 计算相关问题     1.4 Implementation         1.4.1 二叉树的遍历         1.4.2 二叉搜索树的操作 2 Linked List  3 Stack &amp;amp; Queue   4 Heap  5 String 6 Hash 今">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Binary_tree.svg/300px-Binary_tree.svg.png">
 <meta property="og:image" content="http://images2015.cnblogs.com/blog/1094457/201702/1094457-20170225183610632-1388959691.png">
@@ -31,10 +31,10 @@
 <meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcly1fqnt981a9ij30b606f0t4.jpg">
 <meta property="og:image" content="http://images2015.cnblogs.com/blog/1094457/201702/1094457-20170225184451991-1942362001.png">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79gy1fqmrwdyw0nj308204gmxb.jpg">
-<meta property="og:updated_time" content="2018-04-24T08:56:42.000Z">
+<meta property="og:updated_time" content="2018-04-24T10:24:32.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Basic Data Structures Review">
-<meta name="twitter:description" content="1 Tree     1.1 Definition     1.2 Operation      1.3 性能分析 &amp;amp; 计算相关问题     1.4 Implementation         1.4.1 二叉树的遍历         1.4.2 二叉搜索树的操作 2 Linked List  3 Stack &amp;amp; Queue   4 Heap  5 String 6 Hash 1">
+<meta name="twitter:description" content="1 Tree     1.1 Definition     1.2 Operation      1.3 性能分析 &amp;amp; 计算相关问题     1.4 Implementation         1.4.1 二叉树的遍历         1.4.2 二叉搜索树的操作 2 Linked List  3 Stack &amp;amp; Queue   4 Heap  5 String 6 Hash 今">
 <meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Binary_tree.svg/300px-Binary_tree.svg.png">
   <!-- Canonical links -->
   <link rel="canonical" href="http://yoursite.com/2018/04/23/Basic Data Structures/index.html">
@@ -420,6 +420,12 @@
 4 Heap 
 5 String
 6 Hash
+</code></pre><p>今天，复习一下基本的数据结构。解决一些小问题。</p>
+<pre><code>要解决的问题
+BST的定义？key可以相等吗?
+Binary Search Tree 与最小堆之间的区别?
+完全二叉树等的概念歧义问题？
+BST的平均高度？为什么？平均是什么意思？
 </code></pre><h3 id="1-Tree"><a href="#1-Tree" class="headerlink" title="1 Tree"></a>1 Tree</h3><h4 id="1-1-Definition"><a href="#1-1-Definition" class="headerlink" title="1.1 Definition"></a>1.1 Definition</h4><h4 id="1-1-1-Tree-树"><a href="#1-1-1-Tree-树" class="headerlink" title="1.1.1 Tree 树"></a>1.1.1 Tree 树</h4><p>在计算机科学中，树是一种被广泛使用的数据结构/ADT，树模仿自然界中树的层次结构。<br>关于树的确切定义，可以使用递归的方式来定义。<br>即：(Recursive Defintion)<br>树是一些节点的集合。<br>这个集合可以是空集。<br>若非空，则一棵树由一个称作根root的节点，以及0个或者多个非空的子树构成。<br>这些子树中的每一棵都与root有一条边链接。  </p>
 <p>图1：一棵树的实例：<br><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Binary_tree.svg/300px-Binary_tree.svg.png" alt=""></p>
 <h4 id="1-1-2-Binary-Tree-二叉树"><a href="#1-1-2-Binary-Tree-二叉树" class="headerlink" title="1.1.2 Binary Tree 二叉树"></a>1.1.2 Binary Tree 二叉树</h4><p>二叉树是一棵树，其中每个节点至多有两个儿子。</p>
