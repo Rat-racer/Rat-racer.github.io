@@ -16,23 +16,47 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>pl0笔记 | Rat-racer&#39;s Blog</title>
-  <meta name="description" content="#pl0笔记 ##第一部分 pl0语言及其编译器    pl0语言介绍  pl0设计语言是一个比较简单的语言，它以赋值语句为基础，构造概念有顺序，条件，循环三种。pl0有子程序的概念，包括过程定义（可以嵌套）与调用且有局部变量说明。pl0唯一的数据类型是整型，可以用来说明该类型的变量和常量。当然pl0也具有通常的算术与逻辑运算。具体的pl0语法图如下所示。 pl0语言编译器  pl0编译器的基本工">
+  <title>用mysql写存储过程与触发器 | Rat-racer&#39;s Blog</title>
+  <meta name="description" content="#数据库系统与应用   实验1 Report PB15121708 方林涛目录实验题目 实验环境 实验内容以及结果：     建表     插入测试数据     查询测试     存储过程     触发器 实验题目设某图书馆数据库包含下面的基本表： Book（ID: char(8)，name:varchar2(10)，author:varchar2(10)，price:float， status">
+<meta name="keywords" content="mysql">
 <meta property="og:type" content="article">
-<meta property="og:title" content="pl0笔记">
-<meta property="og:url" content="http://yoursite.com/2017/10/26/pl0笔记/index.html">
+<meta property="og:title" content="用mysql写存储过程与触发器">
+<meta property="og:url" content="http://yoursite.com/2018/04/26/用mysql写存储过程与触发器/index.html">
 <meta property="og:site_name" content="Rat-racer&#39;s Blog">
-<meta property="og:description" content="#pl0笔记 ##第一部分 pl0语言及其编译器    pl0语言介绍  pl0设计语言是一个比较简单的语言，它以赋值语句为基础，构造概念有顺序，条件，循环三种。pl0有子程序的概念，包括过程定义（可以嵌套）与调用且有局部变量说明。pl0唯一的数据类型是整型，可以用来说明该类型的变量和常量。当然pl0也具有通常的算术与逻辑运算。具体的pl0语法图如下所示。 pl0语言编译器  pl0编译器的基本工">
+<meta property="og:description" content="#数据库系统与应用   实验1 Report PB15121708 方林涛目录实验题目 实验环境 实验内容以及结果：     建表     插入测试数据     查询测试     存储过程     触发器 实验题目设某图书馆数据库包含下面的基本表： Book（ID: char(8)，name:varchar2(10)，author:varchar2(10)，price:float， status">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://yoursite.com/Users/rat_racer/Desktop/屏幕快照/pl0编译器流程.png">
-<meta property="og:image" content="http://yoursite.com/Users/rat_racer/Desktop/屏幕快照/19.png">
-<meta property="og:updated_time" content="2017-10-27T04:59:12.000Z">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1fqh75kg1y7j30dv05dq3m.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79ly1fqh75ei8lej30en06nwff.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79ly1fqh758tgmtj30d804xmxr.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1fqh752qiqbj30fe06aaav.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79ly1fqh74vnr2cj30ij06aq40.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1fqh74jkq9mj30g106fgmf.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcly1fqp58f5rzhj30db08u758.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcly1fqp591utluj30ay06yaam.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcly1fqp597m243j30do078q3h.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1fqh5abul8ej30ga049mxg.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1fqh5tpl35mj30jl05mt9b.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1fqh5xspdjlj30fz07ngmc.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79ly1fqh5z1db3pj30hq055dg9.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79ly1fqh64bxlkwj30jh06xt9l.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79ly1fqh67j0alzj30jg051jrt.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79ly1fqh6esrz9mj30ji086jsg.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1fqh6ha0t0cj30gw04ywes.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79ly1fqh6wu6epxj30u1066757.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79gy1fqh9wqgq03j30gp06tjs5.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcly1fqp8bd0q8gj30cy08ngnc.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcly1fqp8bm0msvj30da08h75f.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcly1fqp857kc4tj30cr08ptam.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcly1fqp86hjtacj30d607gta3.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcly1fqp87qwzoqj30d207rmy4.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcly1fqp86u4aemj30cq0c0jte.jpg">
+<meta property="og:updated_time" content="2018-04-26T05:34:08.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="pl0笔记">
-<meta name="twitter:description" content="#pl0笔记 ##第一部分 pl0语言及其编译器    pl0语言介绍  pl0设计语言是一个比较简单的语言，它以赋值语句为基础，构造概念有顺序，条件，循环三种。pl0有子程序的概念，包括过程定义（可以嵌套）与调用且有局部变量说明。pl0唯一的数据类型是整型，可以用来说明该类型的变量和常量。当然pl0也具有通常的算术与逻辑运算。具体的pl0语法图如下所示。 pl0语言编译器  pl0编译器的基本工">
-<meta name="twitter:image" content="http://yoursite.com/Users/rat_racer/Desktop/屏幕快照/pl0编译器流程.png">
+<meta name="twitter:title" content="用mysql写存储过程与触发器">
+<meta name="twitter:description" content="#数据库系统与应用   实验1 Report PB15121708 方林涛目录实验题目 实验环境 实验内容以及结果：     建表     插入测试数据     查询测试     存储过程     触发器 实验题目设某图书馆数据库包含下面的基本表： Book（ID: char(8)，name:varchar2(10)，author:varchar2(10)，price:float， status">
+<meta name="twitter:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1fqh75kg1y7j30dv05dq3m.jpg">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://yoursite.com/2017/10/26/pl0笔记/index.html">
+  <link rel="canonical" href="http://yoursite.com/2018/04/26/用mysql写存储过程与触发器/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Rat-racer&#39;s Blog" type="application/atom+xml">
   
@@ -357,14 +381,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-pl0笔记" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-用mysql写存储过程与触发器" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      pl0笔记
+      用mysql写存储过程与触发器
     </h1>
   
 
@@ -372,12 +396,17 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="fa fa-calendar-check-o"></i>
-	<a href="/2017/10/26/pl0笔记/" class="article-date">
-	  <time datetime="2017-10-26T11:26:43.000Z" itemprop="datePublished">2017-10-26</time>
+	<a href="/2018/04/26/用mysql写存储过程与触发器/" class="article-date">
+	  <time datetime="2018-04-26T05:32:38.000Z" itemprop="datePublished">2018-04-26</time>
 	</a>
 </span>
         
         
+  <span class="article-tag">
+    <i class="fa fa-tag"></i>
+	<a class="article-tag-link" href="/tags/mysql/">mysql</a>
+  </span>
+
 
         
 	<span class="article-read hidden-xs">
@@ -388,38 +417,90 @@
 	</span>
 
 
-        <span class="post-comment"><i class="fa fa-commenting-o"></i> <a href="/2017/10/26/pl0笔记/#comments" class="article-comment-link">Comments</a></span>
+        <span class="post-comment"><i class="fa fa-commenting-o"></i> <a href="/2018/04/26/用mysql写存储过程与触发器/#comments" class="article-comment-link">Comments</a></span>
         
       </div>
       
     </div>
     <div class="article-entry markdown-body" itemprop="articleBody">
       
-        <p>#pl0笔记</p>
-<p>##第一部分 pl0语言及其编译器  </p>
-<ul>
-<li><strong>pl0语言介绍</strong><br>  pl0设计语言是一个比较简单的语言，它以赋值语句为基础，构造概念有顺序，条件，循环三种。pl0有子程序的概念，包括过程定义（可以嵌套）与调用且有局部变量说明。pl0唯一的数据类型是整型，可以用来说明该类型的变量和常量。当然pl0也具有通常的算术与逻辑运算。具体的pl0语法图如下所示。</li>
-<li><strong>pl0语言编译器</strong><br>  pl0编译器的基本工作流程如下图所示：<br>  <img src="/Users/rat_racer/Desktop/屏幕快照/pl0编译器流程.png" alt="compiler process"><ul>
-<li>语法分析完成以下工作<br>  1.跳过分隔符，即空格，回车，制表符<br>  2.识别保留字，如<strong><code>begin，end，if ，while</code></strong>等<br>  3.识别非保留字的 一般标志符，将次标志符赋值给全局量<code>id</code>，而全局量<code>sym</code>赋值为<strong><code>sym_identifier</code></strong><br>  4.识别数字序列，当前值赋值给全局量<code>num</code>,<code>sym</code>被赋值为<strong><code>sym_number</code></strong><br>  5.是被<code>：=,&lt;=,&gt;=</code>等特殊符号，全局量<code>sym</code>被赋值为<strong><code>sym_becomes,sym_leq,sym_gtr</code></strong>等。<br>  相关函数有<strong><code>getsym(),getch()</code></strong>,其中<code>getch()</code>为获取单个字符函数，除此之外，它还完成:  <ul>
-<li>识别且跳过行结束符</li>
-<li>将输入源文件复写到输出文件</li>
-<li>产生一份程序列表，输出相应行号或者指令计数器的值<br>注意getch()识别一个字符后，文件指针指向下一个，而getc()不会。</li>
-</ul>
-</li>
-<li>语法分析 </li>
-</ul>
-</li>
-</ul>
-<p>###pl0的指令集</p>
-<ul>
-<li>pl0的指令集包含7种指令，分别是：<br>（1) LIT  将常数压栈<br>（2) LOD  将变量值压栈<br>（3) STO  将栈顶的值赋予某变量<br>（4) CAL  过程调用<br>（5) INT  在数据栈中分配存储空间<br>（6) JMP,JPC 用于if,while语句的条件或者无条件控制转移指令<br>（7) OPR  算术逻辑指令  </li>
-<li><p>指令格式  </p>
-<p>   <img src="" alt=""> <img src="/Users/rat_racer/Desktop/屏幕快照/19.png" alt="format">  </p>
-<pre><code>F,L,A的含义见下表  
- ![ins]
-</code></pre></li>
+        <p>#数据库系统与应用   实验1 Report</p>
+<h3 id="PB15121708-方林涛"><a href="#PB15121708-方林涛" class="headerlink" title="PB15121708 方林涛"></a>PB15121708 方林涛</h3><h4 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h4><pre><code>实验题目
+实验环境
+实验内容以及结果：
+    建表
+    插入测试数据
+    查询测试
+    存储过程
+    触发器
+</code></pre><h4 id="实验题目"><a href="#实验题目" class="headerlink" title="实验题目"></a>实验题目</h4><p>设某图书馆数据库包含下面的基本表：<br> Book（ID: char(8)，name:varchar2(10)，author:varchar2(10)，price:float， status: int）<br>图书号 ID 为主键，书名不能为空。状态（status）为 1 表示书被借出，0 表示在馆，<br>默认值为 0。<br> Reader（ID:char(8)，name:varchar2(10)，age:int，address:varchar2(20)） 读者号 ID<br>为主键。<br> Borrow（book_ID:char(8)，Reader_ID:char(8)，Brrrow_Date:date，  Return_Date:date）<br>其中：还期 Return_Date 为 NULL 表示该书未还。主键为（图书号，读者号），图<br>书号为外键，引用图书表的图书号，读者号为外键，引用读者表的读者号  </p>
+<p>1、 创建上述基本表，并插入部分测试数据；<br>2、 设计例子，验证实体完整性、参照完整性、用户自定义完整性；<br>3、 用 SQL 语言完成下面小题，并测试运行结果：<br>4、 设计存储过程，实现对 Book 表的 ID 的修改。<br>5、 设计触发器，实现：当一本书被借出时，自动将 Book 表中相 应图书的 status 修改为1；当某本书被归还时，自动将 status 改为 0。  </p>
+<h4 id="实验环境"><a href="#实验环境" class="headerlink" title="实验环境"></a>实验环境</h4><pre><code>Mysql  5.7.20  
+MacOSX
+</code></pre><h3 id="建表"><a href="#建表" class="headerlink" title="建表"></a>建表</h3><p>1.1<br><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fqh75kg1y7j30dv05dq3m.jpg" alt=""><br><img src="https://ws2.sinaimg.cn/large/006tNc79ly1fqh75ei8lej30en06nwff.jpg" alt=""><br>1.2<br><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fqh758tgmtj30d804xmxr.jpg" alt=""><br><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fqh752qiqbj30fe06aaav.jpg" alt=""><br>1.3<br><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fqh74vnr2cj30ij06aq40.jpg" alt=""><br><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fqh74jkq9mj30g106fgmf.jpg" alt="">  </p>
+<h3 id="插入测试数据"><a href="#插入测试数据" class="headerlink" title="插入测试数据"></a>插入测试数据</h3><p><img src="https://ws4.sinaimg.cn/large/006tKfTcly1fqp58f5rzhj30db08u758.jpg" alt=""><br><img src="https://ws2.sinaimg.cn/large/006tKfTcly1fqp591utluj30ay06yaam.jpg" alt=""><br><img src="https://ws3.sinaimg.cn/large/006tKfTcly1fqp597m243j30do078q3h.jpg" alt=""></p>
+<h3 id="查询测试"><a href="#查询测试" class="headerlink" title="查询测试"></a>查询测试</h3><p>1.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select id,address from reader where name = &apos;Rose&apos;;</div></pre></td></tr></table></figure>
+<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fqh5abul8ej30ga049mxg.jpg" alt=""></p>
+<p>2.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">select book.name,datediff(return_date,borror_date) as Days </div><div class="line">from borrow,reader,book where book_id = book.id and reader_id = reader.id </div><div class="line">and reader.name = &apos;Rose&apos;;</div></pre></td></tr></table></figure>
+<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fqh5tpl35mj30jl05mt9b.jpg" alt=""><br>3.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">mysql&gt; select reader.name from reader</div><div class="line">    -&gt; where</div><div class="line">    -&gt; reader.id not in</div><div class="line">    -&gt; (</div><div class="line">    -&gt; select distinct reader_id from borrow</div><div class="line">    -&gt; );</div></pre></td></tr></table></figure>
+<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fqh5xspdjlj30fz07ngmc.jpg" alt=""><br>4.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select name,price from book where author = &apos;Ullman&apos;;</div></pre></td></tr></table></figure>
+<p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fqh5z1db3pj30hq055dg9.jpg" alt=""><br>5.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">select book.id,book.name </div><div class="line">from book,reader,borrow </div><div class="line">where</div><div class="line">reader.id = borrow.reader_id </div><div class="line">and book.id = borrow.book_id </div><div class="line">and reader.name = &apos;Lilin&apos; </div><div class="line">and datediff(curdate(),return_date)&lt;0;</div></pre></td></tr></table></figure>
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fqh64bxlkwj30jh06xt9l.jpg" alt="">  </p>
+<ol>
 <li></li>
-</ul>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">select reader.name </div><div class="line">from reader,borrow </div><div class="line">where reader.id = borrow.reader_id </div><div class="line">group by reader.id </div><div class="line">having count(*)&gt;=3;</div></pre></td></tr></table></figure>
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fqh67j0alzj30jg051jrt.jpg" alt="">  </p>
+<ol>
+<li></li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">select reader.name,reader.id </div><div class="line">from reader,borrow</div><div class="line"> where borrow.reader_id = reader.id </div><div class="line"> and book_id not  in</div><div class="line">(select distinct book_id </div><div class="line">from borrow,reader </div><div class="line">where borrow.reader_id = reader.id </div><div class="line">and reader.name = &apos;Lilin&apos;)</div></pre></td></tr></table></figure>
+<p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fqh6esrz9mj30ji086jsg.jpg" alt=""></p>
+<ol>
+<li></li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select name,id from book where name like &apos;%Oracle%&apos;;</div></pre></td></tr></table></figure>
+<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fqh6ha0t0cj30gw04ywes.jpg" alt=""><br>9.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">select reader_id,count(*) from borrow_view V </div><div class="line"> where datediff(curdate(),borrow_date)&lt;=365 group by reader_id;</div></pre></td></tr></table></figure>
+<p><img src="https://ws2.sinaimg.cn/large/006tNc79ly1fqh6wu6epxj30u1066757.jpg" alt=""></p>
+<h3 id="存储过程"><a href="#存储过程" class="headerlink" title="存储过程"></a>存储过程</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">DELIMITER $</div><div class="line">create procedure modify_bookid(</div><div class="line">in old_id  char, in new_id char)</div><div class="line">begin </div><div class="line">set foreign_key_checks = 0;</div><div class="line">update book set id = new_id where id = old_id; </div><div class="line">update borrow set book_id = new_id where book_id = old_id;  </div><div class="line">set foreign_key_checks = 1;</div><div class="line">end$</div></pre></td></tr></table></figure>
+<p><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fqh9wqgq03j30gp06tjs5.jpg" alt=""></p>
+<h4 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h4><pre><code>call modify_bookid(&apos;0&apos;,&apos;9&apos;)$
+</code></pre><p><img src="https://ws4.sinaimg.cn/large/006tKfTcly1fqp8bd0q8gj30cy08ngnc.jpg" alt=""><br><img src="https://ws2.sinaimg.cn/large/006tKfTcly1fqp8bm0msvj30da08h75f.jpg" alt=""></p>
+<h3 id="触发器"><a href="#触发器" class="headerlink" title="触发器"></a>触发器</h3><pre><code>  CREATE PROCEDURE 存储过程名称(
+            IN/OUT 参数 数据类型 ...)
+        BEGIN
+
+        END
+
+  create procedure modify_bookid(
+        in old_id  char, in new_id char)
+        begin 
+            set foreign_key_checks = 0;
+            update book set id = new_id where id = old_id; 
+                update borrow set book_id = new_id where book_id =                         old_id;  
+            set foreign_key_checks = 1;
+        end$
+
+
+
+
+
+create trigger borrow_insert after insert  on borrow for each row
+begin
+if datediff(curdate(),new.return_date)&gt;=0 then 
+    update book set status = 0 where id = new.book_id;
+else                                                  
+    update book set status = 1 where id = new.book_id;
+end if;
+end$
+</code></pre><h3 id="插入测试数据前book，borrow表"><a href="#插入测试数据前book，borrow表" class="headerlink" title="插入测试数据前book，borrow表"></a>插入测试数据前book，borrow表</h3><p><img src="https://ws2.sinaimg.cn/large/006tKfTcly1fqp857kc4tj30cr08ptam.jpg" alt=""><br><img src="https://ws4.sinaimg.cn/large/006tKfTcly1fqp86hjtacj30d607gta3.jpg" alt=""></p>
+<h3 id="插入测试数据后borrow，book表"><a href="#插入测试数据后borrow，book表" class="headerlink" title="插入测试数据后borrow，book表"></a>插入测试数据后borrow，book表</h3><p><img src="https://ws4.sinaimg.cn/large/006tKfTcly1fqp87qwzoqj30d207rmy4.jpg" alt=""><br><img src="https://ws3.sinaimg.cn/large/006tKfTcly1fqp86u4aemj30cq0c0jte.jpg" alt=""></p>
 
       
     </div>
@@ -429,7 +510,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://yoursite.com/2017/10/26/pl0笔记/" title="pl0笔记" target="_blank" rel="external">http://yoursite.com/2017/10/26/pl0笔记/</a>
+      <a href="http://yoursite.com/2018/04/26/用mysql写存储过程与触发器/" title="用mysql写存储过程与触发器" target="_blank" rel="external">http://yoursite.com/2018/04/26/用mysql写存储过程与触发器/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -477,13 +558,9 @@
   
   <ul class="pager pull-left">
     
-    <li class="prev">
-      <a href="/2017/10/26/ifconfig/" title="ifconfig命令学习笔记"><i class="fa fa-angle-left" aria-hidden="true"></i>&nbsp;&nbsp;Newer</a>
-    </li>
-    
     
     <li class="next">
-      <a href="/2017/10/25/小细节/" title="(no title)">Older&nbsp;&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+      <a href="/2018/04/23/Basic Data Structures/" title="Basic Data Structures Review">Older&nbsp;&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></a>
     </li>
     
   </ul>
