@@ -16,11 +16,11 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>Category: linux | Rat-racer&#39;s Blog</title>
+  <title>Rat-racer&#39;s Blog</title>
   <meta name="description" content="stay busy and happy">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Rat-racer&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/categories/linux/index.html">
+<meta property="og:url" content="http://yoursite.com/page/4/index.html">
 <meta property="og:site_name" content="Rat-racer&#39;s Blog">
 <meta property="og:description" content="stay busy and happy">
 <meta property="og:locale" content="en">
@@ -28,7 +28,7 @@
 <meta name="twitter:title" content="Rat-racer&#39;s Blog">
 <meta name="twitter:description" content="stay busy and happy">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://yoursite.com/categories/linux/index.html">
+  <link rel="canonical" href="http://yoursite.com/page/4/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Rat-racer&#39;s Blog" type="application/atom+xml">
   
@@ -351,62 +351,114 @@
 
   
   <main class="main" role="main">
-  <article class="content article article-categories article-type-list" itemscope="">
-    <header class="article-header">
-      <h1 itemprop="name" class="hidden-xs">Category: linux</h1>
-      <p class="hidden-xs">Total 1 articles</p>
-      <nav role="navigation" id="nav-main" class="okayNav">
-        <ul>
-          <li><a href="/categories">All</a></li>
-          
-          <li><a href="/categories/CLRS/">CLRS</a></li>
-          
-          <li><a href="/categories/工具/">工具</a></li>
-          
-          <li><a href="/categories/data-structures/">data structures</a></li>
-          
-          <li><a href="/categories/linux/">linux</a></li>
-          
-          <li><a href="/categories/python/">python</a></li>
-          
-          <li><a href="/categories/Job/">Job</a></li>
-          
-          <li><a href="/categories/algorithms/">algorithms</a></li>
-          
-        </ul>
-      </nav>
-    </header>
-    <!-- /header -->
-    <div class="article-body">
-      <div class="panel panel-default b-no">
-    <div class="panel-heading" role="tab">
-        <h4 class="panel-title">
-            <a data-toggle="collapse" href="#collapselinux" aria-expanded="true">
-              <i class="fa fa-folder-o text-active"></i><i class="fa fa-folder-open-o text"></i>
-              linux
-            </a>
-            <small class="text-muted">(Total 1 articles)</small>
-        </h4>
-    </div>
-    <div id="collapselinux" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headinglinux">
-        <div class="panel-body">
-            <div class="collection">
-              
-                
-<a href="/2017/10/26/ifconfig/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2017-10-26T15:33:02.000Z" itemprop="datePublished">2017-10-26</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> ifconfig命令学习笔记
-</a>
+  
+  
+    <div class="content">
+  <article id="post-小细节" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="fa fa-calendar-check-o"></i>
+	<a href="/2017/10/25/小细节/" class="article-date">
+	  <time datetime="2017-10-25T14:46:51.000Z" itemprop="datePublished">2017-10-25</time>
+	</a>
+</span>
+        
+        
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="fa fa-eye" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			阅读<span id="busuanzi_value_page_pv">0</span>次
+		</span>
+	</span>
 
 
-              
-            </div>
-        </div>
+        <span class="post-comment"><i class="fa fa-commenting-o"></i> <a href="/2017/10/25/小细节/#comments" class="article-comment-link">Comments</a></span>
+        
+      </div>
+      
     </div>
+    <div class="article-entry markdown-body" itemprop="articleBody">
+      
+        <p>###MAC ifconfig 输出结果 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">* lo 回环接口(loop back) 或者 本地主机(localhost)</div><div class="line">* gif 通用 IP-in-IP隧道(RFC2893)stf 6to4连接(RFC3056)</div><div class="line">* en 以太网或802.11接口</div><div class="line">* fw IP over FireWire(IEEE-1394), macOS特</div><div class="line">* 有p2p Point-to-Point 协议</div><div class="line">* awdl airdrop peer to peer(一种mesh network), apple airdrop设备特有</div><div class="line">* bridge 第2层桥接</div><div class="line">* vlan 虚拟局域网络</div><div class="line">* 在iOS设备(支持cellular)上还能看到pdp_ip 蜂窝数据连接</div></pre></td></tr></table></figure>
+<p><a href="https://www.zhihu.com/question/36861098/answer/" target="_blank" rel="external">Reference-from-Zhihu</a>  </p>
+<p>###mac查看端口被程序占用情况<br><code>lsof -i tcp:port number</code>  </p>
+<p><img src="/Users/rat_racer/Desktop/屏幕快照/lsof.png" alt="lsof"><br><code>查到程序PID后，可以kill PID</code></p>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://yoursite.com/2017/10/25/小细节/" title="" target="_blank" rel="external">http://yoursite.com/2017/10/25/小细节/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/Rat-racer" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/Rat-racer" target="_blank"><span class="text-dark">Rat-racer</span><small class="ml-1x">computer science student</small></a></h3>
+        <div>学渣渣，什么都不会。</div>
+      </div>
+    </figure>
+  </div>
 </div>
+
+
     </div>
   </article>
-   
+  
+</div>
+
+  
+
+  
+    
+    <nav class="bar bar-footer clearfix" data-stick-bottom>
+        <div class="bar-inner">
+        <ul class="pager pull-left">
+            
+            <li class="prev">
+                <a href="/page/3/">
+                    <i class="fa fa-angle-left"></i>
+                    Prev
+                </a>
+            </li>
+            
+            
+            <li class="next disabled">
+                <a href="javascript:;">
+                    Next
+                    <i class="fa fa-angle-right"></i>                    
+                </a>
+            </li>
+            
+        </ul>
+        <div class="total-article bar-right">Page 4 of 4</div>
+        </div>
+    </nav>
+    
+ 
 </main>
 
   <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">

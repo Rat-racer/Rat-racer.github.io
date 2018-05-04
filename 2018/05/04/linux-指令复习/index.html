@@ -17,19 +17,19 @@
   
   
   <title>linux-指令复习 | Rat-racer&#39;s Blog</title>
-  <meta name="description" content="1 进程相关     1 ps     2 top     3 kill     4 grep 2 用户相关     2.1 用户基本basics     2.2 su sudo 进程相关psps (pocess status),查看进程状态 ,所查看的状态是静态的，是查询时间瞬时的状态。 top动态地状态。 killgrep2.1 用户基本basicsLinux是一个多用户操作系统，我们需要以一">
+  <meta name="description" content="1 进程相关     1.1 ps top pstree kill     1.2 bg fg &amp;amp; Ctrl+Z  2 用户相关     2.1 用户基本basics     2.2 su sudo 3 查询      grep 进程相关1.1 ps top pstree killpsps (pocess status),查看进程状态 ,所查看的状态是静态的，是查询时间瞬时的状态。 top">
 <meta name="keywords" content="linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="linux-指令复习">
 <meta property="og:url" content="http://yoursite.com/2018/05/04/linux-指令复习/index.html">
 <meta property="og:site_name" content="Rat-racer&#39;s Blog">
-<meta property="og:description" content="1 进程相关     1 ps     2 top     3 kill     4 grep 2 用户相关     2.1 用户基本basics     2.2 su sudo 进程相关psps (pocess status),查看进程状态 ,所查看的状态是静态的，是查询时间瞬时的状态。 top动态地状态。 killgrep2.1 用户基本basicsLinux是一个多用户操作系统，我们需要以一">
+<meta property="og:description" content="1 进程相关     1.1 ps top pstree kill     1.2 bg fg &amp;amp; Ctrl+Z  2 用户相关     2.1 用户基本basics     2.2 su sudo 3 查询      grep 进程相关1.1 ps top pstree killpsps (pocess status),查看进程状态 ,所查看的状态是静态的，是查询时间瞬时的状态。 top">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcgy1fqzt6c0uaoj30jv06dmxw.jpg">
-<meta property="og:updated_time" content="2018-05-04T18:08:30.000Z">
+<meta property="og:updated_time" content="2018-05-04T18:31:55.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux-指令复习">
-<meta name="twitter:description" content="1 进程相关     1 ps     2 top     3 kill     4 grep 2 用户相关     2.1 用户基本basics     2.2 su sudo 进程相关psps (pocess status),查看进程状态 ,所查看的状态是静态的，是查询时间瞬时的状态。 top动态地状态。 killgrep2.1 用户基本basicsLinux是一个多用户操作系统，我们需要以一">
+<meta name="twitter:description" content="1 进程相关     1.1 ps top pstree kill     1.2 bg fg &amp;amp; Ctrl+Z  2 用户相关     2.1 用户基本basics     2.2 su sudo 3 查询      grep 进程相关1.1 ps top pstree killpsps (pocess status),查看进程状态 ,所查看的状态是静态的，是查询时间瞬时的状态。 top">
 <meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006tKfTcgy1fqzt6c0uaoj30jv06dmxw.jpg">
   <!-- Canonical links -->
   <link rel="canonical" href="http://yoursite.com/2018/05/04/linux-指令复习/index.html">
@@ -257,7 +257,7 @@
   <div class="widget">
     <h3 class="widget-title">Archive</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a><span class="archive-list-count">10</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a><span class="archive-list-count">10</span></li></ul>
     </div>
   </div>
 
@@ -269,6 +269,36 @@
     <div class="widget-body">
       <ul class="recent-post-list list-unstyled no-thumbnail">
         
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2018/05/05/操作系统Review/" class="title">操作系统Review</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-05-04T18:32:51.000Z" itemprop="datePublished">2018-05-05</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2018/05/05/程序的链接与装载/" class="title">程序的链接与装载</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-05-04T18:31:31.000Z" itemprop="datePublished">2018-05-05</time>
+              </p>
+            </div>
+          </li>
+          
           <li>
             
             <div class="item-inner">
@@ -310,36 +340,6 @@
               </p>
               <p class="item-date">
                 <time datetime="2018-04-26T05:32:38.000Z" itemprop="datePublished">2018-04-26</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                
-              </p>
-              <p class="item-title">
-                <a href="/2018/04/23/Basic Data Structures/" class="title">Basic Data Structures Review</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2018-04-23T09:24:44.000Z" itemprop="datePublished">2018-04-23</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/Job/">Job</a>
-              </p>
-              <p class="item-title">
-                <a href="/2018/04/21/一个弱鸡的找实习经历/" class="title">一个弱鸡的找实习经历</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2018-04-20T16:38:43.000Z" itemprop="datePublished">2018-04-21</time>
               </p>
             </div>
           </li>
@@ -401,16 +401,21 @@
     <div class="article-entry markdown-body" itemprop="articleBody">
       
         <pre><code>1 进程相关
-    1 ps
-    2 top
-    3 kill
-    4 grep
+    1.1 ps top pstree kill
+    1.2 bg fg &amp; Ctrl+Z
+
 2 用户相关
     2.1 用户基本basics
     2.2 su sudo
-</code></pre><h3 id="进程相关"><a href="#进程相关" class="headerlink" title="进程相关"></a>进程相关</h3><h4 id="ps"><a href="#ps" class="headerlink" title="ps"></a>ps</h4><p>ps (pocess status),查看进程状态 ,所查看的状态是静态的，是查询时间瞬时的状态。</p>
+3 查询
+     grep
+</code></pre><h3 id="进程相关"><a href="#进程相关" class="headerlink" title="进程相关"></a>进程相关</h3><h4 id="1-1-ps-top-pstree-kill"><a href="#1-1-ps-top-pstree-kill" class="headerlink" title="1.1 ps top pstree kill"></a>1.1 ps top pstree kill</h4><h4 id="ps"><a href="#ps" class="headerlink" title="ps"></a>ps</h4><p>ps (pocess status),查看进程状态 ,所查看的状态是静态的，是查询时间瞬时的状态。</p>
 <h4 id="top"><a href="#top" class="headerlink" title="top"></a>top</h4><p>动态地状态。</p>
-<h4 id="kill"><a href="#kill" class="headerlink" title="kill"></a>kill</h4><h4 id="grep"><a href="#grep" class="headerlink" title="grep"></a>grep</h4><h4 id="2-1-用户基本basics"><a href="#2-1-用户基本basics" class="headerlink" title="2.1 用户基本basics"></a>2.1 用户基本basics</h4><p>Linux是一个多用户操作系统，我们需要以一个身份登录，一个系统也需要以一个身份运行。  不同的用户有着不同的权限，这样可以通过限制用户的权限来达到管理资源与权限的目的。   </p>
+<h4 id="kill"><a href="#kill" class="headerlink" title="kill"></a>kill</h4><h4 id="利用grep查询"><a href="#利用grep查询" class="headerlink" title="利用grep查询"></a>利用grep查询</h4><h4 id="1-2-bg-fg-amp-Ctrl-Z"><a href="#1-2-bg-fg-amp-Ctrl-Z" class="headerlink" title="1.2 bg fg &amp; Ctrl+Z"></a>1.2 bg fg &amp; Ctrl+Z</h4><p>什么是前台，后台？相对于终端？</p>
+<p>jobs<br>列出后台挂起和运行的程序  </p>
+<p>command + &amp; -&gt; 后台运行<br>前台运行 + Ctrl Z -&gt;后台-挂起<br>后台-挂起 + bg %num - &gt; 后台-运行<br>后台 + fg %num -&gt;前台</p>
+<h4 id="终端关闭后仍运行"><a href="#终端关闭后仍运行" class="headerlink" title="终端关闭后仍运行"></a>终端关闭后仍运行</h4><p><a href="https://www.ibm.com/developerworks/cn/linux/l-cn-nohup/" target="_blank" rel="external">Linux 技巧：让进程在后台可靠运行的几种方法</a></p>
+<h4 id="nohup"><a href="#nohup" class="headerlink" title="nohup"></a>nohup</h4><h4 id="setsid"><a href="#setsid" class="headerlink" title="setsid"></a>setsid</h4><h4 id="amp"><a href="#amp" class="headerlink" title="&amp;"></a>&amp;</h4><h4 id="disown"><a href="#disown" class="headerlink" title="disown"></a>disown</h4><h4 id="screen"><a href="#screen" class="headerlink" title="screen"></a>screen</h4><h4 id="2-1-用户基本basics"><a href="#2-1-用户基本basics" class="headerlink" title="2.1 用户基本basics"></a>2.1 用户基本basics</h4><p>Linux是一个多用户操作系统，我们需要以一个身份登录，一个系统也需要以一个身份运行。  不同的用户有着不同的权限，这样可以通过限制用户的权限来达到管理资源与权限的目的。   </p>
 <ul>
 <li>每一个用户都有一个UID，即user id. </li>
 <li>每一个用户都属于一个主组，一个或者多个附属组。  </li>
@@ -549,6 +554,10 @@ sudo 执行命令的流程是当前用户切换到root（或其它指定切换�
   <div class="bar-inner">
   
   <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2018/05/05/程序的链接与装载/" title="程序的链接与装载"><i class="fa fa-angle-left" aria-hidden="true"></i>&nbsp;&nbsp;Newer</a>
+    </li>
     
     
     <li class="next">
