@@ -16,19 +16,21 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>openmp入门 | Rat-racer&#39;s Blog</title>
-  <meta name="description" content="stay busy and happy">
+  <title>OpenMPI入门 | Rat-racer&#39;s Blog</title>
+  <meta name="description" content="MPI即Message Passing Interface、  消息传递Message Passing是进程间通信的一种方式。回顾一下操作系统的知识，进程间通信IPC主要有两种模型，一种是共享内存shared memory。另外一种便是消息传递Message Passing.   1.MPI 2.基于消息传递的并行编程 3.6个基本函数 4.MPI HelloWorld 5.点对点通信 6.集群通">
 <meta name="keywords" content="并行计算">
 <meta property="og:type" content="article">
-<meta property="og:title" content="openmp入门">
+<meta property="og:title" content="OpenMPI入门">
 <meta property="og:url" content="http://yoursite.com/2018/04/26/openmp入门/index.html">
 <meta property="og:site_name" content="Rat-racer&#39;s Blog">
-<meta property="og:description" content="stay busy and happy">
+<meta property="og:description" content="MPI即Message Passing Interface、  消息传递Message Passing是进程间通信的一种方式。回顾一下操作系统的知识，进程间通信IPC主要有两种模型，一种是共享内存shared memory。另外一种便是消息传递Message Passing.   1.MPI 2.基于消息传递的并行编程 3.6个基本函数 4.MPI HelloWorld 5.点对点通信 6.集群通">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-04-26T05:36:51.000Z">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcgy1fr1w976doej30rj0j9gpy.jpg">
+<meta property="og:updated_time" content="2018-05-06T13:42:43.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="openmp入门">
-<meta name="twitter:description" content="stay busy and happy">
+<meta name="twitter:title" content="OpenMPI入门">
+<meta name="twitter:description" content="MPI即Message Passing Interface、  消息传递Message Passing是进程间通信的一种方式。回顾一下操作系统的知识，进程间通信IPC主要有两种模型，一种是共享内存shared memory。另外一种便是消息传递Message Passing.   1.MPI 2.基于消息传递的并行编程 3.6个基本函数 4.MPI HelloWorld 5.点对点通信 6.集群通">
+<meta name="twitter:image" content="https://ws2.sinaimg.cn/large/006tKfTcgy1fr1w976doej30rj0j9gpy.jpg">
   <!-- Canonical links -->
   <link rel="canonical" href="http://yoursite.com/2018/04/26/openmp入门/index.html">
   
@@ -319,7 +321,7 @@
                 
               </p>
               <p class="item-title">
-                <a href="/2018/04/26/openmp入门/" class="title">openmp入门</a>
+                <a href="/2018/04/26/openmp入门/" class="title">OpenMPI入门</a>
               </p>
               <p class="item-date">
                 <time datetime="2018-04-26T05:36:31.000Z" itemprop="datePublished">2018-04-26</time>
@@ -362,7 +364,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      openmp入门
+      OpenMPI入门
     </h1>
   
 
@@ -398,7 +400,96 @@
     </div>
     <div class="article-entry markdown-body" itemprop="articleBody">
       
-        
+        <p>MPI即Message Passing Interface、  消息传递Message Passing是进程间通信的一种方式。回顾一下操作系统的知识，进程间通信IPC主要有两种模型，一种是共享内存shared memory。另外一种便是消息传递Message Passing.  </p>
+<pre><code>1.MPI
+2.基于消息传递的并行编程
+3.6个基本函数
+4.MPI HelloWorld
+5.点对点通信
+6.集群通信
+</code></pre><h3 id="MPI"><a href="#MPI" class="headerlink" title="MPI"></a><font color="red">MPI</font></h3><ul>
+<li>MPI是一个消息传递接口标准，(而不是指对它的实现)。 </li>
+<li>有很多MPI的实现，MPICH,MVAPICH,OpenMP,Intel MPI等。</li>
+<li>MPI支持对C/C++,和Fortran语言的绑定</li>
+<li>MPI已语言独立的形式存在，可以运行在不同的操作系统和硬件平台上。  </li>
+</ul>
+<p>OpenMPI是MPI的一个开源实现，支持标准MPI2.2.<br>使用OpenMPI我们可以方便的编写基于消息传递的并行程序。</p>
+<h3 id="基于消息传递的并行编程"><a href="#基于消息传递的并行编程" class="headerlink" title="基于消息传递的并行编程"></a><font color="red">基于消息传递的并行编程</font></h3><p>在基于消息传递的并行编程模型中，每个进程都有一个独立的地址空间，一个进程不能直接访问其他进程中的数据。使用消息传递来实现进程间的通信。<br>用户需要显式的通过发送和接受消息来实现处理器之间的数据交换。 这种编程方式适用于MPP,Cluster.<br>使用消息传递的开销比较大，因此它主要用来开发大粒度和粗粒度的并行性。</p>
+<p>对于一个问题进行分解，可以有两种方式，一种是域分解，一种是函数分解。所谓域分解就是讲问题的区域分为若干较小的区域，然后进行并行求解。 另外一种方式，函数求解又叫做功能分解。即使将一个大问题分解为若干子问题，然后对其并行求解。<br>对应于这两种形式，就是所谓的SPMD,MPMD两种编程模式。</p>
+<ul>
+<li>有SPMD,MPMD两种模式</li>
+<li>程序员需要指定有哪些进程，不同进程间要发送哪些消息，发送发与接收方是谁？</li>
+<li>MPI适用于分布式系统</li>
+</ul>
+<p>问题</p>
+<pre><code>什么是SPMD?MPMD?
+为什么会有SPMD,MPMD适用于什么情况？
+MPI适合什么类型的体系结构？  SMP,MPP,DSM,Cluster?
+OpenMPI OpenMP 区别？
+</code></pre><h3 id="6个基本函数"><a href="#6个基本函数" class="headerlink" title="6个基本函数"></a><font color="red">6个基本函数</font></h3><p>OpenMPI提供了数以百计的API接口，但是完成一个基本的基于MPI的并行程序，一般只需要利用的其中六个，用这六个基本函数就可以求解很多问题。<br>包括启动与结束MPI环境，识别进程以及发送接收消息。</p>
+<pre><code>1. MPI_Init()
+2. MPI_Comm_size()
+3. MPI_COmm_rank()
+4. MPI_Send()
+5. MPI_Recv()
+6. MPI_Finalize()
+</code></pre><p>问题</p>
+<pre><code>什么是通信域？
+什么是进程？和操作系统中的进程有什么区别？
+通信域与进程间关系？
+为什么要有消息标签？
+消息如何打包Pack，解包Unpack？
+MPI_Status?
+</code></pre><h3 id="MPI-HelloWorld"><a href="#MPI-HelloWorld" class="headerlink" title="MPI HelloWorld"></a><font color="red">MPI HelloWorld</font></h3><p>不会Fortran,只会C。在此只介绍如何用c来写mpi程序。<br>关于如何安装mpi，此处略去。<br>欲使用MPI编写并行程序，必须将头文件mpi.h包含进去。  </p>
+<pre><code>#include&lt;mpi.h&gt;  
+#include&lt;stdio.h&gt;
+int main(int argc, char * argv[])  
+{  
+    int rank,size;  
+    MPI_Init(&amp;argc,&amp;argv);  
+    MPI_Comm_rank(MPI_COMM_WORLD,&amp;rank);  
+    MPI_Comm_size(MPI_COMM_WORLD,&amp;size);  
+    printf(&quot;Hello world from process %d of%d\n&quot;,rank,size);  
+    MPI_Finalize();  
+    return 0;  
+}     
+</code></pre><h3 id="点对点通信"><a href="#点对点通信" class="headerlink" title="点对点通信"></a><font color="red">点对点通信</font></h3><p>通信机制</p>
+<ul>
+<li>阻塞通信机制</li>
+<li>非阻塞通信机制</li>
+</ul>
+<p>通信模式</p>
+<ul>
+<li>缓冲</li>
+<li>同步</li>
+<li>标准</li>
+<li>就绪</li>
+</ul>
+<font color="dark"><br>通信模式(Communication Mode)指的是缓冲管理，以及发送方和接收方之间的同步方式<br><br>不同通信模式和不同通信机制的结合，便 产生了非常丰富的点对点通信函数<br></font>   
+
+<p>发送方：<br>（阻塞， 非阻塞） × （缓冲，同步，标准，就绪）<br>共有8中发送方式</p>
+<p>接收方有阻塞接收，非阻塞接收两种方式。 </p>
+<p>问题</p>
+<pre><code>什么是阻塞？什么是非阻塞？
+缓冲，同步，标准，就绪的含义？
+</code></pre><h3 id="集群通信"><a href="#集群通信" class="headerlink" title="集群通信"></a><font color="red">集群通信</font></h3><p>群集通信(Collective Communications)是一个进 程组中的所有进程都参加的全局通信操作。   </p>
+<p>群集通信实现三个功能:通信、聚集和同步</p>
+<ul>
+<li>通信功能主要完成组内数据的传输</li>
+<li>聚集功能在通信的基础上对给定的数据完成一定的操 作</li>
+<li>同步功能实现组内所有进程在执行进度上取得一致</li>
+</ul>
+<p>群集通信，按照通信方向的不同，又可以分为三 种:一对多通信，多对一通信和多对多通信。</p>
+<ul>
+<li>对多通信:一个进程向其它所有的进程发送消息， 这个负责发送消息的进程叫做Root进程。</li>
+<li>多对一通信:一个进程负责从其它所有的进程接收消 息，这个接收的进程也叫做Root进程。</li>
+<li>多对多通信:每一个进程都向其它所有的进程发送或 者接收消息。</li>
+</ul>
+<p><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fr1w976doej30rj0j9gpy.jpg" alt=""></p>
+<pre><code>具体操作？
+含义？
+例子?
+</code></pre>
       
     </div>
     <div class="article-footer">
@@ -407,7 +498,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://yoursite.com/2018/04/26/openmp入门/" title="openmp入门" target="_blank" rel="external">http://yoursite.com/2018/04/26/openmp入门/</a>
+      <a href="http://yoursite.com/2018/04/26/openmp入门/" title="OpenMPI入门" target="_blank" rel="external">http://yoursite.com/2018/04/26/openmp入门/</a>
     </li>
     
     <li class="post-copyright-license">
