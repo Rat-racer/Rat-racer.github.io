@@ -1,23 +1,85 @@
 <!DOCTYPE html>
-<html lang=en>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
-  <meta name="renderer" content="webkit">
-  <meta http-equiv="Cache-Control" content="no-transform" />
-  <meta http-equiv="Cache-Control" content="no-siteapp" />
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="format-detection" content="telephone=no,email=no,adress=no">
-  <!-- Color theme for statusbar -->
-  <meta name="theme-color" content="#000000" />
-  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
-  <meta http-equiv="window-target" content="_top" />
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
   
-  <title>Rat-racer&#39;s Blog</title>
-  <meta name="description" content="stay busy and happy">
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="stay busy and happy">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Rat-racer&#39;s Blog">
 <meta property="og:url" content="http://yoursite.com/index.html">
@@ -27,602 +89,2113 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Rat-racer&#39;s Blog">
 <meta name="twitter:description" content="stay busy and happy">
-  <!-- Canonical links -->
-  <link rel="canonical" href="http://yoursite.com/index.html">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Rat racer'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/"/>
+
+
+
+
+
+  <title>Rat-racer's Blog</title>
   
-    <link rel="alternate" href="/atom.xml" title="Rat-racer&#39;s Blog" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png" type="image/x-icon">
-  
-  <!-- font-awesome CSS -->
-  <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css">
-  
-    
-    
+
+
+
+
+
+
+
 
 </head>
 
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
 
-<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
-  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-  <div class="slimContent">
-    <div class="navbar-header">
-      
-      
-      <div class="profile-block text-center">
-        <a id="avatar" href="https://github.com/Rat-racer" target="_blank">
-          <img class="thumb-xl img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
-        </a>
-        <h2 id="name" class="hidden-xs hidden-sm">Rat-racer</h2>
-        <h3 id="title" class="hidden-xs hidden-sm hidden-md">computer science student</h3>
-        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="fa fa-map-marker"></i> USTC,Hefei, China</small>
-      </div>
-      
-      <div class="search" id="search-form-wrap">
+  
+  
+    
+  
 
-    <form class="search-form sidebar-form">
-        <div class="input-group">
-            <input type="text" class="search-form-input form-control" placeholder="Search" />
-            <span class="input-group-btn">
-                <button type="submit" class="search-form-submit btn btn-flat"><i class="fa fa-search"></i></button>
-            </span>
-        </div>
-    </form>
-    <div class="ins-search">
-    <div class="ins-search-mask"></div>
-    <div class="ins-search-container">
-        <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="Type something..." x-webkit-speech />
-            <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-            <!-- <span class="ins-close ins-selectable"><i class="fa fa-times"></i></span> -->
-        </div>
-        <div class="ins-section-wrapper">
-            <div class="ins-section-container"></div>
-        </div>
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Rat-racer's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
     </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
 
-</div>
-      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-    </div>
-    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
-      <ul class="nav navbar-nav main-nav">
-        
-        
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
         
         <li class="menu-item menu-item-home">
-          <a href="/.">
+          <a href="/" rel="section">
             
-            <i class="fa fa-fw fa-dashboard"></i>
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            <span class="menu-title">Home</span>
+            Home
           </a>
         </li>
-        
-        
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives">
-            
-            <i class="fa fa-fw fa-delicious"></i>
-            
-            <span class="menu-title">Archives</span>
-          </a>
-        </li>
-        
-        
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories">
-            
-            <i class="fa fa-fw fa-folder"></i>
-            
-            <span class="menu-title">Categories</span>
-          </a>
-        </li>
-        
-        
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags">
-            
-            <i class="fa fa-fw fa-tags"></i>
-            
-            <span class="menu-title">Tags</span>
-          </a>
-        </li>
-        
-        
-        
-        <li class="menu-item menu-item-books">
-          <a href="/books">
-            
-            <i class="fa fa-fw fa-leanpub"></i>
-            
-            <span class="menu-title">Books</span>
-          </a>
-        </li>
-        
-        
-        
-        <li class="menu-item menu-item-links">
-          <a href="/links">
-            
-            <i class="fa fa-fw fa-gg"></i>
-            
-            <span class="menu-title">Links</span>
-          </a>
-        </li>
-        
-        
+      
         
         <li class="menu-item menu-item-about">
-          <a href="/about">
+          <a href="/about/" rel="section">
             
-            <i class="fa fa-fw fa-coffee"></i>
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
-            <span class="menu-title">About</span>
+            About Me
           </a>
         </li>
-        
-      </ul>
       
-	
-    <ul class="social-links">
-    	
-        <li><a href="https://github.com/Rat-racer" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="fa fa-github"></i></a></li>
         
-        <li><a href="http://weibo.com/" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="fa fa-weibo"></i></a></li>
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
         
-        <li><a href="https://www.douban.com/people/95596562/" target="_blank" title="Douban" data-toggle=tooltip data-placement=top><i class="fa fa-douban"></i></a></li>
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
         
-        <li><a href="http://1356772993.qzone.qq.com" target="_blank" title="Qzone" data-toggle=tooltip data-placement=top><i class="fa fa-qzone"></i></a></li>
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
         
-        <li><a href="/images/wechat.jpg" target="_blank" title="Wechat" data-toggle=tooltip data-placement=top><i class="fa fa-wechat"></i></a></li>
-        
-        <li><a href="/lintaofang@gmail.com" target="_blank" title="Google" data-toggle=tooltip data-placement=top><i class="fa fa-google"></i></a></li>
-        
-        <li><a href="https://www.linkedin.com/in/lintaofang/" target="_blank" title="Linkedin" data-toggle=tooltip data-placement=top><i class="fa fa-linkedin"></i></a></li>
-        
-        <li><a href="/images/qq.jpg" target="_blank" title="Tencent" data-toggle=tooltip data-placement=top><i class="fa fa-tencent"></i></a></li>
-        
-        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="fa fa-rss"></i></a></li>
-        
-    </ul>
+        <li class="menu-item menu-item-commonweal">
+          <a href="/resources/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            Resources
+          </a>
+        </li>
+      
 
-    </nav>
-  </div>
-</header>
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
 
   
-    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
-  <div class="slimContent">
-    
-      <div class="widget">
-    <h3 class="widget-title">Board</h3>
-    <div class="widget-body">
-        <div id="board">
-            
-            <p>您好，您是第<span id="busuanzi_value_site_uv">0</span>位访客</p>
-            
-            <div class="content">
-                <p>欢迎交流与分享经验!</p>
-            </div>
-        </div>
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
     </div>
+  </div>
+  <div id="local-search-result"></div>
 </div>
 
-    
-      
-  <div class="widget">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget-body">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CLRS/">CLRS</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Job/">Job</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithms/">algorithms</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/data-structures/">data structures</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a><span class="category-list-count">2</span></li></ul>
+
+
     </div>
-  </div>
+  
+</nav>
 
 
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
     
       
-  <div class="widget">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget-body">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hash-Table/">Hash Table</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithms/">algorithms</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/argparse/">argparse</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/data-structures/">data structures</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ifconfig/">ifconfig</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/internship/">internship</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/macdown/">macdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/基于比较的排序/">基于比较的排序</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/实习/">实习</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/并行计算/">并行计算</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/排序/">排序</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/红黑树/">红黑树</a><span class="tag-list-count">1</span></li></ul>
-    </div>
-  </div>
 
+  
 
-    
-      
-  <div class="widget">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget-body tagcloud">
-      <a href="/tags/Git/" style="font-size: 13px;">Git</a> <a href="/tags/Hash-Table/" style="font-size: 13px;">Hash Table</a> <a href="/tags/algorithms/" style="font-size: 14px;">algorithms</a> <a href="/tags/argparse/" style="font-size: 13px;">argparse</a> <a href="/tags/data-structures/" style="font-size: 14px;">data structures</a> <a href="/tags/ifconfig/" style="font-size: 13px;">ifconfig</a> <a href="/tags/internship/" style="font-size: 13px;">internship</a> <a href="/tags/linux/" style="font-size: 14px;">linux</a> <a href="/tags/macdown/" style="font-size: 13px;">macdown</a> <a href="/tags/markdown/" style="font-size: 13px;">markdown</a> <a href="/tags/mysql/" style="font-size: 13px;">mysql</a> <a href="/tags/python/" style="font-size: 13px;">python</a> <a href="/tags/基于比较的排序/" style="font-size: 13px;">基于比较的排序</a> <a href="/tags/实习/" style="font-size: 13px;">实习</a> <a href="/tags/并行计算/" style="font-size: 13px;">并行计算</a> <a href="/tags/排序/" style="font-size: 13px;">排序</a> <a href="/tags/算法/" style="font-size: 13px;">算法</a> <a href="/tags/红黑树/" style="font-size: 13px;">红黑树</a>
-    </div>
-  </div>
+  
+  
+  
 
-    
-      
-  <div class="widget">
-    <h3 class="widget-title">Archive</h3>
-    <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a><span class="archive-list-count">10</span></li></ul>
-    </div>
-  </div>
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/05/操作系统Review/">
 
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lintao Fang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Rat-racer's Blog">
+    </span>
 
     
-      
-  <div class="widget">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget-body">
-      <ul class="recent-post-list list-unstyled no-thumbnail">
+      <header class="post-header">
+
         
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
+        
+          <h1 class="post-title" itemprop="name headline">
                 
-              </p>
-              <p class="item-title">
-                <a href="/2018/05/05/操作系统Review/" class="title">操作系统Review</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2018-05-04T18:32:51.000Z" itemprop="datePublished">2018-05-05</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
+                <a class="post-title-link" href="/2018/05/05/操作系统Review/" itemprop="url">操作系统Review</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
             
-            <div class="item-inner">
-              <p class="item-category">
-                
-              </p>
-              <p class="item-title">
-                <a href="/2018/05/05/程序的链接与装载/" class="title">程序的链接与装载</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2018-05-04T18:31:31.000Z" itemprop="datePublished">2018-05-05</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-05T02:32:51+08:00">
+                2018-05-05
+              </time>
             
-            <div class="item-inner">
-              <p class="item-category">
-                
-              </p>
-              <p class="item-title">
-                <a href="/2018/05/04/linux-指令复习/" class="title">linux-指令Review</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2018-05-04T08:25:51.000Z" itemprop="datePublished">2018-05-04</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
+
             
-            <div class="item-inner">
-              <p class="item-category">
-                
-              </p>
-              <p class="item-title">
-                <a href="/2018/04/26/openmp入门/" class="title">OpenMPI入门</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2018-04-26T05:36:31.000Z" itemprop="datePublished">2018-04-26</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
+
             
-            <div class="item-inner">
-              <p class="item-category">
-                
-              </p>
-              <p class="item-title">
-                <a href="/2018/04/26/用mysql写存储过程与触发器/" class="title">用mysql写存储过程与触发器</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2018-04-26T05:32:38.000Z" itemprop="datePublished">2018-04-26</time>
-              </p>
-            </div>
-          </li>
+          </span>
+
           
-      </ul>
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/05/05/操作系统Review/" class="leancloud_visitors" data-flag-title="操作系统Review">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Operating Systems Review</p>
+<ul>
+<li>I/O 软件 系统 </li>
+<li>I/O控制<ul>
+<li>轮询    流程？弊端</li>
+<li>中断   什么是中断？中断处理流程？多重？抢占？弊端</li>
+<li>DMA   流程？</li>
+</ul>
+</li>
+<li>Spooling<ul>
+<li>什么是假脱机 ？ 假脱机 vs 脱机？</li>
+<li>组成部分</li>
+<li>工作原理：假脱机打印机</li>
+<li>特点 (虚拟？why spooling?)</li>
+</ul>
+</li>
+<li>Buffer<ul>
+<li>Why buffer?</li>
+<li>Single , double, circle ,buffer pool</li>
+<li>作用</li>
+</ul>
+</li>
+<li>磁盘调度<ul>
+<li>磁盘访问时间 =  寻道时间 + 旋转延迟 + 传输时间 </li>
+<li>FCFS , SSJF , SCAN , C-SCAN , N-Setp-SCAN , FSCAN 算法流程 </li>
+<li>利弊？如何选择？ SCAN适用于磁盘负荷大</li>
+<li>SSJF(平均寻道时间最短) </li>
+<li>饥饿( FCFS , SSJF )  -&gt;  解决饥饿( SCAN,C-SCAN ）  SCAN -&gt; C-SCAN (减少等待时间)</li>
+<li>解决磁壁粘着(N-Setp-SCAN,FSCAN(简化版N-step))</li>
+</ul>
+</li>
+<li>设备独立性<ul>
+<li>1</li>
+<li>2</li>
+<li>3</li>
+</ul>
+</li>
+<li>操作系统Intro<ul>
+<li>OS 目标，作用，发展动力</li>
+<li>发展历史  无操作系统(人工操作 -&gt; 脱机IO ) -&gt; 单道批处理系统 -&gt; 多道批处理系统 -&gt; 分时系统，实时系统</li>
+<li>什么是脱机IO  ？why? 解决人机矛盾以及CPU，IO速度不匹配 什么是人机矛盾？</li>
+</ul>
+</li>
+<li>文件系统<ul>
+<li>什么是文件？目录 ？文件的逻辑结构？组织结构？目录结构？</li>
+<li>分配方法及其优缺点<ul>
+<li>连续分配  随机访问 外部碎片&amp;大小声明</li>
+<li>链式分配<ul>
+<li>隐式链接 无外部碎片&amp;大小可变  随机访问&amp;指针占用空间</li>
+<li>显示链接 无外部碎片&amp;%大小可变&amp;随机访问  链接表占用空间</li>
+</ul>
+</li>
+<li>索引分配&amp;多级索引 随机访问&amp;外部碎片&amp;大小可变 索引表占空间&amp;一级索引文件大小受限</li>
+<li>增量式多级索引 unix采用</li>
+<li>FAT NTFS</li>
+</ul>
+</li>
+<li>空闲空间管理<ul>
+<li>Bit Vector</li>
+<li>Linked List</li>
+<li>Grouping</li>
+<li>Count</li>
+</ul>
+</li>
+<li>RAID 各级别</li>
+<li>提高可靠性</li>
+<li>数据一致性</li>
+</ul>
+</li>
+<li>Memory 管理<ul>
+<li>链接，装载</li>
+<li>连续内存分配<ul>
+<li>单一，固定分区，动态分区</li>
+<li>动态分区<ul>
+<li>数据结构 空闲分区表</li>
+<li>分配算法 first fit , next fit , best fit , worst fit</li>
+<li>回收</li>
+</ul>
+</li>
+<li>覆盖  Overlay 将不会同时同时运行的程序段共享一块内存，by programmer </li>
+<li>紧凑（compaction） <ul>
+<li>Compaction is possible only if relocation is dynamic, and is done at execution time (运行时的动态可重定位技术)</li>
+</ul>
+</li>
+<li>对换（swap）</li>
+</ul>
+</li>
+<li>离散内存分配<ul>
+<li>分段</li>
+<li>分页</li>
+<li>段页式</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>虚拟内存</li>
+<li>进程间通信</li>
+<li>死锁</li>
+</ul>
+<h3 id="I-O-System"><a href="#I-O-System" class="headerlink" title="I/O System"></a>I/O System</h3><p>一无所知还写。我tmD的真的是一无所知，什么都不知道。辣鸡。误人子弟。</p>
+<p>计算机的两大任务就是 计算 与 I/O操作。 在冯诺依曼体系结构中，计算机有五大部件，分别是运算器，控制器,主存，输入系统，输出系统组成。 对于主存，需要频繁的进行读，写操作，可以将其看作是一种特殊的I/O设备。<br>因此<strong>不严格</strong>地说，这五大部件可以分为CPU(运算器，控制器)，I/O设备。<br>计算机在运行时，需要与I/O进行交互。譬如当你浏览网页时，需要用鼠标点击或者是使用触控板。当你编辑时，需要使用键盘来键入。<br>需要计算机的任务(job)可以大致分为两种类型，一种是I/O密集型，即需要频繁大量的I/O操作，一种是CPU密集型，即需要大量的运算。 </p>
+<p>I/O设备层出不穷，各式各样。 计算机的任务是让用户能够使用这些I/O设备。<br>更好的是，能让用户方便的使用，高效的使用这些设备。   </p>
+<pre><code>譬如说，对于磁盘读写而言、
+典型的磁盘读写需要用磁头进行操作，先让磁头移动到指定的位置，然后进行读或者写。 
+这是一个非常底层的工作，如果用户进行磁盘读写时需要自己操作磁头，这将是一个多么恐怖的事情。  
+
+可用性 Availability
+    因此为了让用户能够使用这些设备。我们需要对底层进行抽象，隐藏。
+    可以添加以磁盘控制器Controller，每次需要读写的时候，只需要向磁盘控制器发送一个信号就可以了。
+    这个信号可能包括指令(读，还是写)，地址(在哪里写)，数据(写什么数据)。然后磁盘控制器可以操作磁头完成用户的这些请求操作。 
+    控制器Controller应该算是一个硬件设备。完成可用性的应该是计算机组成原理等底层硬件的相关技术。
+    事实上，对于所有的I/O设备而言，都尤其对应的控制器，来隐藏底层，向上层提供一个接口，用户只需要提供一个接口就可以使用这些设备。  
+易用性与高效性
+    完成了可用性的工作，接下来的目标便是高效的完成I/O操作。 
+    一方面，我们可以降低I/O操作的时延，即能够快速响应。
+    另一方面，我们可以增加不同设备间的并行性，让不同的设备可以并行地进行工作。 
+
+    为了更加方便的使用IO设备，完成IO操作，需要进一步进行抽象，隐藏底层。 
+    磁盘读写操作而言，CPU通过总线向磁盘contrller发送信号。然后磁盘完成相应的操作。 
+    可以进一步封装为read(),write()操作，用户在编程是可以直接调用这样的接口。
+    进一步抽象，用户只需要提供read(filename),或者write(filename,data)即可完成相应的操作。接下来的操作由CPU，和磁盘控制器来完成。  
+
+
+    1、轮询
+    2、终端
+    3、DMA
+    4、通道
+    操作系统在I/O方面的作用是管理和控制I/O操作和设备。
+可拓展性 Scalability
+</code></pre>
+          
+        
+      
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
   </div>
   
+  
+  
+  </article>
+
 
     
-  </div>
-</aside>
+      
 
   
-  <main class="main" role="main">
+
   
-  <div class="content article-list">
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/05/操作系统Review/">操作系统Review</a>
-    </h1>
   
 
-  </div>
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="fa fa-calendar-check-o"></i>
-	<a href="/2018/05/05/操作系统Review/" class="article-date">
-	  <time datetime="2018-05-04T18:32:51.000Z" itemprop="datePublished">May 5</time>
-	</a>
-</span>
-    
-    
-
-    <span class="post-comment"><i class="fa fa-commenting-o"></i> <a href="/2018/05/05/操作系统Review/#comments" class="article-comment-link">Comments</a></span>
-    
-  </p>
-</article>
-
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/05/程序的链接与装载/">程序的链接与装载</a>
-    </h1>
   
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/05/程序的链接与装载/">
 
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="fa fa-calendar-check-o"></i>
-	<a href="/2018/05/05/程序的链接与装载/" class="article-date">
-	  <time datetime="2018-05-04T18:31:31.000Z" itemprop="datePublished">May 5</time>
-	</a>
-</span>
-    
-    
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lintao Fang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
 
-    <span class="post-comment"><i class="fa fa-commenting-o"></i> <a href="/2018/05/05/程序的链接与装载/#comments" class="article-comment-link">Comments</a></span>
-    
-  </p>
-</article>
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Rat-racer's Blog">
+    </span>
 
     
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/04/linux-指令复习/">linux-指令Review</a>
-    </h1>
-  
+      <header class="post-header">
 
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="fa fa-calendar-check-o"></i>
-	<a href="/2018/05/04/linux-指令复习/" class="article-date">
-	  <time datetime="2018-05-04T08:25:51.000Z" itemprop="datePublished">May 4</time>
-	</a>
-</span>
-    
-    
-  <span class="article-tag">
-    <i class="fa fa-tag"></i>
-	<a class="article-tag-link" href="/tags/linux/">linux</a>
-  </span>
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/05/程序的链接与装载/" itemprop="url">程序的链接与装载</a></h1>
+        
 
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-05T02:31:31+08:00">
+                2018-05-05
+              </time>
+            
 
-    <span class="post-comment"><i class="fa fa-commenting-o"></i> <a href="/2018/05/04/linux-指令复习/#comments" class="article-comment-link">Comments</a></span>
-    
-  </p>
-</article>
+            
 
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/26/openmp入门/">OpenMPI入门</a>
-    </h1>
-  
+            
+          </span>
 
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="fa fa-calendar-check-o"></i>
-	<a href="/2018/04/26/openmp入门/" class="article-date">
-	  <time datetime="2018-04-26T05:36:31.000Z" itemprop="datePublished">Apr 26</time>
-	</a>
-</span>
-    
-    
-  <span class="article-tag">
-    <i class="fa fa-tag"></i>
-	<a class="article-tag-link" href="/tags/并行计算/">并行计算</a>
-  </span>
+          
 
+          
+            
+          
 
-    <span class="post-comment"><i class="fa fa-commenting-o"></i> <a href="/2018/04/26/openmp入门/#comments" class="article-comment-link">Comments</a></span>
+          
+          
+             <span id="/2018/05/05/程序的链接与装载/" class="leancloud_visitors" data-flag-title="程序的链接与装载">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
     
-  </p>
-</article>
 
     
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
     
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/26/用mysql写存储过程与触发器/">用mysql写存储过程与触发器</a>
-    </h1>
-  
+    
+    <div class="post-body" itemprop="articleBody">
 
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
   </div>
   
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="fa fa-calendar-check-o"></i>
-	<a href="/2018/04/26/用mysql写存储过程与触发器/" class="article-date">
-	  <time datetime="2018-04-26T05:32:38.000Z" itemprop="datePublished">Apr 26</time>
-	</a>
-</span>
-    
-    
-  <span class="article-tag">
-    <i class="fa fa-tag"></i>
-	<a class="article-tag-link" href="/tags/mysql/">mysql</a>
-  </span>
-
-
-    <span class="post-comment"><i class="fa fa-commenting-o"></i> <a href="/2018/04/26/用mysql写存储过程与触发器/#comments" class="article-comment-link">Comments</a></span>
-    
-  </p>
-</article>
-
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/23/Basic Data Structures/">Basic Data Structures Review</a>
-    </h1>
+  
+  </article>
+
+
+    
+      
+
   
 
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/04/linux-指令复习/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lintao Fang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Rat-racer's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/04/linux-指令复习/" itemprop="url">linux-指令Review</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-04T16:25:51+08:00">
+                2018-05-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/05/04/linux-指令复习/" class="leancloud_visitors" data-flag-title="linux-指令Review">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <pre><code>1 进程相关
+    1.1 ps top pstree kill
+    1.2 bg fg &amp; Ctrl+Z
+
+2 用户相关
+    2.1 用户基本basics
+    2.2 su sudo
+3 查询
+     grep
+</code></pre><h3 id="进程相关"><a href="#进程相关" class="headerlink" title="进程相关"></a>进程相关</h3><h4 id="1-1-ps-top-pstree-kill"><a href="#1-1-ps-top-pstree-kill" class="headerlink" title="1.1 ps top pstree kill"></a>1.1 ps top pstree kill</h4><h4 id="ps"><a href="#ps" class="headerlink" title="ps"></a>ps</h4><p>ps (pocess status),查看进程状态 ,所查看的状态是静态的，是查询时间瞬时的状态。</p>
+<h4 id="top"><a href="#top" class="headerlink" title="top"></a>top</h4><p>动态地状态。</p>
+<h4 id="kill"><a href="#kill" class="headerlink" title="kill"></a>kill</h4><h4 id="利用grep查询"><a href="#利用grep查询" class="headerlink" title="利用grep查询"></a>利用grep查询</h4><h4 id="1-2-bg-fg-amp-Ctrl-Z"><a href="#1-2-bg-fg-amp-Ctrl-Z" class="headerlink" title="1.2 bg fg &amp; Ctrl+Z"></a>1.2 bg fg &amp; Ctrl+Z</h4><p>什么是前台，后台？相对于终端？</p>
+<p>jobs<br>列出后台挂起和运行的程序  </p>
+<p>command + &amp; -&gt; 后台运行<br>前台运行 + Ctrl Z -&gt;后台-挂起<br>后台-挂起 + bg %num - &gt; 后台-运行<br>后台 + fg %num -&gt;前台</p>
+<h4 id="终端关闭后仍运行"><a href="#终端关闭后仍运行" class="headerlink" title="终端关闭后仍运行"></a>终端关闭后仍运行</h4><p><a href="https://www.ibm.com/developerworks/cn/linux/l-cn-nohup/" target="_blank" rel="external">Linux 技巧：让进程在后台可靠运行的几种方法</a></p>
+<h4 id="nohup"><a href="#nohup" class="headerlink" title="nohup"></a>nohup</h4><h4 id="setsid"><a href="#setsid" class="headerlink" title="setsid"></a>setsid</h4><h4 id="amp"><a href="#amp" class="headerlink" title="&amp;"></a>&amp;</h4><h4 id="disown"><a href="#disown" class="headerlink" title="disown"></a>disown</h4><h4 id="screen"><a href="#screen" class="headerlink" title="screen"></a>screen</h4><h4 id="2-1-用户基本basics"><a href="#2-1-用户基本basics" class="headerlink" title="2.1 用户基本basics"></a>2.1 用户基本basics</h4><p>Linux是一个多用户操作系统，我们需要以一个身份登录，一个系统也需要以一个身份运行。  不同的用户有着不同的权限，这样可以通过限制用户的权限来达到管理资源与权限的目的。   </p>
+<ul>
+<li>每一个用户都有一个UID，即user id. </li>
+<li>每一个用户都属于一个主组，一个或者多个附属组。  </li>
+<li>每个组拥有一个GroupID。</li>
+<li>每个进程以一个用户身份运行，并受该用户可访问的资源限制。</li>
+<li>每个可登录用户拥有一个指定的shell。</li>
+<li><p>用户分为以下三种:</p>
+<ul>
+<li>root用户 (ID为0的用户为root用户)</li>
+<li>系统用户 (1 – 499 非强制，而是惯例)</li>
+<li>普通用户 (500以上)</li>
+</ul>
+</li>
+<li><p>系统中的文件都有一个所属用户及所属组。  </p>
+</li>
+</ul>
+<p>查看用户信息</p>
+<ul>
+<li>使用<font color="red">id</font>命令可以显示当前用户的信息。 </li>
+<li>命令<font color="red">whoami</font>显示当前用户名</li>
+<li>命令<font color="red">who</font>显示有哪些用户已经登录系统</li>
+<li>命令<font color="red">w</font>显示有哪些用户已经登录并且在干什么 </li>
+</ul>
+<p>使用<font color="red">passwd</font>命令可以修改当前用户密码。</p>
+<ul>
+<li><p>可以通过useradd创建，usermod修改与userdel删除用户</p>
+</li>
+<li><p>可以通过groupadd创建，groupmod修改，groupdel删除组</p>
+</li>
+</ul>
+<p>配置文件  </p>
+<ul>
+<li>/etc/passwd</li>
+<li>/etc/shadow</li>
+</ul>
+<p>详细信息可参见<a href="http://www.runoob.com/linux/linux-user-manage.html" target="_blank" rel="external">linux用户和用户组管理-Runoob</a></p>
+<h4 id="2-2-su-vs-sudo"><a href="#2-2-su-vs-sudo" class="headerlink" title="2.2 su vs sudo"></a>2.2 su vs sudo</h4><h4 id="2-2-1-su做什么？"><a href="#2-2-1-su做什么？" class="headerlink" title="2.2.1 su做什么？"></a>2.2.1 su做什么？</h4><p>su和sudo是经常容易弄混的两个命令。<br>我们知道，root用户具有全部权限，然而普通用户只有部分权限。譬如普通用户不可以..。为了能够执行这些需要这些权限的命令，就需要获得超级用户权限。  </p>
+<p>su,sudo两者相同的地方在于都可以通过获得超级用户(superuser , or root , or admin on windows.)权限来执行一些受限操作。     </p>
+<p>su 命令的作用是<font color="red">切换用户(switch user)</font>。其后接用户名，即可切换至该用户。  直接su命令不接用户则默认切换至root用户。（需要输入<font color="red">目标用户</font>的密码，Ubuntu Linux密码记忆时间为15分钟5，Mac OSX为5分钟）  </p>
+<p>切换到目标用户后，可使用<font color="blue">exit</font>,或者<font color="blue">logout</font>命令来注销该用户，然后返回到原用户。</p>
+<p>查看su文档如下  </p>
+<pre><code>名称
+   su - 更改用户 ID 或成为超级用户
+
+大纲
+   su [选项] [用户名]
+
+描述
+   su 用于让用户在登录期间变成另外一个用户。后边不带 username 使用时，su 默认会变成超级用户。可选的选项
+  ......
+
+选项
+  .....
+....
+</code></pre><h4 id="2-2-2-sudo做什么？"><a href="#2-2-2-sudo做什么？" class="headerlink" title="2.2.2 sudo做什么？"></a>2.2.2 sudo做什么？</h4><p> sudo 命令的作用是用超级用户权限执行<font color="red">单个命令</font>.<br> 需要输入<font color="red">当前用户密码</font>  </p>
+<pre><code>eg:
+$ sudo rm -rf /
+</code></pre><h5 id="sudo-i"><a href="#sudo-i" class="headerlink" title="sudo -i"></a><font color="red">sudo -i</font></h5><p>为了频繁的执行某些只有超级用户才能执行的权限，而不用每次输入密码，可以使用该命令、<br>执行该命令后提示符变为“#”而不是“$”</p>
+<h5 id="sudo-su"><a href="#sudo-su" class="headerlink" title="sudo su"></a><font color="red">sudo su</font></h5><p>sudo su即以超级用户权限运行su命令(切换至root用户)，因为sudo命令是输入当前用户密码。<br>所以在不知道root用户密码的情况下，可以使用该命令切换至root用户，但是只需要当前用户的密码。  </p>
+<h4 id="2-2-3-su与sudo的区别"><a href="#2-2-3-su与sudo的区别" class="headerlink" title="2.2.3 su与sudo的区别"></a>2.2.3 su与sudo的区别</h4><p><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fqzt6c0uaoj30jv06dmxw.jpg" alt=""></p>
+<pre><code>[1]
+su stands for switch (or substitute) user. With no user name given, it defaults to switching to root. 
+It prompts for the password of the user you&apos;re switching to.
+
+sudo is used to run a command as root (i.e., with root permissions), or as other users.
+It prompts for your password, and checks that you&apos;re allowed to use sudo.
+
+
+
+[2]
+扩展阅读一:Linux下 su命令与su - 命令有什么区别？ 
+su 是切换到其他用户，但是不切换环境变量（比如说那些export命令查看一下，就知道两个命令的区别了） 
+su - 是完整的切换到一个用户环境 
+所以建议大家切换用户的时候,尽量使用 su - linuxso 这样 否则可能发现某些命令执行不了 
+扩展阅读二:su和sudo的区 别 
+    由于su 对切换到超级权限用户root后，权限的无限制性，所以su并不能担任多个管理员所管理的系统。如果用su 来切换到超级用户来管理系统，也不能明确哪些工作是由哪个管理员进行的操作。特别是对于服务器的管理有多人参与管理时，最好是针对每个管理员的技术特长和 管理范围，并且有针对性的下放给权限，并且约定其使用哪些工具来完成与其相关的工作，这时我们就有必要用到 sudo。
+
+通过sudo，我们能把某些超级权限有针对性的下放，并且不需要普通用户知道root密码，所以sudo 相对于权限无限制性的su来说，还是比较安全的，所以sudo 也能被称为受限制的su ；另外sudo 是需要授权许可的，所以也被称为授权许可的su； 
+sudo 执行命令的流程是当前用户切换到root（或其它指定切换到的用户），然后以root（或其它指定的切换到的用户）身份执行命令，执行完成后，直接退回到当前用户；而这些的前提是要通过sudo的配置文件/etc/sudoers来进行授权；
+</code></pre><h4 id="References"><a href="#References" class="headerlink" title="References"></a>References</h4><p>[1] <a href="https://superuser.com/questions/587371/sudo-su-vs-su-linux" target="_blank" rel="external">sudo-su-vs-su-linux</a></p>
+<p>[2] <a href="https://blog.csdn.net/afxcontrolbars/article/details/51059501" target="_blank" rel="external">su</a></p>
+<h4 id="External-Links"><a href="#External-Links" class="headerlink" title="External Links"></a>External Links</h4><p><a href="https://www.linux.com/blog/how-use-sudo-and-su-commands-linux-introduction" target="_blank" rel="external">how-use-sudo-and-su-commands-linux-introduction</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
   </div>
   
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="fa fa-calendar-check-o"></i>
-	<a href="/2018/04/23/Basic Data Structures/" class="article-date">
-	  <time datetime="2018-04-23T09:24:44.000Z" itemprop="datePublished">Apr 23</time>
-	</a>
-</span>
-    
-    
-  <span class="article-tag">
-    <i class="fa fa-tag"></i>
-	<a class="article-tag-link" href="/tags/data-structures/">data structures</a>
-  </span>
-
-
-    <span class="post-comment"><i class="fa fa-commenting-o"></i> <a href="/2018/04/23/Basic Data Structures/#comments" class="article-comment-link">Comments</a></span>
-    
-  </p>
-</article>
-
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/21/一个弱鸡的找实习经历/">一个弱鸡的找实习经历</a>
-    </h1>
+  
+  </article>
+
+
+    
+      
+
   
 
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/26/openmp入门/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lintao Fang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Rat-racer's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/26/openmp入门/" itemprop="url">OpenMPI入门</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-26T13:36:31+08:00">
+                2018-04-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/04/26/openmp入门/" class="leancloud_visitors" data-flag-title="OpenMPI入门">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>MPI即Message Passing Interface、  消息传递Message Passing是进程间通信的一种方式。回顾一下操作系统的知识，进程间通信IPC主要有两种模型，一种是共享内存shared memory。另外一种便是消息传递Message Passing.  </p>
+<pre><code>1.MPI
+2.基于消息传递的并行编程
+3.6个基本函数
+4.MPI HelloWorld
+5.点对点通信
+6.集群通信
+</code></pre><h3 id="MPI"><a href="#MPI" class="headerlink" title="MPI"></a><font color="red">MPI</font></h3><ul>
+<li>MPI是一个消息传递接口标准，(而不是指对它的实现)。 </li>
+<li>有很多MPI的实现，MPICH,MVAPICH,OpenMP,Intel MPI等。</li>
+<li>MPI支持对C/C++,和Fortran语言的绑定</li>
+<li>MPI已语言独立的形式存在，可以运行在不同的操作系统和硬件平台上。  </li>
+</ul>
+<p>OpenMPI是MPI的一个开源实现，支持标准MPI2.2.<br>使用OpenMPI我们可以方便的编写基于消息传递的并行程序。</p>
+<h3 id="基于消息传递的并行编程"><a href="#基于消息传递的并行编程" class="headerlink" title="基于消息传递的并行编程"></a><font color="red">基于消息传递的并行编程</font></h3><p>在基于消息传递的并行编程模型中，每个进程都有一个独立的地址空间，一个进程不能直接访问其他进程中的数据。使用消息传递来实现进程间的通信。<br>用户需要显式的通过发送和接受消息来实现处理器之间的数据交换。 这种编程方式适用于MPP,Cluster.<br>使用消息传递的开销比较大，因此它主要用来开发大粒度和粗粒度的并行性。</p>
+<p>对于一个问题进行分解，可以有两种方式，一种是域分解，一种是函数分解。所谓域分解就是讲问题的区域分为若干较小的区域，然后进行并行求解。 另外一种方式，函数求解又叫做功能分解。即使将一个大问题分解为若干子问题，然后对其并行求解。<br>对应于这两种形式，就是所谓的SPMD,MPMD两种编程模式。</p>
+<ul>
+<li>有SPMD,MPMD两种模式</li>
+<li>程序员需要指定有哪些进程，不同进程间要发送哪些消息，发送发与接收方是谁？</li>
+<li>MPI适用于分布式系统</li>
+</ul>
+<p>问题</p>
+<pre><code>什么是SPMD?MPMD?
+为什么会有SPMD,MPMD适用于什么情况？
+MPI适合什么类型的体系结构？  SMP,MPP,DSM,Cluster?
+OpenMPI OpenMP 区别？
+</code></pre><h3 id="6个基本函数"><a href="#6个基本函数" class="headerlink" title="6个基本函数"></a><font color="red">6个基本函数</font></h3><p>OpenMPI提供了数以百计的API接口，但是完成一个基本的基于MPI的并行程序，一般只需要利用的其中六个，用这六个基本函数就可以求解很多问题。<br>包括启动与结束MPI环境，识别进程以及发送接收消息。</p>
+<pre><code>1. MPI_Init()
+2. MPI_Comm_size()
+3. MPI_COmm_rank()
+4. MPI_Send()
+5. MPI_Recv()
+6. MPI_Finalize()
+</code></pre><p>问题</p>
+<pre><code>什么是通信域？
+什么是进程？和操作系统中的进程有什么区别？
+通信域与进程间关系？
+为什么要有消息标签？
+消息如何打包Pack，解包Unpack？
+MPI_Status?
+</code></pre><h3 id="MPI-HelloWorld"><a href="#MPI-HelloWorld" class="headerlink" title="MPI HelloWorld"></a><font color="red">MPI HelloWorld</font></h3><p>不会Fortran,只会C。在此只介绍如何用c来写mpi程序。<br>关于如何安装mpi，此处略去。<br>欲使用MPI编写并行程序，必须将头文件mpi.h包含进去。  </p>
+<pre><code>#include&lt;mpi.h&gt;  
+#include&lt;stdio.h&gt;
+int main(int argc, char * argv[])  
+{  
+    int rank,size;  
+    MPI_Init(&amp;argc,&amp;argv);  
+    MPI_Comm_rank(MPI_COMM_WORLD,&amp;rank);  
+    MPI_Comm_size(MPI_COMM_WORLD,&amp;size);  
+    printf(&quot;Hello world from process %d of%d\n&quot;,rank,size);  
+    MPI_Finalize();  
+    return 0;  
+}     
+</code></pre><h3 id="点对点通信"><a href="#点对点通信" class="headerlink" title="点对点通信"></a><font color="red">点对点通信</font></h3><p>通信机制</p>
+<ul>
+<li>阻塞通信机制</li>
+<li>非阻塞通信机制</li>
+</ul>
+<p>通信模式</p>
+<ul>
+<li>缓冲</li>
+<li>同步</li>
+<li>标准</li>
+<li>就绪</li>
+</ul>
+<font color="dark"><br>通信模式(Communication Mode)指的是缓冲管理，以及发送方和接收方之间的同步方式<br><br>不同通信模式和不同通信机制的结合，便 产生了非常丰富的点对点通信函数<br></font>   
+
+<p>发送方：<br>（阻塞， 非阻塞） × （缓冲，同步，标准，就绪）<br>共有8中发送方式</p>
+<p>接收方有阻塞接收，非阻塞接收两种方式。 </p>
+<p>问题</p>
+<pre><code>什么是阻塞？什么是非阻塞？
+缓冲，同步，标准，就绪的含义？
+</code></pre><h3 id="集群通信"><a href="#集群通信" class="headerlink" title="集群通信"></a><font color="red">集群通信</font></h3><p>群集通信(Collective Communications)是一个进 程组中的所有进程都参加的全局通信操作。   </p>
+<p>群集通信实现三个功能:通信、聚集和同步</p>
+<ul>
+<li>通信功能主要完成组内数据的传输</li>
+<li>聚集功能在通信的基础上对给定的数据完成一定的操 作</li>
+<li>同步功能实现组内所有进程在执行进度上取得一致</li>
+</ul>
+<p>群集通信，按照通信方向的不同，又可以分为三 种:一对多通信，多对一通信和多对多通信。</p>
+<ul>
+<li>对多通信:一个进程向其它所有的进程发送消息， 这个负责发送消息的进程叫做Root进程。</li>
+<li>多对一通信:一个进程负责从其它所有的进程接收消 息，这个接收的进程也叫做Root进程。</li>
+<li>多对多通信:每一个进程都向其它所有的进程发送或 者接收消息。</li>
+</ul>
+<p><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fr1w976doej30rj0j9gpy.jpg" alt=""></p>
+<pre><code>具体操作？
+含义？
+例子?
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
   </div>
   
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="fa fa-calendar-check-o"></i>
-	<a href="/2018/04/21/一个弱鸡的找实习经历/" class="article-date">
-	  <time datetime="2018-04-20T16:38:43.000Z" itemprop="datePublished">Apr 21</time>
-	</a>
-</span>
-    
-  <span class="article-category">
-    <i class="fa fa-folder"></i>
-    <a class="article-category-link" href="/categories/Job/">Job</a>
-  </span>
-
-    
-  <span class="article-tag">
-    <i class="fa fa-tag"></i>
-	<a class="article-tag-link" href="/tags/internship/">internship</a>, <a class="article-tag-link" href="/tags/实习/">实习</a>
-  </span>
-
-
-    <span class="post-comment"><i class="fa fa-commenting-o"></i> <a href="/2018/04/21/一个弱鸡的找实习经历/#comments" class="article-comment-link">Comments</a></span>
-    
-  </p>
-</article>
-
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/21/基于比较的的排序/">基于比较的的排序</a>
-    </h1>
+  
+  </article>
+
+
+    
+      
+
   
 
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/26/用mysql写存储过程与触发器/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lintao Fang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Rat-racer's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/26/用mysql写存储过程与触发器/" itemprop="url">用mysql写存储过程与触发器</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-26T13:32:38+08:00">
+                2018-04-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/04/26/用mysql写存储过程与触发器/" class="leancloud_visitors" data-flag-title="用mysql写存储过程与触发器">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>#数据库系统与应用   实验1 Report</p>
+<h3 id="PB15121708-方林涛"><a href="#PB15121708-方林涛" class="headerlink" title="PB15121708 方林涛"></a>PB15121708 方林涛</h3><h4 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h4><pre><code>实验题目
+实验环境
+实验内容以及结果：
+    建表
+    插入测试数据
+    查询测试
+    存储过程
+    触发器
+</code></pre><h4 id="实验题目"><a href="#实验题目" class="headerlink" title="实验题目"></a>实验题目</h4><p>设某图书馆数据库包含下面的基本表：<br> Book（ID: char(8)，name:varchar2(10)，author:varchar2(10)，price:float， status: int）<br>图书号 ID 为主键，书名不能为空。状态（status）为 1 表示书被借出，0 表示在馆，<br>默认值为 0。<br> Reader（ID:char(8)，name:varchar2(10)，age:int，address:varchar2(20)） 读者号 ID<br>为主键。<br> Borrow（book_ID:char(8)，Reader_ID:char(8)，Brrrow_Date:date，  Return_Date:date）<br>其中：还期 Return_Date 为 NULL 表示该书未还。主键为（图书号，读者号），图<br>书号为外键，引用图书表的图书号，读者号为外键，引用读者表的读者号  </p>
+<p>1、 创建上述基本表，并插入部分测试数据；<br>2、 设计例子，验证实体完整性、参照完整性、用户自定义完整性；<br>3、 用 SQL 语言完成下面小题，并测试运行结果：<br>4、 设计存储过程，实现对 Book 表的 ID 的修改。<br>5、 设计触发器，实现：当一本书被借出时，自动将 Book 表中相 应图书的 status 修改为1；当某本书被归还时，自动将 status 改为 0。  </p>
+<h4 id="实验环境"><a href="#实验环境" class="headerlink" title="实验环境"></a>实验环境</h4><pre><code>Mysql  5.7.20  
+MacOSX
+</code></pre><h3 id="建表"><a href="#建表" class="headerlink" title="建表"></a>建表</h3><p>1.1<br><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fqh75kg1y7j30dv05dq3m.jpg" alt=""><br><img src="https://ws2.sinaimg.cn/large/006tNc79ly1fqh75ei8lej30en06nwff.jpg" alt=""><br>1.2<br><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fqh758tgmtj30d804xmxr.jpg" alt=""><br><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fqh752qiqbj30fe06aaav.jpg" alt=""><br>1.3<br><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fqh74vnr2cj30ij06aq40.jpg" alt=""><br><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fqh74jkq9mj30g106fgmf.jpg" alt="">  </p>
+<h3 id="插入测试数据"><a href="#插入测试数据" class="headerlink" title="插入测试数据"></a>插入测试数据</h3><p><img src="https://ws4.sinaimg.cn/large/006tKfTcly1fqp58f5rzhj30db08u758.jpg" alt=""><br><img src="https://ws2.sinaimg.cn/large/006tKfTcly1fqp591utluj30ay06yaam.jpg" alt=""><br><img src="https://ws3.sinaimg.cn/large/006tKfTcly1fqp597m243j30do078q3h.jpg" alt=""></p>
+<h3 id="查询测试"><a href="#查询测试" class="headerlink" title="查询测试"></a>查询测试</h3><p>1.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select id,address from reader where name = &apos;Rose&apos;;</div></pre></td></tr></table></figure>
+<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fqh5abul8ej30ga049mxg.jpg" alt=""></p>
+<p>2.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">select book.name,datediff(return_date,borror_date) as Days </div><div class="line">from borrow,reader,book where book_id = book.id and reader_id = reader.id </div><div class="line">and reader.name = &apos;Rose&apos;;</div></pre></td></tr></table></figure>
+<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fqh5tpl35mj30jl05mt9b.jpg" alt=""><br>3.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">mysql&gt; select reader.name from reader</div><div class="line">    -&gt; where</div><div class="line">    -&gt; reader.id not in</div><div class="line">    -&gt; (</div><div class="line">    -&gt; select distinct reader_id from borrow</div><div class="line">    -&gt; );</div></pre></td></tr></table></figure>
+<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fqh5xspdjlj30fz07ngmc.jpg" alt=""><br>4.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select name,price from book where author = &apos;Ullman&apos;;</div></pre></td></tr></table></figure>
+<p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fqh5z1db3pj30hq055dg9.jpg" alt=""><br>5.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">select book.id,book.name </div><div class="line">from book,reader,borrow </div><div class="line">where</div><div class="line">reader.id = borrow.reader_id </div><div class="line">and book.id = borrow.book_id </div><div class="line">and reader.name = &apos;Lilin&apos; </div><div class="line">and datediff(curdate(),return_date)&lt;0;</div></pre></td></tr></table></figure>
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fqh64bxlkwj30jh06xt9l.jpg" alt="">  </p>
+<ol>
+<li></li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">select reader.name </div><div class="line">from reader,borrow </div><div class="line">where reader.id = borrow.reader_id </div><div class="line">group by reader.id </div><div class="line">having count(*)&gt;=3;</div></pre></td></tr></table></figure>
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fqh67j0alzj30jg051jrt.jpg" alt="">  </p>
+<ol>
+<li></li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">select reader.name,reader.id </div><div class="line">from reader,borrow</div><div class="line"> where borrow.reader_id = reader.id </div><div class="line"> and book_id not  in</div><div class="line">(select distinct book_id </div><div class="line">from borrow,reader </div><div class="line">where borrow.reader_id = reader.id </div><div class="line">and reader.name = &apos;Lilin&apos;)</div></pre></td></tr></table></figure>
+<p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fqh6esrz9mj30ji086jsg.jpg" alt=""></p>
+<ol>
+<li></li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select name,id from book where name like &apos;%Oracle%&apos;;</div></pre></td></tr></table></figure>
+<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fqh6ha0t0cj30gw04ywes.jpg" alt=""><br>9.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">select reader_id,count(*) from borrow_view V </div><div class="line"> where datediff(curdate(),borrow_date)&lt;=365 group by reader_id;</div></pre></td></tr></table></figure>
+<p><img src="https://ws2.sinaimg.cn/large/006tNc79ly1fqh6wu6epxj30u1066757.jpg" alt=""></p>
+<h3 id="存储过程"><a href="#存储过程" class="headerlink" title="存储过程"></a>存储过程</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">DELIMITER $</div><div class="line">create procedure modify_bookid(</div><div class="line">in old_id  char, in new_id char)</div><div class="line">begin </div><div class="line">set foreign_key_checks = 0;</div><div class="line">update book set id = new_id where id = old_id; </div><div class="line">update borrow set book_id = new_id where book_id = old_id;  </div><div class="line">set foreign_key_checks = 1;</div><div class="line">end$</div></pre></td></tr></table></figure>
+<p><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fqh9wqgq03j30gp06tjs5.jpg" alt=""></p>
+<h4 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h4><pre><code>call modify_bookid(&apos;0&apos;,&apos;9&apos;)$
+</code></pre><p><img src="https://ws4.sinaimg.cn/large/006tKfTcly1fqp8bd0q8gj30cy08ngnc.jpg" alt=""><br><img src="https://ws2.sinaimg.cn/large/006tKfTcly1fqp8bm0msvj30da08h75f.jpg" alt=""></p>
+<h3 id="触发器"><a href="#触发器" class="headerlink" title="触发器"></a>触发器</h3><pre><code>  CREATE PROCEDURE 存储过程名称(
+            IN/OUT 参数 数据类型 ...)
+        BEGIN
+
+        END
+
+  create procedure modify_bookid(
+        in old_id  char, in new_id char)
+        begin 
+            set foreign_key_checks = 0;
+            update book set id = new_id where id = old_id; 
+                update borrow set book_id = new_id where book_id =                         old_id;  
+            set foreign_key_checks = 1;
+        end$
+
+
+
+
+
+create trigger borrow_insert after insert  on borrow for each row
+begin
+if datediff(curdate(),new.return_date)&gt;=0 then 
+    update book set status = 0 where id = new.book_id;
+else                                                  
+    update book set status = 1 where id = new.book_id;
+end if;
+end$
+</code></pre><h3 id="插入测试数据前book，borrow表"><a href="#插入测试数据前book，borrow表" class="headerlink" title="插入测试数据前book，borrow表"></a>插入测试数据前book，borrow表</h3><p><img src="https://ws2.sinaimg.cn/large/006tKfTcly1fqp857kc4tj30cr08ptam.jpg" alt=""><br><img src="https://ws4.sinaimg.cn/large/006tKfTcly1fqp86hjtacj30d607gta3.jpg" alt=""></p>
+<h3 id="插入测试数据后borrow，book表"><a href="#插入测试数据后borrow，book表" class="headerlink" title="插入测试数据后borrow，book表"></a>插入测试数据后borrow，book表</h3><p><img src="https://ws4.sinaimg.cn/large/006tKfTcly1fqp87qwzoqj30d207rmy4.jpg" alt=""><br><img src="https://ws3.sinaimg.cn/large/006tKfTcly1fqp86u4aemj30cq0c0jte.jpg" alt=""></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
   </div>
   
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="fa fa-calendar-check-o"></i>
-	<a href="/2018/04/21/基于比较的的排序/" class="article-date">
-	  <time datetime="2018-04-20T16:35:52.000Z" itemprop="datePublished">Apr 21</time>
-	</a>
-</span>
-    
-  <span class="article-category">
-    <i class="fa fa-folder"></i>
-    <a class="article-category-link" href="/categories/algorithms/">algorithms</a>
-  </span>
-
-    
-  <span class="article-tag">
-    <i class="fa fa-tag"></i>
-	<a class="article-tag-link" href="/tags/基于比较的排序/">基于比较的排序</a>, <a class="article-tag-link" href="/tags/排序/">排序</a>, <a class="article-tag-link" href="/tags/算法/">算法</a>
-  </span>
-
-
-    <span class="post-comment"><i class="fa fa-commenting-o"></i> <a href="/2018/04/21/基于比较的的排序/#comments" class="article-comment-link">Comments</a></span>
-    
-  </p>
-</article>
-
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/20/Hash-Table-基础/">Hash Table 基础</a>
-    </h1>
+  
+  </article>
+
+
+    
+      
+
   
 
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/23/Basic Data Structures/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lintao Fang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Rat-racer's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/23/Basic Data Structures/" itemprop="url">Basic Data Structures Review</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-23T17:24:44+08:00">
+                2018-04-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/04/23/Basic Data Structures/" class="leancloud_visitors" data-flag-title="Basic Data Structures Review">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <pre><code>1 Tree
+    1.1 Definition
+    1.2 Operation 
+    1.3 性能分析 &amp; 计算相关问题
+    1.4 Implementation
+        1.4.1 二叉树的遍历
+        1.4.2 二叉搜索树的操作
+2 Linked List
+
+3 Stack &amp; Queue
+
+
+4 Heap 
+5 String
+6 Hash
+</code></pre><p>今天，复习一下基本的数据结构。顺带解决一些小问题。</p>
+<pre><code>要解决的问题
+BST的定义？key可以相等吗? 
+Binary Search Tree 与最小堆之间的区别? 
+完全二叉树等的概念歧义问题？ 
+BST的平均高度？为什么？平均是什么意思？
+</code></pre><h3 id="1-Tree"><a href="#1-Tree" class="headerlink" title="1 Tree"></a>1 Tree</h3><h4 id="1-1-Definition"><a href="#1-1-Definition" class="headerlink" title="1.1 Definition"></a>1.1 Definition</h4><h4 id="1-1-1-Tree-树"><a href="#1-1-1-Tree-树" class="headerlink" title="1.1.1 Tree 树"></a>1.1.1 Tree 树</h4><p>在计算机科学中，树是一种被广泛使用的数据结构/ADT，树模仿自然界中树的层次结构。<br>关于树的确切定义，可以使用递归的方式来定义。<br>即：(Recursive Defintion)<br>树是一些节点的集合。<br>这个集合可以是空集。<br>若非空，则一棵树由一个称作根root的节点，以及0个或者多个非空的子树构成。<br>这些子树中的每一棵都与root有一条边链接。  </p>
+<p>图1：一棵树的实例：<br><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Binary_tree.svg/300px-Binary_tree.svg.png" alt=""></p>
+<h4 id="1-1-2-Binary-Tree-二叉树"><a href="#1-1-2-Binary-Tree-二叉树" class="headerlink" title="1.1.2 Binary Tree 二叉树"></a>1.1.2 Binary Tree 二叉树</h4><p>二叉树是一棵树，其中每个节点至多有两个儿子。</p>
+<h4 id="1-1-3-Binary-Search-Tree-二叉搜索树-BST"><a href="#1-1-3-Binary-Search-Tree-二叉搜索树-BST" class="headerlink" title="1.1.3 Binary Search Tree 二叉搜索树(BST)"></a>1.1.3 Binary Search Tree 二叉搜索树(BST)</h4><p>二叉搜索是特殊的二叉树。 每一个有节点有一个Key键值。<br>对于树中的每个节点X，它的左子树中的所有Key＜X.Key (≤X.Key).右子树中的所有Key＞X.Key(≥X.Key)。<br>(关于上述两种不同的定义情况，其本质问题即使BST是否允许存在两个节点Key相等？)<br>这个我在不同的书中看到了不同的定义<br>[1]中给出的定义是不可以相等。<br>[2]中给出的定义是可以。即树中的每个节点X,左子树中的所有Key≤X.Key.右子树中的所有Key≥X.Key.  </p>
+<pre><code>我个人认为：对于大部分情况而言，我们更倾向于不存在Key值相同的情况。这样即符合很多实际情况，又能够简化问题。 
+当然，也可以引入带有Key值相等的情况，这需要再实现上考虑这个问题。具体见[2]思考题12.1.
+（而且[2]的算法皆是按照在不存在key值相等的情况下编写的）  
+</code></pre><p>Binary Search Tree 与最小堆之间的区别：</p>
+<pre><code>二叉搜索树的节点的左右孩子是有序的，left.key &lt; parent.key &lt; right.key  
+而最小堆，其左右孩子是无序的，也没有大小关系。{left.key ,right.key}&gt; parent.key
+对于最小堆而言,查找最小值是O(1)的，由于其左右孩子无大小关系，其查找任意一key则是O(n)的。
+</code></pre><p>二叉搜索树与最优二叉搜索树：  </p>
+<pre><code>最优二叉搜索🌲 动态规划
+</code></pre><h4 id="1-1-4-其他Type的树"><a href="#1-1-4-其他Type的树" class="headerlink" title="1.1.4 其他Type的树"></a>1.1.4 其他Type的树</h4><h4 id="Perfect-Binary-Tree"><a href="#Perfect-Binary-Tree" class="headerlink" title="Perfect Binary Tree"></a>Perfect Binary Tree</h4><p>A perfect binary tree is a binary tree in which all interior nodes have two children and all leaves have the same depth or same level.<br><img src="http://images2015.cnblogs.com/blog/1094457/201702/1094457-20170225183610632-1388959691.png" alt=""></p>
+<h4 id="Full-Binary-Tree"><a href="#Full-Binary-Tree" class="headerlink" title="Full Binary Tree"></a>Full Binary Tree</h4><p>每个节点的度为0或2  。<br>A full binary tree (sometimes referred to as a proper or plane binary tree)is a tree in which every node has either 0 or 2 children.<br>图2： A full binary tree<br><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Full_binary.svg/220px-Full_binary.svg.png" alt=""></p>
+<h4 id="Complete-Binary-Tree"><a href="#Complete-Binary-Tree" class="headerlink" title="Complete Binary Tree"></a>Complete Binary Tree</h4><p>所有层全充满，除了最后一层。且最后一层的节点从左向右填充。<br><img src="https://ws2.sinaimg.cn/large/006tKfTcly1fqnt981a9ij30b606f0t4.jpg" alt=""><br>综上，即<br><img src="http://images2015.cnblogs.com/blog/1094457/201702/1094457-20170225184451991-1942362001.png" alt=""><br>上述定义来自维基百科，此为最为广泛使用的定义。<br>然后不同的文献之间定义却存在歧义。主要在于完全二叉树的问题上。  </p>
+<p>譬如说，<br>在一些国外教程以及国内教材中【完全二叉树】一词指上图中的complete binary tree，而在算法导论中【完全二叉树】一词指上图中perfect binary tree。用【近似的完全二叉树】一词表示上图中的complete binary tree。</p>
+<pre><code>国内教材中
+满二叉树 指 perfect binary tree
+完全二叉树 指 complete binary tree
+
+算法导论[2]中：
+满二叉树 指 perfect binary tree
+近似的完全二叉树 指 complete binary tree
+完全二叉树  指 perfect binary tree
+</code></pre><p>知乎上有一个讨论此问题的问题<a href="https://www.zhihu.com/question/19809666" target="_blank" rel="external">为什么说“满二叉树也是完全二叉树?</a> </p>
+<p>同样的，对于树的深度depth和高度height不同的作者也都有不用的定义。<br>见:<br><a href="https://stackoverflow.com/questions/2603692/what-is-the-difference-between-tree-depth-and-height" target="_blank" rel="external">What is the difference between tree depth and height?
+</a><br><a href="https://www.zhihu.com/question/40286584/answer/85888350" target="_blank" rel="external">link</a><br>另外，对于根节点的标记有的从0开始也有的从1开始。  </p>
+<p>先序序列为a,b,c,d 的不同二叉树的个数是<br>n个结点构成的不同二叉树个数为 c(n,2n)/(n+1) 【卡特兰数】</p>
+<h4 id="AVL树"><a href="#AVL树" class="headerlink" title="AVL树"></a>AVL树</h4><h4 id="why-AVL"><a href="#why-AVL" class="headerlink" title="why AVL?"></a>why AVL?</h4><p>对于BST而言，其查询插入删除的时间复杂度都是O(h),h为树的高度。  </p>
+<p>一个不好的消息是BST的最坏时间复杂是O(n)。即BST的高度最坏可以达到O(n)，这也不难理解。  试想一颗总是朝着一个方向生长的二叉树。 它的高度便是O(n)。<br>为了提高性能，我们的出发点便是控制树高。 使得树高不至于那么高(O(n)级别)。  </p>
+<p>为了能够控制树高，我们期望树更加平衡些。即左右子树高度相差不是很大。<br>譬如说，我们可以限制对于任意一个节点，其左右子树的高度相等。这样的话，树的高度就会受限，不会疯狂的朝着一个方向生长。  然而这样的条件比较苛刻。  不容易满足。<br>于是我们可以限制每一个节点左子树和右子树的高度最多差1。这样的话既可以控制树高，又不是那么难以满足。  </p>
+<h4 id="what"><a href="#what" class="headerlink" title="what ?"></a>what ?</h4><p>AVL树即平衡 二叉搜索树  其以发明者 Adelson-Velsky and Landis命名。  </p>
+<p>AVL 树 == BBST（Balanced Binary Search Tree）   </p>
+<p>一颗AVL树是其每一个节点左子树和右子树的高度最多差1的二叉搜索树。<br>AVL树是自平衡的，即使在插入删除操作中，它可以自己调整(Rotate)从而使得满足AVL树条件。</p>
+<p>AVL树的每一个结点都有一个平衡因子Balanced Factor:为该结点的左子树的深度减去它的右子树的深度。<br>对于AVL树而言对于任一节点N，有BalanceFactor(N) ∈ {–1,0,+1}  </p>
+<p>AVL树的深度和logN是同数量级的(其中的N为结点个数) （why?） </p>
+<h4 id="Huffman树"><a href="#Huffman树" class="headerlink" title="Huffman树"></a>Huffman树</h4><h4 id="如何构建"><a href="#如何构建" class="headerlink" title="如何构建?"></a>如何构建?</h4><h4 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h4><p>树中一定没有度为1的结点</p>
+<h4 id="ASL"><a href="#ASL" class="headerlink" title="ASL"></a>ASL</h4><pre><code>huffman树与最优二叉搜索树的区别
+</code></pre><h4 id="线索二叉树"><a href="#线索二叉树" class="headerlink" title="线索二叉树"></a>线索二叉树</h4><p>前序和后序线索化之后，空链域为1<br>中序线索化后，空链域为2</p>
+<p>n个结点的线索二叉树上含有的线索数为 2n - (n-1) = n+1</p>
+<h4 id="1-1-5-高级树结构"><a href="#1-1-5-高级树结构" class="headerlink" title="1.1.5 高级树结构"></a>1.1.5 高级树结构</h4><h4 id="B-树"><a href="#B-树" class="headerlink" title="B 树"></a>B 树</h4><h4 id="红黑树"><a href="#红黑树" class="headerlink" title="红黑树"></a>红黑树</h4><h4 id="基数树"><a href="#基数树" class="headerlink" title="基数树"></a>基数树</h4><h4 id="Treap树"><a href="#Treap树" class="headerlink" title="Treap树"></a>Treap树</h4><h4 id="1-2-Operation-操作"><a href="#1-2-Operation-操作" class="headerlink" title="1.2 Operation 操作"></a>1.2 Operation 操作</h4><ul>
+<li>二叉树<ul>
+<li>遍历  （前序/中序/后序/层次）</li>
+</ul>
+</li>
+<li>二叉搜索树BST<ul>
+<li>插入/删除</li>
+<li>搜索    </li>
+</ul>
+</li>
+</ul>
+<p>Note:  </p>
+<pre><code>对于所有遍历操作，不论是递归实现还是迭代实现，其时间复杂度都是O(n)。  (why?)
+</code></pre><h4 id="1-3-性能分析-amp-计算相关问题"><a href="#1-3-性能分析-amp-计算相关问题" class="headerlink" title="1.3 性能分析 &amp; 计算相关问题"></a>1.3 性能分析 &amp; 计算相关问题</h4><h4 id="1-3-1-二叉树Binary-Tree"><a href="#1-3-1-二叉树Binary-Tree" class="headerlink" title="1.3.1 二叉树Binary Tree"></a>1.3.1 二叉树Binary Tree</h4><p>对于遍历操作，不论是递归实现还是迭代实现，其时间复杂度都是O(n)。</p>
+<h4 id="1-3-2-二叉搜索树Binary-Search-Tree"><a href="#1-3-2-二叉搜索树Binary-Search-Tree" class="headerlink" title="1.3.2 二叉搜索树Binary Search Tree:"></a>1.3.2 二叉搜索树Binary Search Tree:</h4><p><img src="https://ws1.sinaimg.cn/large/006tNc79gy1fqmrwdyw0nj308204gmxb.jpg" alt="">[3]</p>
+<p>对于插入，删除，查找操作其复杂度都是O(h) ，这是显而易见的。<br>接下来的问题便是h到底是多少，h与n的关系了.<br>对于树的深度而言，其</p>
+<ul>
+<li>最坏深度为O(n) ，这是显而易见的。  </li>
+<li>平均深度 O(log n)  这导出两个问题，<ul>
+<li>1.为什么是O(log n)? 如何证明之</li>
+<li>2.在这里平均的意义(含义)又是什么？</li>
+</ul>
+</li>
+</ul>
+<p>关于问题1，我在[1],[2]中找到了相关的说明。  </p>
+<p><strong>[2]</strong> 中定理12.4 证明了<br>一颗有n个不同关键字的随机构建二叉搜索树的期望高度是O(log n )   </p>
+<pre><code>NOTE:
+在这里随机构建的含义即是，考虑n个不同的节点，其所有排列情况是n!中，对于每一种情形按次序依次插入一个元素构建BST，
+注意只有插入操作，而没有删除操作。这样的构建过程叫做随机构建。 
+
+12.4节中同样证明了，一颗有n个不同关键字的随机构建二叉搜索树的期望高度是O(log n ) 。
+但是对于既存在插入操作，又存在删除操作的BST，其平均深度在[2]中并未做说明。  
+If deletions are allowed as well as insertions, 
+&quot;little is known about the average height of a binary search tree&quot;
+</code></pre><p><strong>[1]</strong> 中证明了，有n个节点，假设所有的树出现的机会相等时，则树平均深度为O(log n)<br>证明过程见下<a href="https://ws2.sinaimg.cn/large/006tKfTcly1fqnqnhzcpij30qd0h779p.jpg" target="_blank" rel="external">Weisss-p78</a><br>在这里，我认为其含义同[2]，即随机构建，虽然[1]中貌似并未明确其平均含义。  </p>
+<pre><code>对于既存在插入操作，又存在删除操作的情况下，
+[1]中给出了如下结论：
+已经证明，如果我们交替插入和删除θ(n^2)次，那么树的期望深度是θ(根号n)
+</code></pre><h4 id="1-3-3-相关计算"><a href="#1-3-3-相关计算" class="headerlink" title="1.3.3 相关计算"></a>1.3.3 相关计算</h4><p>设层数从1开始，即根节点为第1层，共有k层。  </p>
+<ul>
+<li>那么第i层，最多有2^(i-1)个节点。  </li>
+<li><p>整棵树，最多有2^0 + 2^1 +  … 2^(k-1) = 2^k -1   </p>
+</li>
+<li><p>若叶子节点即读书为0的节点有m个，度数为2的节点有n个，那么 m = n + 1</p>
+</li>
+<li>若整棵树有N个节点，设其高度为h。那么有[2^(h-1)-1] + 1 ≤ N ≤ 2^h - 1 即floor(log2(N)) + 1 后者ceil(log2(N+1))</li>
+</ul>
+<h4 id="1-4-Implementation-实现"><a href="#1-4-Implementation-实现" class="headerlink" title="1.4 Implementation  实现"></a>1.4 Implementation  实现</h4><h4 id="1-4-1-Tree-遍历"><a href="#1-4-1-Tree-遍历" class="headerlink" title="1.4.1 Tree 遍历"></a>1.4.1 Tree 遍历</h4><h4 id="1-4-2-二叉搜索树的操作"><a href="#1-4-2-二叉搜索树的操作" class="headerlink" title="1.4.2 二叉搜索树的操作"></a>1.4.2 二叉搜索树的操作</h4><h4 id="二叉树的重构"><a href="#二叉树的重构" class="headerlink" title="二叉树的重构"></a>二叉树的重构</h4><p>所谓重构即使，在不知道二叉树结构的情况下，从二叉树的先序中序后序遍历序列中重构出二叉树的结构。<br>可以证明：<br>采用 (先序遍历 || 后序遍历) + 中序遍历 可以重构出二叉树。<br>采用 先序遍历 + 中序遍历 不可以重构出二叉树   </p>
+<p>至于为什么？相关证明参见<a href="http://www.xuetangx.com/courses/course-v1:TsinghuaX+30240184X+sp/courseware/16d8402a24fd4429a8a7cc1c8401cb1f/b3fdcad4c3a84a8a861003eaa8b5965c/" target="_blank" rel="external">数据结构-二叉树重构</a></p>
+<h5 id="那么如何重构？"><a href="#那么如何重构？" class="headerlink" title="那么如何重构？"></a>那么如何重构？</h5><p>[1]: 数据结构与算法分析 C语言描述 Weiss</p>
+<p>[2]: 算法导论 CLRS 3th Edition</p>
+<p>[3] <a href="https://en.wikipedia.org/wiki/Binary_search_tree" target="_blank" rel="external">https://en.wikipedia.org/wiki/Binary_search_tree</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
   </div>
   
-  <div class="article-entry text-muted" itemprop="description">
-    <h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><pre><code>1.1 什么是哈希Hash 
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/21/一个弱鸡的找实习经历/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lintao Fang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Rat-racer's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/21/一个弱鸡的找实习经历/" itemprop="url">一个弱鸡的找实习经历</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-21T00:38:43+08:00">
+                2018-04-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Job/" itemprop="url" rel="index">
+                    <span itemprop="name">Job</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/04/21/一个弱鸡的找实习经历/" class="leancloud_visitors" data-flag-title="一个弱鸡的找实习经历">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fqixjir52oj30k40kidim.jpg" alt=""></p>
+<ul>
+<li><p>4-2日投递：<br>爱奇艺（ Up主质量等级划分， 深度学习开发工程师-实习-）<br>优酷， （算法工程师-机器学习）<br>商汤     (见习算法开发工程师-暑期实习)，<br>去哪儿，（开发）<br>瓜子   (数据挖掘)<br>微众银行(NT-信息安全(数据挖掘方向))<br>顺丰，（大数据挖掘与分析实习生）<br>蘑菇街,<br>拼多多，(算法)<br>旷视，（暑期实习生<em>算法研究员）<br>百度，（商务搜索部</em>机器学习/数据挖掘实习工程师）<br>小米,<br>58转转（开发）<br>七牛云 （算法）<br>作业帮<br>滴滴POI（数据挖掘研发），地图事业部（算法）<br>51信用卡 （算法实习生）<br>cvte  (中央研究院 数据挖掘实习生)<br>虎牙 （数据挖掘实习生）  </p>
+</li>
+<li><p>待投递：ebay PayPal 第四范式  </p>
+</li>
+<li><p>新笔试：<br>七牛云（算法）    4-13   （19：00）<br>今日头条 4-15 （10：00）<br>瓜子(数据挖掘) 4-15   (10:00)<br>58(开发)        4-15 （20：00）<br>微众银行   4-16 (19:00)<br>美团   4-20(19:00)  </p>
+</li>
+</ul>
+<ul>
+<li>简历挂:<br>阿里，百度 ，滴滴，爱奇艺，优酷，商汤，拼多多，蘑菇街，小米，虎牙，快手，作业帮，去哪儿，顺丰  </li>
+<li><p>瓜子，微众银行待定 无结果</p>
+</li>
+<li><p>笔试挂:<br>微软，头条，华为，京东，美图，七牛云，58网易游戏 </p>
+</li>
+</ul>
+<ul>
+<li><p>笔试通过、收到面试: 艾耕（3-30），旷视(4-19) , 微软（4-26）<br>收到offer:艾耕</p>
+</li>
+<li><p>Face++ 面试</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">1.讲讲自己用做的项目   </div><div class="line"> </div><div class="line">2.问熟悉哪些语言...python </div><div class="line">   </div><div class="line">python  is ==的区别？    </div><div class="line">python方法解析顺序    </div><div class="line">m*k   n*k两矩阵计算欧几里得距离np.tile？   </div><div class="line"> </div><div class="line">3.问上了哪些课？    </div><div class="line">elf 的 bss段？    </div><div class="line">ip报文经过一个路由器改变哪些字段？    </div><div class="line"></div><div class="line">4.Batch normalization ？    </div><div class="line">group convolution ？    </div><div class="line"></div><div class="line">5 .a,b~U[0,1]，互相独立    </div><div class="line">求Max(a,b) 期望</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/21/基于比较的的排序/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lintao Fang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Rat-racer's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/21/基于比较的的排序/" itemprop="url">基于比较的的排序</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-21T00:35:52+08:00">
+                2018-04-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/algorithms/" itemprop="url" rel="index">
+                    <span itemprop="name">algorithms</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/04/21/基于比较的的排序/" class="leancloud_visitors" data-flag-title="基于比较的的排序">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Toaday I’m going to review some important sorting algorithms based on comparison.Besides,related data structures such as heap,priority queue will also be talked.</p>
+<pre><code>1 堆排序 &amp;&amp; 优先队列
+2 选择排序，插入排序，冒泡排序
+3 快速排序
+4 相关笔试题分析
+</code></pre><h3 id="1-堆排序-amp-amp-优先队列"><a href="#1-堆排序-amp-amp-优先队列" class="headerlink" title="1 堆排序 &amp;&amp; 优先队列"></a>1 堆排序 &amp;&amp; 优先队列</h3><pre><code>1 堆排序 &amp;&amp; 优先队列
+目录：
+1.1 什么是堆?    what and why?
+    1.1.1 what？
+    1.1.2 关于二叉堆 Binary Heap
+    1.1.3 why ? 
+1.2 堆的实现？什么二叉堆？   
+    1.2.0 什么是二叉堆？ binary heap?
+    1.2.1 堆的实现 二叉堆
+    1.2.2 斐波那契堆的实现
+    1.2.3 二项堆堆的实现
+1.3 堆的相关操作？ 堆排序？ 
+    1.3.1 Max-Heapify
+    1.3.2 Build-Max-Heap
+    1.3.3 HeapSort
+    1.3.4 关于优先队列の操作
+1.4 堆的优缺点? 堆排序分析.
+    1.4.1 堆的优缺点
+    1.4.2 性能分析
+1.5 优先队列 what and why? 堆与优先队列的关系？ 
+    1.5.1 什么是优先队列？Priority Queue
+    1.5.2 为什么是要使用优先队列？ why?
+    1.5.3 Links between Heap and Priority Queue ?
+1.6 优先队列的实现 性能分析？
+     1.6.1 Naive Implementation
+    1.6.2 Usual Implementation
+    1.6.3 Specialized Heaps Implementation
+    1.6.4 性能分析
+1.7 Java，Python中的Heap，Priority Queue的实现
+    1.7.1 Java中的实现
+    1.7.2 Python中的实现
+1.8 References &amp; Externel Links
+    1.8.1 References
+    1.8.2 Externel Links
+</code></pre><p>In this Section,we’ll go deeply to reveal concrete definitions of Heap,Binary Heap,and Priority Queue and difference between them.<br>Basic Concepts and Methods will also be talked but not that  specifically.</p>
+<h5 id="1-1-什么是堆？Heap"><a href="#1-1-什么是堆？Heap" class="headerlink" title="1.1  什么是堆？Heap?"></a>1.1  什么是堆？Heap?</h5><h5 id="1-1-1-what？"><a href="#1-1-1-what？" class="headerlink" title="1.1.1 what？"></a>1.1.1 what？</h5><p>很多人以为<br>堆 == 二叉堆 == 优先队列   他们之间的关系真的是相等的吗？   [Conclusion at section 1.5.3]   </p>
+<p>在英语中，heap作为动词 <strong>把..堆起/使成堆</strong> 的意思。作为名词是<strong>堆/很多</strong>的意思。<br>1964年，J. W. J. Williams 发明了堆排序(Heap Sort)<sup>[1]</sup>，同时描述了如何利用二叉堆来实现一个优先队列。 使用该种数据结构可以高效的获取队列中的最大值或者最小值，从而进行排序操作。<br>（关于二叉堆见1.2,什么是优先队列见1.4 ）</p>
+<p>之后，后人不断加以改进，产生了一系列不同的堆.<br>比如k-叉堆，斐波那契堆，二项堆，左式堆，斜堆等等。  见<a href="https://en.wikipedia.org/wiki/Heap_(data_structure" target="_blank" rel="external">堆变体</a>#Variants)。  </p>
+<p>从最初William的二叉堆用于堆排序，到后来的各式各样的堆，基本都是以树的形式表示。因此说    </p>
+<p>  <strong>堆是一共基于树的数据结构</strong>。</p>
+<p>  维基百科也有说：A heap is a <strong>specialized tree-based data structure</strong> that satisfies the heap property。<br>  所谓的heap property(堆的性质)即是大根堆/小跟堆的性质(所有父节点≥/≤子节点)。   </p>
+<p>  因此，亦可以说堆不是一个数据结构，而是一类数据结构[this is my personal opinion]。</p>
+<h5 id="1-1-2-关于二叉堆-Binary-Heap"><a href="#1-1-2-关于二叉堆-Binary-Heap" class="headerlink" title="1.1.2 关于二叉堆 Binary Heap"></a>1.1.2 关于二叉堆 Binary Heap</h5><p>  <strong>二叉堆是一种堆</strong>。  </p>
+<p>  维基百科上说：<br>  A binary heap is <strong>a heap data structure</strong> that takes the form of a binary tree. Binary heaps are a common way of implementing priority queues.[2]</p>
+<p> 显而易见的，将堆与二叉堆划等号（堆heap == 二叉堆bianry heap），显然是一个不成熟的想法。  </p>
+<p>heap != bianry heap,that is to say , heap is a class of data structures.but binay heap is a common type of heap.  </p>
+<p>它们与优先队列的关系将会在1.4中简要探讨。</p>
+<h5 id="1-1-3-why"><a href="#1-1-3-why" class="headerlink" title="1.1.3 why ?"></a>1.1.3 why ?</h5><p>既然知道了什么是堆，那么为什么要用堆呢？williams为什么要引入它呢。它又有哪些优点呢。<br>我认为，对于传统的大根堆或者小跟堆而言，最大值/最小值分别处于root节点位置.(为什么？)<br>这方便我们从中读/取最大值，最小值，这是一个O(logn)的操作。相对于数组而言，这有显著的性能提升。因此堆适用于那些需要频繁取最大/最小值的应用。  </p>
+<h4 id="1-2-堆的实现？什么二叉堆？"><a href="#1-2-堆的实现？什么二叉堆？" class="headerlink" title="1.2 堆的实现？什么二叉堆？"></a>1.2 堆的实现？什么二叉堆？</h4><p>堆采用树结构实现。对于不同的堆有不同的树实现。  </p>
+<h5 id="1-2-0-什么是二叉堆"><a href="#1-2-0-什么是二叉堆" class="headerlink" title="1.2.0 什么是二叉堆"></a>1.2.0 什么是二叉堆</h5><p>二叉堆是一种堆，二叉堆广泛地被使用，以至于，当我们谈论堆时，通常默认指的就是二叉堆。<br>二叉堆也是优先队列的一种常见的实现。 （什么是优先队列见1.4 ）</p>
+<p>二叉堆基于二叉树是实现，除了是二叉树之外，还需要满足下面两个条件。<br>1.Shape property :一个二叉堆是一个完全二叉树。在此含义即是所有的层（除了最后一层）都是满的，只有最后一层不是满的，而且最后一层的节点从左向右依次填充。<br>2.Heap property: （大根堆）对于所有的父亲节点而言，其值≥子节点。<br>    （小根堆）对于所有的父亲节点而言，其值≤ 子节点。  【注意可以等于】</p>
+<h5 id="1-2-1-二叉堆的实现"><a href="#1-2-1-二叉堆的实现" class="headerlink" title="1.2.1 二叉堆的实现"></a>1.2.1 二叉堆的实现</h5><p>对于最常见的二叉堆：<br>他使用二叉树来实现，这个二叉树是一个完全二叉树(完全二叉树在不同的文献中有着不同的含义，在此处我们取所有的层（除了最后一层）都是满的，只有最后一层不是满的，而且最后一层的节点从左向右依次填充。见<a href="https://en.wikipedia.org/wiki/Binary_tree" target="_blank" rel="external">维基百科-完全二叉树</a>)  </p>
+<p>逻辑上，二叉堆是一棵树。  物理上，二叉堆常用数组来实现。而不需要指针。这样可以获得较好的性能。(考虑为什么可以？)  </p>
+<p>如下图所示：<br>逻辑结构：<br><img src="https://img-blog.csdn.net/20161201154351701" alt=""><br>物理结构：<br><img src="https://img-blog.csdn.net/20161201155126086" alt=""></p>
+<h5 id="1-2-2-斐波那契堆的实现"><a href="#1-2-2-斐波那契堆的实现" class="headerlink" title="1.2.2 斐波那契堆的实现"></a>1.2.2 斐波那契堆的实现</h5><p>待续</p>
+<h5 id="1-2-3-二项堆的实现"><a href="#1-2-3-二项堆的实现" class="headerlink" title="1.2.3 二项堆的实现"></a>1.2.3 二项堆的实现</h5><p>待续</p>
+<h4 id="1-3-堆的相关操作？-堆排序？"><a href="#1-3-堆的相关操作？-堆排序？" class="headerlink" title="1.3 堆的相关操作？   堆排序？"></a>1.3 堆的相关操作？   堆排序？</h4><p>对于不同的heap，我们有不同的操作，在此，我们先对最为广泛的二叉堆进行阐述。<br>【本部分主要采自算法导论第三版 &amp;&amp; 只针对大根堆（小根同理）】<br>【注：大根堆 == 最大堆，小根堆 == 最小堆】</p>
+<ul>
+<li>Max-Heapify 维护大根堆的性质。O(log n)</li>
+<li>Build-Max-Heap 从无序的输入数据数组中构造一个大根堆。 O(n) </li>
+<li>HeapSort O(nlog n ) 对一个数组进行[原址]排序。</li>
+<li>Max-Heap-Insert,Heap-Extract-Max,Heap-Increase-Key,Heap-Maximum【O(1)】过程、时间复杂度均为O(log n )功能是利用二叉堆实现一个优先队列。 </li>
+</ul>
+<p>【此处只是列出了算法伪代码以及算法思想，比较晦涩，最好还是找到具体的例子(譬如算法导论上就可以找到)，配合算法，会有更加深刻的理解，此处限于篇幅就不做举例了】</p>
+<h5 id="1-3-1-Max-Heapify"><a href="#1-3-1-Max-Heapify" class="headerlink" title="1.3.1 Max-Heapify"></a>1.3.1 Max-Heapify</h5><p>Max-Heapify(A,i) 自顶向下维护大根堆性质。 O(log n)<br><img src="https://ws1.sinaimg.cn/large/006tNc79gy1fqjp4ykkzdj30fp0abwfy.jpg" alt="">  </p>
+<h5 id="1-3-2-Build-Max-Heap"><a href="#1-3-2-Build-Max-Heap" class="headerlink" title="1.3.2 Build-Max-Heap"></a>1.3.2 Build-Max-Heap</h5><p>Build-Max-Heap(A)  从最后一个非叶子节点开始，到根节点一次调用Max-Heapify(A,i)<br><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fqjp7f20upj30cj045wex.jpg" alt=""><br>【此算法的复杂度是O(n) 而不是O(n log n)试想为什么？】【算法导论上有证明】   </p>
+<h5 id="1-3-3-HeapSort"><a href="#1-3-3-HeapSort" class="headerlink" title="1.3.3 HeapSort"></a>1.3.3 HeapSort</h5><p>HeapSort(A)  O(n log n )<br>思想：<br>每次从root节点取出最大值，然后调整。<br>即：<br>从最后一个节点开始，将其调换A<a href="最大值">1]</a>，将脱离堆，从根节点开始调整堆。<br><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fqjpbnwuryj30ei0713z7.jpg" alt=""></p>
+<h5 id="1-3-4-优先队列の操作"><a href="#1-3-4-优先队列の操作" class="headerlink" title="1.3.4 优先队列の操作"></a>1.3.4 优先队列の操作</h5><p>Max-Heap-Insert,Heap-Extract-Max,Heap-Increase-Key,Heap-Maximum【O(1)】过程、时间复杂度均为O(log n )功能是利用二叉堆实现一个优先队列。<br>these operations are implemented to implement a priority queue.<br>the operations above ,i.e. Max-Heapify,Build-Max-Heap ,HeapSort are enough for heapsort.  </p>
+<ul>
+<li>Max-Heap-Insert,在大根堆中插入一个元素并调整之</li>
+<li>Heap-Extract-Max,取出最大值即根节点，然后调整之</li>
+<li>Heap-Increase-Key,将某个节点增加一定的值，然后调整之</li>
+<li>Heap-Maximum，返回根节点的值</li>
+</ul>
+<h4 id="1-4-堆的优缺点-堆排序分析"><a href="#1-4-堆的优缺点-堆排序分析" class="headerlink" title="1.4 堆的优缺点? 堆排序分析."></a>1.4 堆的优缺点? 堆排序分析.</h4><h4 id="1-5-堆与优先队列的关系？-优先队列what-and-why"><a href="#1-5-堆与优先队列的关系？-优先队列what-and-why" class="headerlink" title="1.5 堆与优先队列的关系？ 优先队列what and why?"></a>1.5 堆与优先队列的关系？ 优先队列what and why?</h4><h5 id="1-5-1-什么是优先队列？Priority-Queue"><a href="#1-5-1-什么是优先队列？Priority-Queue" class="headerlink" title="1.5.1 什么是优先队列？Priority Queue"></a>1.5.1 什么是优先队列？Priority Queue</h5><p>优先队列是一种类似于队列的数据结构。<br>熟悉数据结构的我们知道，队列是一种允许在一段进行插入(入队)以及另一端进行删除(出队)的数据结构。 它是一种FIFO类型的数据结构。 队列在很多方面都有很多应用，比如在cache(替换策略),进程/作业调度方面。  </p>
+<p>而，在很多情况下，我们需要考虑不同元素的优先权不同，譬如在操作系统调度中，有一种叫做SJF的算法(即最短作业有限),在此，优先级就是执行作业的用时长短。这种情况下，用基本的先入先出的队列就不能胜任了。<br>因此，引入了一种叫做优先队列(Priority Queue )的数据结构。<br>优先队列中的每一个节点都有对应的优先级。 在不同的应用中采用不同的指标作为优先级。   </p>
+<ul>
+<li>优先队列满足至少以下两种操作<sup>[4]</sup><ul>
+<li>Insert  插入/入队 将一个节点插入到优先队列</li>
+<li>Deelete Min/Max      删除最小值/最大值，或者称之为Min/Max出队.</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>其实可以将Stack,Queue作为优先队列的两种特殊情况(为什么？)</li>
+<li>也可以将优先队列看做为队列的一种修改，当出队时，总是出优先级最大/小的节点。</li>
+</ul>
+<h5 id="1-5-2-为什么是要使用优先队列？-why"><a href="#1-5-2-为什么是要使用优先队列？-why" class="headerlink" title="1.5.2 为什么是要使用优先队列？ why?"></a>1.5.2 为什么是要使用优先队列？ why?</h5><p>引入了优先队列，可以方便的执行插入以及取最大/最小值的操作。在很多应用中，这两种操作频繁出现。</p>
+<ul>
+<li>我认为优先队列<ul>
+<li>一方面，其插入,取最大/最小值操作在很多应用中频繁使用，满足了这些应用的需求。</li>
+<li>另一方面，使用堆来实现的优先队列具有很好的性能。这使得我们更加倾向于使用它们。(关于性能见1.5)</li>
+</ul>
+</li>
+</ul>
+<p>维基百科上列举了优先队列的一些重要应用<sup>[3]</sup>：</p>
+<pre><code>Bandwidth management
+Discrete event simulation
+Dijkstra&apos;s algorithm
+Huffman coding
+Best-first search algorithms
+ROAM triangulation algorithm
+Prim&apos;s algorithm for minimum spanning tree
+</code></pre><h5 id="1-5-3-Links-between-Heap-and-Priority-Queue"><a href="#1-5-3-Links-between-Heap-and-Priority-Queue" class="headerlink" title="1.5.3 Links between Heap and Priority Queue ?"></a>1.5.3 Links between Heap and Priority Queue ?</h5><p>优先队列常使用堆Heap来实现，但是优先队列与堆在概念上是不同的。<br>优先队列是一种抽象数据结构ADT(逻辑上)，它可以有很多实现(物理上)，譬如堆，数组，链表等。<br>但是<strong>最常见且最高效</strong>的实现是采用堆来实现。   </p>
+<p>到目前为止，我们理清了三者之间的关系。<br>so  堆 != 二叉堆 != 优先队列 != 堆<br><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fqkaogd2h9j30ew06o75c.jpg" alt=""><br>Heap : 二叉堆，k-叉堆，二项堆，斐波那契堆，斜堆，etc..<br>PQ : Priority Queue(ADT) 。Many kinds of Implementations<br><strong>二叉堆是堆的一种，常用于实现优先队列。</strong></p>
+<h4 id="1-6-优先队列的实现-性能分析？"><a href="#1-6-优先队列的实现-性能分析？" class="headerlink" title="1.6 优先队列的实现 性能分析？"></a>1.6 优先队列的实现 性能分析？</h4><h5 id="1-6-1-Naive-Implementation"><a href="#1-6-1-Naive-Implementation" class="headerlink" title="1.6.1  Naive Implementation"></a>1.6.1  Naive Implementation</h5><p>有很多非常simple的实现优先队列的方法，比如无序列表Unordered List。<br>尽管Simple，但是性能却<strong>不佳</strong>。对于无序列表而言，插入操作是O(1)的，出队Extract-Min/Max 却是O（n）的，因为要搜索整个列表。  </p>
+<h5 id="1-6-2-Usual-Implementation"><a href="#1-6-2-Usual-Implementation" class="headerlink" title="1.6.2 Usual Implementation"></a>1.6.2 Usual Implementation</h5><p>为了提高性能，堆被引入作为实现。<br>普通的二叉堆具有O(log n )的performance for inserts and removals。<br>and O(n) to build initially。<br>普通二叉堆的变体，斐波那契堆， pairing heaps提供了更好的性能。 </p>
+<h5 id="1-6-3-Specialized-Heaps-Implementation"><a href="#1-6-3-Specialized-Heaps-Implementation" class="headerlink" title="1.6.3 Specialized Heaps Implementation"></a>1.6.3 Specialized Heaps Implementation</h5><p>有一些特殊的堆结构，可以提供附加一些的操作(除1.5.1中的两种),或者在一些特殊的数据类型上性能优于普通的堆。<br>见[3]</p>
+<h5 id="1-6-4-性能分析"><a href="#1-6-4-性能分析" class="headerlink" title="1.6.4 性能分析"></a>1.6.4 性能分析</h5><p>下图为采用不同的堆作为优先队列时，相关操作的时间复杂度。【此为最小堆】<br><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fqk7tyztq7j30rk05amyp.jpg" alt=""><br><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fqk7v8i14jj311r03j3z4.jpg" alt=""><br>【采自维基百科，注释略之】</p>
+<h4 id="1-7-Java，Python中的Heap，Priority-Queue的实现"><a href="#1-7-Java，Python中的Heap，Priority-Queue的实现" class="headerlink" title="1.7 Java，Python中的Heap，Priority Queue的实现"></a>1.7 Java，Python中的Heap，Priority Queue的实现</h4><h5 id="1-7-1-Java中的实现"><a href="#1-7-1-Java中的实现" class="headerlink" title="1.7.1 Java中的实现"></a>1.7.1 Java中的实现</h5><p>Class PriorityQueue </p>
+<h5 id="1-7-2-Python中的实现"><a href="#1-7-2-Python中的实现" class="headerlink" title="1.7.2 Python中的实现"></a>1.7.2 Python中的实现</h5><p>heapq模块实现了二叉堆的功能,可以用来实现优先队列以及Heapsort。<br>为Min-Heap.且下标从0开始。</p>
+<ul>
+<li>API<ul>
+<li>Heapify() 给定一List,原地 线性 将其变为最小堆。</li>
+<li>Heappop() 从堆中pop最小值，即索引[0]所在元素。</li>
+<li>Heappush() 向插入一个元素。</li>
+</ul>
+</li>
+<li>用例<ul>
+<li><img src="https://ws2.sinaimg.cn/large/006tNc79ly1fqk8st2mxmj307e06p3yv.jpg" alt=""></li>
+</ul>
+</li>
+<li>此外还提供了<br>  heapq.nlargest, heapq.nsmallest 用来返回n个最大/最小的元素。</li>
+</ul>
+<h5 id="实现HeapSort"><a href="#实现HeapSort" class="headerlink" title="实现HeapSort"></a>实现HeapSort</h5><pre><code>def heapsort(iterable):
+   h = []
+   for value in iterable:
+     heappush(h, value)
+   return [heappop(h) for i in range(len(h))]
+
+ &gt;&gt;&gt; heapsort([1, 3, 5, 7, 9, 2, 4, 6, 8, 0])
+ &gt;&gt;&gt; [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+</code></pre><h5 id="实现优先队列"><a href="#实现优先队列" class="headerlink" title="实现优先队列"></a>实现优先队列</h5><pre><code>pq = []                         # list of entries arranged in a heap
+entry_finder = {}               # mapping of tasks to entries
+REMOVED = &apos;&lt;removed-task&gt;&apos;      # placeholder for a removed task
+counter = itertools.count()     # unique sequence count
+
+def add_task(task, priority=0):
+    &apos;Add a new task or update the priority of an existing task&apos;
+    if task in entry_finder:
+        remove_task(task)
+    count = next(counter)
+    entry = [priority, count, task]
+    entry_finder[task] = entry
+    heappush(pq, entry)
+
+def remove_task(task):
+    &apos;Mark an existing task as REMOVED.  Raise KeyError if not found.&apos;
+    entry = entry_finder.pop(task)
+    entry[-1] = REMOVED
+
+    def pop_task():
+&apos;Remove and return the lowest priority task. Raise KeyError if empty.&apos;
+    while pq:
+        priority, count, task = heappop(pq)
+        if task is not REMOVED:
+            del entry_finder[task]
+            return task
+    raise KeyError(&apos;pop from an empty priority queue&apos;)
+</code></pre><h5 id="最大堆的实现"><a href="#最大堆的实现" class="headerlink" title="最大堆的实现"></a>最大堆的实现</h5><p>待续<br><a href="https://stackoverflow.com/questions/14189540/python-topn-max-heap-use-heapq-or-self-implement" target="_blank" rel="external">ref</a></p>
+<h4 id="1-8-References-amp-Externel-Links"><a href="#1-8-References-amp-Externel-Links" class="headerlink" title="1.8 References &amp; Externel Links"></a>1.8 References &amp; Externel Links</h4><h5 id="1-8-1-References"><a href="#1-8-1-References" class="headerlink" title="1.8.1 References"></a>1.8.1 References</h5><p>[1] : Williams, J. W. J. (1964), “Algorithm 232 - Heapsort”, Communications of the ACM, 7 (6): 347–348</p>
+<p>[2] :<a href="https://en.wikipedia.org/wiki/Binary_heap" target="_blank" rel="external">维基百科-二叉堆</a></p>
+<p>[3] :<a href="https://en.wikipedia.org/wiki/Priority_queue" target="_blank" rel="external">维基百科-优先队列</a></p>
+<p>[4] : 《数据结构与算法分析 C语言实现》 Weiss Chapter 6</p>
+<h5 id="1-8-2-Externel-Links"><a href="#1-8-2-Externel-Links" class="headerlink" title="1.8.2 Externel Links"></a>1.8.2 Externel Links</h5><p><a href="https://www.coder4.com/archives/3844" target="_blank" rel="external">Python使用heapq实现小顶堆（TopK大）、大顶堆（BtmK小）</a></p>
+<p><a href="https://blog.csdn.net/minxihou/article/details/51850001" target="_blank" rel="external">利用Python实现堆排序</a></p>
+<p><a href="https://blog.csdn.net/Marksinoberg/article/details/52734332" target="_blank" rel="external">..</a></p>
+<h3 id="1-2-选择排序，插入排序，冒泡排序"><a href="#1-2-选择排序，插入排序，冒泡排序" class="headerlink" title="1.2 选择排序，插入排序，冒泡排序"></a>1.2 选择排序，插入排序，冒泡排序</h3><h3 id="1-3-快速排序"><a href="#1-3-快速排序" class="headerlink" title="1.3 快速排序"></a>1.3 快速排序</h3><h3 id="1-4"><a href="#1-4" class="headerlink" title="1.4"></a>1.4</h3>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/20/Hash-Table-基础/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lintao Fang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Rat-racer's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/20/Hash-Table-基础/" itemprop="url">Hash Table 基础</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-20T02:00:59+08:00">
+                2018-04-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/data-structures/" itemprop="url" rel="index">
+                    <span itemprop="name">data structures</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/04/20/Hash-Table-基础/" class="leancloud_visitors" data-flag-title="Hash Table 基础">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><pre><code>1.1 什么是哈希Hash 
 1.2 哈希函数 Hash Function 
     1.2.1 哈希函数性质
     1.2.2 哈希函数的选择
@@ -643,163 +2216,900 @@
 1.7 總結 Summary 
 1.7 References &amp; External Links
 </code></pre>
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="fa fa-calendar-check-o"></i>
-	<a href="/2018/04/20/Hash-Table-基础/" class="article-date">
-	  <time datetime="2018-04-19T18:00:59.000Z" itemprop="datePublished">Apr 20</time>
-	</a>
-</span>
-    
-  <span class="article-category">
-    <i class="fa fa-folder"></i>
-    <a class="article-category-link" href="/categories/data-structures/">data structures</a>
-  </span>
-
-    
-  <span class="article-tag">
-    <i class="fa fa-tag"></i>
-	<a class="article-tag-link" href="/tags/Hash-Table/">Hash Table</a>, <a class="article-tag-link" href="/tags/data-structures/">data structures</a>
-  </span>
-
-
-    <span class="post-comment"><i class="fa fa-commenting-o"></i> <a href="/2018/04/20/Hash-Table-基础/#comments" class="article-comment-link">Comments</a></span>
-    
-  </p>
-</article>
-
-    
-      <article class="article article-type-第四章" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/02/分值策略/">分值策略</a>
-    </h1>
-  
-
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="fa fa-calendar-check-o"></i>
-	<a href="/2018/01/02/分值策略/" class="article-date">
-	  <time datetime="2018-01-01T16:00:10.000Z" itemprop="datePublished">Jan 2</time>
-	</a>
-</span>
-    
-    
-
-    <span class="post-comment"><i class="fa fa-commenting-o"></i> <a href="/2018/01/02/分值策略/#comments" class="article-comment-link">Comments</a></span>
-    
-  </p>
-</article>
-
-    
-  </div>
-
-  
-    
-    <nav class="bar bar-footer clearfix" data-stick-bottom>
-        <div class="bar-inner">
-        <ul class="pager pull-left">
-            
-            <li class="prev disabled">
-                <a href="javascript:;">
-                    <i class="fa fa-angle-left"></i>
-                    Prev
-                </a>
-            </li>
-            
-            
-            <li class="next">
-                <a href="/page/2/">
-                    Next
-                    <i class="fa fa-angle-right"></i>
-                </a>
-            </li>
-            
-        </ul>
-        <div class="total-article bar-right">Page 1 of 4</div>
-        </div>
-    </nav>
-    
- 
-</main>
-
-  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
-	
-	
-    <ul class="social-links">
-    	
-        <li><a href="https://github.com/Rat-racer" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="fa fa-github"></i></a></li>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/04/20/Hash-Table-基础/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
-        <li><a href="http://weibo.com/" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="fa fa-weibo"></i></a></li>
-        
-        <li><a href="https://www.douban.com/people/95596562/" target="_blank" title="Douban" data-toggle=tooltip data-placement=top><i class="fa fa-douban"></i></a></li>
-        
-        <li><a href="http://1356772993.qzone.qq.com" target="_blank" title="Qzone" data-toggle=tooltip data-placement=top><i class="fa fa-qzone"></i></a></li>
-        
-        <li><a href="/images/wechat.jpg" target="_blank" title="Wechat" data-toggle=tooltip data-placement=top><i class="fa fa-wechat"></i></a></li>
-        
-        <li><a href="/lintaofang@gmail.com" target="_blank" title="Google" data-toggle=tooltip data-placement=top><i class="fa fa-google"></i></a></li>
-        
-        <li><a href="https://www.linkedin.com/in/lintaofang/" target="_blank" title="Linkedin" data-toggle=tooltip data-placement=top><i class="fa fa-linkedin"></i></a></li>
-        
-        <li><a href="/images/qq.jpg" target="_blank" title="Tencent" data-toggle=tooltip data-placement=top><i class="fa fa-tencent"></i></a></li>
-        
-        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="fa fa-rss"></i></a></li>
-        
-    </ul>
-
-    <div class="copyright">
-    	
-        <div class="publishby">
-        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
-        </div>
+      
     </div>
-</footer>
-  <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
-<script>
-window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
-</script>
-<script src="/js/plugin.js"></script>
-<script src="/js/application.js"></script>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
   
+  
+  
+  </article>
+
+
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/02/分值策略/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lintao Fang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Rat-racer's Blog">
+    </span>
+
     
-    
-        <script>
-(function (window) {
-    var INSIGHT_CONFIG = {
-        TRANSLATION: {
-            POSTS: 'Posts',
-            PAGES: 'Pages',
-            CATEGORIES: 'Categories',
-            TAGS: 'Tags',
-            UNTITLED: '(Untitled)',
-        },
-        ROOT_URL: '/',
-        CONTENT_URL: '/content.json',
-    };
-    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-})(window);
-</script>
-<script src="/js/insight.js"></script>
-    
-    
+      <header class="post-header">
+
         
-<script defer src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/01/02/分值策略/" itemprop="url">分值策略</a></h1>
+        
 
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-02T00:00:10+08:00">
+                2018-01-02
+              </time>
+            
 
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/01/02/分值策略/" class="leancloud_visitors" data-flag-title="分值策略">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
 
     
     
     
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
 
 
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.gif"
+                alt="Lintao Fang" />
+            
+              <p class="site-author-name" itemprop="name">Lintao Fang</p>
+              <p class="site-description motion-element" itemprop="description">stay busy and happy</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">categories</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Lintao Fang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("HgtMwg8ozBBtv1qUaUNAimqo-gzGzoHsz#<app_id>", "gHk6AuhGfLLB5hu7SF6yqXha#<app_key>");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+  
+
+  
+
+  
+
+  
 
 </body>
 </html>
