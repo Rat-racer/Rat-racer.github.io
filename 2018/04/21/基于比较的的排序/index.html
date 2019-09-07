@@ -1,0 +1,1415 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="排序,基于比较的排序,算法," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Toaday I’m going to review some important sorting algorithms based on comparison.Besides,related data structures such as heap,priority queue will also be talked. 1 堆排序 &amp;amp;&amp;amp; 优先队列 2 选择排序，插入排序，冒泡排序">
+<meta name="keywords" content="排序,基于比较的排序,算法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于比较的的排序">
+<meta property="og:url" content="http://yoursite.com/2018/04/21/基于比较的的排序/index.html">
+<meta property="og:site_name" content="Rat-racer&#39;s Blog">
+<meta property="og:description" content="Toaday I’m going to review some important sorting algorithms based on comparison.Besides,related data structures such as heap,priority queue will also be talked. 1 堆排序 &amp;amp;&amp;amp; 优先队列 2 选择排序，插入排序，冒泡排序">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://img-blog.csdn.net/20161201154351701">
+<meta property="og:image" content="https://img-blog.csdn.net/20161201155126086">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79gy1fqjp4ykkzdj30fp0abwfy.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79gy1fqjp7f20upj30cj045wex.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79gy1fqjpbnwuryj30ei0713z7.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79ly1fqkaogd2h9j30ew06o75c.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1fqk7tyztq7j30rk05amyp.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1fqk7v8i14jj311r03j3z4.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79ly1fqk8st2mxmj307e06p3yv.jpg">
+<meta property="og:updated_time" content="2018-05-08T12:10:02.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="基于比较的的排序">
+<meta name="twitter:description" content="Toaday I’m going to review some important sorting algorithms based on comparison.Besides,related data structures such as heap,priority queue will also be talked. 1 堆排序 &amp;amp;&amp;amp; 优先队列 2 选择排序，插入排序，冒泡排序">
+<meta name="twitter:image" content="https://img-blog.csdn.net/20161201154351701">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Rat racer'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/04/21/基于比较的的排序/"/>
+
+
+
+
+
+  <title>基于比较的的排序 | Rat-racer's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Rat-racer's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About Me
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/resources/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            Resources
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/21/基于比较的的排序/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lintao Fang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Rat-racer's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">基于比较的的排序</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-21T00:35:52+08:00">
+                2018-04-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/algorithms/" itemprop="url" rel="index">
+                    <span itemprop="name">algorithms</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/04/21/基于比较的的排序/" class="leancloud_visitors" data-flag-title="基于比较的的排序">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Toaday I’m going to review some important sorting algorithms based on comparison.Besides,related data structures such as heap,priority queue will also be talked.</p>
+<pre><code>1 堆排序 &amp;&amp; 优先队列
+2 选择排序，插入排序，冒泡排序
+3 快速排序
+4 相关笔试题分析
+</code></pre><h3 id="1-堆排序-amp-amp-优先队列"><a href="#1-堆排序-amp-amp-优先队列" class="headerlink" title="1 堆排序 &amp;&amp; 优先队列"></a>1 堆排序 &amp;&amp; 优先队列</h3><pre><code>1 堆排序 &amp;&amp; 优先队列
+目录：
+1.1 什么是堆?    what and why?
+    1.1.1 what？
+    1.1.2 关于二叉堆 Binary Heap
+    1.1.3 why ? 
+1.2 堆的实现？什么二叉堆？   
+    1.2.0 什么是二叉堆？ binary heap?
+    1.2.1 堆的实现 二叉堆
+    1.2.2 斐波那契堆的实现
+    1.2.3 二项堆堆的实现
+1.3 堆的相关操作？ 堆排序？ 
+    1.3.1 Max-Heapify
+    1.3.2 Build-Max-Heap
+    1.3.3 HeapSort
+    1.3.4 关于优先队列の操作
+1.4 堆的优缺点? 堆排序分析.
+    1.4.1 堆的优缺点
+    1.4.2 性能分析
+1.5 优先队列 what and why? 堆与优先队列的关系？ 
+    1.5.1 什么是优先队列？Priority Queue
+    1.5.2 为什么是要使用优先队列？ why?
+    1.5.3 Links between Heap and Priority Queue ?
+1.6 优先队列的实现 性能分析？
+     1.6.1 Naive Implementation
+    1.6.2 Usual Implementation
+    1.6.3 Specialized Heaps Implementation
+    1.6.4 性能分析
+1.7 Java，Python中的Heap，Priority Queue的实现
+    1.7.1 Java中的实现
+    1.7.2 Python中的实现
+1.8 References &amp; Externel Links
+    1.8.1 References
+    1.8.2 Externel Links
+</code></pre><p>In this Section,we’ll go deeply to reveal concrete definitions of Heap,Binary Heap,and Priority Queue and difference between them.<br>Basic Concepts and Methods will also be talked but not that  specifically.</p>
+<h5 id="1-1-什么是堆？Heap"><a href="#1-1-什么是堆？Heap" class="headerlink" title="1.1  什么是堆？Heap?"></a>1.1  什么是堆？Heap?</h5><h5 id="1-1-1-what？"><a href="#1-1-1-what？" class="headerlink" title="1.1.1 what？"></a>1.1.1 what？</h5><p>很多人以为<br>堆 == 二叉堆 == 优先队列   他们之间的关系真的是相等的吗？   [Conclusion at section 1.5.3]   </p>
+<p>在英语中，heap作为动词 <strong>把..堆起/使成堆</strong> 的意思。作为名词是<strong>堆/很多</strong>的意思。<br>1964年，J. W. J. Williams 发明了堆排序(Heap Sort)<sup>[1]</sup>，同时描述了如何利用二叉堆来实现一个优先队列。 使用该种数据结构可以高效的获取队列中的最大值或者最小值，从而进行排序操作。<br>（关于二叉堆见1.2,什么是优先队列见1.4 ）</p>
+<p>之后，后人不断加以改进，产生了一系列不同的堆.<br>比如k-叉堆，斐波那契堆，二项堆，左式堆，斜堆等等。  见<a href="https://en.wikipedia.org/wiki/Heap_(data_structure" target="_blank" rel="external">堆变体</a>#Variants)。  </p>
+<p>从最初William的二叉堆用于堆排序，到后来的各式各样的堆，基本都是以树的形式表示。因此说    </p>
+<p>  <strong>堆是一共基于树的数据结构</strong>。</p>
+<p>  维基百科也有说：A heap is a <strong>specialized tree-based data structure</strong> that satisfies the heap property。<br>  所谓的heap property(堆的性质)即是大根堆/小跟堆的性质(所有父节点≥/≤子节点)。   </p>
+<p>  因此，亦可以说堆不是一个数据结构，而是一类数据结构[this is my personal opinion]。</p>
+<h5 id="1-1-2-关于二叉堆-Binary-Heap"><a href="#1-1-2-关于二叉堆-Binary-Heap" class="headerlink" title="1.1.2 关于二叉堆 Binary Heap"></a>1.1.2 关于二叉堆 Binary Heap</h5><p>  <strong>二叉堆是一种堆</strong>。  </p>
+<p>  维基百科上说：<br>  A binary heap is <strong>a heap data structure</strong> that takes the form of a binary tree. Binary heaps are a common way of implementing priority queues.[2]</p>
+<p> 显而易见的，将堆与二叉堆划等号（堆heap == 二叉堆bianry heap），显然是一个不成熟的想法。  </p>
+<p>heap != bianry heap,that is to say , heap is a class of data structures.but binay heap is a common type of heap.  </p>
+<p>它们与优先队列的关系将会在1.4中简要探讨。</p>
+<h5 id="1-1-3-why"><a href="#1-1-3-why" class="headerlink" title="1.1.3 why ?"></a>1.1.3 why ?</h5><p>既然知道了什么是堆，那么为什么要用堆呢？williams为什么要引入它呢。它又有哪些优点呢。<br>我认为，对于传统的大根堆或者小跟堆而言，最大值/最小值分别处于root节点位置.(为什么？)<br>这方便我们从中读/取最大值，最小值，这是一个O(logn)的操作。相对于数组而言，这有显著的性能提升。因此堆适用于那些需要频繁取最大/最小值的应用。  </p>
+<h4 id="1-2-堆的实现？什么二叉堆？"><a href="#1-2-堆的实现？什么二叉堆？" class="headerlink" title="1.2 堆的实现？什么二叉堆？"></a>1.2 堆的实现？什么二叉堆？</h4><p>堆采用树结构实现。对于不同的堆有不同的树实现。  </p>
+<h5 id="1-2-0-什么是二叉堆"><a href="#1-2-0-什么是二叉堆" class="headerlink" title="1.2.0 什么是二叉堆"></a>1.2.0 什么是二叉堆</h5><p>二叉堆是一种堆，二叉堆广泛地被使用，以至于，当我们谈论堆时，通常默认指的就是二叉堆。<br>二叉堆也是优先队列的一种常见的实现。 （什么是优先队列见1.4 ）</p>
+<p>二叉堆基于二叉树是实现，除了是二叉树之外，还需要满足下面两个条件。<br>1.Shape property :一个二叉堆是一个完全二叉树。在此含义即是所有的层（除了最后一层）都是满的，只有最后一层不是满的，而且最后一层的节点从左向右依次填充。<br>2.Heap property: （大根堆）对于所有的父亲节点而言，其值≥子节点。<br>    （小根堆）对于所有的父亲节点而言，其值≤ 子节点。  【注意可以等于】</p>
+<h5 id="1-2-1-二叉堆的实现"><a href="#1-2-1-二叉堆的实现" class="headerlink" title="1.2.1 二叉堆的实现"></a>1.2.1 二叉堆的实现</h5><p>对于最常见的二叉堆：<br>他使用二叉树来实现，这个二叉树是一个完全二叉树(完全二叉树在不同的文献中有着不同的含义，在此处我们取所有的层（除了最后一层）都是满的，只有最后一层不是满的，而且最后一层的节点从左向右依次填充。见<a href="https://en.wikipedia.org/wiki/Binary_tree" target="_blank" rel="external">维基百科-完全二叉树</a>)  </p>
+<p>逻辑上，二叉堆是一棵树。  物理上，二叉堆常用数组来实现。而不需要指针。这样可以获得较好的性能。(考虑为什么可以？)  </p>
+<p>如下图所示：<br>逻辑结构：<br><img src="https://img-blog.csdn.net/20161201154351701" alt=""><br>物理结构：<br><img src="https://img-blog.csdn.net/20161201155126086" alt=""></p>
+<h5 id="1-2-2-斐波那契堆的实现"><a href="#1-2-2-斐波那契堆的实现" class="headerlink" title="1.2.2 斐波那契堆的实现"></a>1.2.2 斐波那契堆的实现</h5><p>待续</p>
+<h5 id="1-2-3-二项堆的实现"><a href="#1-2-3-二项堆的实现" class="headerlink" title="1.2.3 二项堆的实现"></a>1.2.3 二项堆的实现</h5><p>待续</p>
+<h4 id="1-3-堆的相关操作？-堆排序？"><a href="#1-3-堆的相关操作？-堆排序？" class="headerlink" title="1.3 堆的相关操作？   堆排序？"></a>1.3 堆的相关操作？   堆排序？</h4><p>对于不同的heap，我们有不同的操作，在此，我们先对最为广泛的二叉堆进行阐述。<br>【本部分主要采自算法导论第三版 &amp;&amp; 只针对大根堆（小根同理）】<br>【注：大根堆 == 最大堆，小根堆 == 最小堆】</p>
+<ul>
+<li>Max-Heapify 维护大根堆的性质。O(log n)</li>
+<li>Build-Max-Heap 从无序的输入数据数组中构造一个大根堆。 O(n) </li>
+<li>HeapSort O(nlog n ) 对一个数组进行[原址]排序。</li>
+<li>Max-Heap-Insert,Heap-Extract-Max,Heap-Increase-Key,Heap-Maximum【O(1)】过程、时间复杂度均为O(log n )功能是利用二叉堆实现一个优先队列。 </li>
+</ul>
+<p>【此处只是列出了算法伪代码以及算法思想，比较晦涩，最好还是找到具体的例子(譬如算法导论上就可以找到)，配合算法，会有更加深刻的理解，此处限于篇幅就不做举例了】</p>
+<h5 id="1-3-1-Max-Heapify"><a href="#1-3-1-Max-Heapify" class="headerlink" title="1.3.1 Max-Heapify"></a>1.3.1 Max-Heapify</h5><p>Max-Heapify(A,i) 自顶向下维护大根堆性质。 O(log n)<br><img src="https://ws1.sinaimg.cn/large/006tNc79gy1fqjp4ykkzdj30fp0abwfy.jpg" alt="">  </p>
+<h5 id="1-3-2-Build-Max-Heap"><a href="#1-3-2-Build-Max-Heap" class="headerlink" title="1.3.2 Build-Max-Heap"></a>1.3.2 Build-Max-Heap</h5><p>Build-Max-Heap(A)  从最后一个非叶子节点开始，到根节点一次调用Max-Heapify(A,i)<br><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fqjp7f20upj30cj045wex.jpg" alt=""><br>【此算法的复杂度是O(n) 而不是O(n log n)试想为什么？】【算法导论上有证明】   </p>
+<h5 id="1-3-3-HeapSort"><a href="#1-3-3-HeapSort" class="headerlink" title="1.3.3 HeapSort"></a>1.3.3 HeapSort</h5><p>HeapSort(A)  O(n log n )<br>思想：<br>每次从root节点取出最大值，然后调整。<br>即：<br>从最后一个节点开始，将其调换A<a href="最大值">1]</a>，将脱离堆，从根节点开始调整堆。<br><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fqjpbnwuryj30ei0713z7.jpg" alt=""></p>
+<h5 id="1-3-4-优先队列の操作"><a href="#1-3-4-优先队列の操作" class="headerlink" title="1.3.4 优先队列の操作"></a>1.3.4 优先队列の操作</h5><p>Max-Heap-Insert,Heap-Extract-Max,Heap-Increase-Key,Heap-Maximum【O(1)】过程、时间复杂度均为O(log n )功能是利用二叉堆实现一个优先队列。<br>these operations are implemented to implement a priority queue.<br>the operations above ,i.e. Max-Heapify,Build-Max-Heap ,HeapSort are enough for heapsort.  </p>
+<ul>
+<li>Max-Heap-Insert,在大根堆中插入一个元素并调整之</li>
+<li>Heap-Extract-Max,取出最大值即根节点，然后调整之</li>
+<li>Heap-Increase-Key,将某个节点增加一定的值，然后调整之</li>
+<li>Heap-Maximum，返回根节点的值</li>
+</ul>
+<h4 id="1-4-堆的优缺点-堆排序分析"><a href="#1-4-堆的优缺点-堆排序分析" class="headerlink" title="1.4 堆的优缺点? 堆排序分析."></a>1.4 堆的优缺点? 堆排序分析.</h4><h4 id="1-5-堆与优先队列的关系？-优先队列what-and-why"><a href="#1-5-堆与优先队列的关系？-优先队列what-and-why" class="headerlink" title="1.5 堆与优先队列的关系？ 优先队列what and why?"></a>1.5 堆与优先队列的关系？ 优先队列what and why?</h4><h5 id="1-5-1-什么是优先队列？Priority-Queue"><a href="#1-5-1-什么是优先队列？Priority-Queue" class="headerlink" title="1.5.1 什么是优先队列？Priority Queue"></a>1.5.1 什么是优先队列？Priority Queue</h5><p>优先队列是一种类似于队列的数据结构。<br>熟悉数据结构的我们知道，队列是一种允许在一段进行插入(入队)以及另一端进行删除(出队)的数据结构。 它是一种FIFO类型的数据结构。 队列在很多方面都有很多应用，比如在cache(替换策略),进程/作业调度方面。  </p>
+<p>而，在很多情况下，我们需要考虑不同元素的优先权不同，譬如在操作系统调度中，有一种叫做SJF的算法(即最短作业有限),在此，优先级就是执行作业的用时长短。这种情况下，用基本的先入先出的队列就不能胜任了。<br>因此，引入了一种叫做优先队列(Priority Queue )的数据结构。<br>优先队列中的每一个节点都有对应的优先级。 在不同的应用中采用不同的指标作为优先级。   </p>
+<ul>
+<li>优先队列满足至少以下两种操作<sup>[4]</sup><ul>
+<li>Insert  插入/入队 将一个节点插入到优先队列</li>
+<li>Deelete Min/Max      删除最小值/最大值，或者称之为Min/Max出队.</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>其实可以将Stack,Queue作为优先队列的两种特殊情况(为什么？)</li>
+<li>也可以将优先队列看做为队列的一种修改，当出队时，总是出优先级最大/小的节点。</li>
+</ul>
+<h5 id="1-5-2-为什么是要使用优先队列？-why"><a href="#1-5-2-为什么是要使用优先队列？-why" class="headerlink" title="1.5.2 为什么是要使用优先队列？ why?"></a>1.5.2 为什么是要使用优先队列？ why?</h5><p>引入了优先队列，可以方便的执行插入以及取最大/最小值的操作。在很多应用中，这两种操作频繁出现。</p>
+<ul>
+<li>我认为优先队列<ul>
+<li>一方面，其插入,取最大/最小值操作在很多应用中频繁使用，满足了这些应用的需求。</li>
+<li>另一方面，使用堆来实现的优先队列具有很好的性能。这使得我们更加倾向于使用它们。(关于性能见1.5)</li>
+</ul>
+</li>
+</ul>
+<p>维基百科上列举了优先队列的一些重要应用<sup>[3]</sup>：</p>
+<pre><code>Bandwidth management
+Discrete event simulation
+Dijkstra&apos;s algorithm
+Huffman coding
+Best-first search algorithms
+ROAM triangulation algorithm
+Prim&apos;s algorithm for minimum spanning tree
+</code></pre><h5 id="1-5-3-Links-between-Heap-and-Priority-Queue"><a href="#1-5-3-Links-between-Heap-and-Priority-Queue" class="headerlink" title="1.5.3 Links between Heap and Priority Queue ?"></a>1.5.3 Links between Heap and Priority Queue ?</h5><p>优先队列常使用堆Heap来实现，但是优先队列与堆在概念上是不同的。<br>优先队列是一种抽象数据结构ADT(逻辑上)，它可以有很多实现(物理上)，譬如堆，数组，链表等。<br>但是<strong>最常见且最高效</strong>的实现是采用堆来实现。   </p>
+<p>到目前为止，我们理清了三者之间的关系。<br>so  堆 != 二叉堆 != 优先队列 != 堆<br><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fqkaogd2h9j30ew06o75c.jpg" alt=""><br>Heap : 二叉堆，k-叉堆，二项堆，斐波那契堆，斜堆，etc..<br>PQ : Priority Queue(ADT) 。Many kinds of Implementations<br><strong>二叉堆是堆的一种，常用于实现优先队列。</strong></p>
+<h4 id="1-6-优先队列的实现-性能分析？"><a href="#1-6-优先队列的实现-性能分析？" class="headerlink" title="1.6 优先队列的实现 性能分析？"></a>1.6 优先队列的实现 性能分析？</h4><h5 id="1-6-1-Naive-Implementation"><a href="#1-6-1-Naive-Implementation" class="headerlink" title="1.6.1  Naive Implementation"></a>1.6.1  Naive Implementation</h5><p>有很多非常simple的实现优先队列的方法，比如无序列表Unordered List。<br>尽管Simple，但是性能却<strong>不佳</strong>。对于无序列表而言，插入操作是O(1)的，出队Extract-Min/Max 却是O（n）的，因为要搜索整个列表。  </p>
+<h5 id="1-6-2-Usual-Implementation"><a href="#1-6-2-Usual-Implementation" class="headerlink" title="1.6.2 Usual Implementation"></a>1.6.2 Usual Implementation</h5><p>为了提高性能，堆被引入作为实现。<br>普通的二叉堆具有O(log n )的performance for inserts and removals。<br>and O(n) to build initially。<br>普通二叉堆的变体，斐波那契堆， pairing heaps提供了更好的性能。 </p>
+<h5 id="1-6-3-Specialized-Heaps-Implementation"><a href="#1-6-3-Specialized-Heaps-Implementation" class="headerlink" title="1.6.3 Specialized Heaps Implementation"></a>1.6.3 Specialized Heaps Implementation</h5><p>有一些特殊的堆结构，可以提供附加一些的操作(除1.5.1中的两种),或者在一些特殊的数据类型上性能优于普通的堆。<br>见[3]</p>
+<h5 id="1-6-4-性能分析"><a href="#1-6-4-性能分析" class="headerlink" title="1.6.4 性能分析"></a>1.6.4 性能分析</h5><p>下图为采用不同的堆作为优先队列时，相关操作的时间复杂度。【此为最小堆】<br><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fqk7tyztq7j30rk05amyp.jpg" alt=""><br><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fqk7v8i14jj311r03j3z4.jpg" alt=""><br>【采自维基百科，注释略之】</p>
+<h4 id="1-7-Java，Python中的Heap，Priority-Queue的实现"><a href="#1-7-Java，Python中的Heap，Priority-Queue的实现" class="headerlink" title="1.7 Java，Python中的Heap，Priority Queue的实现"></a>1.7 Java，Python中的Heap，Priority Queue的实现</h4><h5 id="1-7-1-Java中的实现"><a href="#1-7-1-Java中的实现" class="headerlink" title="1.7.1 Java中的实现"></a>1.7.1 Java中的实现</h5><p>Class PriorityQueue </p>
+<h5 id="1-7-2-Python中的实现"><a href="#1-7-2-Python中的实现" class="headerlink" title="1.7.2 Python中的实现"></a>1.7.2 Python中的实现</h5><p>heapq模块实现了二叉堆的功能,可以用来实现优先队列以及Heapsort。<br>为Min-Heap.且下标从0开始。</p>
+<ul>
+<li>API<ul>
+<li>Heapify() 给定一List,原地 线性 将其变为最小堆。</li>
+<li>Heappop() 从堆中pop最小值，即索引[0]所在元素。</li>
+<li>Heappush() 向插入一个元素。</li>
+</ul>
+</li>
+<li>用例<ul>
+<li><img src="https://ws2.sinaimg.cn/large/006tNc79ly1fqk8st2mxmj307e06p3yv.jpg" alt=""></li>
+</ul>
+</li>
+<li>此外还提供了<br>  heapq.nlargest, heapq.nsmallest 用来返回n个最大/最小的元素。</li>
+</ul>
+<h5 id="实现HeapSort"><a href="#实现HeapSort" class="headerlink" title="实现HeapSort"></a>实现HeapSort</h5><pre><code>def heapsort(iterable):
+   h = []
+   for value in iterable:
+     heappush(h, value)
+   return [heappop(h) for i in range(len(h))]
+
+ &gt;&gt;&gt; heapsort([1, 3, 5, 7, 9, 2, 4, 6, 8, 0])
+ &gt;&gt;&gt; [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+</code></pre><h5 id="实现优先队列"><a href="#实现优先队列" class="headerlink" title="实现优先队列"></a>实现优先队列</h5><pre><code>pq = []                         # list of entries arranged in a heap
+entry_finder = {}               # mapping of tasks to entries
+REMOVED = &apos;&lt;removed-task&gt;&apos;      # placeholder for a removed task
+counter = itertools.count()     # unique sequence count
+
+def add_task(task, priority=0):
+    &apos;Add a new task or update the priority of an existing task&apos;
+    if task in entry_finder:
+        remove_task(task)
+    count = next(counter)
+    entry = [priority, count, task]
+    entry_finder[task] = entry
+    heappush(pq, entry)
+
+def remove_task(task):
+    &apos;Mark an existing task as REMOVED.  Raise KeyError if not found.&apos;
+    entry = entry_finder.pop(task)
+    entry[-1] = REMOVED
+
+    def pop_task():
+&apos;Remove and return the lowest priority task. Raise KeyError if empty.&apos;
+    while pq:
+        priority, count, task = heappop(pq)
+        if task is not REMOVED:
+            del entry_finder[task]
+            return task
+    raise KeyError(&apos;pop from an empty priority queue&apos;)
+</code></pre><h5 id="最大堆的实现"><a href="#最大堆的实现" class="headerlink" title="最大堆的实现"></a>最大堆的实现</h5><p>待续<br><a href="https://stackoverflow.com/questions/14189540/python-topn-max-heap-use-heapq-or-self-implement" target="_blank" rel="external">ref</a></p>
+<h4 id="1-8-References-amp-Externel-Links"><a href="#1-8-References-amp-Externel-Links" class="headerlink" title="1.8 References &amp; Externel Links"></a>1.8 References &amp; Externel Links</h4><h5 id="1-8-1-References"><a href="#1-8-1-References" class="headerlink" title="1.8.1 References"></a>1.8.1 References</h5><p>[1] : Williams, J. W. J. (1964), “Algorithm 232 - Heapsort”, Communications of the ACM, 7 (6): 347–348</p>
+<p>[2] :<a href="https://en.wikipedia.org/wiki/Binary_heap" target="_blank" rel="external">维基百科-二叉堆</a></p>
+<p>[3] :<a href="https://en.wikipedia.org/wiki/Priority_queue" target="_blank" rel="external">维基百科-优先队列</a></p>
+<p>[4] : 《数据结构与算法分析 C语言实现》 Weiss Chapter 6</p>
+<h5 id="1-8-2-Externel-Links"><a href="#1-8-2-Externel-Links" class="headerlink" title="1.8.2 Externel Links"></a>1.8.2 Externel Links</h5><p><a href="https://www.coder4.com/archives/3844" target="_blank" rel="external">Python使用heapq实现小顶堆（TopK大）、大顶堆（BtmK小）</a></p>
+<p><a href="https://blog.csdn.net/minxihou/article/details/51850001" target="_blank" rel="external">利用Python实现堆排序</a></p>
+<p><a href="https://blog.csdn.net/Marksinoberg/article/details/52734332" target="_blank" rel="external">..</a></p>
+<h3 id="1-2-选择排序，插入排序，冒泡排序"><a href="#1-2-选择排序，插入排序，冒泡排序" class="headerlink" title="1.2 选择排序，插入排序，冒泡排序"></a>1.2 选择排序，插入排序，冒泡排序</h3><h3 id="1-3-快速排序"><a href="#1-3-快速排序" class="headerlink" title="1.3 快速排序"></a>1.3 快速排序</h3><h3 id="1-4"><a href="#1-4" class="headerlink" title="1.4"></a>1.4</h3>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/排序/" rel="tag"># 排序</a>
+          
+            <a href="/tags/基于比较的排序/" rel="tag"># 基于比较的排序</a>
+          
+            <a href="/tags/算法/" rel="tag"># 算法</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/20/Hash-Table-基础/" rel="next" title="Hash Table 基础">
+                <i class="fa fa-chevron-left"></i> Hash Table 基础
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/21/一个弱鸡的找实习经历/" rel="prev" title="一个弱鸡的找实习经历">
+                一个弱鸡的找实习经历 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="vcomments"></div>
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.gif"
+                alt="Lintao Fang" />
+            
+              <p class="site-author-name" itemprop="name">Lintao Fang</p>
+              <p class="site-description motion-element" itemprop="description">stay busy and happy</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">44</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">categories</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-堆排序-amp-amp-优先队列"><span class="nav-number">1.</span> <span class="nav-text">1 堆排序 && 优先队列</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-1-什么是堆？Heap"><span class="nav-number">1.0.1.</span> <span class="nav-text">1.1  什么是堆？Heap?</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-1-1-what？"><span class="nav-number">1.0.2.</span> <span class="nav-text">1.1.1 what？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-1-2-关于二叉堆-Binary-Heap"><span class="nav-number">1.0.3.</span> <span class="nav-text">1.1.2 关于二叉堆 Binary Heap</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-1-3-why"><span class="nav-number">1.0.4.</span> <span class="nav-text">1.1.3 why ?</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-堆的实现？什么二叉堆？"><span class="nav-number">1.1.</span> <span class="nav-text">1.2 堆的实现？什么二叉堆？</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-2-0-什么是二叉堆"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.2.0 什么是二叉堆</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-2-1-二叉堆的实现"><span class="nav-number">1.1.2.</span> <span class="nav-text">1.2.1 二叉堆的实现</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-2-2-斐波那契堆的实现"><span class="nav-number">1.1.3.</span> <span class="nav-text">1.2.2 斐波那契堆的实现</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-2-3-二项堆的实现"><span class="nav-number">1.1.4.</span> <span class="nav-text">1.2.3 二项堆的实现</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-堆的相关操作？-堆排序？"><span class="nav-number">1.2.</span> <span class="nav-text">1.3 堆的相关操作？   堆排序？</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-3-1-Max-Heapify"><span class="nav-number">1.2.1.</span> <span class="nav-text">1.3.1 Max-Heapify</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-3-2-Build-Max-Heap"><span class="nav-number">1.2.2.</span> <span class="nav-text">1.3.2 Build-Max-Heap</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-3-3-HeapSort"><span class="nav-number">1.2.3.</span> <span class="nav-text">1.3.3 HeapSort</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-3-4-优先队列の操作"><span class="nav-number">1.2.4.</span> <span class="nav-text">1.3.4 优先队列の操作</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-堆的优缺点-堆排序分析"><span class="nav-number">1.3.</span> <span class="nav-text">1.4 堆的优缺点? 堆排序分析.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-5-堆与优先队列的关系？-优先队列what-and-why"><span class="nav-number">1.4.</span> <span class="nav-text">1.5 堆与优先队列的关系？ 优先队列what and why?</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-5-1-什么是优先队列？Priority-Queue"><span class="nav-number">1.4.1.</span> <span class="nav-text">1.5.1 什么是优先队列？Priority Queue</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-5-2-为什么是要使用优先队列？-why"><span class="nav-number">1.4.2.</span> <span class="nav-text">1.5.2 为什么是要使用优先队列？ why?</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-5-3-Links-between-Heap-and-Priority-Queue"><span class="nav-number">1.4.3.</span> <span class="nav-text">1.5.3 Links between Heap and Priority Queue ?</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-6-优先队列的实现-性能分析？"><span class="nav-number">1.5.</span> <span class="nav-text">1.6 优先队列的实现 性能分析？</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-6-1-Naive-Implementation"><span class="nav-number">1.5.1.</span> <span class="nav-text">1.6.1  Naive Implementation</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-6-2-Usual-Implementation"><span class="nav-number">1.5.2.</span> <span class="nav-text">1.6.2 Usual Implementation</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-6-3-Specialized-Heaps-Implementation"><span class="nav-number">1.5.3.</span> <span class="nav-text">1.6.3 Specialized Heaps Implementation</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-6-4-性能分析"><span class="nav-number">1.5.4.</span> <span class="nav-text">1.6.4 性能分析</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-7-Java，Python中的Heap，Priority-Queue的实现"><span class="nav-number">1.6.</span> <span class="nav-text">1.7 Java，Python中的Heap，Priority Queue的实现</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-7-1-Java中的实现"><span class="nav-number">1.6.1.</span> <span class="nav-text">1.7.1 Java中的实现</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-7-2-Python中的实现"><span class="nav-number">1.6.2.</span> <span class="nav-text">1.7.2 Python中的实现</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#实现HeapSort"><span class="nav-number">1.6.3.</span> <span class="nav-text">实现HeapSort</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#实现优先队列"><span class="nav-number">1.6.4.</span> <span class="nav-text">实现优先队列</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#最大堆的实现"><span class="nav-number">1.6.5.</span> <span class="nav-text">最大堆的实现</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-8-References-amp-Externel-Links"><span class="nav-number">1.7.</span> <span class="nav-text">1.8 References & Externel Links</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-8-1-References"><span class="nav-number">1.7.1.</span> <span class="nav-text">1.8.1 References</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-8-2-Externel-Links"><span class="nav-number">1.7.2.</span> <span class="nav-text">1.8.2 Externel Links</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-选择排序，插入排序，冒泡排序"><span class="nav-number">2.</span> <span class="nav-text">1.2 选择排序，插入排序，冒泡排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-快速排序"><span class="nav-number">3.</span> <span class="nav-text">1.3 快速排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4"><span class="nav-number">4.</span> <span class="nav-text">1.4</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Lintao Fang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("HgtMwg8ozBBtv1qUaUNAimqo-gzGzoHsz#<app_id>", "gHk6AuhGfLLB5hu7SF6yqXha#<app_key>");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

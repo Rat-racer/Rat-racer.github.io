@@ -1,0 +1,1328 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="data structures," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1 Tree     1.1 Definition     1.2 Operation      1.3 性能分析 &amp;amp; 计算相关问题     1.4 Implementation         1.4.1 二叉树的遍历         1.4.2 二叉搜索树的操作 2 Linked List  3 Stack &amp;amp; Queue   4 Heap  5 String 6 Hash 今">
+<meta name="keywords" content="data structures">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Basic Data Structures Review">
+<meta property="og:url" content="http://yoursite.com/2018/04/23/Basic Data Structures/index.html">
+<meta property="og:site_name" content="Rat-racer&#39;s Blog">
+<meta property="og:description" content="1 Tree     1.1 Definition     1.2 Operation      1.3 性能分析 &amp;amp; 计算相关问题     1.4 Implementation         1.4.1 二叉树的遍历         1.4.2 二叉搜索树的操作 2 Linked List  3 Stack &amp;amp; Queue   4 Heap  5 String 6 Hash 今">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Binary_tree.svg/300px-Binary_tree.svg.png">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/1094457/201702/1094457-20170225183610632-1388959691.png">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Full_binary.svg/220px-Full_binary.svg.png">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcly1fqnt981a9ij30b606f0t4.jpg">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/1094457/201702/1094457-20170225184451991-1942362001.png">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79gy1fqmrwdyw0nj308204gmxb.jpg">
+<meta property="og:updated_time" content="2018-04-25T13:05:33.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Basic Data Structures Review">
+<meta name="twitter:description" content="1 Tree     1.1 Definition     1.2 Operation      1.3 性能分析 &amp;amp; 计算相关问题     1.4 Implementation         1.4.1 二叉树的遍历         1.4.2 二叉搜索树的操作 2 Linked List  3 Stack &amp;amp; Queue   4 Heap  5 String 6 Hash 今">
+<meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Binary_tree.svg/300px-Binary_tree.svg.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Rat racer'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/04/23/Basic Data Structures/"/>
+
+
+
+
+
+  <title>Basic Data Structures Review | Rat-racer's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Rat-racer's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About Me
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/resources/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            Resources
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/23/Basic Data Structures/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lintao Fang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Rat-racer's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Basic Data Structures Review</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-23T17:24:44+08:00">
+                2018-04-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/04/23/Basic Data Structures/" class="leancloud_visitors" data-flag-title="Basic Data Structures Review">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <pre><code>1 Tree
+    1.1 Definition
+    1.2 Operation 
+    1.3 性能分析 &amp; 计算相关问题
+    1.4 Implementation
+        1.4.1 二叉树的遍历
+        1.4.2 二叉搜索树的操作
+2 Linked List
+
+3 Stack &amp; Queue
+
+
+4 Heap 
+5 String
+6 Hash
+</code></pre><p>今天，复习一下基本的数据结构。顺带解决一些小问题。</p>
+<pre><code>要解决的问题
+BST的定义？key可以相等吗? 
+Binary Search Tree 与最小堆之间的区别? 
+完全二叉树等的概念歧义问题？ 
+BST的平均高度？为什么？平均是什么意思？
+</code></pre><h3 id="1-Tree"><a href="#1-Tree" class="headerlink" title="1 Tree"></a>1 Tree</h3><h4 id="1-1-Definition"><a href="#1-1-Definition" class="headerlink" title="1.1 Definition"></a>1.1 Definition</h4><h4 id="1-1-1-Tree-树"><a href="#1-1-1-Tree-树" class="headerlink" title="1.1.1 Tree 树"></a>1.1.1 Tree 树</h4><p>在计算机科学中，树是一种被广泛使用的数据结构/ADT，树模仿自然界中树的层次结构。<br>关于树的确切定义，可以使用递归的方式来定义。<br>即：(Recursive Defintion)<br>树是一些节点的集合。<br>这个集合可以是空集。<br>若非空，则一棵树由一个称作根root的节点，以及0个或者多个非空的子树构成。<br>这些子树中的每一棵都与root有一条边链接。  </p>
+<p>图1：一棵树的实例：<br><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Binary_tree.svg/300px-Binary_tree.svg.png" alt=""></p>
+<h4 id="1-1-2-Binary-Tree-二叉树"><a href="#1-1-2-Binary-Tree-二叉树" class="headerlink" title="1.1.2 Binary Tree 二叉树"></a>1.1.2 Binary Tree 二叉树</h4><p>二叉树是一棵树，其中每个节点至多有两个儿子。</p>
+<h4 id="1-1-3-Binary-Search-Tree-二叉搜索树-BST"><a href="#1-1-3-Binary-Search-Tree-二叉搜索树-BST" class="headerlink" title="1.1.3 Binary Search Tree 二叉搜索树(BST)"></a>1.1.3 Binary Search Tree 二叉搜索树(BST)</h4><p>二叉搜索是特殊的二叉树。 每一个有节点有一个Key键值。<br>对于树中的每个节点X，它的左子树中的所有Key＜X.Key (≤X.Key).右子树中的所有Key＞X.Key(≥X.Key)。<br>(关于上述两种不同的定义情况，其本质问题即使BST是否允许存在两个节点Key相等？)<br>这个我在不同的书中看到了不同的定义<br>[1]中给出的定义是不可以相等。<br>[2]中给出的定义是可以。即树中的每个节点X,左子树中的所有Key≤X.Key.右子树中的所有Key≥X.Key.  </p>
+<pre><code>我个人认为：对于大部分情况而言，我们更倾向于不存在Key值相同的情况。这样即符合很多实际情况，又能够简化问题。 
+当然，也可以引入带有Key值相等的情况，这需要再实现上考虑这个问题。具体见[2]思考题12.1.
+（而且[2]的算法皆是按照在不存在key值相等的情况下编写的）  
+</code></pre><p>Binary Search Tree 与最小堆之间的区别：</p>
+<pre><code>二叉搜索树的节点的左右孩子是有序的，left.key &lt; parent.key &lt; right.key  
+而最小堆，其左右孩子是无序的，也没有大小关系。{left.key ,right.key}&gt; parent.key
+对于最小堆而言,查找最小值是O(1)的，由于其左右孩子无大小关系，其查找任意一key则是O(n)的。
+</code></pre><p>二叉搜索树与最优二叉搜索树：  </p>
+<pre><code>最优二叉搜索🌲 动态规划
+</code></pre><h4 id="1-1-4-其他Type的树"><a href="#1-1-4-其他Type的树" class="headerlink" title="1.1.4 其他Type的树"></a>1.1.4 其他Type的树</h4><h4 id="Perfect-Binary-Tree"><a href="#Perfect-Binary-Tree" class="headerlink" title="Perfect Binary Tree"></a>Perfect Binary Tree</h4><p>A perfect binary tree is a binary tree in which all interior nodes have two children and all leaves have the same depth or same level.<br><img src="http://images2015.cnblogs.com/blog/1094457/201702/1094457-20170225183610632-1388959691.png" alt=""></p>
+<h4 id="Full-Binary-Tree"><a href="#Full-Binary-Tree" class="headerlink" title="Full Binary Tree"></a>Full Binary Tree</h4><p>每个节点的度为0或2  。<br>A full binary tree (sometimes referred to as a proper or plane binary tree)is a tree in which every node has either 0 or 2 children.<br>图2： A full binary tree<br><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Full_binary.svg/220px-Full_binary.svg.png" alt=""></p>
+<h4 id="Complete-Binary-Tree"><a href="#Complete-Binary-Tree" class="headerlink" title="Complete Binary Tree"></a>Complete Binary Tree</h4><p>所有层全充满，除了最后一层。且最后一层的节点从左向右填充。<br><img src="https://ws2.sinaimg.cn/large/006tKfTcly1fqnt981a9ij30b606f0t4.jpg" alt=""><br>综上，即<br><img src="http://images2015.cnblogs.com/blog/1094457/201702/1094457-20170225184451991-1942362001.png" alt=""><br>上述定义来自维基百科，此为最为广泛使用的定义。<br>然后不同的文献之间定义却存在歧义。主要在于完全二叉树的问题上。  </p>
+<p>譬如说，<br>在一些国外教程以及国内教材中【完全二叉树】一词指上图中的complete binary tree，而在算法导论中【完全二叉树】一词指上图中perfect binary tree。用【近似的完全二叉树】一词表示上图中的complete binary tree。</p>
+<pre><code>国内教材中
+满二叉树 指 perfect binary tree
+完全二叉树 指 complete binary tree
+
+算法导论[2]中：
+满二叉树 指 perfect binary tree
+近似的完全二叉树 指 complete binary tree
+完全二叉树  指 perfect binary tree
+</code></pre><p>知乎上有一个讨论此问题的问题<a href="https://www.zhihu.com/question/19809666" target="_blank" rel="external">为什么说“满二叉树也是完全二叉树?</a> </p>
+<p>同样的，对于树的深度depth和高度height不同的作者也都有不用的定义。<br>见:<br><a href="https://stackoverflow.com/questions/2603692/what-is-the-difference-between-tree-depth-and-height" target="_blank" rel="external">What is the difference between tree depth and height?
+</a><br><a href="https://www.zhihu.com/question/40286584/answer/85888350" target="_blank" rel="external">link</a><br>另外，对于根节点的标记有的从0开始也有的从1开始。  </p>
+<p>先序序列为a,b,c,d 的不同二叉树的个数是<br>n个结点构成的不同二叉树个数为 c(n,2n)/(n+1) 【卡特兰数】</p>
+<h4 id="AVL树"><a href="#AVL树" class="headerlink" title="AVL树"></a>AVL树</h4><h4 id="why-AVL"><a href="#why-AVL" class="headerlink" title="why AVL?"></a>why AVL?</h4><p>对于BST而言，其查询插入删除的时间复杂度都是O(h),h为树的高度。  </p>
+<p>一个不好的消息是BST的最坏时间复杂是O(n)。即BST的高度最坏可以达到O(n)，这也不难理解。  试想一颗总是朝着一个方向生长的二叉树。 它的高度便是O(n)。<br>为了提高性能，我们的出发点便是控制树高。 使得树高不至于那么高(O(n)级别)。  </p>
+<p>为了能够控制树高，我们期望树更加平衡些。即左右子树高度相差不是很大。<br>譬如说，我们可以限制对于任意一个节点，其左右子树的高度相等。这样的话，树的高度就会受限，不会疯狂的朝着一个方向生长。  然而这样的条件比较苛刻。  不容易满足。<br>于是我们可以限制每一个节点左子树和右子树的高度最多差1。这样的话既可以控制树高，又不是那么难以满足。  </p>
+<h4 id="what"><a href="#what" class="headerlink" title="what ?"></a>what ?</h4><p>AVL树即平衡 二叉搜索树  其以发明者 Adelson-Velsky and Landis命名。  </p>
+<p>AVL 树 == BBST（Balanced Binary Search Tree）   </p>
+<p>一颗AVL树是其每一个节点左子树和右子树的高度最多差1的二叉搜索树。<br>AVL树是自平衡的，即使在插入删除操作中，它可以自己调整(Rotate)从而使得满足AVL树条件。</p>
+<p>AVL树的每一个结点都有一个平衡因子Balanced Factor:为该结点的左子树的深度减去它的右子树的深度。<br>对于AVL树而言对于任一节点N，有BalanceFactor(N) ∈ {–1,0,+1}  </p>
+<p>AVL树的深度和logN是同数量级的(其中的N为结点个数) （why?） </p>
+<h4 id="Huffman树"><a href="#Huffman树" class="headerlink" title="Huffman树"></a>Huffman树</h4><h4 id="如何构建"><a href="#如何构建" class="headerlink" title="如何构建?"></a>如何构建?</h4><h4 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h4><p>树中一定没有度为1的结点</p>
+<h4 id="ASL"><a href="#ASL" class="headerlink" title="ASL"></a>ASL</h4><pre><code>huffman树与最优二叉搜索树的区别
+</code></pre><h4 id="线索二叉树"><a href="#线索二叉树" class="headerlink" title="线索二叉树"></a>线索二叉树</h4><p>前序和后序线索化之后，空链域为1<br>中序线索化后，空链域为2</p>
+<p>n个结点的线索二叉树上含有的线索数为 2n - (n-1) = n+1</p>
+<h4 id="1-1-5-高级树结构"><a href="#1-1-5-高级树结构" class="headerlink" title="1.1.5 高级树结构"></a>1.1.5 高级树结构</h4><h4 id="B-树"><a href="#B-树" class="headerlink" title="B 树"></a>B 树</h4><h4 id="红黑树"><a href="#红黑树" class="headerlink" title="红黑树"></a>红黑树</h4><h4 id="基数树"><a href="#基数树" class="headerlink" title="基数树"></a>基数树</h4><h4 id="Treap树"><a href="#Treap树" class="headerlink" title="Treap树"></a>Treap树</h4><h4 id="1-2-Operation-操作"><a href="#1-2-Operation-操作" class="headerlink" title="1.2 Operation 操作"></a>1.2 Operation 操作</h4><ul>
+<li>二叉树<ul>
+<li>遍历  （前序/中序/后序/层次）</li>
+</ul>
+</li>
+<li>二叉搜索树BST<ul>
+<li>插入/删除</li>
+<li>搜索    </li>
+</ul>
+</li>
+</ul>
+<p>Note:  </p>
+<pre><code>对于所有遍历操作，不论是递归实现还是迭代实现，其时间复杂度都是O(n)。  (why?)
+</code></pre><h4 id="1-3-性能分析-amp-计算相关问题"><a href="#1-3-性能分析-amp-计算相关问题" class="headerlink" title="1.3 性能分析 &amp; 计算相关问题"></a>1.3 性能分析 &amp; 计算相关问题</h4><h4 id="1-3-1-二叉树Binary-Tree"><a href="#1-3-1-二叉树Binary-Tree" class="headerlink" title="1.3.1 二叉树Binary Tree"></a>1.3.1 二叉树Binary Tree</h4><p>对于遍历操作，不论是递归实现还是迭代实现，其时间复杂度都是O(n)。</p>
+<h4 id="1-3-2-二叉搜索树Binary-Search-Tree"><a href="#1-3-2-二叉搜索树Binary-Search-Tree" class="headerlink" title="1.3.2 二叉搜索树Binary Search Tree:"></a>1.3.2 二叉搜索树Binary Search Tree:</h4><p><img src="https://ws1.sinaimg.cn/large/006tNc79gy1fqmrwdyw0nj308204gmxb.jpg" alt="">[3]</p>
+<p>对于插入，删除，查找操作其复杂度都是O(h) ，这是显而易见的。<br>接下来的问题便是h到底是多少，h与n的关系了.<br>对于树的深度而言，其</p>
+<ul>
+<li>最坏深度为O(n) ，这是显而易见的。  </li>
+<li>平均深度 O(log n)  这导出两个问题，<ul>
+<li>1.为什么是O(log n)? 如何证明之</li>
+<li>2.在这里平均的意义(含义)又是什么？</li>
+</ul>
+</li>
+</ul>
+<p>关于问题1，我在[1],[2]中找到了相关的说明。  </p>
+<p><strong>[2]</strong> 中定理12.4 证明了<br>一颗有n个不同关键字的随机构建二叉搜索树的期望高度是O(log n )   </p>
+<pre><code>NOTE:
+在这里随机构建的含义即是，考虑n个不同的节点，其所有排列情况是n!中，对于每一种情形按次序依次插入一个元素构建BST，
+注意只有插入操作，而没有删除操作。这样的构建过程叫做随机构建。 
+
+12.4节中同样证明了，一颗有n个不同关键字的随机构建二叉搜索树的期望高度是O(log n ) 。
+但是对于既存在插入操作，又存在删除操作的BST，其平均深度在[2]中并未做说明。  
+If deletions are allowed as well as insertions, 
+&quot;little is known about the average height of a binary search tree&quot;
+</code></pre><p><strong>[1]</strong> 中证明了，有n个节点，假设所有的树出现的机会相等时，则树平均深度为O(log n)<br>证明过程见下<a href="https://ws2.sinaimg.cn/large/006tKfTcly1fqnqnhzcpij30qd0h779p.jpg" target="_blank" rel="external">Weisss-p78</a><br>在这里，我认为其含义同[2]，即随机构建，虽然[1]中貌似并未明确其平均含义。  </p>
+<pre><code>对于既存在插入操作，又存在删除操作的情况下，
+[1]中给出了如下结论：
+已经证明，如果我们交替插入和删除θ(n^2)次，那么树的期望深度是θ(根号n)
+</code></pre><h4 id="1-3-3-相关计算"><a href="#1-3-3-相关计算" class="headerlink" title="1.3.3 相关计算"></a>1.3.3 相关计算</h4><p>设层数从1开始，即根节点为第1层，共有k层。  </p>
+<ul>
+<li>那么第i层，最多有2^(i-1)个节点。  </li>
+<li><p>整棵树，最多有2^0 + 2^1 +  … 2^(k-1) = 2^k -1   </p>
+</li>
+<li><p>若叶子节点即读书为0的节点有m个，度数为2的节点有n个，那么 m = n + 1</p>
+</li>
+<li>若整棵树有N个节点，设其高度为h。那么有[2^(h-1)-1] + 1 ≤ N ≤ 2^h - 1 即floor(log2(N)) + 1 后者ceil(log2(N+1))</li>
+</ul>
+<h4 id="1-4-Implementation-实现"><a href="#1-4-Implementation-实现" class="headerlink" title="1.4 Implementation  实现"></a>1.4 Implementation  实现</h4><h4 id="1-4-1-Tree-遍历"><a href="#1-4-1-Tree-遍历" class="headerlink" title="1.4.1 Tree 遍历"></a>1.4.1 Tree 遍历</h4><h4 id="1-4-2-二叉搜索树的操作"><a href="#1-4-2-二叉搜索树的操作" class="headerlink" title="1.4.2 二叉搜索树的操作"></a>1.4.2 二叉搜索树的操作</h4><h4 id="二叉树的重构"><a href="#二叉树的重构" class="headerlink" title="二叉树的重构"></a>二叉树的重构</h4><p>所谓重构即使，在不知道二叉树结构的情况下，从二叉树的先序中序后序遍历序列中重构出二叉树的结构。<br>可以证明：<br>采用 (先序遍历 || 后序遍历) + 中序遍历 可以重构出二叉树。<br>采用 先序遍历 + 中序遍历 不可以重构出二叉树   </p>
+<p>至于为什么？相关证明参见<a href="http://www.xuetangx.com/courses/course-v1:TsinghuaX+30240184X+sp/courseware/16d8402a24fd4429a8a7cc1c8401cb1f/b3fdcad4c3a84a8a861003eaa8b5965c/" target="_blank" rel="external">数据结构-二叉树重构</a></p>
+<h5 id="那么如何重构？"><a href="#那么如何重构？" class="headerlink" title="那么如何重构？"></a>那么如何重构？</h5><p>[1]: 数据结构与算法分析 C语言描述 Weiss</p>
+<p>[2]: 算法导论 CLRS 3th Edition</p>
+<p>[3] <a href="https://en.wikipedia.org/wiki/Binary_search_tree" target="_blank" rel="external">https://en.wikipedia.org/wiki/Binary_search_tree</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/data-structures/" rel="tag"># data structures</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/21/一个弱鸡的找实习经历/" rel="next" title="一个弱鸡的找实习经历">
+                <i class="fa fa-chevron-left"></i> 一个弱鸡的找实习经历
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/26/用mysql写存储过程与触发器/" rel="prev" title="用mysql写存储过程与触发器">
+                用mysql写存储过程与触发器 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="vcomments"></div>
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.gif"
+                alt="Lintao Fang" />
+            
+              <p class="site-author-name" itemprop="name">Lintao Fang</p>
+              <p class="site-description motion-element" itemprop="description">stay busy and happy</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">44</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">categories</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Tree"><span class="nav-number">1.</span> <span class="nav-text">1 Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-Definition"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 Definition</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-1-Tree-树"><span class="nav-number">1.2.</span> <span class="nav-text">1.1.1 Tree 树</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-2-Binary-Tree-二叉树"><span class="nav-number">1.3.</span> <span class="nav-text">1.1.2 Binary Tree 二叉树</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-3-Binary-Search-Tree-二叉搜索树-BST"><span class="nav-number">1.4.</span> <span class="nav-text">1.1.3 Binary Search Tree 二叉搜索树(BST)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-4-其他Type的树"><span class="nav-number">1.5.</span> <span class="nav-text">1.1.4 其他Type的树</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Perfect-Binary-Tree"><span class="nav-number">1.6.</span> <span class="nav-text">Perfect Binary Tree</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Full-Binary-Tree"><span class="nav-number">1.7.</span> <span class="nav-text">Full Binary Tree</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Complete-Binary-Tree"><span class="nav-number">1.8.</span> <span class="nav-text">Complete Binary Tree</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#AVL树"><span class="nav-number">1.9.</span> <span class="nav-text">AVL树</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#why-AVL"><span class="nav-number">1.10.</span> <span class="nav-text">why AVL?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#what"><span class="nav-number">1.11.</span> <span class="nav-text">what ?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Huffman树"><span class="nav-number">1.12.</span> <span class="nav-text">Huffman树</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何构建"><span class="nav-number">1.13.</span> <span class="nav-text">如何构建?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#性质"><span class="nav-number">1.14.</span> <span class="nav-text">性质</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ASL"><span class="nav-number">1.15.</span> <span class="nav-text">ASL</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#线索二叉树"><span class="nav-number">1.16.</span> <span class="nav-text">线索二叉树</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-5-高级树结构"><span class="nav-number">1.17.</span> <span class="nav-text">1.1.5 高级树结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#B-树"><span class="nav-number">1.18.</span> <span class="nav-text">B 树</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#红黑树"><span class="nav-number">1.19.</span> <span class="nav-text">红黑树</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基数树"><span class="nav-number">1.20.</span> <span class="nav-text">基数树</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Treap树"><span class="nav-number">1.21.</span> <span class="nav-text">Treap树</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-Operation-操作"><span class="nav-number">1.22.</span> <span class="nav-text">1.2 Operation 操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-性能分析-amp-计算相关问题"><span class="nav-number">1.23.</span> <span class="nav-text">1.3 性能分析 & 计算相关问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-1-二叉树Binary-Tree"><span class="nav-number">1.24.</span> <span class="nav-text">1.3.1 二叉树Binary Tree</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-2-二叉搜索树Binary-Search-Tree"><span class="nav-number">1.25.</span> <span class="nav-text">1.3.2 二叉搜索树Binary Search Tree:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-3-相关计算"><span class="nav-number">1.26.</span> <span class="nav-text">1.3.3 相关计算</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-Implementation-实现"><span class="nav-number">1.27.</span> <span class="nav-text">1.4 Implementation  实现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-1-Tree-遍历"><span class="nav-number">1.28.</span> <span class="nav-text">1.4.1 Tree 遍历</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-2-二叉搜索树的操作"><span class="nav-number">1.29.</span> <span class="nav-text">1.4.2 二叉搜索树的操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二叉树的重构"><span class="nav-number">1.30.</span> <span class="nav-text">二叉树的重构</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#那么如何重构？"><span class="nav-number">1.30.1.</span> <span class="nav-text">那么如何重构？</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Lintao Fang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("HgtMwg8ozBBtv1qUaUNAimqo-gzGzoHsz#<app_id>", "gHk6AuhGfLLB5hu7SF6yqXha#<app_key>");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
