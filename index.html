@@ -306,6 +306,321 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/12/未命名文件夹/未命名/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lintao Fang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Rat-racer's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/11/12/未命名文件夹/未命名/" itemprop="url">Untitled</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-12T13:24:36+08:00">
+                2019-11-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2019/11/12/未命名文件夹/未命名/" class="leancloud_visitors" data-flag-title="">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>各位老师，各位同学好，我是方林涛，【自我介绍】<br>我今天的报告题目是，Incorporating AutoML Techniques to Massive Network Embedding<br>那么，今天呢，我的报告主要有三个部分，<br>第一部分，和第二部分是背景介绍，主要是关于automl和nework embedding的一些工作的介绍。<br>第三部分核心的，将automl用于network的最新工作。</p>
+<h1 id="NE-1500字"><a href="#NE-1500字" class="headerlink" title="NE 1500字"></a>NE 1500字</h1><p>图数据，为什么要embedding?<br>问题定义都没讲啊。</p>
+<ul>
+<li><p>classical LLE,Laplacian Eigenmap , Graph Factrization，GraRep , HOPE</p>
+</li>
+<li><p>Word2vec + -&gt; Deepwalk , LINE,ndoe2vec , strut2vec,…</p>
+</li>
+<li>GCN </li>
+</ul>
+<p>要有一个大表！<br>LLE即局部线性嵌入，他假设假设一个节点可以用他的邻居节点的线性组合表示。损失函数为。<br>拉普拉斯特征映射认为在原始图中相似的节点映射到低位空间之后依然是相似的，在原始图中这个相似度使用边权来衡量。目标函数为。<br>Graph Factorization使用矩阵分解的方式对邻接矩阵进行分解得到节点的embedding.</p>
+<h1 id="AutoML"><a href="#AutoML" class="headerlink" title="AutoML"></a>AutoML</h1><h4 id="第二部分，我们将对automl进行简单的接受，他的全称是自动化机器学习。"><a href="#第二部分，我们将对automl进行简单的接受，他的全称是自动化机器学习。" class="headerlink" title="第二部分，我们将对automl进行简单的接受，他的全称是自动化机器学习。"></a>第二部分，我们将对automl进行简单的接受，他的全称是自动化机器学习。</h4><p>一个典型的机器学习过程大致有下面几个过程，首先数据预处理，特征选择与构造，模型选择与超参调优，模型集成。<br>很多人工。<br>这部分的各个过程室友很多人工参与的，如果你不懂机器学习的话，domain knowledge 那么你将无从下手。</p>
+<p>我们学计算机的 ,就是把那些机器可以做的交给机器来做，而不需要人工的参与。<br>就是把人工做的-&gt;机器来做的</p>
+<p>自动化机器学习过程。<br>就是把整套机器学习过程交给机器来做，从数据。。。。<br>这样机器学习小白，只要提供数据，交给automl系统，就可以获得一个较好的模型。</p>
+<p>automl可以分为自动化特征工程、自动化模型选择和自动化超参优化3个方面的内容。</p>
+<p>机器学习自动化的难点在于 数据清洗和特征工程 这些技巧，至于模型筛选、模型集成和超参数调参已经有比较成熟可用的代码了。</p>
+<p>已经有了很多automl产品和公司。 + 200字<br>auto-weka,auto-sklarn,auto-keras,,,,etc。<br>一些automl产品和公司</p>
+<ul>
+<li>自动化特征工程，自动特征工程可以帮助数据科学家基于数据自动创建特征。已经有一些工具，<ul>
+<li>自动化模型选择 + 200字  </li>
+<li>自动化超参调优【随机搜索，网格搜索，贝叶斯优化】 + 500字   </li>
+</ul>
+</li>
+</ul>
+<p>随机搜索<br>搜索整个超参数空间，在高维空间容易遇到维度灾难，不实用。<br>网格搜索是一种昂贵的方法。假设我们有n个超参数，每个超参数有两个值，那么配置总数就是2的N次方。因此，仅在少量配置上进行网格搜索是可行的。<br>网格搜索可以并行化，使得网格搜索在足够的计算能力下更加可行。<br>每次trial之间是相互独立的，不能利用先验知识选择下一组超参数。</p>
+<p>如果不同超参数对模型性能的影响有很大差异。有些超参数(比如正则化 系数)对模型性能的影响有限，而有些超参数(比如学习率)对模型性能影响 比较大。在这种情况下，采用网格搜索会在不重要的超参数上进行不必要的尝 试。一种在实践中比较有效的改进方法是对超参数进行随机组合，然后选取一 个性能最好的配置，这就是随机搜索(Random Search)[Bergstra and Bengio, 2012]。随机搜索在实践中更容易实现，一般会比网格搜索更加有效。<br>网格搜索和随机搜索都没有利用不同超参数组合之间的相关性，即如果模 型的超参数组合比较类似，其模型性能也是比较接近的。因此这两种搜索方式 一般都比较低效。下面我们介绍两种自适应的超参数优化方法。</p>
+<p>这个过程本质上是顺序的，不容易并行化。</p>
+<p>贝叶斯优化(Bayesian optimization)[Bergstra et al., 2011, Snoek et al., 2012] 是一种自适应的超参数搜索方法，根据当前已经试验的超参数组合，来预 测下一个可能带来最大收益的组合。</p>
+<p>假设超参数优化的函数 f (x) 服从高斯过程，则 p(f (x)|x) 为一个正态分 布。贝叶斯优化过程是根据已有的N组试验结果H = {xn,yn}Nn=1(yn为f(xn) 的观测值)来建模高斯过程，并计算f(x)的后验分布pGP(f(x)|x,H)。</p>
+<p>a(x,H)来判断一个样本是否能够给建模pθ(f(x)|x,H)<br> 供更多的收益。收益越大，其修正的高斯过程会越接近目标函数的真实分布。</p>
+<p> x 配置</p>
+<p>红色虚线曲线是实际真正的目标函数<br>黑色实线曲线是代理模型的目标函数的均值<br>灰色区域是代理模型的目标函数的方差</p>
+<h4 id="AutoDL"><a href="#AutoDL" class="headerlink" title="AutoDL"></a>AutoDL</h4><p>AutoDL 的原理、基于强化学习的AutoDL、基于进化算法的AutoDL、AtuoDL的高阶知识、自动化模型压缩与加速，以及各种核心算法和前沿算法。<br>autoDL + NAS  300字  </p>
+<h4 id="元学习-500字"><a href="#元学习-500字" class="headerlink" title="元学习 500字"></a>元学习 500字</h4><p>元学习是人工智能的理想目标，这部分对元学习的概念、流程和各种主流的学习方法都进行了详尽的介绍</p>
+<p>What is meta-learning?</p>
+<p>Mimics human domain experts: use configurations which are known to work well on similar datasets</p>
+<p>数据的metafeatures</p>
+<p>AutoML : automated machine learning 自动化机器学习，流程自动化，自动化，，<br>Meta-Learning : Learn to Learn, 学习如何学习，小孩子可以看很少的样本，而机器，，，，<br>Few-shot-learning ：小样本学习，是 Meta Learning 在监督学习领域的应用。<br>Transfer-Learning</p>
+<p>autoML指的是自动特征工程，自动超参调优，用来自动化一个机器学习流程。<br>meta-learning:学习如何学习。给的一任务，人类知道如何学习。机器不知道。<br>小样本学习。<br>tranfer learning，迁移学习。<br>迁移学习可看做meta-learning的一种方法。</p>
+<p>如何meta-learning.通过模型评估来学习<br>通过任务的属性，元特征来学习。现有的模型中学习。迁移学习。利用RNN在学习过程中修改自己的权</p>
+<p>元学习有好几种实现方法，</p>
+<h1 id="AutoNE"><a href="#AutoNE" class="headerlink" title="AutoNE"></a>AutoNE</h1><p>the existing AutoML techniques mostly deal with image or text data, and cannot easily handle large- scale networks</p>
+<p>简单的网格搜索，随机搜索不适用于大数据集。<br>贝叶斯优化需要大量的实验，每次实验得到的performance来调整超参数。<br>对于大数据而言，获得一个超参配置的performance是很难的， 代价太大了。<br>那么如何利用autoNE呢，使用meta-learnig初始化一个较好的超参配置，然后再做贝叶斯优化。【这是他的解决方法，其他方法呢，】</p>
+<p>Motivation ,challengs<br>AutoMl引入？拿来主义</p>
+<p>非常的有前景</p>
+<p>The meta-learner will collect the knowledge about the unknown performance function fM (·, ·), by executing algorithm M on the sampled sub-networks {Gi }i &gt;0 using various hyperparameters. It will then predict the optimal hyperparameters for algorithm M on the original large-scale network G, based on the knowledge transferred from the sampled sub-networks</p>
+<p>为啥不知道用一个network?</p>
+<p>数据增广Data Augmentation。。增加一些sub-network?<br>其他的meta-learner?<br>(theta,h(G)) -&gt; perfomance</p>
+<p> weight-share?</p>
+<p> 对这篇论文的评价，厉害的地方， 以及不足之处 ，未来可增加的工作？  </p>
+<p> 具体哪参数？</p>
+<p>【就用5个subnetwork,很容易过拟合吧？】<br>【你的实验也有很多参数。采样：初始点，采样长度，子图大小，子图个数；签名方法，；元学习方法，贝叶斯优化，不使用贝叶斯优化，使用RL，进化算法？】<br>【你这个pipeline也是个参数，其他的模型流程；肯定有可以借鉴的，只是我太无知，不知道】<br>【使用图meta-feature? netlsd】<br>迁移学习<br>受限于meta-learning + bayesian optimizaiton 这个模式？<br>要是你你怎么做？<br>两阶段<br>分层</p>
+<p>问题本质 ： 大规模数据/复杂模型 的 超参数优化问题</p>
+<p>【只能看几个数据(配置，performance)，小样本学习？】<br>Leverage NAS to NE?</p>
+<p>【预训练】</p>
+<p> ne peoformance是啥》</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/16/深度学习/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lintao Fang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Rat-racer's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/10/16/深度学习/" itemprop="url">Untitled</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-16T09:41:29+08:00">
+                2019-10-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2019/10/16/深度学习/" class="leancloud_visitors" data-flag-title="">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/05/9月计划/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1741,303 +2056,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/31/那些阅读来源/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Lintao Fang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Rat-racer's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/31/那些阅读来源/" itemprop="url">那些阅读来源</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-31T23:13:16+08:00">
-                2019-03-31
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2019/03/31/那些阅读来源/" class="leancloud_visitors" data-flag-title="那些阅读来源">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>信息过载时代，每天面临的的海量的信息使人眼花缭乱，如果没有计划，漫无目的地玩起手机，结果将是看着看着半天就过去了。也不知道究竟收获了什么？？<br>作为一个从现在开始珍惜时间，努力学习的小弱鸡，<br>我不能再想起来那样散漫，没有克制了。<br>从现在开始珍惜时间，把时间花费在有用的信息上。<br>如何找到那些对自己最有用的信息，是一个很重要的问题。<br>这就要讨论几个问题。  </p>
-<ul>
-<li>信息有效性，是否是我所想要的？✔️</li>
-<li>信息质量，尽管这个问题是我想要的，但是内容质量如何？✔️</li>
-</ul>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/03/31/那些阅读来源/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/11/算法笔试解答/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Lintao Fang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Rat-racer's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/11/算法笔试解答/" itemprop="url">Untitled</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-11T14:15:36+08:00">
-                2018-05-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/05/11/算法笔试解答/" class="leancloud_visitors" data-flag-title="">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>一·选择题 </p>
-<p>1.C<br>2.D<br>3.B<br>4.A </p>
-<p>二·编程题<br>1,<br>使用im2col方法来将卷积转换为矩阵相乘，性能更佳<br>2.</p>
-<pre><code>C/C++实现
-int MaxSub(const char * array , int len ){  
- int curSum = 0,maxSum = 0;  
- for( int i = 0 ; i &lt; len ;i++){  
-    curSum += array[i];  
-    maxSum = curSum&gt;maxSum ? curSum : maxSum;  
-    if(curSum &lt; 0)  
-        curSum = 0;  
-}
-return maxSum;  
-   }
-</code></pre><p>3.</p>
-<p><img src="https://ws4.sinaimg.cn/large/006tNc79gy1fr7dk88iloj30bx0fgdrp.jpg" alt=""></p>
-<p>4.Rondom forest<br>1.</p>
-<pre><code>D = {(x1,x2)…………………………(xm,ym)}  
-For i=1,2,,,K  
-    1.从属性集feature set中随机选择k属性,作为属性子集f_k  
-    2.选择最优属性进行划分  
-    3.继续分裂，   
-    4.重复1-3，直至终止条件以生成一棵树  
-</code></pre><p>共生成k棵树  </p>
-<ol>
-<li><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fr7do059fnj30f80l6qm4.jpg" alt=""><br>欠拟合，参数过于简单，未能较好的拟合。未能捕捉到样本的趋势，过拟合在训练集以及测试机上都有较大的误差。<br>过拟合，参数过于复杂，过度拟合。过度拟合训练样本。过拟合在训练集上有较小的误差，但是在测试集上有较大误差  </li>
-</ol>
-<p>3.<br>随机森林一般情况下不容易过拟合。<br>因为现实世界中，数据是有噪声的，采用较少棵的树容易过拟合。<br>增加树的数量可以减少过拟合。  </p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2092,7 +2110,7 @@ For i=1,2,,,K
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">44</span>
+                  <span class="site-state-item-count">46</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2153,7 +2171,7 @@ For i=1,2,,,K
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
