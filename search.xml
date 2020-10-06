@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title></title>
+    <url>%2F2020%2F10%2F06%2FUntitled%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
     <title><![CDATA[hexo迁移到新电脑]]></title>
     <url>%2F2020%2F10%2F06%2Fhexo%E8%BF%81%E7%A7%BB%E5%88%B0%E6%96%B0%E7%94%B5%E8%84%91%2F</url>
     <content type="text"><![CDATA[安装git, node.js, npm，hexo-cli等上传公钥至ssh key，源文件夹全部拷贝即可why so complicated?]]></content>
