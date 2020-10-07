@@ -19,6 +19,12 @@
     <title><![CDATA[7月计划]]></title>
     <url>%2F2019%2F07%2F01%2F7%E6%9C%88%E8%AE%A1%E5%88%92%2F</url>
     <content type="text"><![CDATA[7月1日 阅读《数学之美》第1~7章 基于规则的-&gt; 统计语言模型，计算句子的概率干什么呢，有什么用 大数定律？ 注意力机制 Attention 《美团机器学习实践》第七章 评论挖掘 7月2日 无监督学习 N-Gram语言模型 即 N阶马尔科夫链。。。？？？ 连续状态马尔科夫链，转移核？ 7月3日 机器翻译MT历史 Monte Carlo方法，MCMC 采样，采样方法 接受拒绝采样 变分推断 AI技术内参 p89-92 7月4日 肥宅 7月5日 肥宅 7月6日 周末 7月7日 周末 7月8日 ESL 回归的线性方法 矩阵求导术 TF-IDF,BM25 point-wise，paire-wise，list-wise 7月9日 7月10日 7月11日 7月12日 7月13日 无所事事，撩妹，，， 7月14日 7月15日 7月16日 7月17日 上午听讲座 7月18日 好像没干啥，，， 7月19日 又到周五了 梯度下降，对谁的梯度，谁对谁，为什么下降？ 损失函数关于参数的梯度，自变量是梯度，调节参数，是的Loss最小 知识都是别人的， 怎么才能搞成是自己的 7月20日 kf混沌一天 7月21日 计算学习理论？ PAC？ 泛化误差？期望错误？ 指在未知数据上的错误 经验误差？ 频率选派 vs.贝叶斯学派，MLE vs.贝叶斯估计 MAP = MLE + Prior ,使用贝叶斯公式，极大 贝叶斯估计，使用贝叶斯公式，求得后验分布密度函数 朴素贝叶斯 vs. 贝叶斯 贝叶斯决策论？ 多维高斯分布 大数定律 E[R_emp (h)] = R(h) 经验误差 期望误差 自动梯度计算？为什么？怎么做？ 奥卡姆剃刀原则？ 高斯混合模型，GMM EM算法 PCA 7月22日 7月23日 7月24日 7月25日 PCA 理论导出，计算步骤 7月26日 7月27日 Shallow Learning vs. Deep Learning 特征靠人工经验/特征转换 ？ 是否涉及特征学习 表示学习Representation Learning Local Representation , Distributed Representation 端到端 7月28日 前馈网络 vs. 反馈网络 vs. 图网络 7月29日* 7月30日 deep learning part1： chap2 7月31日 数据科学导论 chap5]]></content>
+      <categories>
+        <category>研究生阶段</category>
+      </categories>
+      <tags>
+        <tag>计划</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[random]]></title>
