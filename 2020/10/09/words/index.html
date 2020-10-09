@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>OpenMPI入门 | Rat-racer&#39;s Blog</title>
-  <meta name="keywords" content=" 并行计算 ">
-  <meta name="description" content="OpenMPI入门 | Rat-racer&#39;s Blog">
+  <title>words | Rat-racer&#39;s Blog</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="words | Rat-racer&#39;s Blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="stay busy and happy">
 <meta property="og:type" content="website">
@@ -573,9 +573,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-openmp入门" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-words" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">OpenMPI入门</h1>
+        <h1 class="article-title">words</h1>
     
     <div class="article-meta">
         
@@ -585,27 +585,20 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="Trash">Trash</a>
+            <a  data-rel="研究生阶段">研究生阶段</a>
             
         </span>
         
         
-        <span class="tag">
-            <i class="iconfont icon-tag"></i>
-            
-            <a class="color5">并行计算</a>
-            
-        </span>
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2020-10-09 19:45:45'>2020-10-09 19:42</time>
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2020-10-07 23:56:41'>2018-04-26 13:36</time>
-        
-    </div>
-    <div class="article-meta">
-        
-        <span>字数:1.2k</span>
+        <span>字数:1.9k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -624,7 +617,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#MPI"><span class="toc-text">MPI</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E6%B6%88%E6%81%AF%E4%BC%A0%E9%80%92%E7%9A%84%E5%B9%B6%E8%A1%8C%E7%BC%96%E7%A8%8B"><span class="toc-text">基于消息传递的并行编程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6%E4%B8%AA%E5%9F%BA%E6%9C%AC%E5%87%BD%E6%95%B0"><span class="toc-text">6个基本函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MPI-HelloWorld"><span class="toc-text">MPI HelloWorld</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%82%B9%E5%AF%B9%E7%82%B9%E9%80%9A%E4%BF%A1"><span class="toc-text">点对点通信</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9B%86%E7%BE%A4%E9%80%9A%E4%BF%A1"><span class="toc-text">集群通信</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#PAPER"><span class="toc-text">PAPER</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LISTEN"><span class="toc-text">LISTEN</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#from-Guns-Germs-and-Steel-documentary"><span class="toc-text">from Guns,Germs and Steel documentary</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#The-Battle-of-Chernobyl"><span class="toc-text">The Battle of Chernobyl</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#A-history-of-Communism"><span class="toc-text">A history of Communism</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SPEAKING"><span class="toc-text">SPEAKING</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -640,97 +633,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>MPI即Message Passing Interface、  消息传递Message Passing是进程间通信的一种方式。回顾一下操作系统的知识，进程间通信IPC主要有两种模型，一种是共享内存shared memory。另外一种便是消息传递Message Passing.  </p>
-<pre><code>1.MPI
-2.基于消息传递的并行编程
-3.6个基本函数
-4.MPI HelloWorld
-5.点对点通信
-6.集群通信</code></pre>
-<h3 id="MPI"><a href="#MPI" class="headerlink" title="MPI"></a><font color = red>MPI</font></h3><ul>
-<li>MPI是一个消息传递接口标准，(而不是指对它的实现)。 </li>
-<li>有很多MPI的实现，MPICH,MVAPICH,OpenMP,Intel MPI等。</li>
-<li>MPI支持对C/C++,和Fortran语言的绑定</li>
-<li>MPI已语言独立的形式存在，可以运行在不同的操作系统和硬件平台上。  </li>
-</ul>
-<p>OpenMPI是MPI的一个开源实现，支持标准MPI2.2.<br>使用OpenMPI我们可以方便的编写基于消息传递的并行程序。</p>
-<h3 id="基于消息传递的并行编程"><a href="#基于消息传递的并行编程" class="headerlink" title="基于消息传递的并行编程"></a><font color =red>基于消息传递的并行编程</font></h3><p>在基于消息传递的并行编程模型中，每个进程都有一个独立的地址空间，一个进程不能直接访问其他进程中的数据。使用消息传递来实现进程间的通信。<br>用户需要显式的通过发送和接受消息来实现处理器之间的数据交换。 这种编程方式适用于MPP,Cluster.<br>使用消息传递的开销比较大，因此它主要用来开发大粒度和粗粒度的并行性。</p>
-<p>对于一个问题进行分解，可以有两种方式，一种是域分解，一种是函数分解。所谓域分解就是讲问题的区域分为若干较小的区域，然后进行并行求解。 另外一种方式，函数求解又叫做功能分解。即使将一个大问题分解为若干子问题，然后对其并行求解。<br>对应于这两种形式，就是所谓的SPMD,MPMD两种编程模式。</p>
-<ul>
-<li>有SPMD,MPMD两种模式</li>
-<li>程序员需要指定有哪些进程，不同进程间要发送哪些消息，发送发与接收方是谁？</li>
-<li>MPI适用于分布式系统</li>
-</ul>
-<p>问题</p>
-<pre><code>什么是SPMD?MPMD?
-为什么会有SPMD,MPMD适用于什么情况？
-MPI适合什么类型的体系结构？  SMP,MPP,DSM,Cluster?
-OpenMPI OpenMP 区别？</code></pre>
-<h3 id="6个基本函数"><a href="#6个基本函数" class="headerlink" title="6个基本函数"></a><font color = red>6个基本函数</font></h3><p>OpenMPI提供了数以百计的API接口，但是完成一个基本的基于MPI的并行程序，一般只需要利用的其中六个，用这六个基本函数就可以求解很多问题。<br>包括启动与结束MPI环境，识别进程以及发送接收消息。</p>
-<pre><code>1. MPI_Init()
-2. MPI_Comm_size()
-3. MPI_COmm_rank()
-4. MPI_Send()
-5. MPI_Recv()
-6. MPI_Finalize()</code></pre>
-<p>问题</p>
-<pre><code>什么是通信域？
-什么是进程？和操作系统中的进程有什么区别？
-通信域与进程间关系？
-为什么要有消息标签？
-消息如何打包Pack，解包Unpack？
-MPI_Status?</code></pre>
-<h3 id="MPI-HelloWorld"><a href="#MPI-HelloWorld" class="headerlink" title="MPI HelloWorld"></a><font color = red>MPI HelloWorld</font></h3><p>不会Fortran,只会C。在此只介绍如何用c来写mpi程序。<br>关于如何安装mpi，此处略去。<br>欲使用MPI编写并行程序，必须将头文件mpi.h包含进去。  </p>
-<pre><code>#include&lt;mpi.h&gt;  
-#include&lt;stdio.h&gt;
-int main(int argc, char * argv[])  
-&#123;  
-    int rank,size;  
-    MPI_Init(&amp;argc,&amp;argv);  
-    MPI_Comm_rank(MPI_COMM_WORLD,&amp;rank);  
-    MPI_Comm_size(MPI_COMM_WORLD,&amp;size);  
-    printf(&quot;Hello world from process %d of%d\n&quot;,rank,size);  
-    MPI_Finalize();  
-    return 0;  
-&#125;     </code></pre>
-<h3 id="点对点通信"><a href="#点对点通信" class="headerlink" title="点对点通信"></a><font color = red>点对点通信</font></h3><p>通信机制</p>
-<ul>
-<li>阻塞通信机制</li>
-<li>非阻塞通信机制</li>
-</ul>
-<p>通信模式</p>
-<ul>
-<li>缓冲</li>
-<li>同步</li>
-<li>标准</li>
-<li>就绪</li>
-</ul>
-<font color = dark>
-通信模式(Communication Mode)指的是缓冲管理，以及发送方和接收方之间的同步方式  
-
-<p>不同通信模式和不同通信机制的结合，便 产生了非常丰富的点对点通信函数<br></font>   </p>
-<p>发送方：<br>（阻塞， 非阻塞） × （缓冲，同步，标准，就绪）<br>共有8中发送方式</p>
-<p>接收方有阻塞接收，非阻塞接收两种方式。 </p>
-<p>问题</p>
-<pre><code>什么是阻塞？什么是非阻塞？
-缓冲，同步，标准，就绪的含义？</code></pre>
-<h3 id="集群通信"><a href="#集群通信" class="headerlink" title="集群通信"></a><font color = red>集群通信</font></h3><p>群集通信(Collective Communications)是一个进 程组中的所有进程都参加的全局通信操作。   </p>
-<p>群集通信实现三个功能:通信、聚集和同步</p>
-<ul>
-<li>通信功能主要完成组内数据的传输</li>
-<li>聚集功能在通信的基础上对给定的数据完成一定的操 作</li>
-<li>同步功能实现组内所有进程在执行进度上取得一致</li>
-</ul>
-<p>群集通信，按照通信方向的不同，又可以分为三 种:一对多通信，多对一通信和多对多通信。</p>
-<ul>
-<li>对多通信:一个进程向其它所有的进程发送消息， 这个负责发送消息的进程叫做Root进程。</li>
-<li>多对一通信:一个进程负责从其它所有的进程接收消 息，这个接收的进程也叫做Root进程。</li>
-<li>多对多通信:每一个进程都向其它所有的进程发送或 者接收消息。</li>
-</ul>
-<p><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fr1w976doej30rj0j9gpy.jpg"></p>
-<pre><code>具体操作？
-含义？
-例子?</code></pre>
+        <p>speculation， 猜测<br>contract coronavirus，感染<br>outcome，结果<br>politics，重音，<br>disinformation，虚假信息，<br>misinformation，错误信息，<br>surge，<br>conspiracy，阴谋<br>circulate，传播<br>manipulate，<br>rumors<br>authoritative，<br>Authoritarianism，totalitarianism<br>leftist<br>ideology<br>toxic<br>straighten，<br>stretch，<br>van，nevertheless，尽管如此，<br>technician，carer，blissful，dump，tenant，evict，gunpoint，verge，solidarity，<br>destitute，<br>READ<br>plug-in , intervention,dissolve , parliament , incorporate<br>predicate,<br>depict,<br>nectat,<br>hive,<br>conjunctions,disjunction,<br>inductive,<br>transductive,<br>consecutive,<br>corpus,corpora,<br>interchangeably,<br>intermediate,<br>surpass,<br>physiology<br>ongoing</p>
+<h3 id="PAPER"><a href="#PAPER" class="headerlink" title="PAPER"></a>PAPER</h3><p>penalize,constraint,either or,prominent,error-prone,reside,with regard to,<br>representative(typical,) , let alone , vice versa, asymmetric,scenario,from scratch,ubiquitous computing,characterize,degenerate,decouple,counterparts,formulate,interpret,chronological，criteria，orthogonal,positive semidefinite,nonsingular,<br>synthetic,foreground,consensus,seminal,either,diverge,venue，<br>distill，<br>landscape,exclude,intrinsically,proposition，<br>endeavour,<br>pervasive,<br>buzzword,<br>oscillate,ravine,slope,dampen,<br>incur，multiplicity，understate，verge，differential，inentive，consecutive<br>，intermediate，network fabric，inherent，vendor，congestion, proliferation</p>
+<h3 id="LISTEN"><a href="#LISTEN" class="headerlink" title="LISTEN"></a>LISTEN</h3><h5 id="from-Guns-Germs-and-Steel-documentary"><a href="#from-Guns-Germs-and-Steel-documentary" class="headerlink" title="from Guns,Germs and Steel documentary"></a>from Guns,Germs and Steel documentary</h5><p>rainforest,inequality,specialist,identify ,field,gotten,much,continent ,bluntly,<br>met,beach,cargo,throw sb,threw,almost,religious, reverence,colonials,determine,race,genetically,suprior,explanation,absurd,<br>inferior,ingenuity,suivive,metal,build,cram,appeared,pyramid,Greek,workforce,explore,division,massive,prehistory,ravage,Ice Age,thriving, plants,migrat,instead, archaeological,encyclopedia,game,a bow and arrow,unpredictable, ,An important ,strip, pulp,dough,cornucopia,<br>yield,limitation,cereal,barley and wheat,plentiful,nutritious,profound,humanity,towards,collapse,herds,drought,<br>prosper,Stone Age,specilize,uncover,dwelling,sophiscated,permanent,oval,hut,partially,series,radiocarbon,mud, upright, grain,basis,chip,notch,beam,insects,moisture,percolating,granary,primarily,scarcity,radical shift,<br>harvest,crops,cultivation,trait,interference,domestication,breeding, deliberate<br>,unconsciously, decisive ,transition, turning point,chronic,  corn,squash,beans, sorghum,millet,yam,advanced,colonized,interior,uninhabited,propel,deficiency,supplement,realization,ultimately,scale,transformation,on the hoof,yea-round,variation,ongoing,complementary,stubble,dung,mutually, goats a nd sheep,plough,harness,buffalo,wool,plant-eating,mammal, tame,suitable candidates,offspring,zebra,donkeys,cow,ox,cattle,livestock,sowing,hallmark,efficiently,forge steel,axe,powerhouse,head start,ironically,ecology,accrued,vegetation,explosion, scribes,determistic,destiny,dealt,<br>collided,massacre,Inca Empire,uneven,fascinate,flourish,conquest,mercenary,territory, venture,clash,caribbean,possesion,warrior,llama,docile,ride,ridden,conquistadors,exotic,herding cattle,hos remanship,display,rein,medieval,knights, bull,imperial,highland,Peru,Chile,globe,mighty,upside down,swine,rather,what is it,grimly,beast,emphasis,cavalry,context,royal,messenger,Spaniard,camp,virtually,orchestrated,latest,arsenal,gunpowder,pioneer,Arabs,battlefield,crude,warfare,moderns,seem,aim,swordsman,sound,smell,smoke,awe,terrifying,bluster,infancy,lay elsewhere,sword,smith,craft,deadly,steel,bronze,innately,themselves,the ones,trial,inherited,demanded,stab,slash,wield,rapier,high point,metalworking,brittle,pliability,bend,spring back,infused,plunge,immense,experimentation,blade,dueling,fashionable,Renaissance,aspiring,derives, in spain,civilian dress,upward,ancestry,greed,drove,hardship,lust,self-advancent, overbearing,avarice,bear witness,gambling,unharmed,psychological,purpose,intimidate,enter, room,Indies,scared,eye to eye,bluff, nostril,disturb,fringe,oblivion,slept,walking,square,fearful , brilliantly,star-studded,launch,tactic, formidable,kidnapping,exploit,ensue,ensuing,chaos,<br>,repository,transimit,oral,Sumerian,elaborate,cuneiform,cuniform,ink,moveable,innovations,involve,Mayan script,literate,giant,Eurasia,narrow,Panama, maximum,dimension, rotate, latitude,hinder,spread,events,tilt,in favor of,Europeans,fateful,dancers, unarmed,alleged,sheer,terror,litter,magnificent,crowd,obliged,convert,resort to violence,scene,cut,against,perfection,makeshift,quarters,strategy,proved,decisive,mass,destruction,invisibly,infectious,wage war,vaccine,rampant spread of infectious disease,sail,sailed , smallpox,illness,rash,initially,pimples,blisters,patient,burst,rate,exponentially,eventually,tremendous,devastation,  epidemic,decimate,prey,grew,intimate,,intimidate,contact,evolved,legacy,acquire,swept through,paradoxically,resilient,susceptible,immunity ,death toll,indigenous,emptied,cooperative,captor,slaughter,garrotted,relying,mythology,expansion,inventive,plenty,conqueror,accidental,shape,reshape,triumph,theories,steam locomotive,testament,quest,mid,Cape of Good Hope,tip,ranching,arose,blessed,abundance, prosperous,descendant<br>equator,inhabitant,prior to,proximity,exposure,smallpox,havoc,foothold,Dutch,wagons,adept at ,admire,rifles,assault,stunned,devastated,match,showdown, dawn,injury,prevail,victorious,era of industrial revolution,continuously,tribes,hostile,sustain, spring from,tropic of capricorn,remarkably,descend ,diversify,racist,surplus,outpatient,<br>suppress,overturn,legacy,excavating, rumors,jackal,hill,town,gorgeous,beads,incrediable,accomplishment,set up,tropical, flourshing tropical civilization,tropics,wrack,lethal,reversal,imported,methods,vaccination,bestow,immunity,antibodies,virulent,malaria,humble,overwhelming,combat,tended ,humid,infest,triumphant,Diaspora,draw,reserve,copper,Belgians,rubber,minerals,dust and ashes,brutal,compel,ferry,trail,theory,annual,income,plight,endemic,scourge,burden, afflicting,dramatically,rate of infection,undoubtedly,aware,attributed,sufficient,mutating,mutate,mutation,to be frank with you,magnitude,impersonal,in action(连读: in , an ,),one small,area,perfected guns and steel,lethal disease,wealth,poverty,condemned to sth,fatalistic,historically,endemic malaria,concerted effort,eradicate,Malaysia and Singapore, eliminate,welfare,wealthy,whole,intellectual,enquiry,inquiry,<br>at his disposal,shed light on,come into existence,more or less,in the course of,over the years,pick up from,scratch out a living,keep up with,turn out to ,by virtue of,<br>green,grain,agree,great,greed,greets,Greeks</p>
+<p>whom,them,he,then,than,there,they,this,would,be,has,had,an,it would be,there was, what it is,to,is,it’s,in,at,about, as,in a ,that,have,and,with,from,through ,as if, their,him,could,whereas,where,the,were,all,had been,have been,will,while,over,were,was,than</p>
+<h5 id="The-Battle-of-Chernobyl"><a href="#The-Battle-of-Chernobyl" class="headerlink" title="The Battle of Chernobyl"></a>The Battle of Chernobyl</h5><p>Ukraine,engrave,reactor,self-fueling,a series of ,detonation,tremble,plant,ton,blast,ultra-powerful，stream,radioactive,uranium,graphite,<br>gaping hole,spray,charged with,rainbow,<br>spray,prey,pray,a series,serious,theories,chernobyl,fireman,on the scene,adequate protective gear,pour,lethal doses of radiation,invisiable,ruthless,unsung,Hiroshima,Nagasaki,wiped out,Soviets,nuclear contamination,consequences,column,phones.risk,translucent,ruins,tomb,dead silence,breach,jammed,a dozen of,Kiev,processed,negatives,poor,radioactivity,rubble,fallout,atomic bomb,Kremlin,scanty,false,dramatic,inhabitants,sound,academician,Red Square,samovar,official,flashes,troops,readings,atmospheric,millionth,thousandth,shot up,subordinates,sealed,lethally,absorb,receives,colonel,patrol,dose,a lethal dose of radiation,institute,figure,provoke,renown,delegation,precautions,evacuated,iodine pills,conceal,dolls,tearfully,refugees,engender,ghost,personnel,unaware,premise,spy ,satellite,thermal vision,commission,throw up,vomit,<br>latency period, parade,archives,radius,hectare,abruptly,vast,uprooted,ripped from,cannon,drift,critical,tragedy,missile,cement,slab,megaton,razed,render,heroism,looming,blueprint,comrades,tunnel,tragic,moral,assassinated,</p>
+<h5 id="A-history-of-Communism"><a href="#A-history-of-Communism" class="headerlink" title="A history of Communism"></a>A history of Communism</h5><p>comradeship,bloody, banner,seduction, mysterious,in spit e of,mix ,humanism,terror,self-sacrifice,misery,cynicism,juxtaposition,paradise, Earthly Paradise, mask,hell,lying beneath,Bolsheviks,Petrograd,imagery,glorious imagery,far removed from,unopposed,Winter Palace,  strategic,uprising,triumphant,cornerstone,downtrodden,united behind,the example to follow,Havana,Prague,Saigon,legend,haunt,leave,trench,pointless,counter-offensives, youth,halocaust, barbarism, feudal,offensive,opposed,bourgeoisie,imperialist,champion,<br>[his declaration that the imperilist bourgeoisie was wholly responsible for this holacaust ran more than true in the ears of the young men forced with the daily barbarism. ]<br>negotiations, of the world,even,fraternize,hate for the war, boosted,anti-capitalism ,revolt,paid homage to, forefathers,inaugurate,Marx and Engels,in the eys of,abolition,overthrow,working classes, led by,proletariat,[the Russian proletariat had taken over the reins of power ],utopia,cosmic,proportions,opposition,fledgling,mobilize,whip up,landlord, ,Caucasus,Tsar,modernization,reinforce,prestige,triumph,  domestic and foreign,myth, invincible,were in power,perish,proletariat,meant,brutally,crush, democrat,setback,turmoil, council,Hungary,budapest,disband,  Hungarian, kept alive,revolutionary , debate,gradiose,parade,acclaim,joyous,balcony,Kremlin,had fun,proclaim,spark,Poland,Warsaw ,creed,<br>militant,faithful,disciplined,implacable,regime, morality,devout,implacable, draconian,sprouting up,manifesto,insurrection,dictatorship,centralized,imminence,<br>carried a lot of weight, having had,savoir-faire,Belgium,party’s faithful to,spring up , in,home of,recruited,miners ,dockers,perpetuate,heroic, an uncondictional ,hatred,escape with their lives,hold somebody responsible for,anguish,hopelessness,common ground, steel workers,railwayman,revolt, commitment,mystique,a sense of,elite,evolution,revolution,socialist,congress,splinter group,on the point of,hammer and sickle,machine gun,route,peasants,claim,paralyzed,strikes,installed on, squads,fascist,blackshirt,reign of terror, finding it hard,shake off,war,inflation,soared ,strike demonstrate,Bavaria,ripe,triumph,planned,an armed insurrection,seizing power,orders,barrier,fled to ,defeats,shake the faith,ordained,momentary,sanctuary,Refugee,militants,crusade, holy,municipal,council,abuse,[These institutions for the people had come to be symbols of Bolshevik power over the people,]<br>,acronym,spring, of the world,master,dreamt,classless,ominipresent,totalitarianism, removal of opposition,refused to,[The truth refuses to go away],drained,War Communism,migration,immigration,land requsition,solidarity,[But the Bolsheviks were able to exploit this disasters, for which they were in large part responsible ,by organizing the solidarity campaign with communist parties the world over. ],breathing space,nap,plots of land,resume,divorce and abortion,pluralism,vitality, unparalleled,mastery,i,propaganda,nnovative,hymns,criss-cross,spreading, bore witness to,evangelical,tourist, communists,rituals,secular,baptism,baptized,down tools,ceremony,purge, alienation,wiped clean off the slate,demonstration,vodka,moral majority,huge compaign,launched ,illiteracy,literacy,an obstacle, diffusion,ideology,forefront,crusade,egalitarian,integration,footage,voluntary,redeem,opponent,imprison,concentration camp,metamorphose,regime,an example,roll up sleeves,reintegrate,turn…into , so called,Gulag, stroke,general secretary,funeral,commission,immortalize,mausoleum,faithful,<br>atheist,empiricist,materialist,sacred,legacy,liturgy,pontifical dogma,theories,vernacular vulgate,inheritor,united front.,inner circle,fullfill,self-critical,delegate,impede,rise to power, exile,either,rival,pilgrimage,reinforce theire convictions,what they saw and heard,composer,receive,with great pomp,in the eyes of,storming of the Bastille,realization,commune,Paris commune, Eternal Flame,arrived carrying,transfer,merely,inaugurate,fed by,third world,indian,indochina,<br>denounce,anti-imperialist,brew,oppress,[revolution was brewing among the oppressed peoples of the tropics ],ripped apart,swept up,strikes,demenstrations,riots,spark off, insurgent,crush,thrown,alive,furnace,valuable,betray,parade,in support of,slogan,victory,persecute,solance,the means of,expel,reduced to,preach,soapbox,henchman,pursue,rebel,sympathizer,comradeship,<br> rub shoulders,clique,ritual,aristocoracy,heavy feeling,counterculture,ground rules,hostile,certitute,micro,sprang up,public and private,quest, feed ,intensify,willingness,appealing,<br> myth,forge,stand the test of time,failed , stood,alone,eliminate opponents,early thirties,bullshitting,greet,enthusiastically,intelligentsia,  collectivization,industrialization,intended,tractor,the way forward,suppress,ownership,modern mechanized techniques, contain ethusiasm,deport,indeed,requisition, brutality, disruption,gunpoint,livestock,famine,authorities,burgeon,prosperity,living,tragic,kulak,marvel,transformation,package tour,at the height of, escort,Ukraine,moblize,exaggerated,red-hot furnace,instrumental,infrastructure,rural,urbanization,coal,extracting coal,smash,role model,promote,conscience,perk,in proportion,nomenklatura,popular,in favor of , forced,contemporary, Baltic Sea,canal,symbolize,diffuse,rebirth,confront,inaugurate ,tremors,bankruptcy,all-conquering,having doubts,reign, march,in the face of,collapse,capitalism,communist militant, appear to be,arm-in-arm,sure of,Nazi,treaty,revenge,democracy,Jews,sectarian,dictate[发号施令]，collaborate,social democracy,assassination[暗杀],foremost,anti fascism popular front,short sightedness,catastrophe,parliament,spark off,reign of terror,in their thousands,accused of ,defender,jail,irony,ironies,contributed,liberals,extremist,right wing,plaza,distinct,encircled,  reactionary,probe,</p>
+<h3 id="SPEAKING"><a href="#SPEAKING" class="headerlink" title="SPEAKING"></a>SPEAKING</h3><p>explanation,suprior,inferior,ingenuity,civilization,pyramid,Egyption ,Romans,Maya,require,humanity,d rought,realization,ultimately,repository,poverty,dose,patrol,astronomical,strategic,,abolition,implacable,morality,peasants,russia,acronym</p>
+<p>纠音<br>ask，language,who,done.<br>fund/found ,<br>lung/long,<br>wonder/wander,<br>done/down/dawn/.<br>can’t 转载.<br>misktake,<br>western,<br>bed/bad.united front.  </p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 rat_racer@qq.com </span>
