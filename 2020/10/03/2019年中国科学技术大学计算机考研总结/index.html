@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>用mysql写存储过程与触发器 | Rat-racer&#39;s Blog</title>
-  <meta name="keywords" content=" mysql ">
-  <meta name="description" content="用mysql写存储过程与触发器 | Rat-racer&#39;s Blog">
+  <title>Rat-racer&#39;s Blog</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="Rat-racer&#39;s Blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="stay busy and happy">
 <meta property="og:type" content="website">
@@ -597,39 +597,22 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-用mysql写存储过程与触发器" class="article article-type-post" itemscope itemprop="blogPost">
-    
-        <h1 class="article-title">用mysql写存储过程与触发器</h1>
+        <article id="post-2019年中国科学技术大学计算机考研总结" class="article article-type-post" itemscope itemprop="blogPost">
     
     <div class="article-meta">
         
         
         
-        <span class="book">
-            <i class="iconfont icon-category"></i>
-            
-            
-            <a  data-rel="Trash">Trash</a>
-            
-        </span>
-        
-        
-        <span class="tag">
-            <i class="iconfont icon-tag"></i>
-            
-            <a class="color1">mysql</a>
-            
-        </span>
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2020-10-07 23:58:10'>2018-04-26 13:32</time>
+            发布时间 : <time class="date" title='最后更新: 2020-10-03 01:39:33'>2020-10-03 01:39</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:721</span>
+        <span>字数:1.5k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -648,7 +631,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#PB15121708-%E6%96%B9%E6%9E%97%E6%B6%9B"><span class="toc-text">PB15121708 方林涛</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95"><span class="toc-text">目录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E9%A2%98%E7%9B%AE"><span class="toc-text">实验题目</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E7%8E%AF%E5%A2%83"><span class="toc-text">实验环境</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BB%BA%E8%A1%A8"><span class="toc-text">建表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%92%E5%85%A5%E6%B5%8B%E8%AF%95%E6%95%B0%E6%8D%AE"><span class="toc-text">插入测试数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E6%B5%8B%E8%AF%95"><span class="toc-text">查询测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B"><span class="toc-text">存储过程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95"><span class="toc-text">测试</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A6%E5%8F%91%E5%99%A8"><span class="toc-text">触发器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%92%E5%85%A5%E6%B5%8B%E8%AF%95%E6%95%B0%E6%8D%AE%E5%89%8Dbook%EF%BC%8Cborrow%E8%A1%A8"><span class="toc-text">插入测试数据前book，borrow表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%92%E5%85%A5%E6%B5%8B%E8%AF%95%E6%95%B0%E6%8D%AE%E5%90%8Eborrow%EF%BC%8Cbook%E8%A1%A8"><span class="toc-text">插入测试数据后borrow，book表</span></a></li></ol>
+        
     
 <style>
     .left-col .switch-btn,
@@ -664,76 +647,52 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>#数据库系统与应用   实验1 Report</p>
-<h3 id="PB15121708-方林涛"><a href="#PB15121708-方林涛" class="headerlink" title="PB15121708 方林涛"></a>PB15121708 方林涛</h3><h4 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h4><pre><code>实验题目
-实验环境
-实验内容以及结果：
-    建表
-    插入测试数据
-    查询测试
-    存储过程
-    触发器</code></pre>
-<h4 id="实验题目"><a href="#实验题目" class="headerlink" title="实验题目"></a>实验题目</h4><p>设某图书馆数据库包含下面的基本表：<br> Book（ID: char(8)，name:varchar2(10)，author:varchar2(10)，price:float， status: int）<br>图书号 ID 为主键，书名不能为空。状态（status）为 1 表示书被借出，0 表示在馆，<br>默认值为 0。<br> Reader（ID:char(8)，name:varchar2(10)，age:int，address:varchar2(20)） 读者号 ID<br>为主键。<br> Borrow（book_ID:char(8)，Reader_ID:char(8)，Brrrow_Date:date，  Return_Date:date）<br>其中：还期 Return_Date 为 NULL 表示该书未还。主键为（图书号，读者号），图<br>书号为外键，引用图书表的图书号，读者号为外键，引用读者表的读者号  </p>
-<p>1、 创建上述基本表，并插入部分测试数据；<br>2、 设计例子，验证实体完整性、参照完整性、用户自定义完整性；<br>3、 用 SQL 语言完成下面小题，并测试运行结果：<br>4、 设计存储过程，实现对 Book 表的 ID 的修改。<br>5、 设计触发器，实现：当一本书被借出时，自动将 Book 表中相 应图书的 status 修改为1；当某本书被归还时，自动将 status 改为 0。  </p>
-<h4 id="实验环境"><a href="#实验环境" class="headerlink" title="实验环境"></a>实验环境</h4><pre><code>Mysql  5.7.20  
-MacOSX</code></pre>
-<h3 id="建表"><a href="#建表" class="headerlink" title="建表"></a>建表</h3><p>1.1<br><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fqh75kg1y7j30dv05dq3m.jpg"><br><img src="https://ws2.sinaimg.cn/large/006tNc79ly1fqh75ei8lej30en06nwff.jpg"><br>1.2<br><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fqh758tgmtj30d804xmxr.jpg"><br><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fqh752qiqbj30fe06aaav.jpg"><br>1.3<br><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fqh74vnr2cj30ij06aq40.jpg"><br><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fqh74jkq9mj30g106fgmf.jpg">  </p>
-<h3 id="插入测试数据"><a href="#插入测试数据" class="headerlink" title="插入测试数据"></a>插入测试数据</h3><p><img src="https://ws4.sinaimg.cn/large/006tKfTcly1fqp58f5rzhj30db08u758.jpg"><br><img src="https://ws2.sinaimg.cn/large/006tKfTcly1fqp591utluj30ay06yaam.jpg"><br><img src="https://ws3.sinaimg.cn/large/006tKfTcly1fqp597m243j30do078q3h.jpg"></p>
-<h3 id="查询测试"><a href="#查询测试" class="headerlink" title="查询测试"></a>查询测试</h3><p>1.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select id,address from reader where name &#x3D; &#39;Rose&#39;;</span><br></pre></td></tr></table></figure>
-<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fqh5abul8ej30ga049mxg.jpg"></p>
-<p>2.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select book.name,datediff(return_date,borror_date) as Days </span><br><span class="line">from borrow,reader,book where book_id &#x3D; book.id and reader_id &#x3D; reader.id </span><br><span class="line">and reader.name &#x3D; &#39;Rose&#39;;</span><br></pre></td></tr></table></figure>
-<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fqh5tpl35mj30jl05mt9b.jpg"><br>3.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; select reader.name from reader</span><br><span class="line">    -&gt; where</span><br><span class="line">    -&gt; reader.id not in</span><br><span class="line">    -&gt; (</span><br><span class="line">    -&gt; select distinct reader_id from borrow</span><br><span class="line">    -&gt; );</span><br></pre></td></tr></table></figure>
-<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fqh5xspdjlj30fz07ngmc.jpg"><br>4.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select name,price from book where author &#x3D; &#39;Ullman&#39;;</span><br></pre></td></tr></table></figure>
-<p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fqh5z1db3pj30hq055dg9.jpg"><br>5.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">select book.id,book.name </span><br><span class="line">from book,reader,borrow </span><br><span class="line">where</span><br><span class="line">reader.id &#x3D; borrow.reader_id </span><br><span class="line">and book.id &#x3D; borrow.book_id </span><br><span class="line">and reader.name &#x3D; &#39;Lilin&#39; </span><br><span class="line">and datediff(curdate(),return_date)&lt;0;</span><br></pre></td></tr></table></figure>
-<p><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fqh64bxlkwj30jh06xt9l.jpg"><br>6.  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">select reader.name </span><br><span class="line">from reader,borrow </span><br><span class="line">where reader.id &#x3D; borrow.reader_id </span><br><span class="line">group by reader.id </span><br><span class="line">having count(*)&gt;&#x3D;3;</span><br></pre></td></tr></table></figure>
-<p><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fqh67j0alzj30jg051jrt.jpg"><br>7.  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">select reader.name,reader.id </span><br><span class="line">from reader,borrow</span><br><span class="line"> where borrow.reader_id &#x3D; reader.id </span><br><span class="line"> and book_id not  in</span><br><span class="line">(select distinct book_id </span><br><span class="line">from borrow,reader </span><br><span class="line">where borrow.reader_id &#x3D; reader.id </span><br><span class="line">and reader.name &#x3D; &#39;Lilin&#39;)</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fqh6esrz9mj30ji086jsg.jpg"><br>8.  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select name,id from book where name like &#39;%Oracle%&#39;;</span><br></pre></td></tr></table></figure>
-<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fqh6ha0t0cj30gw04ywes.jpg"><br>9.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select reader_id,count(*) from borrow_view V </span><br><span class="line"> where datediff(curdate(),borrow_date)&lt;&#x3D;365 group by reader_id;</span><br></pre></td></tr></table></figure>
-<p><img src="https://ws2.sinaimg.cn/large/006tNc79ly1fqh6wu6epxj30u1066757.jpg"></p>
-<h3 id="存储过程"><a href="#存储过程" class="headerlink" title="存储过程"></a>存储过程</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">DELIMITER $</span><br><span class="line">create procedure modify_bookid(</span><br><span class="line">in old_id  char, in new_id char)</span><br><span class="line">begin </span><br><span class="line">set foreign_key_checks &#x3D; 0;</span><br><span class="line">update book set id &#x3D; new_id where id &#x3D; old_id; </span><br><span class="line">update borrow set book_id &#x3D; new_id where book_id &#x3D; old_id;  </span><br><span class="line">set foreign_key_checks &#x3D; 1;</span><br><span class="line">end$</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fqh9wqgq03j30gp06tjs5.jpg"></p>
-<h4 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h4><pre><code>call modify_bookid(&#39;0&#39;,&#39;9&#39;)$</code></pre>
-<p><img src="https://ws4.sinaimg.cn/large/006tKfTcly1fqp8bd0q8gj30cy08ngnc.jpg"><br><img src="https://ws2.sinaimg.cn/large/006tKfTcly1fqp8bm0msvj30da08h75f.jpg"></p>
-<h3 id="触发器"><a href="#触发器" class="headerlink" title="触发器"></a>触发器</h3><pre><code>  CREATE PROCEDURE 存储过程名称(
-            IN/OUT 参数 数据类型 ...)
-        BEGIN
-
-        END
-
-  create procedure modify_bookid(
-        in old_id  char, in new_id char)
-        begin 
-            set foreign_key_checks = 0;
-            update book set id = new_id where id = old_id; 
-                update borrow set book_id = new_id where book_id =                         old_id;  
-            set foreign_key_checks = 1;
-        end$
-
-
-
-
-
-create trigger borrow_insert after insert  on borrow for each row
-begin
-if datediff(curdate(),new.return_date)&gt;=0 then 
-    update book set status = 0 where id = new.book_id;
-else                                                  
-    update book set status = 1 where id = new.book_id;
-end if;
-end$</code></pre>
-<h3 id="插入测试数据前book，borrow表"><a href="#插入测试数据前book，borrow表" class="headerlink" title="插入测试数据前book，borrow表"></a>插入测试数据前book，borrow表</h3><p><img src="https://ws2.sinaimg.cn/large/006tKfTcly1fqp857kc4tj30cr08ptam.jpg"><br><img src="https://ws4.sinaimg.cn/large/006tKfTcly1fqp86hjtacj30d607gta3.jpg"></p>
-<h3 id="插入测试数据后borrow，book表"><a href="#插入测试数据后borrow，book表" class="headerlink" title="插入测试数据后borrow，book表"></a>插入测试数据后borrow，book表</h3><p><img src="https://ws4.sinaimg.cn/large/006tKfTcly1fqp87qwzoqj30d207rmy4.jpg"><br><img src="https://ws3.sinaimg.cn/large/006tKfTcly1fqp86u4aemj30cq0c0jte.jpg"></p>
+        <p>最近女朋友在准备考研，让我想到自己曾经也有一段时间努力学习只为求个学上而已。首先，背景介绍，我本科也是科大计算机系，在我们这个保研率有40%的地方都没法保研，可以见的我曾经是多么的废柴。奋斗了几个月最后如愿以偿，没能失学，还是找到了学上，去的实验室还是自己想去的。去年结果出来之后，就准备写一个经验贴，把自己的经验总结一下然后分享一下收集的资源，然而一年多已经过去了，我都已经研二了，这个坑还是没被填上。最近十一放假，趁着这两天有点闲，遂把之前写的东西完善一下给发出来。</p>
+<p>我曾经在b站录过一次考研经验分享视频，感兴趣的同学可以看一下，<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/av50260395/">戳这里</a></p>
+<ul>
+<li>1.初试</li>
+<li>2.复试<ul>
+<li>2.1 笔试</li>
+<li>2.2 机试</li>
+<li>2.3 面试</li>
+</ul>
+</li>
+</ul>
+<p>1.初试</p>
+<ul>
+<li><p>数学：数学的话，考研考得不难，只要按部就班地把三门知识一个不落的学完，题目刷完。就基本没问题了吧。参考书我当时用的李永乐的《考研数学复习全书》，但是现在来看真是不推荐。这本书虽然内容无所不包，但是实在太厚重，导致复习压力很大，同时容易出现学着前面的忘着后面的情况。另外李永乐的《分阶习题同步训练》建议<strong>直接扔掉</strong>【此部分难度较大而且不是很契合考研】。660题这本书不错，如果有时间的话可以刷一刷。<br>我推荐使用张宇的《考研数学三十六讲》 以及 张宇的授课视频。这些视频在B站都可以搜得到。我当时出于偷懒就懒得看书，看了不少视频。<br>数学就一句话吧，多刷题，多刷题，多刷题。。别无它法。</p>
+</li>
+<li><p>英语：这一块我是没有什么发言权的，我英语基础算比较好一点的，所以基本没怎么看，就做了几套往年的阅读完型。今年运气好，排序题全对了10分到手。我前面客观题大概只扣了7分吧,最后考得还不错考了85分。</p>
+<ul>
+<li><p>英语单词很重要。  我当时看的是何凯文1575</p>
+</li>
+<li><p>建议战略性<strong>放弃完型</strong>。分值低且无套路可循，这一块即使付出很多努力也不能make some difference。</p>
+</li>
+<li><p>408 ：<br>讲道理408挺难的， 尤其对于我这个大学没好好学的菜鸡，<br><strong>复习方法 多次 循环复习</strong><br>王道配套书的缺陷【配套题目辣鸡，题解错误，不够深入，过拟合，，等等】<br>组成原理建议看<strong>袁春风</strong>的视频【b站上有】，还有她编写的计算机组成与系统结构这本书，配套的习题最好也做做。（经过我的check，408是考过这个习题册上面的题目的）。讲道理组成远离命题风格和唐书差别挺大的，别上错车了。</p>
+</li>
+<li><p>记忆，<strong>理解</strong>     408   －&gt;  一般之学习。是理解，永远不是机械地记忆</p>
+</li>
+<li><p>408 <strong>陷阱，细节，偏僻</strong>。</p>
+</li>
+<li><p>不是408考的难，是你们学的不透彻</p>
+</li>
+<li><p>408原题有些描述<strong>不严谨不细致不透彻清晰</strong>， 这是命题者之过，作为考试着你要学会揣度。</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>408资源</strong>： 链接:<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1FWUNtpmSPe2d_b_eOzyXJw">https://pan.baidu.com/s/1FWUNtpmSPe2d_b_eOzyXJw</a> 提取码:fx2i</p>
+<p>2.复试</p>
+<ul>
+<li><p>笔试：复试笔试考什么？可以参见2019年的【<a target="_blank" rel="noopener" href="http://cs.ustc.edu.cn/2019/0306/c3057a375537/page.htm">http://cs.ustc.edu.cn/2019/0306/c3057a375537/page.htm</a> 】。<br>编译原理看一下往年试题，在陈意云老师主页： <a target="_blank" rel="noopener" href="http://staff.ustc.edu.cn/~yiyun/">http://staff.ustc.edu.cn/~yiyun/</a><br>数据库建议看金培权老师的课件<br> 链接:<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1dP0224zHJjhUgIQyu4Fuxw">https://pan.baidu.com/s/1dP0224zHJjhUgIQyu4Fuxw</a>  密码:6zb0<br>计算机体系结构和离散数学这个看看往年题目，找找书看看，课听一听吧。<br>我收集的复试资源大集合，包含往年的笔试，面试题目等等。<br>链接:<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1TWk9yIV6BMThtvqA-3yEQw">https://pan.baidu.com/s/1TWk9yIV6BMThtvqA-3yEQw</a>  密码:stf7</p>
+</li>
+<li><p>机试：科大机试算是比较水的，这个一般是马建辉老师命题，不用OJ，打分靠手动评测。我也曾经参与改过夏令营的机试题，一般四五个题目左右吧，简单的题目大家都没什么问题，这部分没有什么差距。比较难的题目大部分人还是做不出来的，只有极少数人能做出来。对于机试这部分，这么说吧，重要的是代码的逻辑，代码要写的neat，多用注释，这样改的时候也能更加理解你的逻辑，即便评测结果不对，也能得到一个比较好的分数了，算是一个trick吧。</p>
+</li>
+<li><p>面试：综合素质面试+专业面试；综合素质面试这个放轻松，和老师（一般是行政岗）聊聊，就正常聊天就行了，问题不大。专业面试，按组抽签，就看你分到哪个组咯。只能说要虚心，认真思考老师问题，态度要端正。这部分考的是本科的基础扎实不扎实，你的深度如何，老师一问便知，你是藏不住马脚的。</p>
+</li>
+</ul>
+<p>关于录取：<br>考试的时候根据准考证号来看报考人数至少在800人了，进复试的我没记错的话大概是90-100人左右吧，教蜜后续增加名额没要到，最后只录取了55人(那年招生简章上名额是40几人)，其中10人左右学硕，剩下的录取是专硕。我看了2021年招生计划，录取名额大幅度增加，预计到了80人了，算是一个好消息吧。</p>
+<p>关于选导师：<br>建议本校学生在开始准备考研前就事先找老师，先上车后买票。其他同学，可以等到录取之后，或者觉得已经稳了的时候，开始找导师。</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 rat_racer@qq.com </span>

@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>用mysql写存储过程与触发器 | Rat-racer&#39;s Blog</title>
-  <meta name="keywords" content=" mysql ">
-  <meta name="description" content="用mysql写存储过程与触发器 | Rat-racer&#39;s Blog">
+  <title>Rat-racer&#39;s Blog</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="Rat-racer&#39;s Blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="stay busy and happy">
 <meta property="og:type" content="website">
@@ -597,39 +597,22 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-用mysql写存储过程与触发器" class="article article-type-post" itemscope itemprop="blogPost">
-    
-        <h1 class="article-title">用mysql写存储过程与触发器</h1>
+        <article id="post-使用NFC模拟校园卡门禁功能 【Mac, Windows,  Android, 手环】" class="article article-type-post" itemscope itemprop="blogPost">
     
     <div class="article-meta">
         
         
         
-        <span class="book">
-            <i class="iconfont icon-category"></i>
-            
-            
-            <a  data-rel="Trash">Trash</a>
-            
-        </span>
-        
-        
-        <span class="tag">
-            <i class="iconfont icon-tag"></i>
-            
-            <a class="color1">mysql</a>
-            
-        </span>
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2020-10-07 23:58:10'>2018-04-26 13:32</time>
+            发布时间 : <time class="date" title='最后更新: 2020-10-03 01:12:40'>2020-10-03 01:12</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:721</span>
+        <span>字数:2.9k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -648,7 +631,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#PB15121708-%E6%96%B9%E6%9E%97%E6%B6%9B"><span class="toc-text">PB15121708 方林涛</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95"><span class="toc-text">目录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E9%A2%98%E7%9B%AE"><span class="toc-text">实验题目</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E7%8E%AF%E5%A2%83"><span class="toc-text">实验环境</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BB%BA%E8%A1%A8"><span class="toc-text">建表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%92%E5%85%A5%E6%B5%8B%E8%AF%95%E6%95%B0%E6%8D%AE"><span class="toc-text">插入测试数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E6%B5%8B%E8%AF%95"><span class="toc-text">查询测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B"><span class="toc-text">存储过程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95"><span class="toc-text">测试</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A6%E5%8F%91%E5%99%A8"><span class="toc-text">触发器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%92%E5%85%A5%E6%B5%8B%E8%AF%95%E6%95%B0%E6%8D%AE%E5%89%8Dbook%EF%BC%8Cborrow%E8%A1%A8"><span class="toc-text">插入测试数据前book，borrow表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%92%E5%85%A5%E6%B5%8B%E8%AF%95%E6%95%B0%E6%8D%AE%E5%90%8Eborrow%EF%BC%8Cbook%E8%A1%A8"><span class="toc-text">插入测试数据后borrow，book表</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%BD%BF%E7%94%A8Mac%E8%BF%9B%E8%A1%8CNFC%E8%AF%BB%E5%86%99"><span class="toc-text">1. 使用Mac进行NFC读写</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%BD%BF%E7%94%A8Windows%E8%BF%9B%E8%A1%8C%E8%AF%BB%E5%86%99"><span class="toc-text">2.使用Windows进行读写</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%89%8B%E6%9C%BANFC-amp-%E6%89%8B%E7%8E%AFNFC"><span class="toc-text">3.手机NFC&amp;手环NFC</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98"><span class="toc-text">4.一些问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E5%85%B6%E4%BB%96%E5%8F%82%E8%80%83%EF%BC%9A"><span class="toc-text">5.其他参考：</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -664,76 +647,146 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>#数据库系统与应用   实验1 Report</p>
-<h3 id="PB15121708-方林涛"><a href="#PB15121708-方林涛" class="headerlink" title="PB15121708 方林涛"></a>PB15121708 方林涛</h3><h4 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h4><pre><code>实验题目
-实验环境
-实验内容以及结果：
-    建表
-    插入测试数据
-    查询测试
-    存储过程
-    触发器</code></pre>
-<h4 id="实验题目"><a href="#实验题目" class="headerlink" title="实验题目"></a>实验题目</h4><p>设某图书馆数据库包含下面的基本表：<br> Book（ID: char(8)，name:varchar2(10)，author:varchar2(10)，price:float， status: int）<br>图书号 ID 为主键，书名不能为空。状态（status）为 1 表示书被借出，0 表示在馆，<br>默认值为 0。<br> Reader（ID:char(8)，name:varchar2(10)，age:int，address:varchar2(20)） 读者号 ID<br>为主键。<br> Borrow（book_ID:char(8)，Reader_ID:char(8)，Brrrow_Date:date，  Return_Date:date）<br>其中：还期 Return_Date 为 NULL 表示该书未还。主键为（图书号，读者号），图<br>书号为外键，引用图书表的图书号，读者号为外键，引用读者表的读者号  </p>
-<p>1、 创建上述基本表，并插入部分测试数据；<br>2、 设计例子，验证实体完整性、参照完整性、用户自定义完整性；<br>3、 用 SQL 语言完成下面小题，并测试运行结果：<br>4、 设计存储过程，实现对 Book 表的 ID 的修改。<br>5、 设计触发器，实现：当一本书被借出时，自动将 Book 表中相 应图书的 status 修改为1；当某本书被归还时，自动将 status 改为 0。  </p>
-<h4 id="实验环境"><a href="#实验环境" class="headerlink" title="实验环境"></a>实验环境</h4><pre><code>Mysql  5.7.20  
-MacOSX</code></pre>
-<h3 id="建表"><a href="#建表" class="headerlink" title="建表"></a>建表</h3><p>1.1<br><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fqh75kg1y7j30dv05dq3m.jpg"><br><img src="https://ws2.sinaimg.cn/large/006tNc79ly1fqh75ei8lej30en06nwff.jpg"><br>1.2<br><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fqh758tgmtj30d804xmxr.jpg"><br><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fqh752qiqbj30fe06aaav.jpg"><br>1.3<br><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fqh74vnr2cj30ij06aq40.jpg"><br><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fqh74jkq9mj30g106fgmf.jpg">  </p>
-<h3 id="插入测试数据"><a href="#插入测试数据" class="headerlink" title="插入测试数据"></a>插入测试数据</h3><p><img src="https://ws4.sinaimg.cn/large/006tKfTcly1fqp58f5rzhj30db08u758.jpg"><br><img src="https://ws2.sinaimg.cn/large/006tKfTcly1fqp591utluj30ay06yaam.jpg"><br><img src="https://ws3.sinaimg.cn/large/006tKfTcly1fqp597m243j30do078q3h.jpg"></p>
-<h3 id="查询测试"><a href="#查询测试" class="headerlink" title="查询测试"></a>查询测试</h3><p>1.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select id,address from reader where name &#x3D; &#39;Rose&#39;;</span><br></pre></td></tr></table></figure>
-<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fqh5abul8ej30ga049mxg.jpg"></p>
-<p>2.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select book.name,datediff(return_date,borror_date) as Days </span><br><span class="line">from borrow,reader,book where book_id &#x3D; book.id and reader_id &#x3D; reader.id </span><br><span class="line">and reader.name &#x3D; &#39;Rose&#39;;</span><br></pre></td></tr></table></figure>
-<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fqh5tpl35mj30jl05mt9b.jpg"><br>3.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; select reader.name from reader</span><br><span class="line">    -&gt; where</span><br><span class="line">    -&gt; reader.id not in</span><br><span class="line">    -&gt; (</span><br><span class="line">    -&gt; select distinct reader_id from borrow</span><br><span class="line">    -&gt; );</span><br></pre></td></tr></table></figure>
-<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fqh5xspdjlj30fz07ngmc.jpg"><br>4.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select name,price from book where author &#x3D; &#39;Ullman&#39;;</span><br></pre></td></tr></table></figure>
-<p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fqh5z1db3pj30hq055dg9.jpg"><br>5.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">select book.id,book.name </span><br><span class="line">from book,reader,borrow </span><br><span class="line">where</span><br><span class="line">reader.id &#x3D; borrow.reader_id </span><br><span class="line">and book.id &#x3D; borrow.book_id </span><br><span class="line">and reader.name &#x3D; &#39;Lilin&#39; </span><br><span class="line">and datediff(curdate(),return_date)&lt;0;</span><br></pre></td></tr></table></figure>
-<p><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fqh64bxlkwj30jh06xt9l.jpg"><br>6.  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">select reader.name </span><br><span class="line">from reader,borrow </span><br><span class="line">where reader.id &#x3D; borrow.reader_id </span><br><span class="line">group by reader.id </span><br><span class="line">having count(*)&gt;&#x3D;3;</span><br></pre></td></tr></table></figure>
-<p><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fqh67j0alzj30jg051jrt.jpg"><br>7.  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">select reader.name,reader.id </span><br><span class="line">from reader,borrow</span><br><span class="line"> where borrow.reader_id &#x3D; reader.id </span><br><span class="line"> and book_id not  in</span><br><span class="line">(select distinct book_id </span><br><span class="line">from borrow,reader </span><br><span class="line">where borrow.reader_id &#x3D; reader.id </span><br><span class="line">and reader.name &#x3D; &#39;Lilin&#39;)</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fqh6esrz9mj30ji086jsg.jpg"><br>8.  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select name,id from book where name like &#39;%Oracle%&#39;;</span><br></pre></td></tr></table></figure>
-<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fqh6ha0t0cj30gw04ywes.jpg"><br>9.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select reader_id,count(*) from borrow_view V </span><br><span class="line"> where datediff(curdate(),borrow_date)&lt;&#x3D;365 group by reader_id;</span><br></pre></td></tr></table></figure>
-<p><img src="https://ws2.sinaimg.cn/large/006tNc79ly1fqh6wu6epxj30u1066757.jpg"></p>
-<h3 id="存储过程"><a href="#存储过程" class="headerlink" title="存储过程"></a>存储过程</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">DELIMITER $</span><br><span class="line">create procedure modify_bookid(</span><br><span class="line">in old_id  char, in new_id char)</span><br><span class="line">begin </span><br><span class="line">set foreign_key_checks &#x3D; 0;</span><br><span class="line">update book set id &#x3D; new_id where id &#x3D; old_id; </span><br><span class="line">update borrow set book_id &#x3D; new_id where book_id &#x3D; old_id;  </span><br><span class="line">set foreign_key_checks &#x3D; 1;</span><br><span class="line">end$</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fqh9wqgq03j30gp06tjs5.jpg"></p>
-<h4 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h4><pre><code>call modify_bookid(&#39;0&#39;,&#39;9&#39;)$</code></pre>
-<p><img src="https://ws4.sinaimg.cn/large/006tKfTcly1fqp8bd0q8gj30cy08ngnc.jpg"><br><img src="https://ws2.sinaimg.cn/large/006tKfTcly1fqp8bm0msvj30da08h75f.jpg"></p>
-<h3 id="触发器"><a href="#触发器" class="headerlink" title="触发器"></a>触发器</h3><pre><code>  CREATE PROCEDURE 存储过程名称(
-            IN/OUT 参数 数据类型 ...)
-        BEGIN
-
-        END
-
-  create procedure modify_bookid(
-        in old_id  char, in new_id char)
-        begin 
-            set foreign_key_checks = 0;
-            update book set id = new_id where id = old_id; 
-                update borrow set book_id = new_id where book_id =                         old_id;  
-            set foreign_key_checks = 1;
-        end$
-
-
-
-
-
-create trigger borrow_insert after insert  on borrow for each row
-begin
-if datediff(curdate(),new.return_date)&gt;=0 then 
-    update book set status = 0 where id = new.book_id;
-else                                                  
-    update book set status = 1 where id = new.book_id;
-end if;
-end$</code></pre>
-<h3 id="插入测试数据前book，borrow表"><a href="#插入测试数据前book，borrow表" class="headerlink" title="插入测试数据前book，borrow表"></a>插入测试数据前book，borrow表</h3><p><img src="https://ws2.sinaimg.cn/large/006tKfTcly1fqp857kc4tj30cr08ptam.jpg"><br><img src="https://ws4.sinaimg.cn/large/006tKfTcly1fqp86hjtacj30d607gta3.jpg"></p>
-<h3 id="插入测试数据后borrow，book表"><a href="#插入测试数据后borrow，book表" class="headerlink" title="插入测试数据后borrow，book表"></a>插入测试数据后borrow，book表</h3><p><img src="https://ws4.sinaimg.cn/large/006tKfTcly1fqp87qwzoqj30d207rmy4.jpg"><br><img src="https://ws3.sinaimg.cn/large/006tKfTcly1fqp86u4aemj30cq0c0jte.jpg"></p>
+        <p>COVID-19期间，我们学校实行通行证制度，只有具有通行证的同学的卡才可以自由进出校园，他而没有通行证的人下人出校只能是一种奢望。在这种无理取闹的制度之下，我试想通过NFC模拟出那些可以自由进出的同学的校园卡，从而实现自由进出校园。其实这个想法已经有人做了，使用手机自带的nfc模拟校园卡，是可以实现门禁进出功能的。经过实际测试，一下方案是可行的：</p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> 使用带NFC功能手机模拟</li>
+<li><input checked="" disabled="" type="checkbox"> NFC读卡器 + 白卡</li>
+<li><input checked="" disabled="" type="checkbox"> 带NFC功能手机+手环 or NFC 读卡器+白卡+手环</li>
+</ul>
+<p>首先第一种，使用带nfc功能的手机模拟，这个是最简单的，只需要打开手机的钱包/卡包app然后模拟门禁卡读取需要复制的卡即可，这样每次进学校大门的时候直接刷手机进来就行。<br>然而对于手机不带NFC功能的手机，譬如我的就是，就比较难搞了。此外，使用手机NFC模拟不具有可拓展性，一台手机只能当作一张卡片使用，如果需要多张卡片就需要多个手机了。因此我们的解决方案是通过复制白卡来实现制作门禁卡，白卡复制不存在可拓展性这个问题。首先自己购买白卡，然后<strong>先读校园卡，再将其写入白卡</strong>。我们知道每一张卡都有唯一的ID，这个ID在门禁识别的时候用到。接下里本文的所有操作遵循1.读卡获取卡片ID ；2.将ID写入白卡。通过这两步，就得到了和原来的卡ID一模一样的卡，这个卡就可以拿来刷进校门了。<br>根据读卡，写卡的媒介不同，可以分为三种平台，win，mac，和手机&amp;手环这些。根据卡片的类型不同，可以分为UID，CUID，M1，CPU卡。<br>卡片类型介绍：</p>
+<ul>
+<li>M1卡：全称Mifare classic 1K，普通IC卡，0扇区不可修改，其他扇区可以反复擦写。通常我们使用的门禁卡、电梯卡都是M1卡。M1卡是NXP（恩智浦半导体）公司研发的IC卡，执行标准是ISO/IEC14443 Type A，读写频率是13.56MHz。目前大多数手机厂商使用的NFC芯片都是NXP，另一部分则是BRCM（博通）方案，均执行同一标准，这是手机读写M1卡的技术基础。</li>
+<li>UID卡：普通复制卡，可以反复擦写所有扇区，门禁有防火墙则失效。</li>
+<li>CUID：升级复制卡，可以反复擦写所有扇区，可以穿透大部分防火墙。【<strong>我们的白卡是购买此种类型的卡</strong>】</li>
+<li>CPU卡：有操作系统，可存储数据，也有自己的ID号，CPU卡发一串数据给设备，设备与SAM卡进行运算，设备再发一串数据回CPU卡确认，然后进行交易或身份认证；跟M1卡的区别在于一个算法在空中，一个算法在设备里面；无论是卡商，设备商，运营商，都不知道其中的算法，所以这个系统的安全性会高很多。【校园卡等大多数具有金融功能的卡属于此种类型】</li>
+</ul>
+<p>目前，大多数<strong>校园卡为CPU卡</strong>，也就是加密级别最高的卡。好在，金融扇区和门禁ID扇区是分开的，这使得我们可以通过复制卡片的ID来实现门禁功能。<br>根据不同平台，其复制校园卡的难度排序是<br>Mac &gt; Win &gt; 手机写卡&gt; 手机模拟，手环模拟</p>
+<ul>
+<li><p>平台</p>
+<ul>
+<li>Win</li>
+<li>Mac OS X</li>
+<li>Android&amp;手环</li>
+</ul>
+</li>
+<li><p>卡片类型</p>
+<ul>
+<li>UID</li>
+<li>CUID</li>
+<li>M1</li>
+<li>CPU</li>
+</ul>
+</li>
+<li><p>读卡器</p>
+<ul>
+<li>PN532 【for mac and windows】<br>该读卡器从某宝购入，附赠两个这种白卡，一共花费¥63。又额外买了10张<strong>CUID</strong>白卡，长下面这个样子，约¥1/张。</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://img-blog.csdnimg.cn/20201002232506672.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ZsdF91c3Rj,size_16,color_FFFFFF,t_70" alt="从某宝购入的读卡器">                       <img src="https://img-blog.csdnimg.cn/img_convert/7935ba270770b340179562e2e6395a3c.png">  </p>
+<h3 id="1-使用Mac进行NFC读写"><a href="#1-使用Mac进行NFC读写" class="headerlink" title="1. 使用Mac进行NFC读写"></a>1. 使用Mac进行NFC读写</h3><ul>
+<li><p>【<strong>GUI 工具</strong>】<br>  现存的针对Mac平台的NFC读写软件较少，我只找到了这两个GUI程序，但是这两个软件都连接不上我的PN532读卡器，遂作罢。查看App Store上的说明看到，这两个工具均不支持PN532，但是支持另一个非常常用的读卡器ACR122U。我手头上没有对应的读卡器，所以这条路走不通了。（以后可以考虑再买一个ACR122U）</p>
+<p>   <img src="https://img-blog.csdnimg.cn/2020100222481975.png#pic_center" alt="在这里插入图片描述"></p>
+<ul>
+<li>【<strong>Command Line Tools or 读写API</strong>】<pre><code>考虑使用命令行工具，或者是用对应的API来读写NFC。</code></pre>
+在网上搜索，使用关键词Mac NFC百度搜索，得到的结果都是用iPhone来做的？？难道Mac == IPhone了？？后来找到了一篇记录: <a target="_blank" rel="noopener" href="https://www.jianshu.com/p/7a0bf015e06c%20">记Macbook Pro配合FT232使用PN532模块</a>，算是中文互联网上位数不多的经验贴了，跟着这位兄弟一点点搭建好了需要的依赖库。</li>
+</ul>
+</li>
+<li><p>硬件连接：MBP2019 雷电3 接口-&gt; type-c 转USB3.0拓展坞-&gt;USB连接PN532</p>
+</li>
+<li><p>驱动Driver ？</p>
+</li>
+<li><p>软件需求: libusb -&gt; libnfc ,mfoc ,mfcuk</p>
+<ul>
+<li><strong>安装Libusb</strong><ul>
+<li>官网 <a target="_blank" rel="noopener" href="https://libusb.info/%EF%BC%8CGitHub%EF%BC%9Ahttps://github.com/libusb/libusb">https://libusb.info/，GitHub：https://github.com/libusb/libusb</a></li>
+<li><strong>安装方法一</strong>: 从官网或者是GitHub下载源代码-&gt;解压-&gt;进入包目录 -&gt;依次执行<code>$ ./configure -&gt;$ make -&gt;$ make install</code><ul>
+<li>即 <code>$ ./configure&amp;&amp;make&amp;&amp;make install</code></li>
+</ul>
+</li>
+<li><strong>安装方法二</strong>：Homebrew安装<ul>
+<li>直接<code>$ brew install libusb</code></li>
+<li>刚开始的时候执行这个命令报错：<code>Error: libusb: undefined method `license&#39; brew install</code> 在<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/31272069/brew-install-undefined-method-desc">这里</a>找到了解决方案，出现这个原因说明当前brew版本太老了，只需要更新一下，<code>brew update -v</code>，执行**两次**这个命令，然后再 <code>brew install libusb</code>就成功了。</li>
+</ul>
+</li>
+<li>注1: 这里推荐使用homebrew安装，接下来的几个也是推荐brew。</li>
+<li>注二：一个问题，我第一次使用的是源代码编译安装，最后<code>$ make install</code>也都成功了。但是执行下一步的时候提示libusb.h头文件找不到,header not found.第二遍安装使用的是$ brew install libusb安装，就没有这个问题出现，可见，使用brew可以轻松的安装配置各种包，不需要自己对各种环境配置揪心。所以强烈建议使用homebrew安装。</li>
+</ul>
+</li>
+<li><strong>安装Libnfc</strong><ul>
+<li>官网 <a target="_blank" rel="noopener" href="http://www.libnfc.org/%EF%BC%8CGitHub">http://www.libnfc.org/，GitHub</a> ：<a target="_blank" rel="noopener" href="https://github.com/nfc-tools/libnfc">https://github.com/nfc-tools/libnfc</a></li>
+<li>安装方法同样两种，一样的操作</li>
+<li>安装方法一：官网或者GitHub下载源代码，解压，进入目录，依次执行<code>$ ./configure -&gt;$ make -&gt;$ make install</code></li>
+<li>安装方法二：<code>$ brew install libnfc</code></li>
+</ul>
+</li>
+<li><strong>安装mfoc</strong><ul>
+<li>GitHub：<a target="_blank" rel="noopener" href="https://github.com/nfc-tools/mfoc">https://github.com/nfc-tools/mfoc</a></li>
+<li>安装方法一：参见GitHub readme，<br><code>$ autoreconf -is</code> [注：这里需要安装autoreconf，方法<code> $brew install automake</code>]<br><code>$./configure</code><br><code>$ make &amp;&amp; sudo make install</code></li>
+<li>执行<code>$./configure</code>时报错如下：<code>PKG_CHECK_MODULES(libnfc, libnfc &gt;= $LIBNFC_REQUIRED_VERSION, , AC_MSG_ERROR([libnfc &gt;= $LIBNFC_REQUIRED_VERSION is mandatory.]))</code>，没有找到解决办法，<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/54870180/how-to-build-mfoc-from-sources-on-kali-linux">这里</a>有一个解释。最后采用了homebrew安装。</li>
+<li>安装方法二：homebrew安装<ul>
+<li><code>$ brew install mfoc</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>安装mfcuk</strong><ul>
+<li>放弃源代码安装，直接homebrew安装<code> $ brew install mfcuk</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>至此，所有软件已经安装完毕，此时进入终端输入nfc-list，即可查看当前的卡片信息<br><img src="https://img-blog.csdnimg.cn/20201002235554840.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ZsdF91c3Rj,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>可以看到这张卡的SAK是20，这意味着我这张卡是一张CPU卡，我们需要的东西即是这个UID。</p>
+<p>使用nfc-mfcassic 命令可以读写卡。但是在后续的写卡过程中遇到两个严重的问题：</p>
+<ul>
+<li><p>nfc写入不进去<br>  不知怎么地，写入命令可以正常执行，没有报错，但是却没有写入。卡片的ID还是之前的。不知为何。</p>
+</li>
+<li><p>大端小端问题<br>可以后续对dump文件进行编辑的过程中，可能由于大小端问题，编辑的文件总是不对。这个dump文件就是这张卡的1K字节的二进制文件，前4个字节是UID，第5个字节是校验字节，其值是UID四个字节的异或值。我们只需要修改这5个字节，其他的不需要改动。</p>
+<h3 id="2-使用Windows进行读写"><a href="#2-使用Windows进行读写" class="headerlink" title="2.使用Windows进行读写"></a>2.使用Windows进行读写</h3><p>使用Windows相对较为简单，相关的经验贴也有很多，出现问题大多数也都能找得到解决方案。首先是软件，<strong>读卡器软件链接</strong> ：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1DQVDdLNUirx33kr18j7EEw">https://pan.baidu.com/s/1DQVDdLNUirx33kr18j7EEw</a> 提取码：0rkw，这个是我在淘宝店买读卡器赠送的。这个文件里面包含了很多细节，里面描述的很清楚，在这里就不再赘述了，按照里面的来一般不会有问题。<br>使用步骤：</p>
+<ul>
+<li>1.准备工作<ul>
+<li>硬件连接： PN352直接插上USB口即可</li>
+<li>软件准备<ul>
+<li>安装驱动 ： 参照文件<ul>
+<li>安装读写工具 NFC reader<br>这里我建议使用<code>教程与软件/增值资料/PN532工具V3.0_crack.exe</code>这一个来安装，使用<code>NFC REA 3.0</code>这一个读取不到CPU卡的UID，因此后续无法使用，如果你的卡是普通的M1卡，则可以使用这一个软件。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>2.读卡 ： 使用该读写软件的玩转NFC，再扫描卡片类型，就可以看到这张卡片的信息来，可以看到UID，为4个字节。这就是我们费劲千辛万苦需要的东西！<br><img src="https://img-blog.csdnimg.cn/20201003001911703.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ZsdF91c3Rj,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></li>
+</ul>
+</li>
+<li><p>3.写白卡</p>
+<ul>
+<li>准备一张白卡，读白卡，点扇区左边👈的小三角可以保存白卡的dump文件。<br><img src="https://img-blog.csdnimg.cn/20201003002218941.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ZsdF91c3Rj,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></li>
+</ul>
+</li>
+</ul>
+<pre><code>*  编辑dump文件：使用二进制文件编辑器，只要可以编辑二进制文件就可以。这里使用``增值资料/辅助工具/dump编辑软件.exe`` 更改前4个字节为UID，第5个字节为校验码(即UID四个字节的异或值，可以在[这里](http://www.ip33.com/bcc.html)计算)。然后保存即可
+* 写入白卡，将刚才编辑的dump文件写入（使用写M1卡方式）即可，大功告成！
+（为了防止写入错误，写入之后，再读取一下卡片，看看前5个字节的内容对不对。）</code></pre>
+<p><img src="https://img-blog.csdnimg.cn/20201003002825436.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ZsdF91c3Rj,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<h3 id="3-手机NFC-amp-手环NFC"><a href="#3-手机NFC-amp-手环NFC" class="headerlink" title="3.手机NFC&amp;手环NFC"></a>3.手机NFC&amp;手环NFC</h3><p>手机读写白卡可以使用NFC simulator。具体使用方法见：<br><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a5klv243/">教你用Android NFC手机制作门禁卡</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/56296951">如何用小米NFC手机模拟加密卡（的部分功能）</a></p>
+<p>手机模拟成功之后，可以再用手环模拟手机，这样就可以来。<br>也可以使用，手环模拟写好的白卡，也可以模拟出来。<br>参考：<a target="_blank" rel="noopener" href="http://zhongce.sina.com.cn/article/view/22016">小米手环4玩转自定义表盘/开门锁/模拟加密卡</a></p>
+<p>目前学校已经实施进出校园报备制，因此此种方法已经退出来历史舞台。</p>
+<h4 id="4-一些问题"><a href="#4-一些问题" class="headerlink" title="4.一些问题"></a>4.一些问题</h4><ul>
+<li>UID/CUID卡如何复制？<br>这两种类型的卡片是很容易，可以直接读取所有扇区内容，然后将其写入到另外一张白卡即可。不需要额外编辑dump文件。</li>
+<li>M1卡如何复制？</li>
+<li>写入是UID还是CUID还是M1？<br>据我测试，使用三种写入方式得到的卡片均可正常刷开门禁。</li>
+<li>金融消费能用吗？<br>显然是不行的【CPU】。maybe possible【M1卡】【暴力破解】</li>
+<li>校验码一定要计算准确哦，如果计算错误，写入到卡片之后，这张卡就报废了。无法再读写。</li>
+<li>图书馆能用吗？经测试，在我们学校图书馆是刷不进去的。</li>
+<li>白卡太明显了？这种纯白色的卡还是套上卡套吧，收敛一点。</li>
+</ul>
+<h4 id="5-其他参考："><a href="#5-其他参考：" class="headerlink" title="5.其他参考："></a>5.其他参考：</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://www.xiaomi.cn/post/5155699">详谈Mifare Classic 1K卡</a></li>
+<li><a target="_blank" rel="noopener" href="https://linsir.org/post/First-IC-Card-Cooking/">IC卡复制初尝试</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/3f851d531609">Linux搭建nfc测试环境</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/d2cdfa03f64f">linux下pn532板子测试学校水卡</a></li>
+</ul>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 rat_racer@qq.com </span>
