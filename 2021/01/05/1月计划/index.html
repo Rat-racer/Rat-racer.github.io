@@ -8,12 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="stay busy and happy">
 <meta property="og:type" content="website">
-<meta property="og:title" content="书单">
-<meta property="og:url" content="http://yoursite.com/books/index.html">
+<meta property="og:title" content="分类">
+<meta property="og:url" content="http://yoursite.com/categories/index.html">
 <meta property="og:site_name" content="Rat-racer&#39;s Blog">
 <meta property="og:description" content="stay busy and happy">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-10-05T08:22:22.830Z">
+<meta property="article:published_time" content="2020-10-07T16:04:07.107Z">
 <meta property="article:modified_time" content="2017-10-26T11:39:15.000Z">
 <meta property="article:author" content="Lintao Fang">
 <meta name="twitter:card" content="summary">
@@ -224,7 +224,7 @@
     <div><a class="about  hasFriend  site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="31">
-<input type="hidden" id="yelog_site_word_count" value="32.8k">
+<input type="hidden" id="yelog_site_word_count" value="33.2k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -633,12 +633,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2021-01-07 15:23:43'>2021-01-05 20:13</time>
+            发布时间 : <time class="date" title='最后更新: 2021-01-18 10:57:58'>2021-01-05 20:13</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:185</span>
+        <span>字数:533</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -657,7 +657,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E4%BF%A1%E6%81%AF%E6%8A%BD%E5%8F%96"><span class="toc-text">什么是信息抽取</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#GCN"><span class="toc-text">GCN</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#CNN"><span class="toc-text">CNN</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -724,9 +724,74 @@
 </li>
 <li><p>1月8号</p>
 <ul>
-<li>作业3，作业4</li>
+<li>批改作业3，找常见问题，准备答案</li>
+<li>早点回去，休息</li>
 </ul>
 </li>
+<li><p>1月11号</p>
+<ul>
+<li>看EMLO，transformer，张俊林blog</li>
+<li>趣谈网络协议,,,,  未完成❎</li>
+</ul>
+</li>
+<li><p>1月12日</p>
+<ul>
+<li>get_batch,  部署上线</li>
+<li>出题，调研KG</li>
+</ul>
+</li>
+<li><p>1月13日</p>
+<ul>
+<li>分享准备，</li>
+<li>信息抽取：<ul>
+<li>NER： 命名实体识别：找到实体，标注类型；人名，地名，组织名等     ，实体链接？</li>
+<li>RE：关系抽取：</li>
+</ul>
+</li>
+<li>Java</li>
+</ul>
+</li>
+<li><p>1月14日</p>
+<ul>
+<li>知识图谱，概念与技术，</li>
+<li>CRF</li>
+<li>远程监督，弱监督，</li>
+<li>自监督，self-supervised</li>
+<li>实体链接</li>
+<li>组会，分享         </li>
+</ul>
+</li>
+<li><p>1月15日</p>
+<ul>
+<li>Trans系列</li>
+</ul>
+</li>
+<li><p>1月18日</p>
+<ul>
+<li>构建awesome KGE<ul>
+<li>人工智能之认知图谱 -AMiner ：  <a target="_blank" rel="noopener" href="https://static.aminer.cn/misc/pdf/CognitiveGraph.pdf">https://static.aminer.cn/misc/pdf/CognitiveGraph.pdf</a>   </li>
+<li>OpenKE<ul>
+<li>project: <a target="_blank" rel="noopener" href="http://nlp.csai.tsinghua.edu.cn/project/openke">http://nlp.csai.tsinghua.edu.cn/project/openke</a></li>
+<li>github: <a target="_blank" rel="noopener" href="https://github.com/thunlp/OpenKE">https://github.com/thunlp/OpenKE</a></li>
+<li>优缺点？        </li>
+</ul>
+</li>
+<li><strong>Thunlp/KRLPapers</strong> ：<a target="_blank" rel="noopener" href="https://github.com/thunlp/KRLPapers">https://github.com/thunlp/KRLPapers</a> </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="什么是信息抽取"><a href="#什么是信息抽取" class="headerlink" title="什么是信息抽取"></a>什么是信息抽取</h4><p>从一段文本中抽取特定的事实，事件等信息，形成结构化的数据；<br>传统的信息检索实际上是文档检索，其结果是文档的集合。<br>抽取： 实体，属性，关系，事件；<br>NER方法：规则，统计；NER工具；  </p>
+<h4 id="GCN"><a href="#GCN" class="headerlink" title="GCN"></a>GCN</h4><p>二维数据，CNN.<br>序列型数据，RNN.<br>无法在图数据上应用,<br>Q : GCN公式来源，邻接矩阵*隐层 *参数 转为 DADHW ，why?<br>Q: GCN为什么有效？特征提取器</p>
+<h4 id="CNN"><a href="#CNN" class="headerlink" title="CNN"></a>CNN</h4><p>Q：为什么padding？<br>Q：什么是channel？  </p>
+<p>远期目标</p>
+<ul>
+<li>专利转让任务</li>
+<li>和徐教授？ 问问论文情况</li>
+<li>实习要做一点东西</li>
+<li>Java，interview</li>
+<li></li>
 </ul>
 
       
